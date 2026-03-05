@@ -3,128 +3,422 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Cerqa</title>
-
+<title>Cerqa — Navigate Together</title>
 <style>
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-    margin: 0;
-    background: #f7f7f7;
-    color: #222;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  margin: 0;
+  background: #f0f4f8;
+  color: #1b2d4a;
 }
 
-header {
-    background: #000;
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(160deg, #1b2d4a 0%, #2e5280 100%);
+  color: white;
+  text-align: center;
+  padding: 80px 20px 64px;
 }
 
-header h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
+.coming-soon-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.9);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 28px;
 }
 
-header p {
-    font-size: 20px;
-    opacity: 0.85;
+.hero h1 {
+  font-size: 72px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin: 0 0 14px;
+  line-height: 1;
 }
 
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 40px 20px;
+.hero .tagline {
+  font-size: 26px;
+  font-weight: 300;
+  opacity: 0.85;
+  margin: 0 0 14px;
 }
 
-.screenshots {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+.hero .subtext {
+  font-size: 16px;
+  opacity: 0.65;
+  max-width: 400px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
 }
 
-.screenshot {
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+.platform-badges {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.placeholder {
-    background: #ddd;
-    height: 420px;
-    border-radius: 10px;
+.platform-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: 10px;
 }
 
+.platform-badge svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+  flex-shrink: 0;
+}
+
+/* ── HERO PHONES ── */
+.hero-phones {
+  background: linear-gradient(180deg, #2e5280 0%, #f0f4f8 55%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 24px;
+  padding: 48px 20px 0;
+  overflow: hidden;
+}
+
+.phone-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.phone-wrap img {
+  display: block;
+  width: 160px;
+  border-radius: 32px;
+  border: 7px solid #111;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.45);
+}
+
+.phone-wrap.featured img {
+  width: 200px;
+  transform: translateY(-16px);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+}
+
+.phone-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 10px;
+}
+
+.phone-wrap.featured .phone-label {
+  color: rgba(255,255,255,0.7);
+}
+
+/* ── SCREENSHOTS SECTION ── */
+.section {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 64px 20px;
+}
+
+.section-header {
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #1b2d4a;
+}
+
+.section-header p {
+  font-size: 16px;
+  color: #6b7a8d;
+  margin: 0;
+}
+
+.screens-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.screen-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.screen-pair-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.screen-card {
+  text-align: center;
+}
+
+.screen-card img {
+  width: 100%;
+  max-width: 140px;
+  border-radius: 22px;
+  border: 5px solid #1a1a1a;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.14);
+  display: block;
+}
+
+.screen-card p {
+  margin: 10px 0 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7a8d;
+  letter-spacing: 0.5px;
+}
+
+.feature-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1b2d4a;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.os-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: #e8eef6;
+  color: #4a6fa5;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-top: 6px;
+}
+
+/* ── TECH SECTION ── */
+.tech-section {
+  background: #1b2d4a;
+  color: white;
+  text-align: center;
+  padding: 72px 20px;
+}
+
+.tech-section h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.tech-section p {
+  font-size: 15px;
+  opacity: 0.65;
+  max-width: 460px;
+  margin: 0 auto 28px;
+  line-height: 1.8;
+}
+
+.tech-badges {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.85);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 8px;
+}
+
+/* ── FOOTER ── */
 footer {
-    text-align: center;
-    padding: 40px;
-    font-size: 14px;
+  text-align: center;
+  padding: 36px 20px;
+  font-size: 14px;
+  color: #8a97a8;
+  background: #f0f4f8;
+  border-top: 1px solid #e2e8f0;
+}
+
+footer p {
+  margin: 0 0 10px;
 }
 
 footer a {
-    margin: 0 10px;
-    color: #333;
-    text-decoration: none;
+  margin: 0 12px;
+  color: #4a6fa5;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  .hero h1 { font-size: 48px; }
+  .hero .tagline { font-size: 20px; }
+
+  .hero-phones {
+    gap: 12px;
+  }
+
+  .phone-wrap img { width: 130px; border-radius: 26px; border-width: 5px; }
+  .phone-wrap.featured img { width: 160px; }
+
+  .screens-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .screens-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-phones {
+    gap: 8px;
+  }
 }
 </style>
 </head>
-
 <body>
 
-<header>
-<h1>Cerqa</h1>
-<p>Discover where friends are. Meet up instantly.</p>
-<p>Real-time location sharing and messaging built for simplicity.</p>
+<!-- HERO -->
+<header class="hero">
+  <div class="coming-soon-badge">Coming Soon</div>
+  <h1>Cerqa</h1>
+  <p class="tagline">Navigate together.</p>
+  <p class="subtext">Real-time location sharing meets turn-by-turn navigation — built for iOS and Android.</p>
+  <div class="platform-badges">
+    <div class="platform-badge">
+      <!-- Apple -->
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+      iOS
+    </div>
+    <div class="platform-badge">
+      <!-- Android -->
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.523 15.341a.924.924 0 01-.924-.924V9.483a.924.924 0 011.847 0v4.934a.924.924 0 01-.923.924zm-11.046 0a.924.924 0 01-.923-.924V9.483a.924.924 0 011.846 0v4.934a.924.924 0 01-.923.924zm1.893-7.875l1.019-1.867a.213.213 0 00-.08-.29.212.212 0 00-.29.08L7.993 7.27a6.687 6.687 0 00-2.674 1.804h13.362A6.684 6.684 0 0016.007 7.27l-1.026-1.881a.212.212 0 00-.29-.08.213.213 0 00-.079.29l1.019 1.867A6.442 6.442 0 0012 6.92a6.443 6.443 0 00-3.63 1.146zM9.47 5.987a.47.47 0 110-.94.47.47 0 010 .94zm5.06 0a.47.47 0 110-.94.47.47 0 010 .94zM5.328 9.483v7.735a1.154 1.154 0 001.154 1.154h.577v2.308a.924.924 0 001.847 0V18.37h6.188v2.308a.924.924 0 001.847 0V18.37h.577a1.154 1.154 0 001.154-1.154V9.483H5.328z"/></svg>
+      Android
+    </div>
+  </div>
 </header>
 
-<div class="container">
-
-<h2>About Cerqa</h2>
-
-<p>
-Cerqa helps you connect with friends in real time. Share your location,
-find people nearby, and chat instantly — all from a simple map interface.
-</p>
-
-<p>
-Designed for both iOS and Android, Cerqa makes meeting up effortless.
-</p>
-
-<h2>Screenshots</h2>
-
-<div class="screenshots">
-
-<div class="screenshot">
-<div class="placeholder"></div>
-<p>Map View</p>
+<!-- HERO PHONES: iOS + Android side by side -->
+<div class="hero-phones">
+  <div class="phone-wrap">
+    <span class="phone-label">Android</span>
+    <img src="/images/android/android-1.png" alt="Cerqa map view on Android">
+  </div>
+  <div class="phone-wrap featured">
+    <span class="phone-label">iOS</span>
+    <img src="/images/ios/ios-1.png" alt="Cerqa map view on iOS">
+  </div>
 </div>
 
-<div class="screenshot">
-<div class="placeholder"></div>
-<p>Search & Discover</p>
+<!-- SCREENSHOTS -->
+<div class="section">
+  <div class="section-header">
+    <h2>See it in action</h2>
+    <p>One experience, built natively for both platforms.</p>
+  </div>
+
+  <div class="screens-grid">
+
+    <!-- Navigation -->
+    <div>
+      <div class="screen-pair-row">
+        <div class="screen-card">
+          <img src="/images/ios/ios-5.png" alt="Navigation on iOS">
+          <span class="os-tag">iOS</span>
+        </div>
+        <div class="screen-card">
+          <img src="/images/android/android-5.png" alt="Navigation on Android">
+          <span class="os-tag">Android</span>
+        </div>
+      </div>
+      <p class="feature-label">Navigation</p>
+    </div>
+
+    <!-- Search -->
+    <div>
+      <div class="screen-pair-row">
+        <div class="screen-card">
+          <img src="/images/ios/ios-3.png" alt="Search on iOS">
+          <span class="os-tag">iOS</span>
+        </div>
+        <div class="screen-card">
+          <img src="/images/android/android-3.png" alt="Search on Android">
+          <span class="os-tag">Android</span>
+        </div>
+      </div>
+      <p class="feature-label">Search</p>
+    </div>
+
+    <!-- Groups -->
+    <div>
+      <div class="screen-pair-row">
+        <div class="screen-card">
+          <img src="/images/ios/ios-4.png" alt="Groups on iOS">
+          <span class="os-tag">iOS</span>
+        </div>
+        <div class="screen-card">
+          <img src="/images/android/android-4.png" alt="Groups on Android">
+          <span class="os-tag">Android</span>
+        </div>
+      </div>
+      <p class="feature-label">Groups</p>
+    </div>
+
+  </div>
 </div>
 
-<div class="screenshot">
-<div class="placeholder"></div>
-<p>Chat</p>
+<!-- KMP / TECH SECTION -->
+<div class="tech-section">
+  <h2>Built for both platforms, natively.</h2>
+  <p>Cerqa is built with Kotlin Multiplatform, sharing business logic across iOS and Android while delivering a fully native experience on each.</p>
+  <div class="tech-badges">
+    <div class="tech-badge">Kotlin Multiplatform</div>
+    <div class="tech-badge">iOS &amp; Android</div>
+  </div>
 </div>
 
-<div class="screenshot">
-<div class="placeholder"></div>
-<p>User Profile</p>
-</div>
-
-</div>
-
-</div>
-
+<!-- FOOTER -->
 <footer>
-<p>© 2026 Cerqa</p>
-<a href="/privacy">Privacy Policy</a>
-<a href="/terms">Terms of Service</a>
+  <p>© 2026 Cerqa</p>
+  <a href="/privacy">Privacy Policy</a>
+  <a href="/terms">Terms of Service</a>
 </footer>
 
 </body>

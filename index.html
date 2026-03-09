@@ -113,9 +113,12 @@ body {
   box-shadow: 0 24px 64px rgba(0,0,0,0.45);
 }
 
+.phone-wrap.featured {
+  transform: translateY(-16px);
+}
+
 .phone-wrap.featured img {
   width: 200px;
-  transform: translateY(-16px);
   box-shadow: 0 32px 80px rgba(0,0,0,0.5);
 }
 
@@ -125,7 +128,7 @@ body {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: rgba(255,255,255,0.5);
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .phone-wrap.featured .phone-label {
@@ -338,12 +341,12 @@ footer a:hover {
 <!-- HERO PHONES: iOS + Android side by side -->
 <div class="hero-phones">
   <div class="phone-wrap">
-    <span class="phone-label">Android</span>
     <img src="/images/android/android-1.png" alt="Cerqa map view on Android">
+    <span class="phone-label">Android</span>
   </div>
   <div class="phone-wrap featured">
-    <span class="phone-label">iOS</span>
     <img src="/images/ios/ios-1.png" alt="Cerqa map view on iOS">
+    <span class="phone-label">iOS</span>
   </div>
 </div>
 

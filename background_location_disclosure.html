@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Background Location Use — Cerqa</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  margin: 0;
+  background: #f0f4f8;
+  color: #1b2d4a;
+}
+
+.page-header {
+  background: linear-gradient(160deg, #1b2d4a 0%, #2e5280 100%);
+  color: white;
+  padding: 40px 20px;
+}
+
+.page-header-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-block;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 20px;
+  letter-spacing: 0.3px;
+}
+
+.back-link:hover { color: white; }
+
+.page-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  letter-spacing: -0.5px;
+}
+
+.page-header p {
+  font-size: 14px;
+  opacity: 0.6;
+  margin: 0;
+}
+
+.content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+}
+
+.notice-box {
+  background: white;
+  border: 1px solid #dde4ef;
+  border-left: 4px solid #4a6fa5;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 40px;
+}
+
+.notice-box p {
+  margin: 0;
+  font-size: 15px;
+  color: #1b2d4a;
+  line-height: 1.7;
+}
+
+.section-block {
+  margin-bottom: 36px;
+}
+
+.section-block h2 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1b2d4a;
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.section-block p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #3a4d63;
+  margin: 0 0 12px;
+}
+
+.section-block p:last-child {
+  margin-bottom: 0;
+}
+
+.section-block ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.section-block ul li {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #3a4d63;
+  margin-bottom: 6px;
+}
+
+.section-block ul li:last-child {
+  margin-bottom: 0;
+}
+
+.platform-block {
+  background: white;
+  border: 1px solid #dde4ef;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+}
+
+.platform-block h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1b2d4a;
+  margin: 0 0 8px;
+}
+
+.platform-block p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #3a4d63;
+  margin: 0;
+}
+
+footer {
+  text-align: center;
+  padding: 28px 20px;
+  font-size: 14px;
+  color: #8a97a8;
+  border-top: 1px solid #e2e8f0;
+  background: #f0f4f8;
+}
+
+footer a {
+  margin: 0 10px;
+  color: #4a6fa5;
+  text-decoration: none;
+}
+
+footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <a href="/" class="back-link">← Back to Cerqa</a>
+    <h1>Background Location Use</h1>
+    <p>Last updated: March 2026</p>
+  </div>
+</header>
+
+<div class="content">
+
+  <div class="notice-box">
+    <p>Cerqa is a location-sharing app that lets you share your live position with contacts and groups during navigation sessions. To do this reliably, Cerqa needs access to your device location while the app is running in the background.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>Why Cerqa uses background location</h2>
+    <p>Background location is used only when you have actively started a location sharing session. It is never collected silently, automatically, or without your knowledge.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>When background location is active</h2>
+    <p>Your location is accessed in the background only under these conditions:</p>
+    <ul>
+      <li>You have tapped "Start sharing" or initiated a location share through the app</li>
+      <li>A sharing session is actively running (indicated by a persistent status bar notification on Android, or the blue location indicator on iOS)</li>
+      <li>You have not ended the session</li>
+    </ul>
+    <p style="margin-top: 14px;">Background location access stops immediately when you end the session, when the session timer expires, or when you force-quit the app.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>What we collect</h2>
+    <p>During an active sharing session, Cerqa collects:</p>
+    <ul>
+      <li>Your GPS coordinates (latitude and longitude)</li>
+      <li>Your approximate speed and heading (used to animate your position on the map)</li>
+      <li>Timestamps associated with each location update</li>
+    </ul>
+    <p style="margin-top: 14px;">This data is transmitted in real time to the contacts or group members you have chosen to share with. It is not stored on our servers after your session ends.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>Who sees your location</h2>
+    <p>Your location is shared only with people you explicitly choose — either a specific contact or members of a group you belong to. Cerqa does not sell, license, or share your location data with advertisers or third parties.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>How to stop background location access</h2>
+    <p>You can stop background location access at any time by:</p>
+    <ul>
+      <li>Tapping "Stop Sharing" in the app or in the persistent notification</li>
+      <li>Closing the app entirely</li>
+      <li>Revoking location permission in your device settings:
+        <ul style="margin-top: 6px;">
+          <li>iOS: Settings → Privacy &amp; Security → Location Services → Cerqa → set to "Never" or "While Using"</li>
+          <li>Android: Settings → Apps → Cerqa → Permissions → Location → set to "Only while using the app" or "Deny"</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section-block">
+    <h2>Platform-specific disclosures</h2>
+    <div class="platform-block">
+      <h3>iOS</h3>
+      <p>Cerqa requests "Always On" location authorization to maintain a sharing session when you switch to another app or lock your screen. If you grant only "While Using the App," location sharing will pause when the app is not in the foreground.</p>
+    </div>
+    <div class="platform-block">
+      <h3>Android</h3>
+      <p>Cerqa runs a foreground service during active sharing sessions. A persistent notification is displayed at all times while your location is being shared. You can stop the session at any time from this notification.</p>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <h2>Contact</h2>
+    <p>If you have questions about how Cerqa uses your location, contact us at <a href="mailto:privacy@cerqa.app" style="color: #4a6fa5; text-decoration: none;">privacy@cerqa.app</a>.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Cerqa LLC</p>
+  <a href="/privacy">Privacy Policy</a>
+  <a href="/terms">Terms of Service</a>
+</footer>
+
+</body>
+</html>

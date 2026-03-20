@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
   <head>
   <meta charset="UTF-8">
@@ -182,7 +182,7 @@
       <h2>Who We Are</h2>
       <p>Cerqa is operated by Cerqa, LLC. This policy applies to the Cerqa mobile app (iOS and Android) and the website at cerqa.app.
   When we say "we", "us", or "our", we mean Cerqa, LLC. When we say "you", we mean anyone who uses Cerqa.</p>
-      <p>If you have questions about this policy, contact us at <a href="mailto:privacy@cerqa.app" 
+      <p>If you have questions about this policy, contact us at <a href="mailto:privacy@cerqa.app"
   style="color:#4a6fa5;">privacy@cerqa.app</a>.</p>
     </div>
 
@@ -203,8 +203,14 @@
   transmitted or retained.</p>
 
       <p><strong>Messages and chat.</strong> Messages you send through Cerqa are stored on our servers (AWS DynamoDB) so they can be
-  delivered and retrieved across devices. Messages include the text content, sender identity, timestamps, and read receipts. Images
-  sent in chat are stored in a private AWS S3 bucket. Messages are retained until you delete them or delete your account.</p>
+  delivered and retrieved across devices. Messages include the text content, sender identity, timestamps, and read receipts. Message
+  content is encrypted at rest using AES-256 before being written to the database; the encryption key is stored separately in AWS
+  Secrets Manager and is not embedded in the application. Images sent in chat are stored in a private AWS S3 bucket. Messages are
+  retained until you delete them or delete your account.</p>
+
+      <p><strong>Notifications.</strong> In-app notifications (such as connection requests and location sharing invitations) are stored
+  on our servers (AWS DynamoDB) so they can be retrieved in your inbox. The title and message content of these notifications are
+  encrypted at rest using AES-256, with the encryption key managed via AWS Secrets Manager.</p>
 
       <p><strong>Device contacts.</strong> If you grant contacts permission, Cerqa reads your device contact list locally on your
   device to help you find friends who are already on Cerqa. Your contact list is not uploaded to our servers. Only when you explicitly
@@ -228,7 +234,7 @@
       <p><strong>On iOS:</strong> The app uses the iOS background location mode to maintain location updates when you switch apps or
   lock your screen during an active session. The blue location indicator in your status bar will be visible while this is active.</p>
       <p>Background location access stops immediately when your session ends, when the session timer expires, or when you force-quit
-  the app. For a full explanation of our background location practices, see <a href="/background_location_disclosure" 
+  the app. For a full explanation of our background location practices, see <a href="/background_location_disclosure"
   style="color:#4a6fa5;">cerqa.app/background_location_disclosure</a>.</p>
     </div>
 
@@ -276,6 +282,11 @@
           <tr>
             <td>AWS AppSync / DynamoDB / S3</td>
             <td>Database storage for messages, profiles, and media</td>
+            <td><a href="https://aws.amazon.com/privacy/" target="_blank">aws.amazon.com/privacy</a></td>
+          </tr>
+          <tr>
+            <td>AWS Secrets Manager</td>
+            <td>Secure storage of the AES-256 encryption key used to encrypt message and notification content</td>
             <td><a href="https://aws.amazon.com/privacy/" target="_blank">aws.amazon.com/privacy</a></td>
           </tr>
           <tr>
@@ -329,7 +340,7 @@
       <p><strong>Account deletion.</strong> You can delete your account from the Profile screen within the app. This permanently
   removes your account and associated data from our systems.</p>
       <p><strong>GDPR and CCPA.</strong> If you are in the European Economic Area, UK, or California, you have additional rights
-  including the right to access, correct, or delete your personal data, and to object to certain processing. Contact us at <a 
+  including the right to access, correct, or delete your personal data, and to object to certain processing. Contact us at <a
   href="mailto:privacy@cerqa.app" style="color:#4a6fa5;">privacy@cerqa.app</a> to exercise these rights.</p>
     </div>
 
@@ -338,6 +349,9 @@
       <p>All data is transmitted over TLS (HTTPS). Account authentication is managed by AWS Cognito. Media files are stored in private
   S3 buckets and accessible only via short-lived signed URLs. We do not store passwords — authentication credentials are managed by AWS
    Cognito.</p>
+      <p>Chat message content and in-app notification data (title and message fields) are encrypted at rest using AES-256 (CBC mode)
+  before being stored in DynamoDB. The encryption key is managed via AWS Secrets Manager and is not stored in the application's source
+  code or binary.</p>
       <p>No method of transmission or storage is 100% secure. If you believe your account has been compromised, contact us immediately
   at <a href="mailto:privacy@cerqa.app" style="color:#4a6fa5;">privacy@cerqa.app</a>.</p>
     </div>
@@ -345,7 +359,7 @@
     <div class="section-block">
       <h2>Children's Privacy</h2>
       <p>Cerqa is not directed at children under the age of 13. We do not knowingly collect personal information from children under
-  13. If you believe a child under 13 has created an account, please contact us at <a href="mailto:privacy@cerqa.app" 
+  13. If you believe a child under 13 has created an account, please contact us at <a href="mailto:privacy@cerqa.app"
   style="color:#4a6fa5;">privacy@cerqa.app</a> and we will delete the account promptly.</p>
     </div>
 

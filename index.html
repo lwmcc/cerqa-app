@@ -24,6 +24,14 @@ body {
   padding: 80px 20px 64px;
 }
 
+.badge-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
 .coming-soon-badge {
   display: inline-block;
   background: rgba(255,255,255,0.12);
@@ -35,7 +43,19 @@ body {
   text-transform: uppercase;
   padding: 6px 16px;
   border-radius: 20px;
-  margin-bottom: 28px;
+}
+
+.alpha-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.45);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 20px;
 }
 
 .hero h1 {
@@ -310,7 +330,10 @@ footer a:hover {
 
 <!-- HERO -->
 <header class="hero">
-  <div class="coming-soon-badge">Coming Soon</div>
+  <div class="badge-row">
+    <div class="alpha-badge">Android · Closed Alpha</div>
+    <div class="coming-soon-badge">iOS · Coming Soon</div>
+  </div>
   <h1>Cerqa</h1>
   <p class="tagline">Navigate together.</p>
   <p class="subtext">Real-time location sharing meets turn-by-turn navigation — built for iOS and Android.</p>

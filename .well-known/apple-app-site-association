@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "PNP9C6YP99.com.cerqa.cerqaiOS",
+        "paths": ["/invite*", "/location*"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.cerqa.app",
+    "sha256_cert_fingerprints": [
+      "10:1E:73:01:50:5E:67:84:34:56:BD:64:E3:E4:A8:69:14:E6:56:96:B8:7B:84:CF:31:80:80:99:10:40:8D:3A"
+    ]
+  }
+}]

@@ -202,13 +202,40 @@
   }
   
   .video-frame {
-    width: 160px;
+    position: relative;
+    width: 180px;
     aspect-ratio: 9 / 16;
-    border-radius: 32px;
-    border: 7px solid #111;
-    box-shadow: 0 24px 64px rgba(0,0,0,0.25);
+    border-radius: 28px;
+    border: 8px solid #111;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.3);
     overflow: hidden;
     background: #000;
+  }
+
+  .video-frame::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #111;
+    z-index: 2;
+  }
+
+  .video-frame::after {
+    content: '';
+    position: absolute;
+    bottom: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 46px;
+    height: 3px;
+    border-radius: 2px;
+    background: rgba(255,255,255,0.55);
+    z-index: 2;
   }
 
   .video-frame iframe {
@@ -425,7 +452,9 @@
   
     .phone-wrap img { width: 130px; border-radius: 26px; border-width: 5px; }
 
-    .video-frame { width: 130px; border-radius: 26px; border-width: 5px; }
+    .video-frame { width: 140px; border-radius: 22px; border-width: 6px; }
+    .video-frame::before { width: 8px; height: 8px; }
+    .video-frame::after { width: 36px; }
   
     .screens-grid { 
       grid-template-columns: 1fr 1fr;

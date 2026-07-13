@@ -238,11 +238,13 @@
     z-index: 2;
   }
 
-  .video-frame iframe {
+  .video-frame iframe,
+  .video-frame video {
     width: 100%;
     height: 100%;
     display: block;
     border: none;
+    object-fit: cover;
   }
 
   .video-caption {

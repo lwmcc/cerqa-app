@@ -212,6 +212,12 @@
     background: #000;
   }
 
+  .video-frame--native {
+    width: auto;
+    height: 320px;
+    aspect-ratio: 720 / 1564;
+  }
+
   .video-frame::after {
     content: '';
     position: absolute;
@@ -449,6 +455,7 @@
     .phone-wrap img { width: 130px; border-radius: 26px; border-width: 5px; }
 
     .video-frame { width: 140px; border-radius: 22px; border-width: 6px; }
+    .video-frame--native { width: auto; height: calc(140px * 16 / 9); }
     .video-frame::after { width: 36px; }
   
     .screens-grid { 
@@ -539,7 +546,7 @@
     <div class="videos-row">
   
       <div class="video-card">
-        <div class="video-frame">
+        <div class="video-frame video-frame--native">
           <video autoplay loop muted playsinline>
             <source src="/videos/cruise-edit.mp4" type="video/mp4">
           </video>

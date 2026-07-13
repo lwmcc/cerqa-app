@@ -237,11 +237,8 @@
     height: 100%;
     display: block;
     border: none;
-    object-fit: contain;
-  }
-
-  .video-frame--native {
-    aspect-ratio: 180 / 391;
+    object-fit: cover;
+    object-position: center bottom;
   }
 
   .video-caption {
@@ -542,7 +539,7 @@
     <div class="videos-row">
   
       <div class="video-card">
-        <div class="video-frame video-frame--native">
+        <div class="video-frame">
           <video autoplay loop muted playsinline>
             <source src="/videos/cruise-edit.mp4" type="video/mp4">
           </video>

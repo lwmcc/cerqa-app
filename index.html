@@ -213,8 +213,9 @@
   }
 
   .video-frame--native {
+    box-sizing: content-box;
     width: auto;
-    height: 320px;
+    height: calc(320px - 2 * 8px);
     aspect-ratio: 720 / 1564;
   }
 
@@ -455,7 +456,7 @@
     .phone-wrap img { width: 130px; border-radius: 26px; border-width: 5px; }
 
     .video-frame { width: 140px; border-radius: 22px; border-width: 6px; }
-    .video-frame--native { width: auto; height: calc(140px * 16 / 9); }
+    .video-frame--native { width: auto; height: calc(140px * 16 / 9 - 2 * 6px); }
     .video-frame::after { width: 36px; }
   
     .screens-grid { 

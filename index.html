@@ -117,7 +117,26 @@
     fill: #1b2d4a;
     flex-shrink: 0;
   }
-  
+
+  /* Flagship web CTA — same pill shape as the store badges so it reads as
+     part of the same row, but filled/accent instead of outline so it's the
+     first thing the eye catches, not just "a third store link." Trip
+     planning is a lower-friction first action (works instantly in-browser,
+     no install) than the app downloads next to it. */
+  .platform-badge-primary {
+    background: #4a6fa5;
+    border-color: #4a6fa5;
+    color: #fff;
+  }
+
+  .platform-badge-primary svg {
+    fill: #fff;
+  }
+
+  .platform-badge-primary:hover {
+    background: #3d5c8a;
+  }
+
   /* ── INVITE CALLOUTS ── */
   .invite-callouts {
     display: flex;
@@ -489,7 +508,13 @@
     <p class="tagline">Move together.</p>
     <p class="subtext">Real-time location sharing meets turn-by-turn navigation, built for iOS and Android.</p>
     <div class="platform-badges">
-      <a class="platform-badge" href="https://apps.apple.com/us/app/cerqa-app/id6762389261" target="_blank" 
+      <a class="platform-badge platform-badge-primary" href="https://ride.cerqa.app" target="_blank"
+  rel="noopener">
+        <!-- Map pin -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        Trip Planner
+      </a>
+      <a class="platform-badge" href="https://apps.apple.com/us/app/cerqa-app/id6762389261" target="_blank"
   rel="noopener">
         <!-- Apple -->
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 

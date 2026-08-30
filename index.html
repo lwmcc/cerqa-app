@@ -118,23 +118,59 @@
     flex-shrink: 0;
   }
 
-  /* Flagship web CTA — same pill shape as the store badges so it reads as
-     part of the same row, but filled/accent instead of outline so it's the
-     first thing the eye catches, not just "a third store link." Trip
-     planning is a lower-friction first action (works instantly in-browser,
-     no install) than the app downloads next to it. */
-  .platform-badge-primary {
+  /* ── SITE NAV ── */
+  /* Trip Planner belongs here, not in the app-store badge row below —
+     it's a page of Cerqa itself (works instantly at ride.cerqa.app, no
+     install), not a third download option next to Apple/Google.
+     Reported: mixed into that row it read as "yet another app to get"
+     instead of "part of the same product." A real top nav (brand left,
+     the flagship feature right) makes that same-site relationship
+     visible instead of implied. */
+  .site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 20px 20px 0;
+  }
+
+  .site-nav-brand {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #1b2d4a;
+    text-decoration: none;
+  }
+
+  .site-nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     background: #4a6fa5;
-    border-color: #4a6fa5;
     color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.15s;
   }
 
-  .platform-badge-primary svg {
-    fill: #fff;
-  }
-
-  .platform-badge-primary:hover {
+  .site-nav-cta:hover {
     background: #3d5c8a;
+  }
+
+  .site-nav-cta svg {
+    width: 16px;
+    height: 16px;
+    fill: #fff;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 480px) {
+    .site-nav-cta span { display: none; }
+    .site-nav-cta { padding: 10px 14px; }
   }
 
   /* ── INVITE CALLOUTS ── */
@@ -501,6 +537,16 @@
   </head>
   <body>
 
+  <!-- SITE NAV -->
+  <nav class="site-nav">
+    <a class="site-nav-brand" href="/">Cerqa</a>
+    <a class="site-nav-cta" href="https://ride.cerqa.app" target="_blank" rel="noopener">
+      <!-- Map pin -->
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+      <span>Trip Planner</span>
+    </a>
+  </nav>
+
   <!-- HERO -->
   <header class="hero">
   
@@ -508,12 +554,6 @@
     <p class="tagline">Move together.</p>
     <p class="subtext">Real-time location sharing meets turn-by-turn navigation, built for iOS and Android.</p>
     <div class="platform-badges">
-      <a class="platform-badge platform-badge-primary" href="https://ride.cerqa.app" target="_blank"
-  rel="noopener">
-        <!-- Map pin -->
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-        Trip Planner
-      </a>
       <a class="platform-badge" href="https://apps.apple.com/us/app/cerqa-app/id6762389261" target="_blank"
   rel="noopener">
         <!-- Apple -->

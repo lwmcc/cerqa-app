@@ -245,6 +245,62 @@
     margin-bottom: 10px;
   }
   
+  /* ── TRIP PLANNER ── */
+  .trip-planner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .browser-frame {
+    width: 100%;
+    max-width: 860px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #1a1a1a;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.35);
+  }
+
+  .browser-frame-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: #1a1a1a;
+  }
+
+  .browser-frame-bar span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+  }
+
+  .browser-frame img {
+    display: block;
+    width: 100%;
+  }
+
+  .trip-planner-copy {
+    max-width: 560px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.75;
+    color: rgba(27,45,74,0.75);
+    margin: 0;
+  }
+
+  .trip-planner-link {
+    color: #4a6fa5;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .trip-planner-link:hover {
+    text-decoration: underline;
+  }
+
   /* ── VIDEOS SECTION ── */
   .videos-row {
     display: flex;
@@ -598,6 +654,27 @@
     <div class="phone-wrap featured">
       <span class="phone-label">iOS</span>
       <img src="/images/ios/ios-1.png" alt="Group sharing map view on iOS">
+    </div>
+  </div>
+
+  <!-- TRIP PLANNER -->
+  <div class="section trip-planner-section">
+    <div class="section-header">
+      <h2>Plan trips from your desktop</h2>
+      <p>The easiest way to put together a group trip.</p>
+    </div>
+
+    <div class="trip-planner-content">
+      <div class="browser-frame">
+        <div class="browser-frame-bar">
+          <span></span><span></span><span></span>
+        </div>
+        <img src="/images/web/trip-planner-1.png" alt="Creating a group trip with stops and a route on the Cerqa web trip planner">
+      </div>
+      <p class="trip-planner-copy">Log in to your Cerqa account using your desktop browser and click the
+        <a class="trip-planner-link" href="https://ride.cerqa.app" target="_blank" rel="noopener">Trip Planner</a>
+        link to easily create trips and add your friends. Once a trip is created, everyone included will see it in
+        the iOS or Android app on the People screen.</p>
     </div>
   </div>
 

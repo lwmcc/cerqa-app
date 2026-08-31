@@ -225,10 +225,12 @@
   }
   
   .phone-wrap img {
+    /* No border/border-radius here (unlike .screen-card img elsewhere on this page) —
+       these are already-rendered phone-mockup screenshots (real bezel, notch, nav bar
+       baked into the image itself), not raw device screenshots. Adding the site's own
+       black bezel border on top would double-frame them. Just a drop shadow for lift. */
     display: block;
     width: 160px;
-    border-radius: 32px;
-    border: 7px solid #111;
     box-shadow: 0 24px 64px rgba(0,0,0,0.45);
   }
   
@@ -568,7 +570,7 @@
       gap: 12px;
     }
   
-    .phone-wrap img { width: 130px; border-radius: 26px; border-width: 5px; }
+    .phone-wrap img { width: 130px; }
 
     .video-frame { width: 140px; border-radius: 22px; border-width: 6px; }
     .video-frame--native { width: auto; height: calc(140px * 16 / 9 - 2 * 6px); }
@@ -649,11 +651,11 @@
   <div class="hero-phones">
     <div class="phone-wrap">
       <span class="phone-label">Android</span>
-      <img src="/images/android/android-1.png" alt="Group sharing map view on Android">
+      <img src="/images/android/android-1.png" alt="Group location sharing map on Android">
     </div>
     <div class="phone-wrap featured">
       <span class="phone-label">iOS</span>
-      <img src="/images/ios/ios-1.png" alt="Group sharing map view on iOS">
+      <img src="/images/ios/ios-1.png" alt="Group location sharing map on iOS">
     </div>
   </div>
 

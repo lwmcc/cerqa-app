@@ -225,17 +225,14 @@
   }
   
   .phone-wrap img {
-    /* No border/border-radius here (unlike .screen-card img elsewhere on this page) —
-       these are already-rendered phone-mockup screenshots (real bezel, notch, nav bar
-       baked into the image itself), not raw device screenshots. Adding the site's own
-       black bezel border on top would double-frame them. Just a drop shadow for lift. */
+    /* No border/border-radius/shadow here (unlike .screen-card img elsewhere on this
+       page) — these are already-rendered phone-mockup screenshots (real bezel, notch,
+       nav bar baked into the image itself), not raw device screenshots. Adding the
+       site's own black bezel border or a box-shadow on top would double-frame them
+       (the shadow in particular renders as a visible rectangle following the image's
+       box, not the phone's silhouette, if there's any transparent margin at all). */
     display: block;
     width: 160px;
-    box-shadow: 0 24px 64px rgba(0,0,0,0.45);
-  }
-  
-  .phone-wrap.featured img {
-    box-shadow: 0 32px 80px rgba(0,0,0,0.5);
   }
 
   .phone-label {
@@ -398,8 +395,12 @@
   }
 
   .screens-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* Vertical stack of store-shot-row pairs (see below), not a multi-column grid —
+       each pair is already ~410px wide (two 200px images side by side), too wide to
+       usefully fit more than one per row at this section's max-width. */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 32px;
   }
   
@@ -436,6 +437,26 @@
     font-weight: 600;
     color: #6b7a8d;
     letter-spacing: 0.5px;
+  }
+
+  /* Store screenshots (App Store / Play Store submission images) — caption, phone
+     mockup, and background color are all already baked into the image itself, so
+     unlike .screen-card these get no border, no shadow (a shadow on a solid opaque
+     rectangle isn't the ghost-box bug .phone-wrap img had, but it still isn't wanted
+     here per feedback), and no separate os-tag/feature-label text underneath. Just a
+     small radius to soften the hard rectangle corners. */
+  .store-shot-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .store-shot-row img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 12px;
+    display: block;
   }
 
   .feature-label {
@@ -576,15 +597,18 @@
     .video-frame--native { width: auto; height: calc(140px * 16 / 9 - 2 * 6px); }
     .video-frame::after { width: 36px; }
   
-    .screens-grid { 
-      grid-template-columns: 1fr 1fr;
+    .screens-grid {
       gap: 20px;
+    }
+
+    .store-shot-row img {
+      max-width: 150px;
     }
   }
 
   @media (max-width: 480px) {
-    .screens-grid {
-      grid-template-columns: 1fr 1fr;
+    .store-shot-row img {
+      max-width: 120px;
     }
 
     .hero-phones {
@@ -781,88 +805,34 @@
   
     <div class="screens-grid">
 
-      <div>
-        <div class="screen-pair-row">
-          <div class="screen-card">
-            <img src="/images/ios/ios-2.png" alt="Group Navigation on iOS">
-            <span class="os-tag">iOS</span>
-          </div>
-          <div class="screen-card">
-            <img src="/images/android/android-2.png" alt="Group Navigation on Android">
-            <span class="os-tag">Android</span>
-          </div>
-        </div>
-        <p class="feature-label">Group Navigation</p>
+      <div class="store-shot-row">
+        <img src="/images/ios/store-1.png" alt="See everyone at once, group sharing map on iOS">
+        <img src="/images/android/store-1.png" alt="See everyone at once, group sharing map on Android">
       </div>
 
-      <div>
-        <div class="screen-pair-row">
-          <div class="screen-card">
-            <img src="/images/ios/ios-3.png" alt="Departure Board on iOS">
-            <span class="os-tag">iOS</span>
-          </div>
-          <div class="screen-card">
-            <img src="/images/android/android-3.png" alt="Departure Board on Android">
-            <span class="os-tag">Android</span>
-          </div>
-        </div>
-        <p class="feature-label">Departure Board</p>
+      <div class="store-shot-row">
+        <img src="/images/ios/store-2.png" alt="Never lose your group, group navigation on iOS">
+        <img src="/images/android/store-2.png" alt="Never lose your group, group navigation on Android">
       </div>
 
-      <div>
-        <div class="screen-pair-row">
-          <div class="screen-card">
-            <img src="/images/ios/ios-4.png" alt="Group Zone on iOS">
-            <span class="os-tag">iOS</span>
-          </div>
-          <div class="screen-card">
-            <img src="/images/android/android-4.png" alt="Group Zone on Android">
-            <span class="os-tag">Android</span>
-          </div>
-        </div>
-        <p class="feature-label">Group Zone</p>
+      <div class="store-shot-row">
+        <img src="/images/ios/store-3.png" alt="Group navigation on your dashboard, CarPlay">
+        <img src="/images/android/store-3.png" alt="Featured drives on Android">
       </div>
 
-      <div>
-        <div class="screen-pair-row">
-          <div class="screen-card">
-            <img src="/images/ios/ios-5.png" alt="Pace Card on iOS">
-            <span class="os-tag">iOS</span>
-          </div>
-          <div class="screen-card">
-            <img src="/images/android/android-5.png" alt="Pace Card on Android">
-            <span class="os-tag">Android</span>
-          </div>
-        </div>
-        <p class="feature-label">Pace Card</p>
+      <div class="store-shot-row">
+        <img src="/images/ios/store-4.png" alt="Distance and direction at a glance, compass on iOS">
+        <img src="/images/android/store-4.png" alt="Distance and direction at a glance, compass on Android">
       </div>
 
-      <div>
-        <div class="screen-pair-row">
-          <div class="screen-card">
-            <img src="/images/ios/ios-6.png" alt="Featured Drive on iOS">
-            <span class="os-tag">iOS</span>
-          </div>
-          <div class="screen-card">
-            <img src="/images/android/android-6.png" alt="Featured Drive on Android">
-            <span class="os-tag">Android</span>
-          </div>
-        </div>
-        <p class="feature-label">Featured Drive</p>
+      <div class="store-shot-row">
+        <img src="/images/ios/store-5.png" alt="Split up and stay in sync, group zone on iOS">
+        <img src="/images/android/store-5.png" alt="Split up and stay in sync, group zone on Android">
       </div>
 
-      <div>
-        <div class="screen-pair-row">
-          <div class="screen-card">
-            <img src="/images/ios/ios-7.png" alt="Quick Chat on iOS">
-            <span class="os-tag">iOS</span>
-          </div>
-          <div class="screen-card">
-            <img src="/images/android/android-7.png" alt="Quick Chat on Android">
-            <span class="os-tag">Android</span>
-          </div>
-        </div>
-        <p class="feature-label">Quick Chat</p>
+      <div class="store-shot-row">
+        <img src="/images/ios/store-6.png" alt="Create on desktop, share with everyone, trip planning on iOS">
+        <img src="/images/android/store-6.png" alt="Create on desktop, share with everyone, trip planning on Android">
       </div>
 
     </div>

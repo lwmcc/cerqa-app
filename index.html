@@ -394,16 +394,6 @@
     margin: 0;
   }
 
-  .screens-grid {
-    /* Vertical stack of store-shot-row pairs (see below), not a multi-column grid —
-       each pair is already ~410px wide (two 200px images side by side), too wide to
-       usefully fit more than one per row at this section's max-width. */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-  }
-  
   .screen-pair {
     display: flex;
     flex-direction: column;
@@ -439,24 +429,60 @@
     letter-spacing: 0.5px;
   }
 
-  /* Store screenshots (App Store / Play Store submission images) — caption, phone
-     mockup, and background color are all already baked into the image itself, so
-     unlike .screen-card these get no border, no shadow (a shadow on a solid opaque
-     rectangle isn't the ghost-box bug .phone-wrap img had, but it still isn't wanted
-     here per feedback), and no separate os-tag/feature-label text underneath. Just a
-     small radius to soften the hard rectangle corners. */
-  .store-shot-row {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    align-items: flex-start;
+  /* Device-mockup screenshots (bezel baked in, transparent background, trimmed
+     to the phone's edges) with captions supplied here as text. Like .phone-wrap
+     img, no border or box-shadow — it would double-frame the mockup. Each card
+     pairs the iOS and Android shot of the same screen under one caption. */
+  .shots-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 64px 56px;
   }
 
-  .store-shot-row img {
-    width: 100%;
-    max-width: 200px;
-    border-radius: 12px;
+  .shot {
+    margin: 0;
+  }
+
+  .shot-pair {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+  }
+
+  .shot-pair img {
     display: block;
+    flex: 1;
+    min-width: 0;
+    height: auto;
+  }
+
+  .shot figcaption {
+    margin-top: 16px;
+  }
+
+  .shot-step {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #4a6fa5;
+    margin-bottom: 4px;
+  }
+
+  .shot h3 {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1b2d4a;
+    margin: 0 0 4px;
+  }
+
+  .shot p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #6b7a8d;
+    margin: 0;
   }
 
   .feature-label {
@@ -596,21 +622,17 @@
     .video-frame { width: 140px; border-radius: 22px; border-width: 6px; }
     .video-frame--native { width: auto; height: calc(140px * 16 / 9 - 2 * 6px); }
     .video-frame::after { width: 36px; }
-  
-    .screens-grid {
-      gap: 20px;
+
+    .shots-grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 48px;
+      max-width: 440px;
+      margin: 0 auto;
     }
 
-    .store-shot-row img {
-      max-width: 150px;
-    }
   }
 
   @media (max-width: 480px) {
-    .store-shot-row img {
-      max-width: 120px;
-    }
-
     .hero-phones {
       gap: 8px;
     }
@@ -794,41 +816,132 @@
       <h2>See it in action</h2>
       <p>One experience, built natively for both platforms.</p>
     </div>
-  
-    <div class="screens-grid">
 
-      <div class="store-shot-row">
-        <img src="/images/ios/store-1.png" alt="See everyone at once, group sharing map on iOS">
-        <img src="/images/android/store-1.png" alt="See everyone at once, group sharing map on Android">
-      </div>
+    <div class="shots-grid">
 
-      <div class="store-shot-row">
-        <img src="/images/ios/store-2.png" alt="Never lose your group, group navigation on iOS">
-        <img src="/images/android/store-2.png" alt="Never lose your group, group navigation on Android">
-      </div>
+      <figure class="shot">
+        <div class="shot-pair">
+          <img src="/images/screens/ios/01-home.webp" width="560" height="1138" loading="lazy" alt="Your trips, front and center on iOS">
+          <img src="/images/screens/android/01-home.webp" width="560" height="1143" loading="lazy" alt="Your trips, front and center on Android">
+        </div>
+        <figcaption>
+          <span class="shot-step">Plan</span>
+          <h3>Your trips, front and center</h3>
+          <p>Upcoming group trips at a glance: where, when, and who&#39;s going.</p>
+        </figcaption>
+      </figure>
 
-      <div class="store-shot-row">
-        <img src="/images/ios/store-3.png" alt="Group navigation on your dashboard, CarPlay">
-        <img src="/images/android/store-3.png" alt="Featured drives on Android">
-      </div>
+      <figure class="shot">
+        <div class="shot-pair">
+          <img src="/images/screens/ios/06-trip-details.webp" width="560" height="1138" loading="lazy" alt="Every stop, planned on iOS">
+          <img src="/images/screens/android/06-trip-details.webp" width="560" height="1143" loading="lazy" alt="Every stop, planned on Android">
+        </div>
+        <figcaption>
+          <span class="shot-step">Plan</span>
+          <h3>Every stop, planned</h3>
+          <p>See the route, stops, and who&#39;s going, then start the trip in one tap.</p>
+        </figcaption>
+      </figure>
 
-      <div class="store-shot-row">
-        <img src="/images/ios/store-4.png" alt="Distance and direction at a glance, compass on iOS">
-        <img src="/images/android/store-4.png" alt="Distance and direction at a glance, compass on Android">
-      </div>
+      <figure class="shot">
+        <div class="shot-pair">
+          <img src="/images/screens/ios/07-trip-chat.webp" width="560" height="1138" loading="lazy" alt="Talk through the trip on iOS">
+          <img src="/images/screens/android/07-trip-chat.webp" width="560" height="1143" loading="lazy" alt="Talk through the trip on Android">
+        </div>
+        <figcaption>
+          <span class="shot-step">Plan</span>
+          <h3>Talk through the trip</h3>
+          <p>Each trip has its own chat for everyone who&#39;s going.</p>
+        </figcaption>
+      </figure>
 
-      <div class="store-shot-row">
-        <img src="/images/ios/store-5.png" alt="Split up and stay in sync, group zone on iOS">
-        <img src="/images/android/store-5.png" alt="Split up and stay in sync, group zone on Android">
-      </div>
+      <figure class="shot">
+        <div class="shot-pair">
+          <img src="/images/screens/ios/02-group-sharing-map.webp" width="560" height="1138" loading="lazy" alt="See everyone at once on iOS">
+          <img src="/images/screens/android/02-group-sharing-map.webp" width="560" height="1143" loading="lazy" alt="See everyone at once on Android">
+        </div>
+        <figcaption>
+          <span class="shot-step">Share</span>
+          <h3>See everyone at once</h3>
+          <p>Friends show up live on the map as soon as they share.</p>
+        </figcaption>
+      </figure>
 
-      <div class="store-shot-row">
-        <img src="/images/ios/store-6.png" alt="Create on desktop, share with everyone, trip planning on iOS">
-        <img src="/images/android/store-6.png" alt="Create on desktop, share with everyone, trip planning on Android">
-      </div>
+      <figure class="shot">
+        <div class="shot-pair">
+          <img src="/images/screens/ios/03-group-sharing.webp" width="560" height="1138" loading="lazy" alt="Share with your crew on iOS">
+          <img src="/images/screens/android/03-group-sharing.webp" width="560" height="1143" loading="lazy" alt="Share with your crew on Android">
+        </div>
+        <figcaption>
+          <span class="shot-step">Share</span>
+          <h3>Share with your crew</h3>
+          <p>Start a timed share with a group and see who&#39;s sharing back.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="shot">
+        <div class="shot-pair">
+          <img src="/images/screens/ios/05-group-sharing-chat.webp" width="560" height="1138" loading="lazy" alt="Chat without leaving the map on iOS">
+          <img src="/images/screens/android/05-group-sharing-chat.webp" width="560" height="1143" loading="lazy" alt="Chat without leaving the map on Android">
+        </div>
+        <figcaption>
+          <span class="shot-step">Share</span>
+          <h3>Chat without leaving the map</h3>
+          <p>Plan stops and meet-ups right inside the group share.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="shot">
+        <div class="shot-pair">
+          <img src="/images/screens/ios/04-shared-nav.webp" width="560" height="1138" loading="lazy" alt="Navigate while you share on iOS">
+          <img src="/images/screens/android/04-shared-nav.webp" width="560" height="1143" loading="lazy" alt="Navigate while you share on Android">
+        </div>
+        <figcaption>
+          <span class="shot-step">Drive</span>
+          <h3>Navigate while you share</h3>
+          <p>Turn-by-turn directions while your group keeps seeing where you are.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="shot">
+        <div class="shot-pair">
+          <img src="/images/screens/ios/08-group-nav.webp" width="560" height="1138" loading="lazy" alt="Never lose your group on iOS">
+          <img src="/images/screens/android/08-group-nav.webp" width="560" height="1143" loading="lazy" alt="Never lose your group on Android">
+        </div>
+        <figcaption>
+          <span class="shot-step">Drive</span>
+          <h3>Never lose your group</h3>
+          <p>See friends on the road around you, whether they&#39;re ahead or behind.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="shot">
+        <div class="shot-pair">
+          <img src="/images/screens/ios/09-group-nav-up.webp" width="560" height="1138" loading="lazy" alt="Your convoy, in order on iOS">
+          <img src="/images/screens/android/09-group-nav-up.webp" width="560" height="1143" loading="lazy" alt="Your convoy, in order on Android">
+        </div>
+        <figcaption>
+          <span class="shot-step">Drive</span>
+          <h3>Your convoy, in order</h3>
+          <p>See who&#39;s leading, pick a place to meet, or suggest a stop.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="shot">
+        <div class="shot-pair">
+          <img src="/images/screens/ios/10-compass.webp" width="560" height="1138" loading="lazy" alt="Distance and direction at a glance on iOS">
+          <img src="/images/screens/android/10-compass.webp" width="560" height="1143" loading="lazy" alt="Distance and direction at a glance on Android">
+        </div>
+        <figcaption>
+          <span class="shot-step">Find</span>
+          <h3>Distance and direction at a glance</h3>
+          <p>Point your phone to find each friend and see how far away they are.</p>
+        </figcaption>
+      </figure>
 
     </div>
   </div>
+
   
   <!-- APPLE CARPLAY SECTION -->
   <div class="carplay-section">

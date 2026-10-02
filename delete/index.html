@@ -124,6 +124,37 @@ footer a {
 
 footer a:hover { text-decoration: underline; }
 </style>
+    <!-- Google Analytics 4 (same property as the Cerqa apps). Only on the live cerqa.app site,
+         no ad features, addresses sent without query strings. Store button clicks are sent as
+         store_click so a website visit can be tied to an install. -->
+    <script>
+      (function () {
+        var host = location.hostname;
+        if (host !== "cerqa.app" && host !== "www.cerqa.app") return;
+        var id = "G-BPFEDCV63V";
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        gtag("js", new Date());
+        gtag("config", id, {
+          page_location: location.origin + location.pathname,
+          allow_google_signals: false,
+          allow_ad_personalization_signals: false
+        });
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+        document.head.appendChild(s);
+        document.addEventListener("click", function (e) {
+          var link = e.target.closest && e.target.closest("a[href]");
+          if (!link) return;
+          var store = link.href.indexOf("apps.apple.com") !== -1 ? "apple"
+            : link.href.indexOf("play.google.com") !== -1 ? "google" : null;
+          if (store) {
+            gtag("event", "store_click", { store: store, page: location.pathname, transport_type: "beacon" });
+          }
+        });
+      })();
+    </script>
 </head>
 <body>
 

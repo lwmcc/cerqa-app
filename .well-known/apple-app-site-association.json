@@ -4,7 +4,7 @@
     "details": [
       {
         "appID": "PNP9C6YP99.com.cerqa.cerqaiOS",
-        "paths": ["/invite*", "/location*"]
+        "paths": ["/invite*", "/location*", "/i/*"]
       }
     ]
   }

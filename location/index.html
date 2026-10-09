@@ -1,33 +1,88 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Open in Cerqa</title>
-    <script>
-      var ua = navigator.userAgent || navigator.vendor || window.opera;
-      if (/android/i.test(ua)) {
-        window.location.href = "https://play.google.com/store/apps/details?id=com.cerqa.app";
-      } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-        window.location.href = "https://apps.apple.com/app/id6762389261";
-      } else {
-        window.location.href = "https://cerqa.app";
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cerqa</title>
+  <meta property="og:title" content="Cerqa">
+  <meta property="og:description" content="Abre este lugar en Cerqa / Open this place in Cerqa">
+  <style>
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+           background: #f4f5fa; color: #1b1b21; display: flex; min-height: 100vh;
+           align-items: center; justify-content: center; }
+    .card { background: #fff; border-radius: 20px; padding: 28px 24px; margin: 16px; max-width: 380px;
+            width: 100%; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; }
+    h1 { font-size: 22px; margin: 0 0 6px; }
+    p { color: #5a5d72; margin: 0 0 22px; }
+    a.btn { display: block; padding: 14px; border-radius: 14px; text-decoration: none;
+            font-weight: 600; margin-top: 10px; }
+    .primary { background: #445e91; color: #fff; }
+    .secondary { border: 1px solid #c4c6d0; color: #445e91; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 id="name">Cerqa</h1>
+    <p id="sub"></p>
+    <a id="directions" class="btn primary" href="https://cerqa.app" style="display:none"></a>
+    <a id="store" class="btn secondary" href="https://cerqa.app/download/"></a>
+    <p id="hint" style="font-size:13px;margin:14px 0 0"></p>
+  </div>
+  <script>
+    // A place shared from the app (gas station, parked car): cerqa.app/location?p=CODE, where CODE
+    // is base64url of "kind|lat|lng|name" (LocationLink.kt). People with Cerqa never see this page,
+    // the link opens the app. Everyone else gets the place name, directions and the app.
+    var es = !/^en/i.test(navigator.language || "es");
+    var ua = navigator.userAgent || "";
+    var isIOS = /iPad|iPhone|iPod/.test(ua);
+    var isAndroid = /android/i.test(ua);
+    var q = new URLSearchParams(location.search);
+    var place = null;
+    try {
+      var code = q.get("p");
+      if (code) {
+        var b64 = code.replace(/-/g, "+").replace(/_/g, "/");
+        while (b64.length % 4) b64 += "=";
+        var bytes = Uint8Array.from(atob(b64), function (c) { return c.charCodeAt(0); });
+        var parts = new TextDecoder().decode(bytes).split("|");
+        if (parts.length >= 4) place = { lat: parseFloat(parts[1]), lng: parseFloat(parts[2]), name: parts.slice(3).join("|") };
+      } else if (q.get("lat") && q.get("lng")) {
+        place = { lat: parseFloat(q.get("lat")), lng: parseFloat(q.get("lng")), name: q.get("name") || "" };
       }
-    </script>
-  </head>
-    <title>Open in Cerqa</title>
-    <script>
-      var ua = navigator.userAgent || navigator.vendor || window.opera;
-      if (/android/i.test(ua)) {
-        window.location.href = "https://play.google.com/store/apps/details?id=com.cerqa.app";
-      } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-        window.location.href = "https://apps.apple.com/app/id6762389261";
-      } else {
-        window.location.href = "https://cerqa.app";
+    } catch (e) { place = null; }
+
+    var store = document.getElementById("store");
+    store.textContent = es ? "Descarga Cerqa" : "Get Cerqa";
+    // Android: like invite links, Play carries the place through the install (referrer
+    // place=CODE) and the app opens it on first launch (InstallReferrerReader).
+    var placeCode = q.get("p");
+    if (isAndroid) store.href = "https://play.google.com/store/apps/details?id=com.cerqa.app" +
+      (placeCode ? "&referrer=" + encodeURIComponent("place=" + placeCode) : "");
+    else if (isIOS) store.href = "https://apps.apple.com/us/app/cerqa-app/id6762389261";
+
+    if (place && isFinite(place.lat) && isFinite(place.lng)) {
+      if (place.name) {
+        document.getElementById("name").textContent = place.name;
+        document.title = place.name;
       }
-    </script>
-  </head>
-  <body>
-    <p>Redirecting to Cerqa...</p>
-  </body>
-  </html>
+      document.getElementById("sub").textContent = es
+        ? "Te compartieron este lugar con Cerqa."
+        : "This place was shared with you from Cerqa.";
+      var dir = document.getElementById("directions");
+      dir.textContent = es ? "Cómo llegar" : "Directions";
+      var ll = place.lat + "," + place.lng;
+      dir.href = isIOS
+        ? "https://maps.apple.com/?daddr=" + ll + "&q=" + encodeURIComponent(place.name || "")
+        : "https://www.google.com/maps/dir/?api=1&destination=" + ll;
+      dir.style.display = "block";
+      if (isAndroid && placeCode) document.getElementById("hint").textContent = es
+        ? "¿No tienes Cerqa? Te lleva a Google Play y este lugar se abrirá cuando abras la app."
+        : "Don't have Cerqa? This takes you to Google Play, and this place will open when you open the app.";
+    } else {
+      document.getElementById("sub").textContent = es
+        ? "Abre este enlace en tu teléfono con Cerqa."
+        : "Open this link on your phone with Cerqa.";
+    }
+  </script>
+</body>
+</html>

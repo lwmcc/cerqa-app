@@ -27,6 +27,7 @@
     <a id="directions" class="btn primary" href="https://cerqa.app" style="display:none"></a>
     <a id="store" class="btn secondary" href="https://cerqa.app/download/"></a>
     <p id="hint" style="font-size:13px;margin:14px 0 0"></p>
+    <p style="font-size:11px;margin:18px 0 0;color:#8a8d9f"><span id="credit">Datos de mapa ©</span> <a id="creditLink" href="https://www.openstreetmap.org/copyright" style="color:inherit">colaboradores de OpenStreetMap</a></p>
   </div>
   <script>
     // A place shared from the app (gas station, parked car): cerqa.app/location?p=CODE, where CODE
@@ -51,6 +52,10 @@
       }
     } catch (e) { place = null; }
 
+    if (!es) {
+      document.getElementById("credit").textContent = "Map data ©";
+      document.getElementById("creditLink").textContent = "OpenStreetMap contributors";
+    }
     var store = document.getElementById("store");
     store.textContent = es ? "Descarga Cerqa" : "Get Cerqa";
     // Android: like invite links, Play carries the place through the install (referrer

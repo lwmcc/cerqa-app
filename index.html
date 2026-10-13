@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cerqa | Live location and group navigation for road trips</title>
@@ -32,659 +32,8 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    margin: 0;
-    background: #f0f4f8;
-    color: #1b2d4a;
-  } 
-  
-  /* ── HERO ── */
-  .hero {
-    background: #f0f4f8;
-    color: #1b2d4a;
-    text-align: center;
-    padding: 80px 20px 32px;
-  }
-  
-  .badge-row {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 28px;
-  } 
-  
-  .coming-soon-badge {
-    display: inline-block;
-    background: rgba(27,45,74,0.12);
-    border: 1px solid rgba(27,45,74,0.25);
-    color: rgba(27,45,74,0.9);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    padding: 6px 16px;
-    border-radius: 20px;
-  }
-  
-  .alpha-badge {
-    display: inline-block;
-    background: rgba(27,45,74,0.2);
-    border: 1px solid rgba(27,45,74,0.45);
-    color: #1b2d4a;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    text-transform: uppercase; 
-    padding: 6px 16px;
-    border-radius: 20px;
-  }
-
-  .hero h1 {
-    font-size: 72px;
-    font-weight: 700;
-    letter-spacing: -2px;
-    margin: 0 0 14px;
-    line-height: 1;
-  }
-
-  .hero .tagline {
-    font-size: 26px;
-    font-weight: 300;
-    opacity: 0.85;
-    margin: 0 0 14px;
-  }
-
-  .hero .subtext {
-    font-size: 16px;
-    opacity: 0.65;
-    max-width: 400px;
-    margin: 0 auto 40px;
-    line-height: 1.7;
-  }
-  
-  .platform-badges {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-
-  .platform-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(27,45,74,0.08);
-    border: 1px solid rgba(27,45,74,0.2);
-    color: #1b2d4a;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 10px 22px;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: background 0.15s;
-  }
-
-  .platform-badge:hover {
-    background: rgba(27,45,74,0.16);
-  }
-
-  .platform-badge svg {
-    width: 18px;
-    height: 18px;
-    fill: #1b2d4a;
-    flex-shrink: 0;
-  }
-
-  /* ── SITE NAV ── */
-  /* Trip Planner belongs here, not in the app-store badge row below —
-     it's a page of Cerqa itself (works instantly at ride.cerqa.app, no
-     install), not a third download option next to Apple/Google.
-     Reported: mixed into that row it read as "yet another app to get"
-     instead of "part of the same product." A real top nav (brand left,
-     the flagship feature right) makes that same-site relationship
-     visible instead of implied. */
-  .site-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1040px;
-    margin: 0 auto;
-    padding: 20px 20px 0;
-  }
-
-  .site-nav-brand {
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    color: #1b2d4a;
-    text-decoration: none;
-  }
-
-  .site-nav-right {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .site-nav-lang {
-    font-size: 14px;
-    font-weight: 600;
-    color: #4a6fa5;
-    text-decoration: none;
-  }
-
-  .site-nav-lang:hover {
-    text-decoration: underline;
-  }
-
-  .site-nav-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #4a6fa5;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 600;
-    padding: 10px 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: background 0.15s;
-  }
-
-  .site-nav-cta:hover {
-    background: #3d5c8a;
-  }
-
-  .site-nav-cta svg {
-    width: 16px;
-    height: 16px;
-    fill: #fff;
-    flex-shrink: 0;
-  }
-
-  @media (max-width: 480px) {
-    .site-nav-cta span { display: none; }
-    .site-nav-cta { padding: 10px 14px; }
-  }
-
-  /* ── INVITE CALLOUTS ── */
-  .invite-callouts {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 24px;
-  }
-
-  .alpha-callout {
-    background: rgba(27,45,74,0.06);
-    border: 1px solid rgba(27,45,74,0.15);
-    border-radius: 14px;
-    padding: 18px 22px;
-    max-width: 340px;
-    text-align: left;
-  }
-
-  .alpha-callout-title {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #1b2d4a;
-    margin: 0 0 6px;
-  }
-
-  .alpha-callout-text {
-    font-size: 14px;
-    line-height: 1.6;
-    color: rgba(27,45,74,0.75);
-    margin: 0;
-  }
-  
-  /* ── HERO PHONES ── */
-  .hero-phones {
-    background: #f0f4f8;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 24px;
-    padding: 24px 20px 0;
-    overflow: hidden;
-  }
-  
-  .phone-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .phone-wrap img {
-    /* No border/border-radius/shadow here (unlike .screen-card img elsewhere on this
-       page) — these are already-rendered phone-mockup screenshots (real bezel, notch,
-       nav bar baked into the image itself), not raw device screenshots. Adding the
-       site's own black bezel border or a box-shadow on top would double-frame them
-       (the shadow in particular renders as a visible rectangle following the image's
-       box, not the phone's silhouette, if there's any transparent margin at all). */
-    display: block;
-    width: 160px;
-  }
-
-  .phone-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: rgba(27,45,74,0.6);
-    margin-bottom: 10px;
-  }
-  
-  /* ── TRIP PLANNER ── */
-  .trip-planner-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 28px;
-  }
-
-  .browser-frame {
-    width: 100%;
-    max-width: 860px;
-    border-radius: 14px;
-    overflow: hidden;
-    background: #1a1a1a;
-    box-shadow: 0 32px 80px rgba(0,0,0,0.35);
-  }
-
-  .browser-frame-bar {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 10px 14px;
-    background: #1a1a1a;
-  }
-
-  .browser-frame-bar span {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.25);
-  }
-
-  .browser-frame img {
-    display: block;
-    width: 100%;
-  }
-
-  .trip-planner-copy {
-    max-width: 560px;
-    text-align: center;
-    font-size: 16px;
-    line-height: 1.75;
-    color: rgba(27,45,74,0.75);
-    margin: 0;
-  }
-
-  .trip-planner-link {
-    color: #4a6fa5;
-    font-weight: 600;
-    text-decoration: none;
-  }
-
-  .trip-planner-link:hover {
-    text-decoration: underline;
-  }
-
-  /* ── VIDEOS SECTION ── */
-  .videos-row {
-    display: flex;
-    justify-content: center;
-    gap: 28px;
-    flex-wrap: wrap;
-  }
-  
-  .video-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 200px;
-  }
-  
-  .video-frame {
-    position: relative;
-    width: 180px;
-    aspect-ratio: 9 / 16;
-    border-radius: 28px;
-    border: 8px solid #111;
-    box-shadow: 0 24px 64px rgba(0,0,0,0.3);
-    overflow: hidden;
-    background: #000;
-  }
-
-  .video-frame--native {
-    box-sizing: content-box;
-    width: auto;
-    height: calc(320px - 2 * 8px);
-    aspect-ratio: 720 / 1564;
-  }
-
-  .video-frame::after {
-    content: '';
-    position: absolute;
-    bottom: 7px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 46px;
-    height: 3px;
-    border-radius: 2px;
-    background: rgba(255,255,255,0.55);
-    z-index: 2;
-  }
-
-  .video-frame iframe {
-    width: 100%;
-    height: 100%;
-    display: block;
-    border: none;
-  }
-
-  .video-frame video {
-    width: 100%;
-    height: 100%;
-    display: block;
-    border: none;
-    object-fit: cover;
-    object-position: center bottom;
-  }
-
-  .video-caption {
-    margin: 8px 0 0;
-    font-size: 13px;
-    color: #6b7a8d;
-    text-align: center;
-    line-height: 1.5;
-  }
-
-  /* ── SCREENSHOTS SECTION ── */
-  .section {
-    max-width: 1040px;
-    margin: 0 auto;
-    padding: 64px 20px;
-  }
-
-  .section-header {
-    margin-bottom: 40px;
-  }
-  
-  .section-header h2 {
-    font-size: 30px;
-    font-weight: 700;
-    margin: 0 0 8px;
-    color: #1b2d4a;
-  }
-  
-  .section-header p {
-    font-size: 16px;
-    color: #6b7a8d;
-    margin: 0;
-  }
-
-  .screen-pair {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  } 
-  
-  .screen-pair-row {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    align-items: flex-end;
-  }
-
-  .screen-card {
-    text-align: center;
-  } 
-  
-  .screen-card img {
-    width: 100%;
-    max-width: 140px;
-    border-radius: 22px;
-    border: 5px solid #1a1a1a;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.14);
-    display: block; 
-  }
-  
-  .screen-card p {
-    margin: 10px 0 0;
-    font-size: 12px;
-    font-weight: 600;
-    color: #6b7a8d;
-    letter-spacing: 0.5px;
-  }
-
-  /* Device-mockup screenshots (bezel baked in, transparent background, trimmed
-     to the phone's edges) with captions supplied here as text. Like .phone-wrap
-     img, no border or box-shadow — it would double-frame the mockup. Each card
-     pairs the iOS and Android shot of the same screen under one caption. */
-  .shots-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 64px 56px;
-  }
-
-  .shot {
-    margin: 0;
-  }
-
-  .shot-pair {
-    display: flex;
-    gap: 12px;
-    align-items: flex-end;
-  }
-
-  .shot-pair img {
-    display: block;
-    flex: 1;
-    min-width: 0;
-    height: auto;
-  }
-
-  .shot figcaption {
-    margin-top: 16px;
-  }
-
-  .shot-step {
-    display: block;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #4a6fa5;
-    margin-bottom: 4px;
-  }
-
-  .shot h3 {
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.3;
-    color: #1b2d4a;
-    margin: 0 0 4px;
-  }
-
-  .shot p {
-    font-size: 13px;
-    line-height: 1.5;
-    color: #6b7a8d;
-    margin: 0;
-  }
-
-  .feature-label {
-    font-size: 13px;
-    font-weight: 600;
-    color: #1b2d4a; 
-    text-align: center;
-    margin-top: 4px;
-  }
-
-  .os-tag {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    background: #e8eef6;
-    color: #4a6fa5;
-    padding: 3px 8px;
-    border-radius: 6px;
-    margin-top: 6px;
-  }
-  
-  /* ── CARPLAY SECTION ── */
-  .carplay-section {
-    background: #f0f4f8;
-    color: #1b2d4a;
-    text-align: center;
-    padding: 72px 20px;
-  } 
-  
-  .carplay-content {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .carplay-section h2 {
-    font-size: 30px;
-    font-weight: 700;
-    margin: 16px 0 12px;
-  }
-  
-  .carplay-section p {
-    font-size: 16px;
-    opacity: 0.75;
-    max-width: 520px;
-    margin: 0 auto 40px;
-    line-height: 1.75;
-  }
-  
-  .carplay-image {
-    width: 100%;
-    max-width: 860px;
-    border-radius: 16px;
-    box-shadow: 0 32px 80px rgba(0,0,0,0.5);
-    display: block;
-    margin: 0 auto;
-  }
-
-  /* ── TECH SECTION ── */
-  .tech-section {
-    background: #f0f4f8;
-    color: #1b2d4a;
-    text-align: center;
-    padding: 72px 20px;
-  }
-
-  .tech-section h2 {
-    font-size: 26px;
-    font-weight: 700;
-    margin: 0 0 12px;
-  }
-
-  .tech-section p {
-    font-size: 15px;
-    opacity: 0.65;
-    max-width: 460px;
-    margin: 0 auto 28px;
-    line-height: 1.8;
-  }
-
-  .tech-badges {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-
-  .tech-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(27,45,74,0.08);
-    border: 1px solid rgba(27,45,74,0.15);
-    color: rgba(27,45,74,0.85);
-    font-size: 13px;
-    font-weight: 500;
-    padding: 8px 18px;
-    border-radius: 8px;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    text-align: center;
-    padding: 36px 20px;
-    font-size: 14px;
-    color: #8a97a8;
-    background: #f0f4f8;
-    border-top: 1px solid #e2e8f0;
-  } 
-  
-  footer p {
-    margin: 0 0 10px;
-  }
-
-  footer .data-credits {
-    margin: 16px 0 0;
-    font-size: 12px;
-  }
-
-  footer a {
-    margin: 0 12px;
-    color: #4a6fa5;
-    text-decoration: none;
-  }
-  
-  footer a:hover {
-    text-decoration: underline;
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 700px) {
-    .hero h1 { font-size: 48px; }
-    .hero .tagline { font-size: 20px; }
-  
-    .hero-phones {
-      gap: 12px;
-    }
-  
-    .phone-wrap img { width: 130px; }
-
-    .video-frame { width: 140px; border-radius: 22px; border-width: 6px; }
-    .video-frame--native { width: auto; height: calc(140px * 16 / 9 - 2 * 6px); }
-    .video-frame::after { width: 36px; }
-
-    .shots-grid {
-      grid-template-columns: minmax(0, 1fr);
-      gap: 48px;
-      max-width: 440px;
-      margin: 0 auto;
-    }
-
-  }
-
-  @media (max-width: 480px) {
-    .hero-phones {
-      gap: 8px;
-    }
-  } 
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/home.css">
       <!-- Google Analytics 4 (same property as the Cerqa apps). Only on the live cerqa.app site,
          no ad features, addresses sent without query strings. Store button clicks are sent as
          store_click so a website visit can be tied to an install. -->
@@ -716,348 +65,241 @@
         });
       })();
     </script>
-  </head>
-  <body>
+</head>
+<body>
 
-  <!-- SITE NAV -->
   <nav class="site-nav">
-    <a class="site-nav-brand" href="/">Cerqa</a>
+    <a class="site-nav-brand" href="/"><img src="/images/icon/apple-touch-icon.png" alt="" width="32" height="32">Cerqa</a>
     <div class="site-nav-right">
       <a class="site-nav-lang" href="/es/" hreflang="es" lang="es">Español</a>
-      <a class="site-nav-cta" href="https://ride.cerqa.app" target="_blank" rel="noopener">
-        <!-- Map pin -->
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-        <span>Trip Planner</span>
-      </a>
+      <a class="site-nav-cta" id="get-app" href="#get">Get the app</a>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <header class="hero">
-  
-    <h1>Cerqa</h1>
-    <p class="tagline">Move together.</p>
-    <p class="subtext">Real-time location sharing meets turn-by-turn navigation, built for iOS and Android.</p>
-    <div class="platform-badges">
-      <a class="platform-badge" href="https://apps.apple.com/us/app/cerqa-app/id6762389261" target="_blank"
-  rel="noopener">
-        <!-- Apple -->
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 
-  2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 
-  9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 
-  1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 
-  2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-        App Store
-      </a>
-      <a class="platform-badge" href="https://play.google.com/store/apps/details?id=com.cerqa.app&amp;referrer=utm_source%3Dcerqa.app%26utm_medium%3Dweb%26utm_campaign%3Dhome_en" target="_blank"
-  rel="noopener">
-        <!-- Google Play -->
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"/></svg>
-        Google Play
-      </a>
+  <header class="hero" id="get">
+    <h1>Get everyone there.</h1>
+    <p class="subtext">See where everyone is, when they'll arrive, and navigate together. For road trips, meetups and every drive in between.</p>
+    <div class="store-badges">
+      <a href="https://apps.apple.com/us/app/cerqa-app/id6762389261" target="_blank" rel="noopener"><img class="badge-apple" src="/images/badges/app-store-en-us.svg" alt="Download on the App Store" width="156" height="52"></a>
+      <a href="https://play.google.com/store/apps/details?id=com.cerqa.app&amp;referrer=utm_source%3Dcerqa.app%26utm_medium%3Dweb%26utm_campaign%3Dhome_en" target="_blank" rel="noopener"><img class="badge-google" src="/images/badges/google-play-en.png" alt="Get it on Google Play" width="199" height="77"></a>
     </div>
-  
-    <div class="invite-callouts">
-      <div class="alpha-callout">
-        <p class="alpha-callout-title">iOS &amp; Android · Beta</p>
-        <p class="alpha-callout-text">Cerqa is in beta on both platforms. The experience is still being refined, and bugs are being fixed along the way.</p>
-      </div>
-    </div>
-
+    <p class="fine">Free on iPhone and Android. Works with Apple CarPlay.</p>
   </header>
 
-  <!-- HERO PHONES: iOS + Android side by side -->
   <div class="hero-phones">
-    <div class="phone-wrap">
-      <span class="phone-label">Android</span>
-      <img src="/images/android/android-1.png" alt="Group location sharing map on Android">
-    </div>
-    <div class="phone-wrap featured">
-      <span class="phone-label">iOS</span>
-      <img src="/images/ios/ios-1.png" alt="Group location sharing map on iOS">
-    </div>
+    <div class="phone-wrap"><img src="/images/android/android-1.png" width="440" height="900" alt="Group location sharing map on Android"></div>
+    <div class="phone-wrap"><img src="/images/ios/ios-1.png" width="443" height="900" alt="Group location sharing map on iPhone"></div>
   </div>
 
-  <!-- TRIP PLANNER -->
-  <div class="section trip-planner-section">
+  <section class="section">
     <div class="section-header">
-      <h2>Plan trips from your desktop</h2>
-      <p>The easiest way to put together a group trip.</p>
+      <h2>One map for the whole group</h2>
+      <p>No more "where are you?" texts.</p>
     </div>
-
-    <div class="trip-planner-content">
-      <div class="browser-frame">
-        <div class="browser-frame-bar">
-          <span></span><span></span><span></span>
-        </div>
-        <img src="/images/web/trip-planner-1.png" alt="Creating a group trip with stops and a route on the Cerqa web trip planner">
+    <div class="benefits">
+      <div class="benefit">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+        <h3>See everyone, live</h3>
+        <p>Share your location with a friend or a group for an hour or a whole day, and see everyone on one map.</p>
       </div>
-      <p class="trip-planner-copy">Log in to your Cerqa account using your desktop browser and click the
-        <a class="trip-planner-link" href="https://ride.cerqa.app" target="_blank" rel="noopener">Trip Planner</a>
-        link to easily create trips and add your friends. Once a trip is created, everyone included will see it in
-        the iOS or Android app on the Home screen.</p>
+      <div class="benefit">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg></div>
+        <h3>Arrive together</h3>
+        <p>Turn-by-turn directions with your group on the map. See who's ahead, who's behind and when everyone gets there.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm-7-8.5c-1.38 0-2.5 1.12-2.5 2.5 0 1.88 2.5 4.5 2.5 4.5s2.5-2.62 2.5-4.5c0-1.38-1.12-2.5-2.5-2.5z"/></svg></div>
+        <h3>Plan the trip</h3>
+        <p>Stops, people and the group chat in one trip, from your phone or your computer.</p>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- VIDEOS -->
-  <div class="section">
+  <section class="section">
     <div class="section-header">
-      <h2>Cerqa in motion</h2>
-      <p>See how Cerqa keeps everyone on the same route, live.</p>
+      <h2>See it in motion</h2>
+      <p>Real screens from the app.</p>
     </div>
-  
     <div class="videos-row">
-
       <div class="video-card">
-        <div class="video-frame video-frame--native">
-          <video autoplay loop muted playsinline>
-            <source src="/videos/cruise-mode.mp4" type="video/mp4">
-          </video>
+        <div class="video-frame">
+          <video muted loop playsinline preload="none" poster="/images/posters/group-navigation-pro.jpg" data-src="/videos/group-navigation-pro.mp4"></video>
         </div>
-        <p class="feature-label">Cruise Mode</p>
-        <p class="video-caption">Get smart stop suggestions along your drive, Scenic Drive, Attractions, or Surprise Me, then route there in one tap.</p>
+        <p class="feature-label">Navigate with your group</p>
+        <p class="video-caption">Directions with your whole group on the map, so you know who's ahead, behind or already there.</p>
       </div>
-
       <div class="video-card">
-        <div class="video-frame video-frame--native">
-          <video autoplay loop muted playsinline>
-            <source src="/videos/group-navigation-pro.mp4" type="video/mp4">
-          </video>
+        <div class="video-frame">
+          <video muted loop playsinline preload="none" poster="/images/posters/shared-trip-meet-up-android-group.jpg" data-src="/videos/shared-trip-meet-up-android-group.mp4"></video>
         </div>
-        <p class="feature-label">Navigate With Your Group</p>
-        <p class="video-caption">Turn-by-turn directions with your whole group on the map, see who's ahead, behind, or already there.</p>
+        <p class="feature-label">Share with a group</p>
+        <p class="video-caption">Start a timed share, pick who's in, and agree on a place to meet.</p>
       </div>
-
       <div class="video-card">
-        <div class="video-frame video-frame--native">
-          <video autoplay loop muted playsinline>
-            <source src="/videos/shared-trip-meet-up-android.mp4" type="video/mp4">
-          </video>
+        <div class="video-frame">
+          <video muted loop playsinline preload="none" poster="/images/posters/cruise-mode.jpg" data-src="/videos/cruise-mode.mp4"></video>
         </div>
-        <p class="feature-label">Meet Up Along the Way</p>
-        <p class="video-caption">Get notified when a friend is meeting you at a stop, with the fastest route to reach them.</p>
+        <p class="feature-label">Cruise</p>
+        <p class="video-caption">Stop ideas along your drive, from scenic routes to attractions, one tap away.</p>
       </div>
-
-      <div class="video-card">
-        <div class="video-frame video-frame--native">
-          <video autoplay loop muted playsinline>
-            <source src="/videos/shared-trip-meet-up-android-group.mp4" type="video/mp4">
-          </video>
-        </div>
-        <p class="feature-label">Share With a Group</p>
-        <p class="video-caption">Start a timed location share with your group, pick who's in, and coordinate a meet-up spot together.</p>
-      </div>
-
-      <div class="video-card">
-        <div class="video-frame video-frame--native">
-          <video autoplay loop muted playsinline>
-            <source src="/videos/group-trip-vote-ios.mp4" type="video/mp4">
-          </video>
-        </div>
-        <p class="feature-label">Group Trip Vote <span class="os-tag">iOS</span></p>
-        <p class="video-caption">Share your location with the group, then kick off a vote to decide where to meet up.</p>
-      </div>
-
-      <div class="video-card">
-        <div class="video-frame video-frame--native">
-          <video autoplay loop muted playsinline>
-            <source src="/videos/group-trip-vote-android.mp4" type="video/mp4">
-          </video>
-        </div>
-        <p class="feature-label">Group Trip Vote <span class="os-tag">Android</span></p>
-        <p class="video-caption">Share your location with the group, then kick off a vote to decide where to meet up.</p>
-      </div>
-
-      <div class="video-card">
-        <div class="video-frame video-frame--native">
-          <video autoplay loop muted playsinline>
-            <source src="/videos/featured-cruise-ios.mp4" type="video/mp4">
-          </video>
-        </div>
-        <p class="feature-label">Featured Cruise <span class="os-tag">iOS</span></p>
-        <p class="video-caption">Tap the Featured Cruise icon in the top nav to discover interesting places worth the drive.</p>
-      </div>
-
-      <div class="video-card">
-        <div class="video-frame video-frame--native">
-          <video autoplay loop muted playsinline>
-            <source src="/videos/featured-cruise-android.mp4" type="video/mp4">
-          </video>
-        </div>
-        <p class="feature-label">Featured Cruise <span class="os-tag">Android</span></p>
-        <p class="video-caption">Tap the Featured Cruise icon in the top nav to discover interesting places worth the drive.</p>
-      </div>
-
     </div>
-  </div>
+  </section>
 
-  <!-- SCREENSHOTS -->
-  <div class="section">
+  <section class="section">
     <div class="section-header">
-      <h2>See it in action</h2>
-      <p>One experience, built natively for both platforms.</p>
+      <h2>Built for iPhone and Android</h2>
+      <p>The same app on both, so the whole group can use it.</p>
     </div>
-
     <div class="shots-grid">
-
       <figure class="shot">
         <div class="shot-pair">
-          <img src="/images/screens/ios/01-home.webp" width="560" height="1138" loading="lazy" alt="Your trips, front and center on iOS">
-          <img src="/images/screens/android/01-home.webp" width="560" height="1143" loading="lazy" alt="Your trips, front and center on Android">
+          <img src="/images/screens/ios/01-home.webp" width="560" height="1138" loading="lazy" alt="Your trips, front and center (iPhone)">
+          <img src="/images/screens/android/01-home.webp" width="560" height="1143" loading="lazy" alt="Your trips, front and center (Android)">
         </div>
-        <figcaption>
-          <span class="shot-step">Plan</span>
-          <h3>Your trips, front and center</h3>
-          <p>Upcoming group trips at a glance: where, when, and who&#39;s going.</p>
-        </figcaption>
+        <figcaption><h3>Your trips, front and center</h3><p>Upcoming trips at a glance: where, when and who's going.</p></figcaption>
       </figure>
-
       <figure class="shot">
         <div class="shot-pair">
-          <img src="/images/screens/ios/06-trip-details.webp" width="560" height="1138" loading="lazy" alt="Every stop, planned on iOS">
-          <img src="/images/screens/android/06-trip-details.webp" width="560" height="1143" loading="lazy" alt="Every stop, planned on Android">
+          <img src="/images/screens/ios/02-group-sharing-map.webp" width="560" height="1138" loading="lazy" alt="See everyone at once (iPhone)">
+          <img src="/images/screens/android/02-group-sharing-map.webp" width="560" height="1143" loading="lazy" alt="See everyone at once (Android)">
         </div>
-        <figcaption>
-          <span class="shot-step">Plan</span>
-          <h3>Every stop, planned</h3>
-          <p>See the route, stops, and who&#39;s going, then start the trip in one tap.</p>
-        </figcaption>
+        <figcaption><h3>See everyone at once</h3><p>Friends show up live on the map as soon as they share.</p></figcaption>
       </figure>
-
       <figure class="shot">
         <div class="shot-pair">
-          <img src="/images/screens/ios/07-trip-chat.webp" width="560" height="1138" loading="lazy" alt="Talk through the trip on iOS">
-          <img src="/images/screens/android/07-trip-chat.webp" width="560" height="1143" loading="lazy" alt="Talk through the trip on Android">
+          <img src="/images/screens/ios/04-shared-nav.webp" width="560" height="1138" loading="lazy" alt="Navigate while you share (iPhone)">
+          <img src="/images/screens/android/04-shared-nav.webp" width="560" height="1143" loading="lazy" alt="Navigate while you share (Android)">
         </div>
-        <figcaption>
-          <span class="shot-step">Plan</span>
-          <h3>Talk through the trip</h3>
-          <p>Each trip has its own chat for everyone who&#39;s going.</p>
-        </figcaption>
+        <figcaption><h3>Navigate while you share</h3><p>Turn-by-turn directions while your group keeps seeing where you are.</p></figcaption>
       </figure>
-
       <figure class="shot">
         <div class="shot-pair">
-          <img src="/images/screens/ios/02-group-sharing-map.webp" width="560" height="1138" loading="lazy" alt="See everyone at once on iOS">
-          <img src="/images/screens/android/02-group-sharing-map.webp" width="560" height="1143" loading="lazy" alt="See everyone at once on Android">
+          <img src="/images/screens/ios/08-group-nav.webp" width="560" height="1138" loading="lazy" alt="Never lose your group (iPhone)">
+          <img src="/images/screens/android/08-group-nav.webp" width="560" height="1143" loading="lazy" alt="Never lose your group (Android)">
         </div>
-        <figcaption>
-          <span class="shot-step">Share</span>
-          <h3>See everyone at once</h3>
-          <p>Friends show up live on the map as soon as they share.</p>
-        </figcaption>
+        <figcaption><h3>Never lose your group</h3><p>See friends on the road around you, ahead or behind.</p></figcaption>
       </figure>
-
       <figure class="shot">
         <div class="shot-pair">
-          <img src="/images/screens/ios/03-group-sharing.webp" width="560" height="1138" loading="lazy" alt="Share with your friends on iOS">
-          <img src="/images/screens/android/03-group-sharing.webp" width="560" height="1143" loading="lazy" alt="Share with your friends on Android">
+          <img src="/images/screens/ios/06-trip-details.webp" width="560" height="1138" loading="lazy" alt="Every stop, planned (iPhone)">
+          <img src="/images/screens/android/06-trip-details.webp" width="560" height="1143" loading="lazy" alt="Every stop, planned (Android)">
         </div>
-        <figcaption>
-          <span class="shot-step">Share</span>
-          <h3>Share with your friends</h3>
-          <p>Start a timed share with a group and see who&#39;s sharing back.</p>
-        </figcaption>
+        <figcaption><h3>Every stop, planned</h3><p>The route, the stops and who's going, then start in one tap.</p></figcaption>
       </figure>
-
       <figure class="shot">
         <div class="shot-pair">
-          <img src="/images/screens/ios/05-group-sharing-chat.webp" width="560" height="1138" loading="lazy" alt="Chat without leaving the map on iOS">
-          <img src="/images/screens/android/05-group-sharing-chat.webp" width="560" height="1143" loading="lazy" alt="Chat without leaving the map on Android">
+          <img src="/images/screens/ios/10-compass.webp" width="560" height="1138" loading="lazy" alt="Distance and direction (iPhone)">
+          <img src="/images/screens/android/10-compass.webp" width="560" height="1143" loading="lazy" alt="Distance and direction (Android)">
         </div>
-        <figcaption>
-          <span class="shot-step">Share</span>
-          <h3>Chat without leaving the map</h3>
-          <p>Plan stops and meet-ups right inside the group share.</p>
-        </figcaption>
+        <figcaption><h3>Distance and direction</h3><p>Point your phone to find each friend and see how far away they are.</p></figcaption>
       </figure>
-
-      <figure class="shot">
-        <div class="shot-pair">
-          <img src="/images/screens/ios/04-shared-nav.webp" width="560" height="1138" loading="lazy" alt="Navigate while you share on iOS">
-          <img src="/images/screens/android/04-shared-nav.webp" width="560" height="1143" loading="lazy" alt="Navigate while you share on Android">
-        </div>
-        <figcaption>
-          <span class="shot-step">Drive</span>
-          <h3>Navigate while you share</h3>
-          <p>Turn-by-turn directions while your group keeps seeing where you are.</p>
-        </figcaption>
-      </figure>
-
-      <figure class="shot">
-        <div class="shot-pair">
-          <img src="/images/screens/ios/08-group-nav.webp" width="560" height="1138" loading="lazy" alt="Never lose your group on iOS">
-          <img src="/images/screens/android/08-group-nav.webp" width="560" height="1143" loading="lazy" alt="Never lose your group on Android">
-        </div>
-        <figcaption>
-          <span class="shot-step">Drive</span>
-          <h3>Never lose your group</h3>
-          <p>See friends on the road around you, whether they&#39;re ahead or behind.</p>
-        </figcaption>
-      </figure>
-
-      <figure class="shot">
-        <div class="shot-pair">
-          <img src="/images/screens/ios/09-group-nav-up-2.webp" width="560" height="1138" loading="lazy" alt="Your convoy, in order on iOS">
-          <img src="/images/screens/android/09-group-nav-up.webp" width="560" height="1143" loading="lazy" alt="Your convoy, in order on Android">
-        </div>
-        <figcaption>
-          <span class="shot-step">Drive</span>
-          <h3>Your convoy, in order</h3>
-          <p>See who&#39;s leading, pick a place to meet, or suggest a stop.</p>
-        </figcaption>
-      </figure>
-
-      <figure class="shot">
-        <div class="shot-pair">
-          <img src="/images/screens/ios/10-compass.webp" width="560" height="1138" loading="lazy" alt="Distance and direction at a glance on iOS">
-          <img src="/images/screens/android/10-compass.webp" width="560" height="1143" loading="lazy" alt="Distance and direction at a glance on Android">
-        </div>
-        <figcaption>
-          <span class="shot-step">Find</span>
-          <h3>Distance and direction at a glance</h3>
-          <p>Point your phone to find each friend and see how far away they are.</p>
-        </figcaption>
-      </figure>
-
     </div>
-  </div>
+  </section>
 
-  
-  <!-- APPLE CARPLAY SECTION -->
-  <div class="carplay-section">
-    <div class="carplay-content">
+  <section class="section">
+    <div class="section-header">
+      <h2>Useful for the road</h2>
+      <p>Free pages you can use without the app.</p>
+    </div>
+    <div class="tools">
+      <a class="tool" href="/border-wait-times/">
+        <h3>US-Mexico border wait times</h3>
+        <p>Live waits at every crossing into the US, from CBP: San Ysidro, Otay Mesa, CBX and more.</p>
+        <span class="go">See wait times →</span>
+      </a>
+      <a class="tool" href="/gas-prices-mexico/">
+        <h3>Gas prices in Mexico</h3>
+        <p>Today's average price by state and city, and the cheapest stations near you.</p>
+        <span class="go">See gas prices →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="planner">
+      <div class="browser-frame">
+        <div class="browser-frame-bar"><span></span><span></span><span></span></div>
+        <img src="/images/web/trip-planner-1.png" loading="lazy" alt="Creating a group trip with stops and a route on the Cerqa web trip planner">
+      </div>
+      <div>
+        <h2>Plan trips from your computer</h2>
+        <p>Sign in at ride.cerqa.app to set up a trip with stops and invite your friends. Everyone you add sees it on the Home screen of the app.</p>
+        <a class="link" href="https://ride.cerqa.app" target="_blank" rel="noopener">Open the trip planner →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section carplay">
+    <div class="section-header">
       <h2>Apple CarPlay</h2>
-      <p>Cerqa is now available on Apple CarPlay. Stay connected with your group, share your location, and
-  coordinate on the go, right from your car's display, hands-free. Download the app for iPhone to get started.</p>
-      <video class="carplay-image" autoplay loop muted playsinline>
-        <source src="/images/carplay/carplay-nav.mp4" type="video/mp4">
-      </video>
+      <p>Keep your group on your car's screen, hands free.</p>
     </div>
-  </div>
-  
-  <!-- KMP / TECH SECTION -->
-  <div class="tech-section">
-    <h2>Built for both platforms, natively.</h2>
-    <p>Cerqa is built with Kotlin Multiplatform, sharing business logic across iOS and Android while delivering a
-  fully native experience on each.</p>
-    <div class="tech-badges">
-      <div class="tech-badge">Kotlin Multiplatform</div>
-      <div class="tech-badge">iOS &amp; Android</div>
+    <video muted loop playsinline preload="none" poster="/images/posters/carplay-nav.jpg" data-src="/images/carplay/carplay-nav.mp4"></video>
+  </section>
+
+  <section class="section" id="plans">
+    <div class="section-header">
+      <h2>Free and Pro</h2>
+      <p>Cerqa is free to use. Pro is for groups that travel together a lot.</p>
     </div>
-  </div>
-  
-  <!-- FOOTER -->
+    <div class="plans">
+      <table>
+        <thead><tr><th></th><th class="c">Free</th><th class="c pro">Pro</th></tr></thead>
+        <tbody>
+          <tr><td>Share your location with friends and groups</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Sharing time</td><td class="c">Up to 1 hour</td><td class="c">Up to 24 hours</td></tr>
+          <tr><td>People per group</td><td class="c">Up to 5</td><td class="c">Up to 25</td></tr>
+          <tr><td>Join trips you're invited to</td><td class="c yes">✓</td><td class="c yes">✓</td></tr>
+          <tr><td>Create trips</td><td class="c no">–</td><td class="c yes">✓</td></tr>
+          <tr><td>Navigate together as a group</td><td class="c no">–</td><td class="c yes">✓</td></tr>
+          <tr><td>Voice Co-Pilot</td><td class="c no">–</td><td class="c yes">✓</td></tr>
+          <tr><td>No ads</td><td class="c no">–</td><td class="c yes">✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="plans-note">You can upgrade to Pro in the app.</p>
+  </section>
+
+  <section class="final">
+    <h2>Your next trip starts here</h2>
+    <p>Get Cerqa free and invite the people you travel with.</p>
+    <div class="store-badges">
+      <a href="https://apps.apple.com/us/app/cerqa-app/id6762389261" target="_blank" rel="noopener"><img class="badge-apple" src="/images/badges/app-store-en-us.svg" alt="Download on the App Store" width="156" height="52"></a>
+      <a href="https://play.google.com/store/apps/details?id=com.cerqa.app&amp;referrer=utm_source%3Dcerqa.app%26utm_medium%3Dweb%26utm_campaign%3Dhome_en_bottom" target="_blank" rel="noopener"><img class="badge-google" src="/images/badges/google-play-en.png" alt="Get it on Google Play" width="199" height="77"></a>
+    </div>
+  </section>
+
   <footer>
     <p>© 2026 Cerqa</p>
-    <a href="/feedback">Feedback</a>
-    <a href="/support">Support</a>
-    <a href="/privacy">Privacy Policy</a>
-    <a href="/terms">Terms of Service</a>
-    <a href="/border-wait-times/">Border wait times</a>
-    <a href="/gas-prices-mexico/">Gas prices in Mexico</a>
-    <p class="data-credits">Map data © <a href="https://www.mapbox.com/about/maps/">Mapbox</a>, © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>. Gas prices: Comisión Nacional de Energía (CNE). EV chargers: <a href="https://openchargemap.org">Open Charge Map</a> (CC BY 4.0).</p>
+    <a href="/feedback">Feedback</a><a href="/support/">Support</a><a href="/privacy/en/">Privacy Policy</a><a href="/terms/en/">Terms of Service</a><a href="/border-wait-times/">Border wait times</a><a href="/gas-prices-mexico/">Gas prices in Mexico</a>
+    <p class="data-credits">Map data © <a href="https://www.mapbox.com/about/maps/">Mapbox</a>, © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>. Gas prices: Comisión Nacional de Energía (CNE). EV chargers: <a href="https://openchargemap.org">Open Charge Map</a> (CC BY 4.0). Border waits: U.S. Customs and Border Protection.</p>
   </footer>
-  
-  </body>
-  </html>
+
+  <script>
+    // "Get the app" goes straight to the right store on phones.
+    (function () {
+      var ua = navigator.userAgent, a = document.getElementById("get-app");
+      if (/iPhone|iPad|iPod/.test(ua)) a.href = "https://apps.apple.com/us/app/cerqa-app/id6762389261";
+      else if (/Android/.test(ua)) a.href = "https://play.google.com/store/apps/details?id=com.cerqa.app&referrer=utm_source%3Dcerqa.app%26utm_medium%3Dweb%26utm_campaign%3Dhome_en_nav";
+    })();
+    // Videos load and play only while on screen.
+    (function () {
+      var vids = document.querySelectorAll("video[data-src]");
+      if (!("IntersectionObserver" in window)) {
+        vids.forEach(function (v) { v.src = v.dataset.src; });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          var v = e.target;
+          if (e.isIntersecting) {
+            if (!v.src) v.src = v.dataset.src;
+            var p = v.play(); if (p && p.catch) p.catch(function () {});
+          } else if (v.src) { v.pause(); }
+        });
+      }, { rootMargin: "200px" });
+      vids.forEach(function (v) { io.observe(v); });
+    })();
+  </script>
+</body>
+</html>

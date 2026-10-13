@@ -36,4 +36,54 @@
   </url>
   <url><loc>https://cerqa.app/feedback</loc><lastmod>2026-10-13</lastmod>
   </url>
+  <url><loc>https://cerqa.app/border-wait-times/</loc><lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/garitas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/border-wait-times/"/>
+  </url>
+  <url><loc>https://cerqa.app/es/garitas/</loc><lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/garitas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/border-wait-times/"/>
+  </url>
+  <url><loc>https://cerqa.app/border-wait-times/san-ysidro/</loc><lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/san-ysidro/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/garitas/san-ysidro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/border-wait-times/san-ysidro/"/>
+  </url>
+  <url><loc>https://cerqa.app/es/garitas/san-ysidro/</loc><lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/san-ysidro/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/garitas/san-ysidro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/border-wait-times/san-ysidro/"/>
+  </url>
+  <url><loc>https://cerqa.app/border-wait-times/otay-mesa/</loc><lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/otay-mesa/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/garitas/otay-mesa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/border-wait-times/otay-mesa/"/>
+  </url>
+  <url><loc>https://cerqa.app/es/garitas/otay-mesa/</loc><lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/otay-mesa/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/garitas/otay-mesa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/border-wait-times/otay-mesa/"/>
+  </url>
+  <url><loc>https://cerqa.app/border-wait-times/cbx/</loc><lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/cbx/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/garitas/cbx/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/border-wait-times/cbx/"/>
+  </url>
+  <url><loc>https://cerqa.app/es/garitas/cbx/</loc><lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/cbx/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/garitas/cbx/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/border-wait-times/cbx/"/>
+  </url>
+  <url><loc>https://cerqa.app/border-wait-times/tecate/</loc><lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/tecate/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/garitas/tecate/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/border-wait-times/tecate/"/>
+  </url>
+  <url><loc>https://cerqa.app/es/garitas/tecate/</loc><lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/tecate/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/garitas/tecate/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/border-wait-times/tecate/"/>
+  </url>
 </urlset>

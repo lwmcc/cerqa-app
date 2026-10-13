@@ -72,16 +72,19 @@
     <a class="site-nav-brand" href="/es/"><img src="/images/icon/apple-touch-icon.png" alt="" width="32" height="32">Cerqa</a>
     <div class="site-nav-right">
       <a class="site-nav-lang" href="/" hreflang="en" lang="en">English</a>
-      <a class="site-nav-cta" id="get-app" href="#get">Descargar</a>
+      <a class="site-nav-planner" href="https://ride.cerqa.app" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        <span>Planear viaje</span>
+      </a>
     </div>
   </nav>
 
-  <header class="hero" id="get">
+  <header class="hero">
     <h1>Que todos lleguen.</h1>
     <p class="subtext">Ve dónde está cada quien, a qué hora llega, y naveguen juntos. Para viajes en carretera, reuniones y cualquier salida.</p>
     <div class="store-badges">
       <a href="https://apps.apple.com/mx/app/cerqa-app/id6762389261" target="_blank" rel="noopener"><img class="badge-apple" src="/images/badges/app-store-es-mx.svg" alt="Descárgalo en el App Store" width="156" height="52"></a>
-      <a href="https://play.google.com/store/apps/details?id=com.cerqa.app&amp;referrer=utm_source%3Dcerqa.app%26utm_medium%3Dweb%26utm_campaign%3Dhome_es" target="_blank" rel="noopener"><img class="badge-google" src="/images/badges/google-play-es.png" alt="Disponible en Google Play" width="199" height="77"></a>
+      <a href="https://play.google.com/store/apps/details?id=com.cerqa.app&amp;referrer=utm_source%3Dcerqa.app%26utm_medium%3Dweb%26utm_campaign%3Dhome_es" target="_blank" rel="noopener"><img class="badge-google" src="/images/badges/google-play-es.png" alt="Disponible en Google Play" width="175" height="52"></a>
     </div>
     <p class="fine">Gratis en iPhone y Android. Funciona con Apple CarPlay.</p>
   </header>
@@ -265,7 +268,7 @@
     <p>Descarga Cerqa gratis e invita a las personas con las que viajas.</p>
     <div class="store-badges">
       <a href="https://apps.apple.com/mx/app/cerqa-app/id6762389261" target="_blank" rel="noopener"><img class="badge-apple" src="/images/badges/app-store-es-mx.svg" alt="Descárgalo en el App Store" width="156" height="52"></a>
-      <a href="https://play.google.com/store/apps/details?id=com.cerqa.app&amp;referrer=utm_source%3Dcerqa.app%26utm_medium%3Dweb%26utm_campaign%3Dhome_es_bottom" target="_blank" rel="noopener"><img class="badge-google" src="/images/badges/google-play-es.png" alt="Disponible en Google Play" width="199" height="77"></a>
+      <a href="https://play.google.com/store/apps/details?id=com.cerqa.app&amp;referrer=utm_source%3Dcerqa.app%26utm_medium%3Dweb%26utm_campaign%3Dhome_es_bottom" target="_blank" rel="noopener"><img class="badge-google" src="/images/badges/google-play-es.png" alt="Disponible en Google Play" width="175" height="52"></a>
     </div>
   </section>
 
@@ -276,12 +279,6 @@
   </footer>
 
   <script>
-    // "Get the app" goes straight to the right store on phones.
-    (function () {
-      var ua = navigator.userAgent, a = document.getElementById("get-app");
-      if (/iPhone|iPad|iPod/.test(ua)) a.href = "https://apps.apple.com/mx/app/cerqa-app/id6762389261";
-      else if (/Android/.test(ua)) a.href = "https://play.google.com/store/apps/details?id=com.cerqa.app&referrer=utm_source%3Dcerqa.app%26utm_medium%3Dweb%26utm_campaign%3Dhome_es_nav";
-    })();
     // Videos load and play only while on screen.
     (function () {
       var vids = document.querySelectorAll("video[data-src]");

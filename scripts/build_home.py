@@ -26,13 +26,12 @@ SHOTS = [  # (file, ios file) shown as iPhone + Android pairs
 
 T = {
     "en": {
-        "path": "/", "alt": "/es/", "lang_link": "Español", "cc": "us", "campaign": "home_en",
+        "path": "/", "alt": "/es/", "lang_link": "Español", "planner_nav": "Trip Planner", "cc": "us", "campaign": "home_en",
         "title": "Cerqa | Live location and group navigation for road trips",
         "desc": "Share live location, see everyone's arrival time and navigate together. Cerqa keeps family and friends together on road trips, meetups and group drives. Free on iPhone and Android.",
         "og_title": "Cerqa: get everyone there",
         "og_desc": "Live location, arrival times and group navigation for family and friends.",
         "og_locale": ("en_US", "es_MX"),
-        "get_app": "Get the app",
         "h1": "Get everyone there.",
         "sub": "See where everyone is, when they'll arrive, and navigate together. For road trips, meetups and every drive in between.",
         "fine": "Free on iPhone and Android. Works with Apple CarPlay.",
@@ -99,13 +98,12 @@ T = {
         "currency": "USD",
     },
     "es": {
-        "path": "/es/", "alt": "/", "lang_link": "English", "cc": "mx", "campaign": "home_es",
+        "path": "/es/", "alt": "/", "lang_link": "English", "planner_nav": "Planear viaje", "cc": "mx", "campaign": "home_es",
         "title": "Cerqa | Ubicación en vivo y navegación en grupo para viajes en carretera",
         "desc": "Comparte tu ubicación en vivo, ve a qué hora llega cada quien y naveguen juntos. Cerqa mantiene unidos a familia y amigos en viajes en carretera, reuniones y caravanas. Gratis en iPhone y Android.",
         "og_title": "Cerqa: que todos lleguen",
         "og_desc": "Ubicación en vivo, horas de llegada y navegación en grupo para familia y amigos.",
         "og_locale": ("es_MX", "en_US"),
-        "get_app": "Descargar",
         "h1": "Que todos lleguen.",
         "sub": "Ve dónde está cada quien, a qué hora llega, y naveguen juntos. Para viajes en carretera, reuniones y cualquier salida.",
         "fine": "Gratis en iPhone y Android. Funciona con Apple CarPlay.",
@@ -182,7 +180,7 @@ def analytics():
 def badges(t, campaign):
     return f"""<div class="store-badges">
       <a href="{APP_STORE.format(cc=t['cc'])}" target="_blank" rel="noopener"><img class="badge-apple" src="{t['apple_badge']}" alt="{t['apple_alt']}" width="156" height="52"></a>
-      <a href="{PLAY.format(campaign=campaign)}" target="_blank" rel="noopener"><img class="badge-google" src="{t['google_badge']}" alt="{t['google_alt']}" width="199" height="77"></a>
+      <a href="{PLAY.format(campaign=campaign)}" target="_blank" rel="noopener"><img class="badge-google" src="{t['google_badge']}" alt="{t['google_alt']}" width="175" height="52"></a>
     </div>"""
 
 
@@ -265,11 +263,14 @@ def build(lang, ga):
     <a class="site-nav-brand" href="{t['path']}"><img src="/images/icon/apple-touch-icon.png" alt="" width="32" height="32">Cerqa</a>
     <div class="site-nav-right">
       <a class="site-nav-lang" href="{t['alt']}" hreflang="{other}" lang="{other}">{t['lang_link']}</a>
-      <a class="site-nav-cta" id="get-app" href="#get">{t['get_app']}</a>
+      <a class="site-nav-planner" href="https://ride.cerqa.app" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        <span>{t['planner_nav']}</span>
+      </a>
     </div>
   </nav>
 
-  <header class="hero" id="get">
+  <header class="hero">
     <h1>{t['h1']}</h1>
     <p class="subtext">{t['sub']}</p>
     {badges(t, t['campaign'])}
@@ -372,12 +373,6 @@ def build(lang, ga):
   </footer>
 
   <script>
-    // "Get the app" goes straight to the right store on phones.
-    (function () {{
-      var ua = navigator.userAgent, a = document.getElementById("get-app");
-      if (/iPhone|iPad|iPod/.test(ua)) a.href = "{APP_STORE.format(cc=t['cc'])}";
-      else if (/Android/.test(ua)) a.href = "{PLAY.format(campaign=t['campaign'] + '_nav').replace('&amp;', '&')}";
-    }})();
     // Videos load and play only while on screen.
     (function () {{
       var vids = document.querySelectorAll("video[data-src]");

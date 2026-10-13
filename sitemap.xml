@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://cerqa.app/</loc><lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/"/>
+  </url>
+  <url><loc>https://cerqa.app/es/</loc><lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/"/>
+  </url>
+  <url><loc>https://cerqa.app/privacy/en/</loc><lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/privacy/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/privacy/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/privacy/en/"/>
+  </url>
+  <url><loc>https://cerqa.app/privacy/es/</loc><lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/privacy/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/privacy/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/privacy/en/"/>
+  </url>
+  <url><loc>https://cerqa.app/terms/en/</loc><lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/terms/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/terms/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/terms/en/"/>
+  </url>
+  <url><loc>https://cerqa.app/terms/es/</loc><lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/terms/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/terms/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/terms/en/"/>
+  </url>
+  <url><loc>https://cerqa.app/download/</loc><lastmod>2026-10-13</lastmod>
+  </url>
+  <url><loc>https://cerqa.app/support/</loc><lastmod>2026-10-13</lastmod>
+  </url>
+  <url><loc>https://cerqa.app/feedback</loc><lastmod>2026-10-13</lastmod>
+  </url>
+</urlset>

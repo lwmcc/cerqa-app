@@ -26,7 +26,7 @@
   <div class="card">
     <h1 id="name">Cerqa</h1>
     <p id="sub"></p>
-    <a id="directions" class="btn primary" href="https://cerqa.app" style="display:none"></a>
+    <a id="open" class="btn primary" href="https://cerqa.app" style="display:none"></a>
     <a id="store" class="btn secondary" href="https://cerqa.app/download/"></a>
     <p id="hint" style="font-size:13px;margin:14px 0 0"></p>
     <p style="font-size:11px;margin:18px 0 0;color:#8a8d9f"><span id="credit">Datos de mapa ©</span> <a id="creditLink" href="https://www.openstreetmap.org/copyright" style="color:inherit">colaboradores de OpenStreetMap</a></p>
@@ -34,10 +34,14 @@
   <script>
     // A place shared from the app (gas station, parked car): cerqa.app/location?p=CODE, where CODE
     // is base64url of "kind|lat|lng|name" (LocationLink.kt). People with Cerqa never see this page,
-    // the link opens the app. Everyone else gets the place name, directions and the app.
+    // the link opens the app. Tapped from cerqa.app itself (the gas price pages), iOS keeps the
+    // link in Safari, so "Abrir en Cerqa" opens the app by its own link scheme (both apps route
+    // <scheme>://cerqa.app/location?p=CODE to the place), falling back to the store. Places
+    // always open in Cerqa, never Apple or Google Maps.
     var es = !/^en/i.test(navigator.language || "es");
     var ua = navigator.userAgent || "";
-    var isIOS = /iPad|iPhone|iPod/.test(ua);
+    // iPad Safari reports itself as a Mac; a touch screen gives it away.
+    var isIOS = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
     var isAndroid = /android/i.test(ua);
     var q = new URLSearchParams(location.search);
     var place = null;
@@ -75,13 +79,21 @@
       document.getElementById("sub").textContent = es
         ? "Te compartieron este lugar con Cerqa."
         : "This place was shared with you from Cerqa.";
-      var dir = document.getElementById("directions");
-      dir.textContent = es ? "Cómo llegar" : "Directions";
-      var ll = place.lat + "," + place.lng;
-      dir.href = isIOS
-        ? "https://maps.apple.com/?daddr=" + ll + "&q=" + encodeURIComponent(place.name || "")
-        : "https://www.google.com/maps/dir/?api=1&destination=" + ll;
-      dir.style.display = "block";
+      var open = document.getElementById("open");
+      open.textContent = es ? "Abrir en Cerqa" : "Open in Cerqa";
+      var linkPath = "cerqa.app/location" + location.search;
+      if (isAndroid) {
+        open.href = "intent://" + linkPath + "#Intent;scheme=com.cerqa.app;package=com.cerqa.app;S.browser_fallback_url=" +
+          encodeURIComponent(store.href) + ";end";
+        open.style.display = "block";
+      } else if (isIOS) {
+        open.href = "com.cerqa.cerqaiOS://" + linkPath;
+        // No Cerqa: Safari stays on this page, so go to the App Store instead.
+        open.addEventListener("click", function () {
+          setTimeout(function () { if (!document.hidden) window.location.href = store.href; }, 1500);
+        });
+        open.style.display = "block";
+      }
       if (isAndroid && placeCode) document.getElementById("hint").textContent = es
         ? "¿No tienes Cerqa? Te lleva a Google Play y este lugar se abrirá cuando abras la app."
         : "Don't have Cerqa? This takes you to Google Play, and this place will open when you open the app.";

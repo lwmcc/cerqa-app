@@ -66,7 +66,7 @@ T = {
         "tools_p": "Free pages you can use without the app.",
         "tools": [
             ("/border-wait-times/", "US-Mexico border wait times", "Live waits at every crossing into the US, from CBP: San Ysidro, Otay Mesa, CBX and more.", "See wait times"),
-            ("/gas-prices-mexico/", "Gas prices in Mexico", "Today's average price by state and city, and the cheapest stations near you.", "See gas prices"),
+            ("/gas-prices-mexico/", "Gas prices in Mexico", "Today's average price by state and city, and the cheapest stations near you. Coming soon for stations in the United States.", "See gas prices"),
         ],
         "planner_h": "Plan trips from your computer",
         "planner_p": "Sign in at ride.cerqa.app to set up a trip with stops and invite your friends. Everyone you add sees it on the Home screen of the app.",
@@ -137,7 +137,7 @@ T = {
         "tools_h": "Útil para el camino",
         "tools_p": "Páginas gratis que puedes usar sin la app.",
         "tools": [
-            ("/es/gasolina/", "Precio de la gasolina hoy", "Precio promedio por estado y ciudad, y las gasolineras más baratas.", "Ver precios"),
+            ("/es/gasolina/", "Precio de la gasolina hoy", "Precio promedio por estado y ciudad, y las gasolineras más baratas. Próximamente también en Estados Unidos.", "Ver precios"),
             ("/es/garitas/", "Tiempos de espera en las garitas", "Espera en vivo para cruzar a EE. UU. en cada garita, según CBP: San Ysidro, Otay, CBX y más.", "Ver tiempos"),
         ],
         "planner_h": "Planea viajes desde tu computadora",

@@ -351,6 +351,9 @@ def build(stations, today):
     body = f"""<h1>Precio de la gasolina hoy en México</h1>
 <p class="lead">Precio promedio de Magna, Premium y Diésel en cada estado, con los precios que {len(stations):,} gasolineras reportaron a la Comisión Nacional de Energía (CNE). Actualizado el {date_es}.</p>
 {summary_cards(stations, "es")}
+<p class="note">Próximamente: precios de gasolina en estaciones de Estados Unidos.</p>
+<h2>¿Por qué Cerqa muestra precios de gasolina?</h2>
+<p>Para que sepas cuánto costará tu viaje antes de salir. Cerqa usa los precios de hoy y el rendimiento de tu auto para calcular la gasolina de tu ruta, suma las casetas y divide el total entre todos cuando viajan juntos.</p>
 <h2>Precio promedio por estado</h2>
 {area_table(groups, "es", "Estado", state_path)}
 <h2>Precios por ciudad</h2>
@@ -365,6 +368,9 @@ def build(stations, today):
     body = f"""<h1>Gas prices in Mexico today</h1>
 <p class="lead">Average price of Regular (Magna), Premium and Diesel in every Mexican state, in pesos per liter, from what {len(stations):,} stations reported to Mexico's energy regulator (CNE). Updated {date_en}.</p>
 {summary_cards(stations, "en")}
+<p class="note">Coming soon: gas prices at stations in the United States.</p>
+<h2>Why Cerqa shows gas prices</h2>
+<p>So you know what a trip will cost before you leave. Cerqa uses today's prices and your car's mileage to estimate the fuel for your route, adds the tolls, and splits the total per person when you travel together.</p>
 <h2>Average price by state</h2>
 {area_table(groups, "en", "State", state_path)}
 <h2>Prices by city (in Spanish)</h2>

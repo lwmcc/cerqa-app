@@ -204,7 +204,7 @@ footer a:hover { text-decoration: underline; }
   <div class="page-header-inner">
     <a href="/" class="back-link">← Volver a Cerqa</a>
     <h1>Política de Privacidad</h1>
-    <p>Última actualización: 12 de octubre de 2026</p>
+    <p>Última actualización: 15 de octubre de 2026</p>
   </div>
 </header>
 
@@ -225,14 +225,14 @@ style="color:#4a6fa5;">privacy@cerqa.net</a>.</p>
   <div class="section-block">
     <h2>Información que Recopilamos</h2>
 
-    <p><strong>Información de cuenta.</strong> Al crear una cuenta, recopilamos tu dirección de correo electrónico, nombre y apellido,
-nombre de usuario, y opcionalmente tu número de teléfono. Esta información se almacena de forma segura en nuestra base de datos (AWS DynamoDB a través de AWS Amplify/Cognito).</p>
+    <p><strong>Información de cuenta.</strong> Al crear una cuenta, recopilamos tu dirección de correo electrónico y creamos un nombre de usuario para ti,
+que puedes cambiar. Tu nombre y apellido son opcionales. Si inicias sesión con Apple o Google y eliges compartir tu nombre, lo usamos para completar tu perfil. También puedes agregar un número de teléfono si quieres. Esta información se almacena de forma segura en nuestra base de datos (AWS DynamoDB a través de AWS Amplify/Cognito).</p>
 
     <p><strong>Foto de perfil.</strong> Si subes una foto de perfil, se almacena en un bucket privado de AWS S3 y solo es accesible para
 los usuarios que pueden ver tu perfil. Las fotos se conservan hasta que las reemplaces o elimines tu cuenta.</p>
 
     <p><strong>Datos de ubicación.</strong> Durante una sesión activa de compartir ubicación, recopilamos tus coordenadas GPS (latitud y
-longitud), velocidad, dirección de desplazamiento y precisión del GPS. También transmitimos datos de navegación como la distancia estimada y el tiempo restante hasta tu destino si has iniciado la navegación giro a giro. Estos datos se transmiten en tiempo real a las personas con quienes hayas elegido compartir. No se almacenan de forma persistente en nuestros servidores — cuando la sesión finaliza, tu ubicación en tiempo real deja de transmitirse y retenerse.</p>
+longitud), velocidad, dirección de desplazamiento y precisión del GPS. También transmitimos datos de navegación como la distancia estimada y el tiempo restante hasta tu destino si has iniciado la navegación giro a giro. Estos datos se transmiten en tiempo real a las personas con quienes hayas elegido compartir. No se almacenan de forma persistente en nuestros servidores. Cuando la sesión finaliza, tu ubicación en tiempo real deja de transmitirse y retenerse.</p>
 
     <p><strong>Mensajes y chat.</strong> Los mensajes que envías a través de Cerqa se almacenan en nuestros servidores (AWS DynamoDB) para que puedan entregarse y recuperarse en distintos dispositivos. Los mensajes incluyen el contenido de texto, la identidad del remitente, marcas de tiempo y confirmaciones de lectura. El contenido de los mensajes se cifra en reposo usando AES-256 antes de escribirse en la base de datos; la clave de cifrado se almacena por separado en AWS Secrets Manager y no está integrada en la aplicación. Las imágenes enviadas en el chat se almacenan en un bucket privado de AWS S3. Los mensajes se conservan hasta que los elimines o elimines tu cuenta.</p>
 
@@ -250,7 +250,7 @@ longitud), velocidad, dirección de desplazamiento y precisión del GPS. Tambié
 
   <div class="section-block">
     <h2>Ubicación en Segundo Plano</h2>
-    <p>Cerqa accede a tu ubicación en segundo plano solo durante una sesión activa de compartir ubicación — es decir, cuando hayas presionado explícitamente "Iniciar compartir" en la aplicación. El acceso a la ubicación en segundo plano se usa únicamente para mantener tu posición en tiempo real actualizada para los contactos o grupo con quienes elegiste compartir.</p>
+    <p>Cerqa accede a tu ubicación en segundo plano solo durante una sesión activa de compartir ubicación, es decir, cuando hayas presionado explícitamente "Iniciar compartir" en la aplicación. El acceso a la ubicación en segundo plano se usa únicamente para mantener tu posición en tiempo real actualizada para los contactos o grupo con quienes elegiste compartir.</p>
     <p><strong>En Android:</strong> Un servicio en primer plano persistente se ejecuta mientras la compartición está activa, y se muestra una notificación en todo momento. Puedes detener la compartición en cualquier momento presionando "Detener compartir" en la notificación.</p>
     <p><strong>En iOS:</strong> La aplicación usa el modo de ubicación en segundo plano de iOS para mantener las actualizaciones de ubicación cuando cambias de aplicación o bloqueas la pantalla durante una sesión activa. El indicador de ubicación azul en tu barra de estado será visible mientras esto esté activo.</p>
     <p>El acceso a la ubicación en segundo plano se detiene de inmediato cuando finaliza tu sesión, cuando expira el temporizador de sesión, o cuando cierras forzosamente la aplicación. Para una explicación completa de nuestras prácticas de ubicación en segundo plano, consulta <a href="/background_location_disclosure"
@@ -260,9 +260,9 @@ style="color:#4a6fa5;">cerqa.app/background_location_disclosure</a>.</p>
   <div class="section-block">
     <h2>Cómo Usamos Tu Información</h2>
     <ul>
-      <li>Para operar la aplicación — autenticando tu cuenta, habilitando sesiones de compartir ubicación, entregando mensajes y enviando notificaciones.</li>
-      <li>Para ayudarte a encontrar personas que conoces — comparando números de teléfono de tu lista de contactos con usuarios existentes de Cerqa (procesado localmente, sin subirse a nuestros servidores).</li>
-      <li>Para enviar notificaciones push — solicitudes para compartir ubicación, mensajes de chat, invitaciones de conexión y confirmaciones de llegada.</li>
+      <li>Para operar la aplicación: autenticando tu cuenta, habilitando sesiones de compartir ubicación, entregando mensajes y enviando notificaciones.</li>
+      <li>Para ayudarte a encontrar personas que conoces: comparando números de teléfono de tu lista de contactos con usuarios existentes de Cerqa (procesado localmente, sin subirse a nuestros servidores).</li>
+      <li>Para enviar notificaciones push: solicitudes para compartir ubicación, mensajes de chat, invitaciones de conexión y confirmaciones de llegada.</li>
       <li>Para permitir el compartir ubicación en tiempo real con los contactos o grupos que elijas.</li>
       <li>Para mejorar la confiabilidad y corregir errores a través de los reportes de fallos y análisis de Firebase.</li>
     </ul>
@@ -400,7 +400,7 @@ href="mailto:privacy@cerqa.net" style="color:#4a6fa5;">privacy@cerqa.net</a> par
 
   <div class="section-block">
     <h2>Seguridad</h2>
-    <p>Todos los datos se transmiten mediante TLS (HTTPS). La autenticación de cuentas está gestionada por AWS Cognito. Los archivos multimedia se almacenan en buckets privados de S3 y son accesibles solo mediante URL firmadas de corta duración. No almacenamos contraseñas — las credenciales de autenticación son gestionadas por AWS Cognito.</p>
+    <p>Todos los datos se transmiten mediante TLS (HTTPS). La autenticación de cuentas está gestionada por AWS Cognito. Los archivos multimedia se almacenan en buckets privados de S3 y son accesibles solo mediante URL firmadas de corta duración. No almacenamos contraseñas. Las credenciales de autenticación son gestionadas por AWS Cognito.</p>
     <p>El contenido de los mensajes de chat y los datos de notificaciones dentro de la aplicación (campos de título y mensaje) se cifran en reposo usando AES-256 (modo CBC) antes de almacenarse en DynamoDB. La clave de cifrado se gestiona a través de AWS Secrets Manager y no está almacenada en el código fuente ni en el binario de la aplicación.</p>
     <p>Ningún método de transmisión o almacenamiento es 100% seguro. Si crees que tu cuenta ha sido comprometida, contáctanos de inmediato en <a href="mailto:privacy@cerqa.net" style="color:#4a6fa5;">privacy@cerqa.net</a>.</p>
   </div>

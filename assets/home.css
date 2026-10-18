@@ -355,9 +355,10 @@ footer .data-credits { margin: 16px auto 0; font-size: 12px; max-width: 720px; }
 .duo-band-text h2 { font-size: 32px; font-weight: 700; letter-spacing: -0.5px; margin: 0 0 8px; }
 .duo-band-text p { font-size: 17px; color: #4b5b73; margin: 0 0 18px; }
 .duo-band-text .link { color: #1E88E5; font-weight: 600; }
-.duo-band-images { position: relative; display: flex; align-items: flex-end; justify-content: flex-end; }
-.duo-band-open { display: block; width: 86%; height: auto; }
-.duo-band-closed { position: absolute; left: 0; bottom: -8px; width: 30%; height: auto; }
+/* Folded and open side by side at the same height: each grows by its width-to-height ratio. */
+.duo-band-images { display: flex; align-items: flex-end; gap: 4%; }
+.duo-band-closed { display: block; flex: 0.723 1 0; min-width: 0; height: auto; }
+.duo-band-open { display: block; flex: 1.394 1 0; min-width: 0; height: auto; }
 
 .duo-hero .fine a { color: #1E88E5; font-weight: 600; text-decoration: none; }
 .duo-hero-image { max-width: 960px; margin: 0 auto; padding: 32px 16px 0; }

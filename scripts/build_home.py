@@ -305,8 +305,8 @@ def build(lang, ga):
         <span class="link">{t['duo_link']} →</span>
       </div>
       <div class="duo-band-images">
-        <img class="duo-band-open" src="/images/duo/inner-1.webp" width="1400" height="1004" loading="lazy" alt="{t['duo_alt'][0]}">
         <img class="duo-band-closed" src="/images/duo/outer-2.webp" width="700" height="968" loading="lazy" alt="{t['duo_alt'][1]}">
+        <img class="duo-band-open" src="/images/duo/inner-1.webp" width="1400" height="1004" loading="lazy" alt="{t['duo_alt'][0]}">
       </div>
     </a>
   </section>

@@ -6,6 +6,10 @@ Styles live in assets/home.css.
 """
 import re
 
+# iPhone Duo: "Coming soon" until the Duo ships and the Duo update is approved; then set False
+# here and in build_duo.py and rerun both.
+DUO_COMING_SOON = True
+
 SITE = "https://cerqa.app"
 APP_STORE = "https://apps.apple.com/{cc}/app/cerqa-app/id6762389261"
 PLAY = ("https://play.google.com/store/apps/details?id=com.cerqa.app&amp;referrer="
@@ -38,6 +42,11 @@ T = {
         "apple_badge": "/images/badges/app-store-en-us.svg", "google_badge": "/images/badges/google-play-en.png",
         "apple_alt": "Download on the App Store", "google_alt": "Get it on Google Play",
         "phones_alt": ("Group location sharing map on Android", "Group location sharing map on iPhone"),
+        "duo_pill": ("Coming soon", "New"),
+        "duo_h": "Made for iPhone Duo",
+        "duo_p": "Open it for a big map with your whole group beside it. Fold it to drive.",
+        "duo_link": "See Cerqa on iPhone Duo",
+        "duo_alt": ("Cerqa on the open iPhone Duo, with the whole group on the map", "Cerqa on the closed iPhone Duo, navigating"),
         "benefits_h": "One map for the whole group",
         "benefits_p": "No more \"where are you?\" texts.",
         "benefits": [
@@ -93,7 +102,7 @@ T = {
         "footer": [("/feedback", "Feedback"), ("/support/", "Support"), ("/privacy/en/", "Privacy Policy"),
                    ("/terms/en/", "Terms of Service"), ("/border-wait-times/", "Border wait times"),
                    ("/gas-prices-mexico/", "Gas prices in Mexico")],
-        "credits": 'Map data © <a href="https://www.mapbox.com/about/maps/">Mapbox</a>, © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>. Gas prices: Comisión Nacional de Energía (CNE). EV chargers: <a href="https://openchargemap.org">Open Charge Map</a> (CC BY 4.0). Border waits: U.S. Customs and Border Protection.',
+        "credits": 'Map data © <a href="https://www.mapbox.com/about/maps/">Mapbox</a> · © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> · Gas prices: Comisión Nacional de Energía (CNE) · EV chargers: <a href="https://openchargemap.org">Open Charge Map</a> (CC BY 4.0) · Border waits: U.S. Customs and Border Protection',
         "ld_desc": "Live location sharing, arrival times and group navigation for family and friends.",
         "currency": "USD",
     },
@@ -110,6 +119,11 @@ T = {
         "apple_badge": "/images/badges/app-store-es-mx.svg", "google_badge": "/images/badges/google-play-es.png",
         "apple_alt": "Descárgalo en el App Store", "google_alt": "Disponible en Google Play",
         "phones_alt": ("Mapa con la ubicación del grupo en Android", "Mapa con la ubicación del grupo en iPhone"),
+        "duo_pill": ("Próximamente", "Nuevo"),
+        "duo_h": "Hecho para iPhone Duo",
+        "duo_p": "Ábrelo para ver un mapa grande con todo tu grupo al lado. Ciérralo para manejar.",
+        "duo_link": "Ver Cerqa en iPhone Duo (en inglés)",
+        "duo_alt": ("Cerqa en el iPhone Duo abierto, con todo el grupo en el mapa", "Cerqa en el iPhone Duo cerrado, navegando"),
         "benefits_h": "Un solo mapa para todo el grupo",
         "benefits_p": "Se acabaron los mensajes de \"¿dónde vienes?\".",
         "benefits": [
@@ -165,7 +179,7 @@ T = {
         "footer": [("/feedback", "Comentarios"), ("/support/", "Ayuda"), ("/privacy/es/", "Aviso de privacidad"),
                    ("/terms/es/", "Términos del servicio"), ("/es/garitas/", "Tiempos en garitas"),
                    ("/es/gasolina/", "Precio de la gasolina")],
-        "credits": 'Datos del mapa © <a href="https://www.mapbox.com/about/maps/">Mapbox</a>, © <a href="https://www.openstreetmap.org/copyright">colaboradores de OpenStreetMap</a>. Precios de gasolina: Comisión Nacional de Energía (CNE). Cargadores eléctricos: <a href="https://openchargemap.org">Open Charge Map</a> (CC BY 4.0). Tiempos en garitas: Oficina de Aduanas y Protección Fronteriza de EE. UU. (CBP).',
+        "credits": 'Datos del mapa © <a href="https://www.mapbox.com/about/maps/">Mapbox</a> · © <a href="https://www.openstreetmap.org/copyright">colaboradores de OpenStreetMap</a> · Precios de gasolina: Comisión Nacional de Energía (CNE) · Cargadores eléctricos: <a href="https://openchargemap.org">Open Charge Map</a> (CC BY 4.0) · Tiempos en garitas: Oficina de Aduanas y Protección Fronteriza de EE. UU. (CBP)',
         "ld_desc": "Ubicación en vivo, horas de llegada y navegación en grupo para familia y amigos.",
         "currency": "MXN",
     },
@@ -281,6 +295,21 @@ def build(lang, ga):
     <div class="phone-wrap"><img src="/images/android/android-1.png" width="440" height="900" alt="{t['phones_alt'][0]}"></div>
     <div class="phone-wrap"><img src="/images/ios/ios-1.png" width="443" height="900" alt="{t['phones_alt'][1]}"></div>
   </div>
+
+  <section class="section duo-band">
+    <a class="duo-band-card" href="/iphone-duo/">
+      <div class="duo-band-text">
+        <span class="duo-pill">{t['duo_pill'][0] if DUO_COMING_SOON else t['duo_pill'][1]}</span>
+        <h2>{t['duo_h']}</h2>
+        <p>{t['duo_p']}</p>
+        <span class="link">{t['duo_link']} →</span>
+      </div>
+      <div class="duo-band-images">
+        <img class="duo-band-open" src="/images/duo/inner-1.webp" width="1400" height="1004" loading="lazy" alt="{t['duo_alt'][0]}">
+        <img class="duo-band-closed" src="/images/duo/outer-2.webp" width="700" height="968" loading="lazy" alt="{t['duo_alt'][1]}">
+      </div>
+    </a>
+  </section>
 
   <section class="section">
     <div class="section-header">

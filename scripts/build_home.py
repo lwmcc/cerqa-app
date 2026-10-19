@@ -46,7 +46,7 @@ T = {
         "duo_h": "Made for iPhone Duo",
         "duo_p": "Unfold your iPhone Duo for a big map where you can see and share locations with friends. Fold it, and drive.",
         "duo_link": "See Cerqa on iPhone Duo",
-        "duo_alt": ("Cerqa on the open iPhone Duo, with the whole group on the map", "Cerqa on the closed iPhone Duo, navigating"),
+        "duo_alt": ("Cerqa on the open iPhone Duo: everyone's route to the same place, with traffic ahead", "Cerqa on the closed iPhone Duo: turn-by-turn with the group's routes beside yours"),
         "benefits_h": "One map for the whole group",
         "benefits_p": "No more \"where are you?\" texts.",
         "benefits": [
@@ -123,7 +123,7 @@ T = {
         "duo_h": "Hecho para iPhone Duo",
         "duo_p": "Abre tu iPhone Duo y tendrás un mapa grande donde puedes ver y compartir ubicaciones con tus amigos. Ciérralo y maneja.",
         "duo_link": "Ver Cerqa en iPhone Duo (en inglés)",
-        "duo_alt": ("Cerqa en el iPhone Duo abierto, con todo el grupo en el mapa", "Cerqa en el iPhone Duo cerrado, navegando"),
+        "duo_alt": ("Cerqa en el iPhone Duo abierto: la ruta de cada quien al mismo lugar, con el tráfico por delante", "Cerqa en el iPhone Duo cerrado: indicaciones paso a paso con las rutas del grupo junto a la tuya"),
         "benefits_h": "Un solo mapa para todo el grupo",
         "benefits_p": "Se acabaron los mensajes de \"¿dónde vienes?\".",
         "benefits": [
@@ -305,8 +305,8 @@ def build(lang, ga):
         <span class="link">{t['duo_link']} →</span>
       </div>
       <div class="duo-band-images">
-        <img class="duo-band-closed" src="/images/duo/outer-2.webp" width="700" height="968" loading="lazy" alt="{t['duo_alt'][1]}">
-        <img class="duo-band-open" src="/images/duo/inner-1.webp" width="1400" height="1004" loading="lazy" alt="{t['duo_alt'][0]}">
+        <img class="duo-band-closed" src="/images/duo/group-folded.webp" width="700" height="967" loading="lazy" alt="{t['duo_alt'][1]}">
+        <img class="duo-band-open" src="/images/duo/group-inner.webp" width="1400" height="1003" loading="lazy" alt="{t['duo_alt'][0]}">
       </div>
     </a>
   </section>

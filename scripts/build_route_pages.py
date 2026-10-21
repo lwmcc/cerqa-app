@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Builds the road trip route pages (/routes/ and one page per route), English only for now.
+"""Builds the road trip route pages: /routes/ in English, and /es/rutas/ with Spanish versions of the
+Mexico routes.
 
 These are hand-written routes to test interest in Shared routes (Jira CAT-65) before building it in
 the app: each page tracks views (GA4) and clicks on "I'd use this" (event route_interest).
@@ -12,7 +13,6 @@ import os
 from build_border_pages import APP_STORE, PLAY, SITE, analytics
 
 HUB = "/routes/"
-WRITTEN = "October 21, 2026"
 
 GA = None
 
@@ -183,6 +183,131 @@ ROUTES = [
     },
 ]
 
+# Spanish versions of the Mexico routes. "en" is the slug of the English page they mirror.
+ES_HUB = "/es/rutas/"
+L_ADVISORY_ES = '<a href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mexico-travel-advisory.html">aviso de viaje de EE. UU. para México</a> (en inglés)'
+L_INM_ES = '<a href="https://www.gob.mx/inm">INM</a>'
+L_CBP_LUKEVILLE_ES = '<a href="https://www.cbp.gov/contact/ports/lukeville">página de CBP de Lukeville</a> (en inglés)'
+L_BORDER_ES = '<a href="/es/garitas/">tiempos de espera en las garitas</a>'
+L_GAS_MX_ES = '<a href="/es/gasolina/">precio de la gasolina</a>'
+
+ES_ROUTES = [
+    {
+        "slug": "phoenix-a-puerto-penasco", "en": "phoenix-to-puerto-penasco",
+        "title": "De Phoenix a Puerto Peñasco en auto",
+        "h1": "De Phoenix a Puerto Peñasco",
+        "desc": "Cómo llegar en auto de Phoenix a Puerto Peñasco por Ajo, Organ Pipe y la garita de Lukeville: unos 345 km y 4 horas, más lo que necesitas para entrar a México (seguro, pasaporte, permisos).",
+        "facts": [("Unos 345 km", "215 millas"), ("Unas 4 h", "más la garita"), ("1 día", ""), ("EE. UU. y México", "Arizona y Sonora")],
+        "lead": "La playa de Arizona: al sur por Ajo y el Monumento Nacional Organ Pipe Cactus, cruzando por Lukeville y Sonoyta, hasta el Mar de Cortés.",
+        "before": [
+            "<strong>Pasaporte</strong> o pasaporte en tarjeta para todos, para volver a Estados Unidos. Los ciudadanos de EE. UU. menores de 16 años pueden usar acta de nacimiento en cruces terrestres.",
+            "<strong>Seguro de auto mexicano.</strong> Los seguros de EE. UU. normalmente no te cubren en México. Compra una póliza mexicana antes de cruzar.",
+            "<strong>No necesitas permiso de importación del auto.</strong> Puerto Peñasco está dentro de la zona libre de Sonora.",
+            "<strong>Permiso de turista (FMM):</strong> las reglas para viajes cortos han cambiado con los años. Consulta con el " + L_INM_ES + " o en la oficina de Sonoyta.",
+            "<strong>¿Auto rentado?</strong> Confirma que la arrendadora permite manejarlo en México.",
+            "Lukeville no abre las 24 horas. Revisa el horario actual en la " + L_CBP_LUKEVILLE_ES + ".",
+        ],
+        "days": [
+            ("Phoenix a Ajo", "Unos 175 km, 2 h", [
+                "I-10 al oeste hasta la salida 112, luego la AZ-85 al sur por Gila Bend hasta Ajo.",
+                "La plaza de estilo español de Ajo es buena para un descanso.",
+            ]),
+            ("Ajo a Lukeville", "Unos 60 km, 45 min", [
+                "Por Why y el Monumento Nacional Organ Pipe Cactus. El centro de visitantes está junto a la AZ-85.",
+                "<strong>Carga gasolina en Ajo o Why</strong> antes de la frontera.",
+            ]),
+            ("Sonoyta a Puerto Peñasco", "Unos 100 km, 1 h", [
+                "Cruza por Lukeville a Sonoyta y toma la carretera federal 8 al sur, por el desierto, hasta la costa.",
+                "En Puerto Peñasco se usan pesos y dólares.",
+            ]),
+        ],
+        "tips": [
+            "De regreso: las filas en Lukeville crecen los domingos por la tarde y después de puentes. Revisa los " + L_BORDER_ES + " antes de salir.",
+            "Hay un punto de revisión de la Patrulla Fronteriza en la AZ-85 rumbo al norte. Ten tu identificación a la mano.",
+            "¿Van en dos autos? Crucen juntos y acuerden dónde verse en Sonoyta por si a uno lo pasan a revisión.",
+        ],
+    },
+    {
+        "slug": "tijuana-a-playa-del-carmen", "en": "tijuana-to-playa-del-carmen",
+        "title": "De Tijuana a Playa del Carmen en auto en 7 días",
+        "h1": "De Tijuana a Playa del Carmen en auto",
+        "desc": "Cruzar México en auto de Tijuana a Playa del Carmen en 7 días: unos 4,350 km por Hermosillo, Mazatlán, Guadalajara, Puebla, Villahermosa y Bacalar, con permisos, casetas y gasolina.",
+        "facts": [("Unos 4,350 km", "2,700 millas"), ("Unas 50 h", "manejando"), ("7 días", ""), ("México", "de Baja California a Quintana Roo")],
+        "lead": "De costa a costa: el desierto de Sonora, el Pacífico en Mazatlán, el centro del país por Guadalajara y Puebla, y luego el Golfo y el Caribe.",
+        "before": [
+            "<strong>Pasaporte</strong> y <strong>permiso de turista (FMM)</strong> si no eres mexicano. Consulta con el " + L_INM_ES + ".",
+            "<strong>Permiso de importación temporal del auto (TIP)</strong> de " + L_BANJERCITO + ", si el auto tiene placas extranjeras: lo necesitas en cuanto sales de la franja fronteriza (en Sonora, de la zona libre). Sácalo en línea de 10 a 60 días antes o en un módulo de Banjercito en la frontera. Pide un depósito reembolsable según el año del auto. Cancélalo en la frontera al salir para que te regresen el depósito.",
+            "<strong>Seguro de auto mexicano.</strong> Los seguros de EE. UU. normalmente no te cubren en México.",
+            "<strong>Efectivo para casetas.</strong> Casi todo el camino es por autopistas de cuota. Muchas casetas aceptan tarjeta, pero no todas.",
+            "<strong>Seguridad:</strong> la ruta cruza estados con distintos niveles en el " + L_ADVISORY_ES + ", y cambian. Revísalo para cada estado antes de salir.",
+        ],
+        "days": [
+            ("Día 1: Tijuana a Hermosillo", "Unos 885 km, 10 h", [
+                "La 2D al este sube La Rumorosa, una cuesta empinada con viento y a veces neblina, hasta Mexicali.",
+                "Luego la federal 2 por San Luis Río Colorado y el Desierto de Altar hasta Sonoyta y Caborca, y al sur a Hermosillo.",
+                "<strong>Carga gasolina cuando llegues a medio tanque.</strong> En el desierto hay tramos largos sin gasolineras.",
+            ]),
+            ("Día 2: Hermosillo a Mazatlán", "Unos 860 km, 10 h", [
+                "La 15, de cuatro carriles casi todo el camino: Guaymas, Ciudad Obregón, Navojoa, Los Mochis, Culiacán.",
+                "Hoy pasas muchas casetas. Ten pesos a la mano.",
+                "Si tu auto trae placas extranjeras, lleva el permiso del auto: ya saliste de la zona libre.",
+            ]),
+            ("Día 3: Mazatlán a Guadalajara", "Unos 490 km, 5.5 h", [
+                "La 15D por Tepic y la sierra. Un día más corto, con tiempo para el malecón de Mazatlán en la mañana.",
+            ]),
+            ("Día 4: Guadalajara a Puebla", "Unos 650 km, 7.5 h", [
+                "Autopistas de cuota hasta Querétaro y luego el Arco Norte, que rodea la Ciudad de México para evitar su tráfico y sus restricciones de circulación.",
+            ]),
+            ("Día 5: Puebla a Villahermosa", "Unos 650 km, 7.5 h", [
+                "La 150D al este junto al Pico de Orizaba, bajando las Cumbres de Maltrata (con neblina seguido), por Córdoba y hasta el Golfo.",
+                "Otra opción: hay quien pasa por el puerto de Veracruz u Oaxaca. Es más lento, pero con muy buenas paradas.",
+            ]),
+            ("Día 6: Villahermosa a Bacalar", "Unos 540 km, 6.5 h", [
+                "La 186 al este por Escárcega. Tramos largos con pocos pueblos, así que <strong>carga gasolina en Escárcega</strong>.",
+                "La laguna de los siete colores de Bacalar vale la noche.",
+            ]),
+            ("Día 7: Bacalar a Playa del Carmen", "Unos 280 km, 3.5 h", [
+                "La 307 al norte por Felipe Carrillo Puerto y Tulum.",
+                "Quintana Roo va una hora adelante del centro del país todo el año.",
+            ]),
+        ],
+        "tips": [
+            "Casi todos los que cruzan México en auto planean llegar antes de que oscurezca.",
+            "Los retenes del Ejército y la Guardia Nacional son normales. Baja la velocidad, sé amable y ten tus papeles listos.",
+            "Cuidado con los topes al entrar a cada pueblo; muchos no tienen señal.",
+            "En las gasolineras te atienden. Fíjate que la bomba empiece en cero. Revisa el " + L_GAS_MX_ES + ".",
+            "Ayuda en carretera: los Ángeles Verdes contestan en el 078.",
+            "¿Van en dos autos? Acuerden las paradas de gasolina y el hotel de cada día antes de quedarse sin señal en el desierto.",
+        ],
+    },
+]
+
+TEXT = {
+    "en": {
+        "hub": HUB, "home": "/", "crumb": "Road trip routes",
+        "before": "Before you go", "route": "The route", "know": "Good to know",
+        "written": "Written by the Cerqa team on {date} from public sources. Distances and times are rough driving estimates without stops. Rules, hours and fees change, so check the official links before you go. Drove it recently? <a href=\"{fb}\">Tell us what's changed</a>.",
+        "int_h": "Drive this route with your group",
+        "int_p": "We're thinking about letting you save routes like this in Cerqa, start them as a trip, and see everyone's live location and arrival time on the way. Would you use it?",
+        "int_btn": "I'd use this", "stores": "Cerqa is free today:", "cc": "us",
+        "footer": [("/feedback", "Feedback"), ("/support/", "Support"), ("/privacy/en/", "Privacy Policy"), ("/terms/en/", "Terms of Service")],
+        "lang_name": "Español", "lang_attr": "es",
+        "date": "October 21, 2026",
+    },
+    "es": {
+        "hub": ES_HUB, "home": "/es/", "crumb": "Rutas en auto",
+        "before": "Antes de salir", "route": "La ruta", "know": "Bueno saber",
+        "written": "Escrito por el equipo de Cerqa el {date} con fuentes públicas. Las distancias y los tiempos son estimados de manejo sin paradas. Las reglas, los horarios y las cuotas cambian, así que revisa las ligas oficiales antes de salir. ¿La manejaste hace poco? <a href=\"{fb}\">Cuéntanos qué cambió</a>.",
+        "int_h": "Maneja esta ruta con tu grupo",
+        "int_p": "Estamos pensando en dejarte guardar rutas como esta en Cerqa, empezarlas como viaje y ver la ubicación en vivo y la hora de llegada de todos en el camino. ¿La usarías?",
+        "int_btn": "Sí la usaría", "stores": "Cerqa es gratis hoy:", "cc": "mx",
+        "footer": [("/feedback", "Comentarios"), ("/support/", "Ayuda"), ("/privacy/es/", "Aviso de privacidad"), ("/terms/es/", "Términos del servicio")],
+        "lang_name": "English", "lang_attr": "en",
+        "date": "21 de octubre de 2026",
+    },
+}
+EN_TO_ES = {r["en"]: r["slug"] for r in ES_ROUTES}
+
 STYLE = """<style>
 .route-facts { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 8px; padding: 0; list-style: none; }
 .route-facts li { background: #fff; border: 1px solid #dde5ee; border-radius: 12px; padding: 10px 14px; min-width: 120px; }
@@ -208,15 +333,23 @@ STYLE = """<style>
 </style>"""
 
 
-def page(path, title, desc, body):
+def page(lang, path, title, desc, body, alt_path=None):
+    t = TEXT[lang]
+    alt_links, lang_nav = "", ""
+    if alt_path:
+        en_path, es_path = (path, alt_path) if lang == "en" else (alt_path, path)
+        alt_links = (f'\n<link rel="alternate" hreflang="en" href="{SITE}{en_path}">'
+                     f'\n<link rel="alternate" hreflang="es" href="{SITE}{es_path}">'
+                     f'\n<link rel="alternate" hreflang="x-default" href="{SITE}{en_path}">')
+        lang_nav = f'\n  <a class="site-nav-lang" href="{alt_path}" hreflang="{t["lang_attr"]}" lang="{t["lang_attr"]}">{t["lang_name"]}</a>'
     return f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="{lang}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title} | Cerqa</title>
 <meta name="description" content="{desc}">
-<link rel="canonical" href="{SITE}{path}">
+<link rel="canonical" href="{SITE}{path}">{alt_links}
 <link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32.png">
 <link rel="apple-touch-icon" href="/images/icon/apple-touch-icon.png">
 <meta name="apple-itunes-app" content="app-id=6762389261">
@@ -225,7 +358,7 @@ def page(path, title, desc, body):
 <meta property="og:url" content="{SITE}{path}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
-<meta property="og:image" content="{SITE}/images/social/cerqa-en.jpg">
+<meta property="og:image" content="{SITE}/images/social/cerqa-{lang}.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -235,76 +368,93 @@ def page(path, title, desc, body):
 </head>
 <body>
 <nav class="site-nav">
-  <a class="site-nav-brand" href="/">Cerqa</a>
+  <a class="site-nav-brand" href="{t['home']}">Cerqa</a>{lang_nav}
 </nav>
 <main>
 {body}
 </main>
 <footer>
   <p>© 2026 Cerqa</p>
-  <a href="/feedback">Feedback</a> <a href="/support/">Support</a> <a href="/privacy/en/">Privacy Policy</a> <a href="/terms/en/">Terms of Service</a>
+  {' '.join(f'<a href="{h}">{n}</a>' for h, n in t['footer'])}
 </footer>
 </body>
 </html>
 """
 
 
-def interest(slug):
+def interest(lang, slug):
     # The click is the signal for CAT-65; the feedback page lets people say more.
-    track = f"if(typeof gtag==='function')gtag('event','route_interest',{{route:'{slug}'}})"
+    t = TEXT[lang]
+    track = f"if(typeof gtag==='function')gtag('event','route_interest',{{route:'{slug}',lang:'{lang}'}})"
     return f"""<section class="route-interest">
-  <h2>Drive this route with your group</h2>
-  <p>We're thinking about letting you save routes like this in Cerqa, start them as a trip, and see everyone's live location and arrival time on the way. Would you use it?</p>
-  <a class="btn" href="/feedback?topic=routes&amp;route={slug}" onclick="{track}">I'd use this</a>
-  <div class="stores">Cerqa is free today:
-    <a href="{APP_STORE.format(cc='us')}" target="_blank" rel="noopener">App Store</a>
+  <h2>{t['int_h']}</h2>
+  <p>{t['int_p']}</p>
+  <a class="btn" href="/feedback?topic=routes&amp;route={slug}" onclick="{track}">{t['int_btn']}</a>
+  <div class="stores">{t['stores']}
+    <a href="{APP_STORE.format(cc=t['cc'])}" target="_blank" rel="noopener">App Store</a>
     <a href="{PLAY.format(campaign='route_' + slug.replace('-', '_'))}" target="_blank" rel="noopener">Google Play</a>
   </div>
 </section>"""
 
 
-def build_route(r):
+def build_route(lang, r):
+    t = TEXT[lang]
     facts = "\n".join(f"<li><strong>{a}</strong><span>{b}</span></li>" for a, b in r["facts"])
     before = ""
     if r.get("before"):
-        before = "<h2>Before you go</h2>\n<ul class=\"route-list\">\n" + "\n".join(f"<li>{x}</li>" for x in r["before"]) + "\n</ul>"
+        before = f"<h2>{t['before']}</h2>\n<ul class=\"route-list\">\n" + "\n".join(f"<li>{x}</li>" for x in r["before"]) + "\n</ul>"
     days = "\n".join(
         f"""<li class="route-day"><h3>{h}</h3><p class="leg">{leg}</p>
 <ul>{''.join(f'<li>{x}</li>' for x in items)}</ul></li>""" for h, leg, items in r["days"])
     tips = "\n".join(f"<li>{x}</li>" for x in r["tips"])
-    body = f"""<p class="crumbs"><a href="{HUB}">Road trip routes</a></p>
+    fb = f"/feedback?topic=routes&amp;route={r['slug']}"
+    body = f"""<p class="crumbs"><a href="{t['hub']}">{t['crumb']}</a></p>
 <h1>{r['h1']}</h1>
 <p class="lead">{r['lead']}</p>
 <ul class="route-facts">
 {facts}
 </ul>
 {before}
-<h2>The route</h2>
+<h2>{t['route']}</h2>
 <ol class="route-days">
 {days}
 </ol>
-<h2>Good to know</h2>
+<h2>{t['know']}</h2>
 <ul class="route-list">
 {tips}
 </ul>
-<p class="route-written">Written by the Cerqa team on {WRITTEN} from public sources. Distances and times are rough driving estimates without stops. Rules, hours and fees change, so check the official links before you go. Drove it recently? <a href="/feedback?topic=routes&amp;route={r['slug']}">Tell us what's changed</a>.</p>
-{interest(r['slug'])}"""
-    path = f"{HUB}{r['slug']}/"
-    return path, page(path, r["title"], r["desc"], body)
+<p class="route-written">{t['written'].format(date=t['date'], fb=fb)}</p>
+{interest(lang, r['slug'])}"""
+    path = f"{t['hub']}{r['slug']}/"
+    if lang == "es":
+        alt = f"{HUB}{r['en']}/"
+    else:
+        alt = f"{ES_HUB}{EN_TO_ES[r['slug']]}/" if r["slug"] in EN_TO_ES else None
+    return path, page(lang, path, r["title"], r["desc"], body, alt)
 
 
-def build_hub():
+def build_hub(lang):
+    t = TEXT[lang]
+    routes = ROUTES if lang == "en" else ES_ROUTES
     cards = "\n".join(
-        f"""<li><a href="{HUB}{r['slug']}/"><strong>{r['h1']}</strong><span>{r['facts'][0][0]}, {r['facts'][2][0]}. {r['lead']}</span></a></li>"""
-        for r in ROUTES)
-    body = f"""<h1>Road trip routes</h1>
-<p class="lead">Routes across the US and Mexico, day by day: where to stop, where to fill up and what to bring.</p>
+        f"""<li><a href="{t['hub']}{r['slug']}/"><strong>{r['h1']}</strong><span>{r['facts'][0][0]}, {r['facts'][2][0]}. {r['lead']}</span></a></li>"""
+        for r in routes)
+    if lang == "en":
+        h1, lead = "Road trip routes", "Routes across the US and Mexico, day by day: where to stop, where to fill up and what to bring."
+        title, desc = ("Road trip routes in the US and Mexico",
+                       "Day-by-day road trip routes in the US and Mexico: Phoenix to San Diego, a Grand Canyon loop, Phoenix to Rocky Point and Tijuana to Playa del Carmen.")
+    else:
+        h1, lead = "Rutas en auto", "Rutas por México, día por día: dónde parar, dónde cargar gasolina y qué llevar."
+        title, desc = ("Rutas en auto por México",
+                       "Rutas en auto día por día: de Tijuana a Playa del Carmen cruzando México y de Phoenix a Puerto Peñasco.")
+    body = f"""<h1>{h1}</h1>
+<p class="lead">{lead}</p>
 <ul class="route-cards">
 {cards}
 </ul>
-{interest('hub')}"""
-    return HUB, page(HUB, "Road trip routes in the US and Mexico",
-                     "Day-by-day road trip routes in the US and Mexico: Phoenix to San Diego, a Grand Canyon loop, Phoenix to Rocky Point and Tijuana to Playa del Carmen.", body)
+{interest(lang, 'hub')}"""
+    alt = ES_HUB if lang == "en" else HUB
+    return t["hub"], page(lang, t["hub"], title, desc, body, alt)
 
 
 def write(path, html):
@@ -317,6 +467,9 @@ def write(path, html):
 
 if __name__ == "__main__":
     GA = analytics()
-    write(*build_hub())
+    write(*build_hub("en"))
     for r in ROUTES:
-        write(*build_route(r))
+        write(*build_route("en", r))
+    write(*build_hub("es"))
+    for r in ES_ROUTES:
+        write(*build_route("es", r))

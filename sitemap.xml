@@ -118,13 +118,37 @@
   <url><loc>https://cerqa.app/es/gasolina/queretaro/queretaro-ciudad/</loc><lastmod>2026-10-21</lastmod>
   </url>
   <url><loc>https://cerqa.app/routes/</loc><lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/routes/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/rutas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/routes/"/>
   </url>
   <url><loc>https://cerqa.app/routes/phoenix-to-san-diego/</loc><lastmod>2026-10-21</lastmod>
   </url>
   <url><loc>https://cerqa.app/routes/grand-canyon-loop-from-phoenix/</loc><lastmod>2026-10-21</lastmod>
   </url>
   <url><loc>https://cerqa.app/routes/phoenix-to-puerto-penasco/</loc><lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/routes/phoenix-to-puerto-penasco/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/rutas/phoenix-a-puerto-penasco/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/routes/phoenix-to-puerto-penasco/"/>
   </url>
   <url><loc>https://cerqa.app/routes/tijuana-to-playa-del-carmen/</loc><lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/routes/tijuana-to-playa-del-carmen/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/rutas/tijuana-a-playa-del-carmen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/routes/tijuana-to-playa-del-carmen/"/>
+  </url>
+  <url><loc>https://cerqa.app/es/rutas/</loc><lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/routes/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/rutas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/routes/"/>
+  </url>
+  <url><loc>https://cerqa.app/es/rutas/phoenix-a-puerto-penasco/</loc><lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/routes/phoenix-to-puerto-penasco/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/rutas/phoenix-a-puerto-penasco/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/routes/phoenix-to-puerto-penasco/"/>
+  </url>
+  <url><loc>https://cerqa.app/es/rutas/tijuana-a-playa-del-carmen/</loc><lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/routes/tijuana-to-playa-del-carmen/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/rutas/tijuana-a-playa-del-carmen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/routes/tijuana-to-playa-del-carmen/"/>
   </url>
 </urlset>

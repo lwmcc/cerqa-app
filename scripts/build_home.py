@@ -6,7 +6,7 @@ Styles live in assets/home.css.
 """
 import re
 
-# iPhone Duo: "Coming soon" until the Duo ships and the Duo update is approved; then set False
+# iPhone Duo: the Duo update is approved, so "Ready for iPhone Duo" until the Duo ships; then set False
 # here and in build_duo.py and rerun both.
 DUO_COMING_SOON = True
 
@@ -42,7 +42,7 @@ T = {
         "apple_badge": "/images/badges/app-store-en-us.svg", "google_badge": "/images/badges/google-play-en.png",
         "apple_alt": "Download on the App Store", "google_alt": "Get it on Google Play",
         "phones_alt": ("Group location sharing map on Android", "Group location sharing map on iPhone"),
-        "duo_pill": ("Coming soon", "New"),
+        "duo_pill": ("Ready for iPhone Duo", "New"),
         "duo_h": "Made for iPhone Duo",
         "duo_p": "Unfold your iPhone Duo for a big map where you can see and share locations with friends. Fold it, and drive.",
         "duo_link": "See Cerqa on iPhone Duo",
@@ -119,7 +119,7 @@ T = {
         "apple_badge": "/images/badges/app-store-es-mx.svg", "google_badge": "/images/badges/google-play-es.png",
         "apple_alt": "Descárgalo en el App Store", "google_alt": "Disponible en Google Play",
         "phones_alt": ("Mapa con la ubicación del grupo en Android", "Mapa con la ubicación del grupo en iPhone"),
-        "duo_pill": ("Próximamente", "Nuevo"),
+        "duo_pill": ("Lista para iPhone Duo", "Nuevo"),
         "duo_h": "Hecho para iPhone Duo",
         "duo_p": "Abre tu iPhone Duo y tendrás un mapa grande donde puedes ver y compartir ubicaciones con tus amigos. Ciérralo y maneja.",
         "duo_link": "Ver Cerqa en iPhone Duo (en inglés)",

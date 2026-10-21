@@ -3,8 +3,8 @@
 home page's nav, badges, analytics and styles (assets/home.css). Run from the repo root:
     python3 scripts/build_duo.py
 
-LAUNCH: while the Duo isn't out, the page says "Coming soon". When the Duo ships and the Duo
-update is approved, set COMING_SOON = False here and in build_home.py, then rerun both.
+LAUNCH: the Duo update is approved, so while the Duo isn't out the page says "Ready for iPhone Duo". When the Duo
+ships, set COMING_SOON = False here and in build_home.py, then rerun both.
 """
 import os
 
@@ -39,7 +39,7 @@ BENEFITS = [
 
 def build(ga):
     t = T["en"]
-    pill = "Coming soon to iPhone Duo" if COMING_SOON else "Now on iPhone Duo"
+    pill = "Ready for iPhone Duo" if COMING_SOON else "Now on iPhone Duo"
     fine = ("Free on iPhone today. Ready for iPhone Duo when it launches." if COMING_SOON
             else "Free on iPhone Duo, iPhone and Android.")
     inner = "\n".join(f"""      <figure class="duo-shot">
@@ -57,7 +57,7 @@ def build(ga):
       </div>""" for icon, h, p in BENEFITS)
     title = "Cerqa on iPhone Duo | Live location and group navigation, unfolded"
     desc = ("Cerqa is made for iPhone Duo. Open it for a big map with your whole group beside it, "
-            "fold it for turn-by-turn directions. " + ("Coming soon." if COMING_SOON else "Free on the App Store."))
+            "fold it for turn-by-turn directions. " + ("Free on the App Store, ready for iPhone Duo when it launches." if COMING_SOON else "Free on the App Store."))
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>

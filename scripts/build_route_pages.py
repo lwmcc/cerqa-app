@@ -284,7 +284,7 @@ ES_ROUTES = [
 
 TEXT = {
     "en": {
-        "hub": HUB, "home": "/", "crumb": "Road trip routes",
+        "hub": HUB, "home": "/", "fb": "/feedback", "crumb": "Road trip routes",
         "before": "Before you go", "route": "The route", "know": "Good to know",
         "written": "Written by the Cerqa team on {date} from public sources. Distances and times are rough driving estimates without stops. Rules, hours and fees change, so check the official links before you go. Drove it recently? <a href=\"{fb}\">Tell us what's changed</a>.",
         "int_h": "Drive this route with your group",
@@ -295,13 +295,13 @@ TEXT = {
         "date": "October 21, 2026",
     },
     "es": {
-        "hub": ES_HUB, "home": "/es/", "crumb": "Rutas en auto",
+        "hub": ES_HUB, "home": "/es/", "fb": "/es/comentarios/", "crumb": "Rutas en auto",
         "before": "Antes de salir", "route": "La ruta", "know": "Bueno saber",
         "written": "Escrito por el equipo de Cerqa el {date} con fuentes públicas. Las distancias y los tiempos son estimados de manejo sin paradas. Las reglas, los horarios y las cuotas cambian, así que revisa las ligas oficiales antes de salir. ¿La manejaste hace poco? <a href=\"{fb}\">Cuéntanos qué cambió</a>.",
         "int_h": "Maneja esta ruta con tu grupo",
         "int_p": "Estamos pensando en dejarte guardar rutas como esta en Cerqa, empezarlas como viaje y ver la ubicación en vivo y la hora de llegada de todos en el camino. ¿La usarías?",
         "int_btn": "Sí la usaría", "stores": "Cerqa es gratis hoy:", "cc": "mx",
-        "footer": [("/feedback", "Comentarios"), ("/support/", "Ayuda"), ("/privacy/es/", "Aviso de privacidad"), ("/terms/es/", "Términos del servicio")],
+        "footer": [("/es/comentarios/", "Comentarios"), ("/support/", "Ayuda"), ("/privacy/es/", "Aviso de privacidad"), ("/terms/es/", "Términos del servicio")],
         "lang_name": "English", "lang_attr": "en",
         "date": "21 de octubre de 2026",
     },
@@ -389,7 +389,7 @@ def interest(lang, slug):
     return f"""<section class="route-interest">
   <h2>{t['int_h']}</h2>
   <p>{t['int_p']}</p>
-  <a class="btn" href="/feedback?topic=routes&amp;route={slug}" onclick="{track}">{t['int_btn']}</a>
+  <a class="btn" href="{t['fb']}?topic=routes&amp;route={slug}" onclick="{track}">{t['int_btn']}</a>
   <div class="stores">{t['stores']}
     <a href="{APP_STORE.format(cc=t['cc'])}" target="_blank" rel="noopener">App Store</a>
     <a href="{PLAY.format(campaign='route_' + slug.replace('-', '_'))}" target="_blank" rel="noopener">Google Play</a>
@@ -407,7 +407,7 @@ def build_route(lang, r):
         f"""<li class="route-day"><h3>{h}</h3><p class="leg">{leg}</p>
 <ul>{''.join(f'<li>{x}</li>' for x in items)}</ul></li>""" for h, leg, items in r["days"])
     tips = "\n".join(f"<li>{x}</li>" for x in r["tips"])
-    fb = f"/feedback?topic=routes&amp;route={r['slug']}"
+    fb = f"{t['fb']}?topic=routes&amp;route={r['slug']}"
     body = f"""<p class="crumbs"><a href="{t['hub']}">{t['crumb']}</a></p>
 <h1>{r['h1']}</h1>
 <p class="lead">{r['lead']}</p>

@@ -199,7 +199,7 @@ def page(lang, path, title, desc, body, alt_path=None):
                 f'{"Español" if lang == "en" else "English"}</a>') if alt_path else ""
     footer = ([("/feedback", "Feedback"), ("/support/", "Support"), ("/privacy/en/", "Privacy Policy"),
                ("/terms/en/", "Terms of Service")] if lang == "en" else
-              [("/feedback", "Comentarios"), ("/support/", "Ayuda"), ("/privacy/es/", "Aviso de privacidad"),
+              [("/es/comentarios/", "Comentarios"), ("/support/", "Ayuda"), ("/privacy/es/", "Aviso de privacidad"),
                ("/terms/es/", "Términos del servicio")])
     return f"""<!DOCTYPE html>
 <html lang="{lang}">

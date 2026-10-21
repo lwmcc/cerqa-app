@@ -36,6 +36,12 @@
   <url><loc>https://cerqa.app/support/</loc><lastmod>2026-10-13</lastmod>
   </url>
   <url><loc>https://cerqa.app/feedback</loc><lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/feedback"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/comentarios/"/>
+  </url>
+  <url><loc>https://cerqa.app/es/comentarios/</loc><lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/feedback"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/comentarios/"/>
   </url>
   <url><loc>https://cerqa.app/border-wait-times/</loc><lastmod>2026-10-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/"/>

@@ -214,7 +214,7 @@ TEXT = {
         "cta_h": "¿Cruzas con familia o amigos?",
         "cta_p": "Cerqa muestra la ubicación en vivo y la hora de llegada de todos en un solo mapa, para que nadie se pierda del otro lado.",
         "cc": "mx",
-        "footer": [("/feedback", "Comentarios"), ("/support/", "Ayuda"), ("/privacy/es/", "Aviso de privacidad"), ("/terms/es/", "Términos del servicio")],
+        "footer": [("/es/comentarios/", "Comentarios"), ("/support/", "Ayuda"), ("/privacy/es/", "Aviso de privacidad"), ("/terms/es/", "Términos del servicio")],
         "home": "/es/",
     },
 }

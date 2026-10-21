@@ -176,7 +176,7 @@ T = {
         "plans_note": "Puedes cambiarte a Pro desde la app.",
         "final_h": "Tu próximo viaje empieza aquí",
         "final_p": "Descarga Cerqa gratis e invita a las personas con las que viajas.",
-        "footer": [("/feedback", "Comentarios"), ("/support/", "Ayuda"), ("/privacy/es/", "Aviso de privacidad"),
+        "footer": [("/es/comentarios/", "Comentarios"), ("/support/", "Ayuda"), ("/privacy/es/", "Aviso de privacidad"),
                    ("/terms/es/", "Términos del servicio"), ("/es/garitas/", "Tiempos en garitas"),
                    ("/es/gasolina/", "Precio de la gasolina")],
         "credits": 'Datos del mapa © <a href="https://www.mapbox.com/about/maps/">Mapbox</a> · © <a href="https://www.openstreetmap.org/copyright">colaboradores de OpenStreetMap</a> · Precios de gasolina: Comisión Nacional de Energía (CNE) · Cargadores eléctricos: <a href="https://openchargemap.org">Open Charge Map</a> (CC BY 4.0) · Tiempos en garitas: Oficina de Aduanas y Protección Fronteriza de EE. UU. (CBP)',

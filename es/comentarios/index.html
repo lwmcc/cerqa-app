@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comentarios | Cerqa</title>
+<meta name="description" content="Cuéntanos qué funciona y qué no en Cerqa.">
+<link rel="canonical" href="https://cerqa.app/es/comentarios/">
+<link rel="alternate" hreflang="en" href="https://cerqa.app/feedback">
+<link rel="alternate" hreflang="es" href="https://cerqa.app/es/comentarios/">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32.png">
+<style>
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  margin: 0;
+  background: #f0f4f8;
+  color: #1b2d4a;
+}
+
+/* ── HERO ── */
+.hero {
+  color: #1b2d4a;
+  text-align: center;
+  padding: 64px 20px 48px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  margin: 0 0 12px;
+  line-height: 1;
+}
+
+.hero p {
+  font-size: 17px;
+  opacity: 0.75;
+  margin: 0;
+}
+
+/* ── FORM SECTION ── */
+.form-section {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 20px 64px;
+}
+
+.form-wrapper {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 32px 28px;
+}
+
+.form-wrapper h2 {
+  font-size: 22px;
+  margin: 0 0 6px;
+}
+
+.form-wrapper .intro {
+  margin: 0 0 8px;
+  color: #4a5a70;
+  line-height: 1.5;
+}
+
+fieldset {
+  border: none;
+  margin: 24px 0 0;
+  padding: 0;
+}
+
+legend {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 16px;
+}
+
+.choice input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #465D91;
+}
+
+.choice input[type="text"] {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  padding: 6px 8px;
+  border: none;
+  border-bottom: 1px solid #c8d2df;
+  outline: none;
+}
+
+.choice input[type="text"]:focus {
+  border-bottom-color: #465D91;
+}
+
+.scale {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.scale label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  font-size: 15px;
+}
+
+.scale input {
+  width: 18px;
+  height: 18px;
+  accent-color: #465D91;
+}
+
+.scale .end {
+  font-size: 13px;
+  color: #6b7a8f;
+}
+
+button {
+  margin-top: 32px;
+  background: #465D91;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 28px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.error {
+  color: #b3261e;
+  margin: 16px 0 0;
+}
+
+.thanks {
+  text-align: center;
+  padding: 24px 0;
+}
+
+.thanks h2 {
+  margin-bottom: 8px;
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 36px 20px;
+  font-size: 14px;
+  color: #8a97a8;
+  background: #f0f4f8;
+  border-top: 1px solid #e2e8f0;
+}
+
+footer p {
+  margin: 0 0 10px;
+}
+
+footer a {
+  margin: 0 12px;
+  color: #4a6fa5;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+</style>
+    <!-- Google Analytics 4 (same property as the Cerqa apps). Only on the live cerqa.app site,
+         no ad features, addresses sent without query strings. Store button clicks are sent as
+         store_click so a website visit can be tied to an install. -->
+    <script>
+      (function () {
+        var host = location.hostname;
+        if (host !== "cerqa.app" && host !== "www.cerqa.app") return;
+        var id = "G-BPFEDCV63V";
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        gtag("js", new Date());
+        gtag("config", id, {
+          page_location: location.origin + location.pathname,
+          allow_google_signals: false,
+          allow_ad_personalization_signals: false
+        });
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+        document.head.appendChild(s);
+        document.addEventListener("click", function (e) {
+          var link = e.target.closest && e.target.closest("a[href]");
+          if (!link) return;
+          var store = link.href.indexOf("apps.apple.com") !== -1 ? "apple"
+            : link.href.indexOf("play.google.com") !== -1 ? "google" : null;
+          if (store) {
+            gtag("event", "store_click", { store: store, page: location.pathname, transport_type: "beacon" });
+          }
+        });
+      })();
+    </script>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <a href="/es/" style="display:inline-block; font-size:28px; font-weight:700; color:#1b2d4a; text-decoration:none; margin-bottom:20px; letter-spacing:-0.5px;">Cerqa</a>
+  <h1>Comparte tus comentarios</h1>
+  <p>Ayúdanos a mejorar. Leemos cada respuesta.</p>
+</header>
+
+<!-- FORM: same Google Form as /feedback, so answers land in the same sheet.
+     Labels are Spanish; the values sent are the form's English options. -->
+<div class="form-section">
+  <div class="form-wrapper">
+    <form id="feedback">
+      <h2>Danos tu opinión</h2>
+      <p class="intro">Si algo no funciona bien en la app, cuéntanos para arreglarlo. Tus comentarios le llegan directo al desarrollador.</p>
+
+      <fieldset>
+        <legend>¿Qué tipo de comentario es?</legend>
+        <label class="choice"><input type="radio" name="entry.2105390907" value="Bug report"> Reportar un error</label>
+        <label class="choice"><input type="radio" name="entry.2105390907" value="Feature request"> Pedir una función</label>
+        <label class="choice"><input type="radio" name="entry.2105390907" value="General feedback"> Comentario general</label>
+        <label class="choice"><input type="radio" name="entry.2105390907" value="__other_option__" id="other"> Otro:
+          <input type="text" name="entry.2105390907.other_option_response" id="other-text" aria-label="Otro"></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>¿Qué teléfono usas?</legend>
+        <label class="choice"><input type="radio" name="entry.1884437469" value="iPhone"> iPhone</label>
+        <label class="choice"><input type="radio" name="entry.1884437469" value="Android"> Android</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>En general, ¿cómo calificarías tu experiencia?</legend>
+        <div class="scale">
+          <span class="end">Mala</span>
+          <label><input type="radio" name="entry.1362098009" value="1">1</label>
+          <label><input type="radio" name="entry.1362098009" value="2">2</label>
+          <label><input type="radio" name="entry.1362098009" value="3">3</label>
+          <label><input type="radio" name="entry.1362098009" value="4">4</label>
+          <label><input type="radio" name="entry.1362098009" value="5">5</label>
+          <span class="end">Excelente</span>
+        </div>
+      </fieldset>
+
+      <button type="submit" id="send">Enviar</button>
+      <p class="error" id="error" hidden>No se pudo enviar. Revisa tu conexión e inténtalo otra vez.</p>
+    </form>
+
+    <div class="thanks" id="thanks" hidden>
+      <h2>¡Gracias!</h2>
+      <p>Recibimos tus comentarios.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Cerqa</p>
+  <a href="/es/">Inicio</a>
+  <a href="/privacy/es/">Aviso de privacidad</a>
+  <a href="/terms/es/">Términos del servicio</a>
+</footer>
+
+<script>
+  (function () {
+    var form = document.getElementById("feedback");
+    var other = document.getElementById("other");
+    var otherText = document.getElementById("other-text");
+    otherText.addEventListener("input", function () { if (otherText.value) other.checked = true; });
+
+    // Route pages link here with ?topic=routes&route=slug; fill in "Otro" so we know which route.
+    var params = new URLSearchParams(location.search);
+    if (params.get("topic") === "routes") {
+      other.checked = true;
+      otherText.value = "Ruta: " + (params.get("route") || "");
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var send = document.getElementById("send");
+      var data = new URLSearchParams(new FormData(form));
+      if (!other.checked) data.delete("entry.2105390907.other_option_response");
+      data.append("fvv", "1");
+      data.append("pageHistory", "0");
+      send.disabled = true;
+      document.getElementById("error").hidden = true;
+      // Google Forms doesn't allow reading the reply from another site, so a sent request counts as done.
+      fetch("https://docs.google.com/forms/d/e/1FAIpQLSfJg9I1lnIqzfTRQ03OFTRRFhHk2HEPn_MI8rSWJfevvCXZeQ/formResponse", {
+        method: "POST", mode: "no-cors", body: data
+      }).then(function () {
+        form.hidden = true;
+        document.getElementById("thanks").hidden = false;
+        if (typeof gtag === "function") gtag("event", "feedback_submit", { lang: "es" });
+      }).catch(function () {
+        send.disabled = false;
+        document.getElementById("error").hidden = false;
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

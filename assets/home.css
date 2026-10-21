@@ -327,15 +327,13 @@ footer .data-credits { margin: 16px auto 0; font-size: 12px; max-width: 720px; }
 
 /* ── iPHONE DUO (home band + /iphone-duo/) ── */
 .duo-pill {
+  /* Bold label in the app's primary color (light theme primaryLight), no pill background. */
   display: inline-block;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: #1E88E5;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
+  color: #465D91;
+  font-size: 16px;
+  font-weight: 700;
   letter-spacing: 0.2px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .duo-band { padding-top: 48px; padding-bottom: 24px; }

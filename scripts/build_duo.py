@@ -73,7 +73,7 @@ def build(ga):
   <meta property="og:site_name" content="Cerqa">
   <meta property="og:url" content="{SITE}{PATH}">
   <meta property="og:title" content="Cerqa on iPhone Duo">
-  <meta property="og:description" content="Open it to see everyone's way there. Fold it to drive.">
+  <meta property="og:description" content="Open it to see everyone's route to the destination. Fold it to drive.">
   <meta property="og:image" content="{SITE}/images/social/cerqa-iphone-duo.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -106,7 +106,7 @@ def build(ga):
 
   <section class="section">
     <div class="section-header">
-      <h2>See everyone's way there</h2>
+      <h2>See everyone's route to the destination</h2>
       <p>Every friend's route in their own color, with arrows showing which way they're headed and traffic marked along the road ahead.</p>
     </div>
     <div class="duo-group-pair">

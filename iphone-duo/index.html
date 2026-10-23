@@ -21,6 +21,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"VideoObject","name":"Cerqa on iPhone Duo",
+   "description":"Open iPhone Duo for the whole group on one map, fold it for your route and arrival time.",
+   "thumbnailUrl":"https://cerqa.app/images/duo/video-poster.webp","uploadDate":"2026-10-23","duration":"PT55S",
+   "embedUrl":"https://www.youtube-nocookie.com/embed/dV6wxytfxx0","contentUrl":"https://youtu.be/dV6wxytfxx0"}
+  </script>
   <link rel="stylesheet" href="/assets/home.css">
       <!-- Google Analytics 4 (same property as the Cerqa apps). Only on the live cerqa.app site,
          no ad features, addresses sent without query strings. Store button clicks are sent as
@@ -77,6 +83,31 @@
   <div class="duo-hero-image">
     <img src="/images/duo/inner-1.webp" width="1400" height="1004" alt="Cerqa on the open iPhone Duo, with the whole group live on the map">
   </div>
+
+  <section class="section duo-video-section">
+    <div class="section-header">
+      <h2>See it on the Duo</h2>
+      <p>Open for the whole group on one map. Closed for your route and arrival time.</p>
+    </div>
+    <a class="duo-video" href="https://youtu.be/dV6wxytfxx0" data-id="dV6wxytfxx0" aria-label="Play the video: Cerqa on iPhone Duo">
+      <img src="/images/duo/video-poster.webp" width="1280" height="720" loading="lazy" alt="Cerqa on the open and closed iPhone Duo, side by side">
+      <span class="duo-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+    </a>
+    <script>
+      // Swap the poster for the player on tap; without JavaScript the link opens YouTube.
+      document.querySelector(".duo-video").addEventListener("click", function (e) {
+        e.preventDefault();
+        var f = document.createElement("iframe");
+        f.src = "https://www.youtube-nocookie.com/embed/" + this.dataset.id + "?autoplay=1&rel=0&playsinline=1";
+        f.title = "Cerqa on iPhone Duo";
+        f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+        f.allowFullscreen = true;
+        this.replaceWith(Object.assign(document.createElement("div"), {className: "duo-video"}));
+        document.querySelector(".duo-video").appendChild(f);
+        if (typeof gtag === "function") gtag("event", "video_play", {video: "iphone_duo"});
+      });
+    </script>
+  </section>
 
   <section class="section">
     <div class="section-header">

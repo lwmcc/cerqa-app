@@ -13,6 +13,9 @@ from build_home import SITE, T, analytics, badges
 COMING_SOON = True
 
 PATH = "/iphone-duo/"
+# The 55 s Duo demo on YouTube. The poster is ours (images/duo/video-poster.webp), so nothing loads from
+# YouTube until someone taps play; then it plays in privacy-enhanced mode (youtube-nocookie.com).
+VIDEO_ID = "dV6wxytfxx0"
 INNER = [  # (image, caption, line)
     ("inner-1", "See your whole crew, all at once", "Everyone live on one big map, with your group card beside it."),
     ("inner-2", "Who's close, who's running late", "Live arrival times on one side, the map on the other."),
@@ -81,6 +84,12 @@ def build(ga):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {{"@context":"https://schema.org","@type":"VideoObject","name":"Cerqa on iPhone Duo",
+   "description":"Open iPhone Duo for the whole group on one map, fold it for your route and arrival time.",
+   "thumbnailUrl":"{SITE}/images/duo/video-poster.webp","uploadDate":"2026-10-23","duration":"PT55S",
+   "embedUrl":"https://www.youtube-nocookie.com/embed/{VIDEO_ID}","contentUrl":"https://youtu.be/{VIDEO_ID}"}}
+  </script>
   <link rel="stylesheet" href="/assets/home.css">{ga}
 </head>
 <body>
@@ -103,6 +112,31 @@ def build(ga):
   <div class="duo-hero-image">
     <img src="/images/duo/inner-1.webp" width="1400" height="1004" alt="Cerqa on the open iPhone Duo, with the whole group live on the map">
   </div>
+
+  <section class="section duo-video-section">
+    <div class="section-header">
+      <h2>See it on the Duo</h2>
+      <p>Open for the whole group on one map. Closed for your route and arrival time.</p>
+    </div>
+    <a class="duo-video" href="https://youtu.be/{VIDEO_ID}" data-id="{VIDEO_ID}" aria-label="Play the video: Cerqa on iPhone Duo">
+      <img src="/images/duo/video-poster.webp" width="1280" height="720" loading="lazy" alt="Cerqa on the open and closed iPhone Duo, side by side">
+      <span class="duo-video-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+    </a>
+    <script>
+      // Swap the poster for the player on tap; without JavaScript the link opens YouTube.
+      document.querySelector(".duo-video").addEventListener("click", function (e) {{
+        e.preventDefault();
+        var f = document.createElement("iframe");
+        f.src = "https://www.youtube-nocookie.com/embed/" + this.dataset.id + "?autoplay=1&rel=0&playsinline=1";
+        f.title = "Cerqa on iPhone Duo";
+        f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+        f.allowFullscreen = true;
+        this.replaceWith(Object.assign(document.createElement("div"), {{className: "duo-video"}}));
+        document.querySelector(".duo-video").appendChild(f);
+        if (typeof gtag === "function") gtag("event", "video_play", {{video: "iphone_duo"}});
+      }});
+    </script>
+  </section>
 
   <section class="section">
     <div class="section-header">

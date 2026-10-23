@@ -361,6 +361,16 @@ footer .data-credits { margin: 16px auto 0; font-size: 12px; max-width: 720px; }
 .duo-hero .fine a { color: #1E88E5; font-weight: 600; text-decoration: none; }
 .duo-hero-image { max-width: 960px; margin: 0 auto; padding: 32px 16px 0; }
 .duo-hero-image img { display: block; width: 100%; height: auto; }
+.duo-video-section { padding-bottom: 16px; }
+.duo-video { position: relative; display: block; max-width: 960px; margin: 0 auto; aspect-ratio: 16 / 9;
+  border-radius: 16px; overflow: hidden; background: #0f1a33; box-shadow: 0 12px 40px rgba(15, 26, 51, 0.18); }
+.duo-video img, .duo-video iframe { display: block; width: 100%; height: 100%; border: 0; object-fit: cover; }
+.duo-video-play { position: absolute; left: 50%; top: 50%; width: 84px; height: 84px; margin: -42px 0 0 -42px;
+  border-radius: 50%; background: rgba(255, 255, 255, 0.92); display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25); transition: transform 0.15s; }
+.duo-video:hover .duo-video-play { transform: scale(1.06); }
+.duo-video-play svg { width: 40px; height: 40px; fill: #1b2d4a; margin-left: 4px; }
+@media (max-width: 600px) { .duo-video { border-radius: 12px; } .duo-video-play { width: 64px; height: 64px; margin: -32px 0 0 -32px; } .duo-video-play svg { width: 30px; height: 30px; } }
 
 .duo-grid { display: grid; gap: 48px 32px; }
 /* Group routes pair: open and folded side by side at the same image height (widths by aspect). */

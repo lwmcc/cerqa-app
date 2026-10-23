@@ -101,7 +101,8 @@ T = {
         "final_p": "Get Cerqa free and invite the people you travel with.",
         "footer": [("/feedback", "Feedback"), ("/support/", "Support"), ("/privacy/en/", "Privacy Policy"),
                    ("/terms/en/", "Terms of Service"), ("/border-wait-times/", "Border wait times"),
-                   ("/gas-prices-mexico/", "Gas prices in Mexico")],
+                   ("/gas-prices-mexico/", "Gas prices in Mexico"),
+                   ("https://www.facebook.com/profile.php?id=61594994114331", "Facebook")],
         "credits": 'Map data © <a href="https://www.mapbox.com/about/maps/">Mapbox</a> · © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> · Gas prices: Comisión Nacional de Energía (CNE) · EV chargers: <a href="https://openchargemap.org">Open Charge Map</a> (CC BY 4.0) · Border waits: U.S. Customs and Border Protection',
         "ld_desc": "Live location sharing, arrival times and group navigation for family and friends.",
         "currency": "USD",
@@ -178,7 +179,8 @@ T = {
         "final_p": "Descarga Cerqa gratis e invita a las personas con las que viajas.",
         "footer": [("/es/comentarios/", "Comentarios"), ("/support/", "Ayuda"), ("/privacy/es/", "Aviso de privacidad"),
                    ("/terms/es/", "Términos del servicio"), ("/es/garitas/", "Tiempos en garitas"),
-                   ("/es/gasolina/", "Precio de la gasolina")],
+                   ("/es/gasolina/", "Precio de la gasolina"),
+                   ("https://www.facebook.com/profile.php?id=61594994114331", "Facebook")],
         "credits": 'Datos del mapa © <a href="https://www.mapbox.com/about/maps/">Mapbox</a> · © <a href="https://www.openstreetmap.org/copyright">colaboradores de OpenStreetMap</a> · Precios de gasolina: Comisión Nacional de Energía (CNE) · Cargadores eléctricos: <a href="https://openchargemap.org">Open Charge Map</a> (CC BY 4.0) · Tiempos en garitas: Oficina de Aduanas y Protección Fronteriza de EE. UU. (CBP)',
         "ld_desc": "Ubicación en vivo, horas de llegada y navegación en grupo para familia y amigos.",
         "currency": "MXN",
@@ -264,7 +266,8 @@ def build(lang, ga):
    "operatingSystem":"iOS, Android","applicationCategory":"TravelApplication",
    "description":"{t['ld_desc']}",
    "offers":{{"@type":"Offer","price":"0","priceCurrency":"{t['currency']}"}},
-   "sameAs":["{APP_STORE.format(cc=t['cc'])}","https://play.google.com/store/apps/details?id=com.cerqa.app"]}}
+   "sameAs":["{APP_STORE.format(cc=t['cc'])}","https://play.google.com/store/apps/details?id=com.cerqa.app"],
+   "publisher":{{"@type":"Organization","name":"Cerqa","url":"{SITE}/","sameAs":["https://www.facebook.com/profile.php?id=61594994114331"]}}}}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -198,9 +198,9 @@ def page(lang, path, title, desc, body, alt_path=None):
     nav_lang = (f'<a class="site-nav-lang" href="{alt_path}" hreflang="{"es" if lang == "en" else "en"}">'
                 f'{"Español" if lang == "en" else "English"}</a>') if alt_path else ""
     footer = ([("/feedback", "Feedback"), ("/support/", "Support"), ("/privacy/en/", "Privacy Policy"),
-               ("/terms/en/", "Terms of Service")] if lang == "en" else
+               ("/terms/en/", "Terms of Service"), ("https://www.facebook.com/profile.php?id=61594994114331", "Facebook")] if lang == "en" else
               [("/es/comentarios/", "Comentarios"), ("/support/", "Ayuda"), ("/privacy/es/", "Aviso de privacidad"),
-               ("/terms/es/", "Términos del servicio")])
+               ("/terms/es/", "Términos del servicio"), ("https://www.facebook.com/profile.php?id=61594994114331", "Facebook")])
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
 <head>

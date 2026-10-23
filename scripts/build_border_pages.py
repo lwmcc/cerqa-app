@@ -194,7 +194,7 @@ TEXT = {
         "cta_h": "Crossing with family or friends?",
         "cta_p": "Cerqa shows everyone's live location and arrival time on one map, so nobody gets lost on the other side.",
         "cc": "us",
-        "footer": [("/feedback", "Feedback"), ("/support/", "Support"), ("/privacy/en/", "Privacy Policy"), ("/terms/en/", "Terms of Service")],
+        "footer": [("/feedback", "Feedback"), ("/support/", "Support"), ("/privacy/en/", "Privacy Policy"), ("/terms/en/", "Terms of Service"), ("https://www.facebook.com/profile.php?id=61594994114331", "Facebook")],
         "home": "/",
     },
     "es": {
@@ -214,7 +214,7 @@ TEXT = {
         "cta_h": "¿Cruzas con familia o amigos?",
         "cta_p": "Cerqa muestra la ubicación en vivo y la hora de llegada de todos en un solo mapa, para que nadie se pierda del otro lado.",
         "cc": "mx",
-        "footer": [("/es/comentarios/", "Comentarios"), ("/support/", "Ayuda"), ("/privacy/es/", "Aviso de privacidad"), ("/terms/es/", "Términos del servicio")],
+        "footer": [("/es/comentarios/", "Comentarios"), ("/support/", "Ayuda"), ("/privacy/es/", "Aviso de privacidad"), ("/terms/es/", "Términos del servicio"), ("https://www.facebook.com/profile.php?id=61594994114331", "Facebook")],
         "home": "/es/",
     },
 }

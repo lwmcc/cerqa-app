@@ -131,6 +131,15 @@ footer a:hover { text-decoration: underline; }
         window.dataLayer = window.dataLayer || [];
         window.gtag = function () { window.dataLayer.push(arguments); };
         gtag("js", new Date());
+        // Your own visits: open any page once with ?internal=1 (?internal=0 undoes it). The cookie
+        // covers cerqa.app and ride.cerqa.app; GA's Internal Traffic filter drops traffic_type internal.
+        var internal = /(?:^|; )cerqa_internal=1/.test(document.cookie);
+        var flag = location.search.match(/[?&]internal=([01])/);
+        if (flag) {
+          internal = flag[1] === "1";
+          document.cookie = "cerqa_internal=1; domain=cerqa.app; path=/; samesite=lax; secure; max-age=" + (internal ? 157680000 : 0);
+        }
+        if (internal) gtag("set", { traffic_type: "internal" });
         gtag("config", id, {
           page_location: location.origin + location.pathname,
           allow_google_signals: false,

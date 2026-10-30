@@ -21,8 +21,7 @@ body {
 }
 
 .page-header {
-  background: linear-gradient(160deg, #1b2d4a 0%, #2e5280 100%);
-  color: white;
+  color: #1b2d4a;
   padding: 40px 20px;
 }
 
@@ -33,14 +32,14 @@ body {
 
 .back-link {
   display: inline-block;
-  color: rgba(255,255,255,0.65);
+  color: #4a6fa5;
   text-decoration: none;
   font-size: 14px;
   margin-bottom: 20px;
   letter-spacing: 0.3px;
 }
 
-.back-link:hover { color: white; }
+.back-link:hover { color: #1b2d4a; }
 
 .page-header h1 {
   font-size: 36px;
@@ -208,69 +207,80 @@ footer a:hover { text-decoration: underline; }
   <div class="page-header-inner">
     <a href="/" class="back-link">← Volver a Cerqa</a>
     <h1>Política de Privacidad</h1>
-    <p>Última actualización: 15 de octubre de 2026</p>
+    <p>Última actualización: 30 de octubre de 2026</p>
   </div>
 </header>
 
 <div class="content">
 
   <div class="highlight-box">
-    <p>Cerqa es una aplicación para compartir ubicación. La construimos con un principio claro: tus datos de ubicación te pertenecen. Solo se comparten cuando tú decides compartirlos, solo con las personas que elijas. Tu ubicación nunca se vende, nunca se comparte con anunciantes y nunca se usa para dirigir anuncios.</p>
+    <p>Cerqa es un servicio para compartir ubicación con amigos y familia. Está construido sobre un principio: tu ubicación te pertenece. Solo se comparte cuando tú decides compartirla, y solo con las personas que elijas. Tu ubicación nunca se vende, nunca se comparte con anunciantes y nunca se usa para dirigir anuncios.</p>
   </div>
 
   <div class="section-block">
-    <h2>Quiénes Somos</h2>
-    <p>Cerqa es operada por Cerqa LLC. Esta política aplica a la aplicación móvil de Cerqa (iOS y Android) y al sitio web en cerqa.app.
-Cuando decimos "nosotros" o "nuestro", nos referimos a Cerqa LLC. Cuando decimos "tú", nos referimos a cualquier persona que use Cerqa.</p>
-    <p>Si tienes preguntas sobre esta política, contáctanos en <a href="mailto:privacy@cerqa.net"
+    <h2>Quién Opera Cerqa</h2>
+    <p>El servicio Cerqa es operado por Cerqa LLC ("la empresa"). El servicio Cerqa ("Cerqa") incluye las aplicaciones de Cerqa para iPhone y Android, los sitios web cerqa.app y ride.cerqa.app, los enlaces que crea Cerqa (como enlaces de ubicación en vivo, de planes y de invitación) y los servidores detrás de ellos. Esta política aplica a todos ellos. "Tú" se refiere a cualquier persona que use Cerqa.</p>
+    <p>Las preguntas sobre esta política pueden enviarse a <a href="mailto:privacy@cerqa.net"
 style="color:#4a6fa5;">privacy@cerqa.net</a>.</p>
   </div>
 
   <div class="section-block">
-    <h2>Información que Recopilamos</h2>
+    <h2>Información que Recopila Cerqa</h2>
 
-    <p><strong>Información de cuenta.</strong> Al crear una cuenta, recopilamos tu dirección de correo electrónico y creamos un nombre de usuario para ti,
-que puedes cambiar. Tu nombre y apellido son opcionales. Si inicias sesión con Apple o Google y eliges compartir tu nombre, lo usamos para completar tu perfil. También puedes agregar un número de teléfono si quieres. Esta información se almacena de forma segura en nuestra base de datos (AWS DynamoDB a través de AWS Amplify/Cognito).</p>
+    <p><strong>Información de cuenta.</strong> Al crear una cuenta, Cerqa recopila tu dirección de correo electrónico y crea un nombre de usuario para ti, que puedes cambiar. Tu nombre y apellido son opcionales. Si inicias sesión con Apple o Google y eliges compartir tu nombre, Cerqa lo usa para completar tu perfil. También puedes agregar un número de teléfono si quieres. Esta información se almacena de forma segura en la base de datos de la empresa (AWS DynamoDB a través de AWS Amplify/Cognito).</p>
 
-    <p><strong>Foto de perfil.</strong> Si subes una foto de perfil, se almacena en un bucket privado de AWS S3 y solo es accesible para
-los usuarios que pueden ver tu perfil. Las fotos se conservan hasta que las reemplaces o elimines tu cuenta.</p>
+    <p><strong>Modo invitado.</strong> Puedes probar Cerqa sin una cuenta. En modo invitado no se crea ninguna cuenta y tu ubicación no se comparte con nadie.</p>
 
-    <p><strong>Datos de ubicación.</strong> Durante una sesión activa de compartir ubicación, recopilamos tus coordenadas GPS (latitud y
-longitud), velocidad, dirección de desplazamiento y precisión del GPS. También transmitimos datos de navegación como la distancia estimada y el tiempo restante hasta tu destino si has iniciado la navegación giro a giro. Estos datos se transmiten en tiempo real a las personas con quienes hayas elegido compartir. No se almacenan de forma persistente en nuestros servidores. Cuando la sesión finaliza, tu ubicación en tiempo real deja de transmitirse y retenerse.</p>
+    <p><strong>Foto de perfil.</strong> Si subes una foto de perfil, se almacena en un bucket privado de AWS S3 y solo es accesible para los usuarios que pueden ver tu perfil. Las fotos se conservan hasta que las reemplaces o elimines tu cuenta.</p>
 
-    <p><strong>Mensajes y chat.</strong> Los mensajes que envías a través de Cerqa se almacenan en nuestros servidores (AWS DynamoDB) para que puedan entregarse y recuperarse en distintos dispositivos. Los mensajes incluyen el contenido de texto, la identidad del remitente, marcas de tiempo y confirmaciones de lectura. El contenido de los mensajes se cifra en reposo usando AES-256 antes de escribirse en la base de datos; la clave de cifrado se almacena por separado en AWS Secrets Manager y no está integrada en la aplicación. Las imágenes enviadas en el chat se almacenan en un bucket privado de AWS S3. Los mensajes se conservan hasta que los elimines o elimines tu cuenta.</p>
+    <p><strong>Ubicación en vivo.</strong> Mientras compartes tu ubicación, Cerqa recopila tus coordenadas GPS (latitud y longitud), velocidad, dirección de desplazamiento y precisión del GPS. Si iniciaste la navegación giro a giro, Cerqa también envía datos de navegación como tu ruta, la distancia y el tiempo restante hasta tu destino. Esto se envía en tiempo real a las personas con quienes elegiste compartir. La secuencia de posiciones en vivo no se guarda en los servidores de la empresa. Cuando dejas de compartir, tu ubicación en vivo deja de enviarse y no se conserva.</p>
 
-    <p><strong>Notificaciones.</strong> Las notificaciones dentro de la aplicación (como solicitudes de conexión e invitaciones para compartir ubicación) se almacenan en nuestros servidores (AWS DynamoDB) para que puedan recuperarse en tu bandeja de entrada. El título y el contenido de estas notificaciones se cifran en reposo usando AES-256, con la clave de cifrado gestionada a través de AWS Secrets Manager.</p>
+    <p><strong>Planes, viajes y Vernos.</strong> Cuando creas un plan o un viaje, o envías una solicitud de Vernos, Cerqa guarda el lugar, la hora, el título o la nota que agregues, y las personas que invitaste junto con sus respuestas. Solo las personas de ese plan o viaje pueden verlo, y la nota de Vernos también aparece en tu chat con las personas a quienes la enviaste. Mientras un plan o viaje está en vivo, Cerqa también guarda algunos datos de estado de cada persona que comparte, como cuándo salió, su hora estimada de llegada, cuándo estaba cerca y cuándo llegó, para que el grupo vea quién va en camino. No guarda la ruta que recorriste.</p>
 
-    <p><strong>Contactos del dispositivo.</strong> Si otorgas permiso de contactos, Cerqa lee tu lista de contactos localmente en tu dispositivo para ayudarte a encontrar amigos que ya usan Cerqa. Tu lista de contactos no se sube a nuestros servidores. Solo cuando agregas explícitamente a alguien como contacto se guarda un registro de esa relación en nuestros servidores.</p>
+    <p><strong>Historial de viajes.</strong> Cuando termina un viaje, Cerqa guarda un resumen en tu historial: el destino, la distancia, el tiempo, la velocidad promedio y máxima, y quiénes participaron. Tú puedes ver tu historial, y en un viaje en grupo también lo ven las personas que estaban en el grupo en ese momento. No incluye la ruta que recorriste.</p>
 
-    <p><strong>Token de notificaciones push.</strong> Recopilamos un token de notificaciones push (proporcionado por Firebase Cloud Messaging en Android, o APNs en iOS) junto con un identificador de dispositivo y tipo de plataforma (iOS o Android) para enviarte notificaciones. Esto se almacena en nuestros servidores y está vinculado a tu cuenta.</p>
+    <p><strong>Lugares privados.</strong> Tus lugares privados (como tu casa o tu trabajo) y las personas de confianza que pueden verte ahí se guardan solo en tu dispositivo, no en los servidores de la empresa. Mientras estás dentro de un lugar privado, tu dispositivo deja de enviar tu ubicación real a quien no hayas marcado como de confianza para ese lugar.</p>
 
-    <p><strong>Entrada de voz.</strong> Si usas la búsqueda por voz, tu voz se procesa en el dispositivo usando el reconocimiento de voz integrado de tu dispositivo. No recibimos ni almacenamos el audio de tu voz.</p>
-    <p><strong>Análisis de uso.</strong> Usamos Google Analytics para Firebase en la aplicación, y Google Analytics en cerqa.app y ride.cerqa.app, para entender cómo se usa Cerqa y qué mejorar. Esto incluye las pantallas y funciones que usas (por ejemplo, empezar a compartir tu ubicación o crear un viaje), la versión de la aplicación, el tipo de dispositivo, el sistema operativo, el idioma y la región aproximada. Se vincula a un identificador interno de tu cuenta, nunca a tu nombre, correo electrónico, teléfono ni ubicación. Las direcciones de las páginas se envían sin enlaces de viajes ni otros identificadores privados. Las funciones de publicidad de Google están desactivadas en los análisis: los análisis no recopilan el identificador de publicidad y sus datos no se usan para anuncios.</p>
+    <p><strong>Fotos del viaje.</strong> Las fotos que agregas durante un viaje compartido se guardan en un bucket privado de AWS S3 con un texto y un nombre de lugar opcionales, y solo las ven las personas de ese viaje (en un grupo, quienes estaban en el grupo cuando se agregó la foto). Se eliminan automáticamente después de 30 días.</p>
+
+    <p><strong>Mensajes y chat.</strong> Los mensajes que envías a través de Cerqa se almacenan en los servidores de la empresa (AWS DynamoDB) para que puedan entregarse y recuperarse en distintos dispositivos. Los mensajes incluyen el contenido de texto, la identidad del remitente, marcas de tiempo y confirmaciones de lectura. El contenido de los mensajes se cifra en reposo usando AES-256 antes de escribirse en la base de datos; la clave de cifrado se almacena por separado en AWS Secrets Manager y no está integrada en la aplicación. Las imágenes enviadas en el chat se almacenan en un bucket privado de AWS S3. Los mensajes se conservan hasta que los elimines o elimines tu cuenta.</p>
+
+    <p><strong>Notificaciones.</strong> Las notificaciones dentro de la aplicación (como solicitudes de conexión e invitaciones para compartir ubicación) se almacenan en los servidores de la empresa (AWS DynamoDB) para que puedan recuperarse en tu bandeja de entrada. El título y el contenido de estas notificaciones se cifran en reposo usando AES-256, con la clave de cifrado gestionada a través de AWS Secrets Manager.</p>
+
+    <p><strong>Contactos del dispositivo.</strong> Si otorgas permiso de contactos, Cerqa lee tu lista de contactos en tu dispositivo para ayudarte a encontrar amigos que ya usan Cerqa. Tu lista de contactos no se sube a los servidores de la empresa. Solo cuando agregas a alguien como conexión se guarda un registro de esa conexión.</p>
+
+    <p><strong>Plan familiar.</strong> Si eres dueño o miembro de un plan familiar de Cerqa, el dueño y los miembros pueden ver el nombre de usuario y la foto de los demás. Tu membresía se registra en los servidores de la empresa y en RevenueCat para que tu acceso Pro funcione.</p>
+
+    <p><strong>Token de notificaciones push.</strong> Cerqa recopila un token de notificaciones push (proporcionado por Firebase Cloud Messaging en Android, o APNs en iOS) junto con un identificador de dispositivo y tipo de plataforma (iOS o Android) para enviarte notificaciones. Esto se almacena en los servidores de la empresa y está vinculado a tu cuenta.</p>
+
+    <p><strong>Entrada de voz.</strong> Si usas la búsqueda por voz, tu voz se procesa en tu dispositivo con su reconocimiento de voz integrado. La empresa no recibe ni almacena el audio de tu voz.</p>
+
+    <p><strong>Análisis de uso.</strong> Cerqa usa Google Analytics para Firebase en la aplicación, y Google Analytics en cerqa.app y ride.cerqa.app, para entender cómo se usa Cerqa y qué mejorar. Esto incluye las pantallas y funciones que usas (por ejemplo, empezar a compartir tu ubicación o crear un viaje), la versión de la aplicación, el tipo de dispositivo, el sistema operativo, el idioma y la región aproximada. Se vincula a un identificador interno de tu cuenta, nunca a tu nombre, correo electrónico, teléfono ni ubicación. Las direcciones de las páginas se envían sin enlaces de viajes ni otros identificadores privados. Las funciones de publicidad de Google están desactivadas en los análisis: los análisis no recopilan el identificador de publicidad y sus datos no se usan para anuncios.</p>
 
     <p><strong>Publicidad.</strong> Las cuentas gratuitas ven anuncios de Google AdMob. El software de anuncios de Google en la aplicación recopila información del dispositivo, como se explica en la sección Publicidad más abajo. Cerqa no da a los anunciantes tu ubicación, tus viajes, tus mensajes, tus conexiones ni tus contactos.</p>
+
+    <p><strong>Información pública de caminos.</strong> Los tiempos de espera en la frontera (de la Oficina de Aduanas y Protección Fronteriza de EE. UU.), los precios de gasolina y las casetas en México, y los cargadores eléctricos vienen de fuentes públicas. Cerqa no envía a esas fuentes ninguna información sobre ti.</p>
   </div>
 
   <div class="section-block">
     <h2>Ubicación en Segundo Plano</h2>
-    <p>Cerqa accede a tu ubicación en segundo plano solo durante una sesión activa de compartir ubicación, es decir, cuando hayas presionado explícitamente "Iniciar compartir" en la aplicación. El acceso a la ubicación en segundo plano se usa únicamente para mantener tu posición en tiempo real actualizada para los contactos o grupo con quienes elegiste compartir.</p>
-    <p><strong>En Android:</strong> Un servicio en primer plano persistente se ejecuta mientras la compartición está activa, y se muestra una notificación en todo momento. Puedes detener la compartición en cualquier momento presionando "Detener compartir" en la notificación.</p>
-    <p><strong>En iOS:</strong> La aplicación usa el modo de ubicación en segundo plano de iOS para mantener las actualizaciones de ubicación cuando cambias de aplicación o bloqueas la pantalla durante una sesión activa. El indicador de ubicación azul en tu barra de estado será visible mientras esto esté activo.</p>
-    <p>El acceso a la ubicación en segundo plano se detiene de inmediato cuando finaliza tu sesión, cuando expira el temporizador de sesión, o cuando cierras forzosamente la aplicación. Para una explicación completa de nuestras prácticas de ubicación en segundo plano, consulta <a href="/background_location_disclosure"
+    <p>Cerqa usa tu ubicación en segundo plano solo mientras compartes tu ubicación o navegas, algo que siempre inicias tú. La ubicación en segundo plano se usa solo para mantener actualizada tu posición en vivo para las personas o el grupo con quienes elegiste compartir, y para guiarte mientras navegas.</p>
+    <p><strong>En Android:</strong> Un servicio en primer plano se ejecuta mientras compartes, y se muestra una notificación todo el tiempo. Puedes dejar de compartir en cualquier momento tocando "Detener compartir" en la notificación.</p>
+    <p><strong>En iOS:</strong> Cerqa usa el modo de ubicación en segundo plano de iOS para mantener tu ubicación actualizada cuando cambias de aplicación o bloqueas la pantalla durante una sesión activa. El indicador de ubicación azul en tu barra de estado se ve mientras esto está activo.</p>
+    <p>La ubicación en segundo plano se detiene en cuanto dejas de compartir, cuando termina el temporizador para compartir o cuando cierras la aplicación a la fuerza. Para una explicación completa, consulta <a href="/background_location_disclosure"
 style="color:#4a6fa5;">cerqa.app/background_location_disclosure</a>.</p>
   </div>
 
   <div class="section-block">
-    <h2>Cómo Usamos Tu Información</h2>
+    <h2>Cómo Se Usa Tu Información</h2>
     <ul>
-      <li>Para operar la aplicación: autenticando tu cuenta, habilitando sesiones de compartir ubicación, entregando mensajes y enviando notificaciones.</li>
-      <li>Para ayudarte a encontrar personas que conoces: comparando números de teléfono de tu lista de contactos con usuarios existentes de Cerqa (procesado localmente, sin subirse a nuestros servidores).</li>
-      <li>Para enviar notificaciones push: solicitudes para compartir ubicación, mensajes de chat, invitaciones de conexión y confirmaciones de llegada.</li>
-      <li>Para permitir el compartir ubicación en tiempo real con los contactos o grupos que elijas.</li>
+      <li>Para operar el servicio Cerqa: iniciar tu sesión, compartir tu ubicación, operar planes, viajes y solicitudes de Vernos, entregar mensajes y enviar notificaciones.</li>
+      <li>Para ayudarte a encontrar personas que conoces: comparando números de teléfono de tu lista de contactos con usuarios existentes de Cerqa (procesado en tu dispositivo, sin subirse).</li>
+      <li>Para enviar notificaciones push: solicitudes para compartir ubicación, invitaciones a planes y a Vernos, mensajes de chat, invitaciones de conexión y avisos de llegada.</li>
+      <li>Para compartir tu ubicación en tiempo real con las personas o grupos que elijas.</li>
       <li>Para mejorar la confiabilidad y corregir errores a través de los reportes de fallos y análisis de Firebase.</li>
     </ul>
-    <p>No construimos perfiles publicitarios a partir de tu ubicación ni de tus datos de uso, y nunca compartimos tu ubicación, tus viajes, tus mensajes, tus conexiones ni tus contactos con anunciantes.</p>
+    <p>Cerqa no construye perfiles publicitarios a partir de tu ubicación ni de tus datos de uso, y nunca comparte tu ubicación, tus viajes, tus mensajes, tus conexiones ni tus contactos con anunciantes.</p>
   </div>
 
   <div class="section-block">
@@ -287,12 +297,12 @@ style="color:#4a6fa5;">cerqa.app/background_location_disclosure</a>.</p>
   </div>
 
   <div class="section-block">
-    <h2>Compartición y Terceros</h2>
-    <p>No vendemos tus datos personales a cambio de dinero. Algunas leyes estatales de EE. UU. consideran los anuncios personalizados como "compartir" datos; puedes pedir que no se haga, como se explica en la sección Publicidad. Compartimos tu información solo en las siguientes circunstancias:</p>
+    <h2>Compartir y Terceros</h2>
+    <p>Cerqa LLC no vende tus datos personales a cambio de dinero. Algunas leyes estatales de EE. UU. consideran los anuncios personalizados como "compartir" datos; puedes pedir que no se haga, como se explica en la sección Publicidad. Tu información se comparte solo en las siguientes circunstancias:</p>
     <ul>
-      <li><strong>Con personas que eliges.</strong> Cuando compartes tu ubicación o envías un mensaje, esos datos se comparten con los contactos específicos o miembros del grupo que seleccionaste.</li>
-      <li><strong>Con proveedores de servicios.</strong> Usamos servicios de terceros para operar la aplicación. Cada uno procesa datos solo en la medida necesaria para proporcionar su servicio.</li>
-      <li><strong>Por razones legales.</strong> Podemos divulgar información si lo exige la ley, una orden judicial, o para proteger la seguridad de nuestros usuarios o del público.</li>
+      <li><strong>Con personas que eliges.</strong> Cuando compartes tu ubicación, invitas a personas a un plan o a Vernos, o envías un mensaje, esa información se comparte con las personas o miembros del grupo que seleccionaste.</li>
+      <li><strong>Con proveedores de servicios.</strong> Cerqa usa los servicios de terceros de la tabla para funcionar. Cada uno procesa datos solo en la medida necesaria para proporcionar su servicio.</li>
+      <li><strong>Por razones legales.</strong> La empresa puede divulgar información si lo exige la ley o una orden judicial, o para proteger la seguridad de los usuarios de Cerqa o del público.</li>
     </ul>
 
     <table class="third-party-table">
@@ -351,7 +361,7 @@ style="color:#4a6fa5;">cerqa.app/background_location_disclosure</a>.</p>
         </tr>
         <tr>
           <td>Amazon SES (AWS)</td>
-          <td>Envía un correo al desarrollador cuando reportas contenido o bloqueas a alguien</td>
+          <td>Envía un correo a Cerqa LLC cuando reportas contenido o bloqueas a alguien</td>
           <td><a href="https://aws.amazon.com/privacy" target="_blank">aws.amazon.com/privacy</a></td>
         </tr>
         <tr>
@@ -382,47 +392,51 @@ style="color:#4a6fa5;">cerqa.app/background_location_disclosure</a>.</p>
     <h2>Retención de Datos</h2>
     <ul>
       <li><strong>Los datos de cuenta</strong> se conservan hasta que elimines tu cuenta.</li>
-      <li><strong>Los datos de ubicación en tiempo real</strong> no se almacenan de forma persistente. Se transmiten en tiempo real solo durante sesiones activas.</li>
+      <li><strong>La ubicación en vivo</strong> no se guarda. Se envía en tiempo real solo mientras compartes.</li>
+      <li><strong>Los planes, viajes e historial de viajes</strong> se conservan hasta que elimines tu cuenta. Los planes y viajes a los que te invitaron se quedan con la persona que los creó.</li>
+      <li><strong>Las fotos del viaje</strong> se eliminan automáticamente después de 30 días.</li>
       <li><strong>Los mensajes</strong> se conservan hasta que los elimines individualmente o elimines tu cuenta.</li>
-      <li><strong>Las fotos y archivos multimedia</strong> almacenados en S3 se conservan hasta que los reemplaces o elimines tu cuenta.</li>
-      <li><strong>Los tokens de notificaciones push</strong> se conservan mientras tu cuenta esté activa y se eliminan cuando borras tu cuenta o revocas el permiso de notificaciones.</li>
+      <li><strong>Las fotos de perfil y las imágenes del chat</strong> se conservan hasta que las reemplaces o elimines tu cuenta.</li>
+      <li><strong>Los tokens de notificaciones push</strong> se conservan mientras tu cuenta esté activa y se eliminan cuando borras tu cuenta o desactivas el permiso de notificaciones.</li>
     </ul>
-    <p>Cuando eliminas tu cuenta, borramos tu perfil, contactos, mensajes y datos asociados de nuestros servidores. Algunos datos pueden conservarse en copias de seguridad por un breve período antes de ser eliminados.</p>
+    <p>Cuando eliminas tu cuenta, Cerqa LLC borra tu perfil, conexiones, mensajes y datos asociados de sus servidores. Algunos datos pueden quedar en copias de seguridad por un breve período antes de eliminarse.</p>
   </div>
 
   <div class="section-block">
     <h2>Tus Derechos y Opciones</h2>
-    <p><strong>Permiso de ubicación.</strong> Puedes revocar el acceso a la ubicación en cualquier momento en la configuración de tu dispositivo. La aplicación seguirá funcionando para mensajería y otras funciones que no requieren ubicación.</p>
-    <p><strong>Permiso de contactos.</strong> Puedes revocar el acceso a los contactos en cualquier momento. Revocarlo no afecta las conexiones que ya hayas realizado.</p>
-    <p><strong>Permiso de notificaciones.</strong> Puedes desactivar las notificaciones push en la configuración de tu dispositivo. Aun así recibirás notificaciones dentro de la aplicación cuando esté abierta.</p>
+    <p><strong>Permiso de ubicación.</strong> Puedes desactivar el acceso a la ubicación en cualquier momento en la configuración de tu dispositivo. Cerqa sigue funcionando para mensajes y otras funciones que no necesitan tu ubicación.</p>
+    <p><strong>Dejar de compartir.</strong> Puedes dejar de compartir tu ubicación en cualquier momento desde el mapa o desde la notificación.</p>
+    <p><strong>Lugares privados.</strong> Puedes agregar lugares privados y elegir quién, si alguien, puede verte ahí.</p>
+    <p><strong>Permiso de contactos.</strong> Puedes desactivar el acceso a los contactos en cualquier momento. Esto no afecta las conexiones que ya hayas hecho.</p>
+    <p><strong>Permiso de notificaciones.</strong> Puedes desactivar las notificaciones push en la configuración de tu dispositivo. Aun así verás las notificaciones dentro de la aplicación cuando esté abierta.</p>
     <p><strong>Anuncios.</strong> Puedes cambiar tus opciones de anuncios como se explica en la sección Publicidad. Con Pro no ves anuncios.</p>
-    <p><strong>Acceso y corrección.</strong> Puedes ver y editar la información de tu perfil dentro de la aplicación en cualquier momento.</p>
-    <p><strong>Eliminación de cuenta.</strong> Puedes eliminar tu cuenta desde la pantalla de Perfil dentro de la aplicación. Esto elimina permanentemente tu cuenta y los datos asociados de nuestros sistemas.</p>
-    <p><strong>GDPR y CCPA.</strong> Si te encuentras en el Espacio Económico Europeo, el Reino Unido, Suiza, California u otro estado de EE. UU. con una ley de privacidad, tienes derechos adicionales, incluidos el derecho a acceder, corregir o eliminar tus datos personales, y a oponerte a ciertos procesamientos. Contáctanos en <a
-href="mailto:privacy@cerqa.net" style="color:#4a6fa5;">privacy@cerqa.net</a> para ejercer estos derechos.</p>
+    <p><strong>Acceso y corrección.</strong> Puedes ver y editar la información de tu perfil en la aplicación en cualquier momento.</p>
+    <p><strong>Eliminación de cuenta.</strong> Puedes eliminar tu cuenta desde la pantalla de Perfil en la aplicación, o en <a href="/delete" style="color:#4a6fa5;">cerqa.app/delete</a>. Esto elimina permanentemente tu cuenta y los datos asociados de los sistemas de la empresa.</p>
+    <p><strong>GDPR y CCPA.</strong> Si te encuentras en el Espacio Económico Europeo, el Reino Unido, Suiza, California u otro estado de EE. UU. con una ley de privacidad, tienes derechos adicionales, incluidos el derecho a acceder, corregir o eliminar tus datos personales, y a oponerte a ciertos procesamientos. Para ejercer estos derechos, escribe a <a
+href="mailto:privacy@cerqa.net" style="color:#4a6fa5;">privacy@cerqa.net</a>.</p>
   </div>
 
   <div class="section-block">
     <h2>Seguridad</h2>
-    <p>Todos los datos se transmiten mediante TLS (HTTPS). La autenticación de cuentas está gestionada por AWS Cognito. Los archivos multimedia se almacenan en buckets privados de S3 y son accesibles solo mediante URL firmadas de corta duración. No almacenamos contraseñas. Las credenciales de autenticación son gestionadas por AWS Cognito.</p>
+    <p>Todos los datos se envían mediante TLS (HTTPS). El inicio de sesión lo gestiona AWS Cognito, y Cerqa LLC nunca guarda tu contraseña. Los archivos multimedia se almacenan en buckets privados de S3 y solo se puede acceder a ellos mediante enlaces firmados de corta duración.</p>
     <p>El contenido de los mensajes de chat y los datos de notificaciones dentro de la aplicación (campos de título y mensaje) se cifran en reposo usando AES-256 (modo CBC) antes de almacenarse en DynamoDB. La clave de cifrado se gestiona a través de AWS Secrets Manager y no está almacenada en el código fuente ni en el binario de la aplicación.</p>
-    <p>Ningún método de transmisión o almacenamiento es 100% seguro. Si crees que tu cuenta ha sido comprometida, contáctanos de inmediato en <a href="mailto:privacy@cerqa.net" style="color:#4a6fa5;">privacy@cerqa.net</a>.</p>
+    <p>Ningún método de transmisión o almacenamiento es 100% seguro. Si crees que tu cuenta ha sido comprometida, escribe de inmediato a <a href="mailto:privacy@cerqa.net" style="color:#4a6fa5;">privacy@cerqa.net</a>.</p>
   </div>
 
   <div class="section-block">
     <h2>Privacidad de Menores</h2>
-    <p>Cerqa no está dirigida a menores de 13 años. No recopilamos intencionalmente información personal de menores de 13 años. Si crees que un menor de 13 años ha creado una cuenta, contáctanos en <a href="mailto:privacy@cerqa.net"
-style="color:#4a6fa5;">privacy@cerqa.net</a> y eliminaremos la cuenta de inmediato.</p>
+    <p>Cerqa no está dirigido a menores de 13 años, y Cerqa LLC no recopila intencionalmente información personal de menores de 13 años. Si crees que un menor de 13 años creó una cuenta, escribe a <a href="mailto:privacy@cerqa.net"
+style="color:#4a6fa5;">privacy@cerqa.net</a> y la cuenta se eliminará de inmediato.</p>
   </div>
 
   <div class="section-block">
     <h2>Cambios a Esta Política</h2>
-    <p>Podemos actualizar esta política periódicamente. Cuando lo hagamos, actualizaremos la fecha de "Última actualización" en la parte superior de esta página. Para cambios importantes, te notificaremos en la aplicación o por correo electrónico. El uso continuado de Cerqa después de que se publiquen los cambios constituye la aceptación de la política actualizada.</p>
+    <p>Cerqa LLC puede actualizar esta política de vez en cuando. Cuando lo haga, cambiará la fecha de "Última actualización" en la parte superior de esta página. Si hay cambios importantes, se te avisará en la aplicación o por correo electrónico. Seguir usando Cerqa después de que se publiquen los cambios significa que aceptas la política actualizada.</p>
   </div>
 
   <div class="section-block">
     <h2>Contacto</h2>
-    <p>Si tienes preguntas, inquietudes o solicitudes relacionadas con esta Política de Privacidad, contáctanos en:</p>
+    <p>Para preguntas, inquietudes o solicitudes sobre esta Política de Privacidad, escribe a:</p>
     <p>
       <strong>Cerqa LLC</strong><br>
       <a href="mailto:privacy@cerqa.net" style="color:#4a6fa5;">privacy@cerqa.net</a>

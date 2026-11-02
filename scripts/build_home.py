@@ -63,7 +63,7 @@ T = {
         "next_items": [
             ("Made for iPhone", "A more familiar iPhone experience, with a translucent tab bar, easier access to location sharing, clearer titles, responsive touch feedback, and improved VoiceOver support."),
             ("Made for Android", "A more familiar Android experience, with intuitive bottom navigation and location sharing just a tap away from the map."),
-            ("Pick me up", "Ask a friend for a ride. They get your spot and directions to you."),
+            ("Pick me up", "Ask a friend for a ride. They get your location and directions to you."),
             ("Meet me", "Choose a meeting place, share it with others, and see everyone make their way there."),
             ("Ride along", "Follow a friend's drive and see their next turns."),
             ("Share your location in chat", "Drop a pin when you want to, see who's on the way, and get a recap after the drive."),
@@ -163,7 +163,7 @@ T = {
         "next_items": [
             ("Hecha para iPhone", "Una experiencia más familiar en iPhone, con una barra de pestañas translúcida, acceso más fácil para compartir tu ubicación, títulos más claros, respuesta al tacto y mejor compatibilidad con VoiceOver."),
             ("Hecha para Android", "Una experiencia más familiar en Android, con navegación intuitiva abajo y compartir tu ubicación a un toque desde el mapa."),
-            ("Recógeme", "Pídele a un amigo que pase por ti. Recibe dónde estás y cómo llegar."),
+            ("Recógeme", "Pídele a un amigo que pase por ti. Recibe tu ubicación y cómo llegar a ti."),
             ("Vernos", "Elige un lugar para verse, compártelo con los demás y ve cómo todos van llegando."),
             ("Acompañar", "Sigue el viaje de un amigo y ve sus próximas vueltas."),
             ("Comparte tu ubicación en el chat", "Fija dónde estás cuando quieras, ve quién viene en camino y recibe un resumen del viaje."),

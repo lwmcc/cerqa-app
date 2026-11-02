@@ -48,6 +48,9 @@ FAQ = [
     ("What happens when I fold or unfold it while driving?", "Cerqa keeps your trip going. Fold it and directions move to the outer screen; open it and the group map and your trip sit side by side."),
     ("Is Cerqa free on iPhone Duo?", "Yes. Location sharing with friends and small groups is free. Pro adds group navigation, longer sharing and bigger groups."),
     ("Does it work with Apple CarPlay?", "Yes. Your route and your group show on your car's screen."),
+    ("Can I share my location from iPhone Duo with Android phones?", 'Yes. Cerqa is free for iPhone and for Android, so friends and family on Android phones see you live on their map, and you see them on your iPhone Duo. <a href="/blog/share-location-between-iphone-and-android/">How it works</a>.'),
+    ("Does Cerqa use the full inner screen?", "Yes. Unfolded, Cerqa fills the inner screen: the map takes the main part, with your people, plans and chat beside it, and the tabs move to a side rail."),
+    ("Is Cerqa good for road trips on iPhone Duo?", "Yes. Open it at a stop to see everyone's route and arrival time, plan the next stop and find a scenic drive. Fold it to drive with turn-by-turn directions and your group beside your route."),
 ]
 
 
@@ -84,9 +87,9 @@ def build(ga):
             {"@type": "ListItem", "position": 2, "name": "iPhone Duo", "item": SITE + PATH}]},
     ]
     ld_tags = "\n".join(f'  <script type="application/ld+json">\n  {json.dumps(x, ensure_ascii=False)}\n  </script>' for x in ld)
-    title = "Cerqa for iPhone Duo | Location sharing and group navigation on a foldable iPhone"
-    desc = ("Cerqa is made for iPhone Duo, the foldable iPhone. Open it for a big map with your whole group beside it, "
-            "fold it for turn-by-turn directions. " + ("Free on the App Store, ready for iPhone Duo when it launches." if COMING_SOON else "Free on the App Store."))
+    title = "Cerqa for iPhone Duo: location sharing on the foldable iPhone's big screen"
+    desc = ("Location sharing made for the iPhone Duo's big screen: your whole group on one map, turn-by-turn when folded, "
+            "and friends on iPhone or Android. " + ("Free, ready for iPhone Duo when it launches." if COMING_SOON else "Free on the App Store."))
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -132,8 +135,8 @@ def build(ga):
 
   <header class="hero duo-hero">
     <span class="duo-pill">{pill}</span>
-    <h1>Cerqa on iPhone Duo, unfolded.</h1>
-    <p class="subtext">Open your iPhone Duo for a big map with your whole group beside it. Fold it to drive.</p>
+    <h1>Your whole group on the iPhone Duo's big screen</h1>
+    <p class="subtext">One of the iPhone Duo apps made for the inner screen: open it for a big map with your whole group beside it, and fold it to drive. Share your location with family and friends on any iPhone or Android phone.</p>
     {badges(t, 'iphone_duo')}
     <p class="fine">{fine} <a href="/">Learn more about Cerqa</a></p>
   </header>

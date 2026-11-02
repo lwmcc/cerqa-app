@@ -61,8 +61,8 @@ T = {
         "next_alt": ["Cerqa 1.19 on iPhone: friends on the way to dinner with arrival times, a glass tab bar and Sharing location just above it",
                      "Cerqa 1.19 on Android: the same friends and arrival times, with familiar navigation along the bottom"],
         "next_items": [
-            ("Made for iPhone", "Looks and feels like your other iPhone apps: a see-through tab bar, Share location one tap away, big clear titles, taps you can feel, and better VoiceOver."),
-            ("Made for Android", "Looks and feels like your other Android apps, with familiar navigation along the bottom and a Share location button right on the map."),
+            ("Made for iPhone", "A more familiar iPhone experience, with a translucent tab bar, easier access to location sharing, clearer titles, responsive touch feedback, and improved VoiceOver support."),
+            ("Made for Android", "A more familiar Android experience, with intuitive bottom navigation and location sharing just a tap away from the map."),
             ("Pick me up", "Ask a friend for a ride. They get your spot and directions to you."),
             ("Meet me", "Send a place to meet and watch each other head there."),
             ("Ride along", "Follow a friend's drive and see their next turns."),
@@ -161,8 +161,8 @@ T = {
         "next_alt": ["Cerqa 1.19 en iPhone: amigos en camino a la cena con su hora de llegada, barra de pestañas de vidrio y Compartiendo ubicación justo arriba",
                      "Cerqa 1.19 en Android: los mismos amigos y horas de llegada, con la navegación de siempre abajo"],
         "next_items": [
-            ("Hecha para iPhone", "Se ve y se siente como tus otras apps de iPhone: barra de pestañas transparente, Compartir ubicación a un toque, títulos grandes y claros, toques que sientes y mejor VoiceOver."),
-            ("Hecha para Android", "Se ve y se siente como tus otras apps de Android, con la navegación de siempre abajo y un botón de Compartir ubicación directo en el mapa."),
+            ("Hecha para iPhone", "Una experiencia más familiar en iPhone, con una barra de pestañas translúcida, acceso más fácil para compartir tu ubicación, títulos más claros, respuesta al tacto y mejor compatibilidad con VoiceOver."),
+            ("Hecha para Android", "Una experiencia más familiar en Android, con navegación intuitiva abajo y compartir tu ubicación a un toque desde el mapa."),
             ("Recógeme", "Pídele a un amigo que pase por ti. Recibe dónde estás y cómo llegar."),
             ("Vernos", "Manda un lugar para verse y vean cómo va llegando cada quien."),
             ("Acompañar", "Sigue el viaje de un amigo y ve sus próximas vueltas."),

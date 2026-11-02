@@ -11,7 +11,7 @@ POST = {
         "h1": "How to share your location between iPhone and Android",
         "desc": "iPhone to Android, Android to Android, or iPhone to iPhone. Here is how to share live location with anyone, for a few minutes or a whole day, and see when everyone will arrive.",
         "image_alt": "Cerqa on iPhone and Android side by side: the same friends on the way to dinner, with live arrival times",
-        "body": """      <p>Most families and groups of friends use a mix of smartphones, with some members using iPhones and others using Android devices. That matters when you want to see where someone is, because the location sharing built into each phone mostly works only with the same type of device.</p>
+        "body": """      <p>Most families and groups of friends use a mix of smartphones, with some members using iPhones and others using Android phones. That matters when you want to see where someone is, because the location sharing built into each phone mostly works only with the same type of device.</p>
       <p>Here's how to share locations seamlessly between iPhone and Android, and get everyone set up in just a couple of minutes.</p>
 
       <h2>Why your phone's built-in location sharing isn't enough</h2>

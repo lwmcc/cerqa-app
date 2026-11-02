@@ -411,20 +411,19 @@ footer .data-credits { margin: 16px auto 0; font-size: 12px; max-width: 720px; }
   position: relative; width: 260px; padding: 9px; background: #10151d;
   box-shadow: 0 0 0 2px #3a4250 inset, 0 24px 48px rgba(27,45,74,0.22);
 }
-.device img { display: block; width: 100%; height: auto; }
+.device img { display: block; width: 100%; height: auto; aspect-ratio: 1320 / 2868; object-fit: cover; object-position: top; }
 .device-ios { border-radius: 40px; }
 .device-ios img { border-radius: 32px; }
 .device-ios::after {  /* Dynamic Island */
   content: ""; position: absolute; top: 17px; left: 50%; transform: translateX(-50%);
   width: 64px; height: 19px; border-radius: 12px; background: #000;
 }
-.device-android { border-radius: 30px; padding: 7px; }
-.device-android img { border-radius: 24px; }
+.device-android { border-radius: 36px; }
+.device-android img { border-radius: 28px; }
 .device-android::after {  /* punch-hole camera */
   content: ""; position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
   width: 11px; height: 11px; border-radius: 50%; background: #000;
 }
-.device:nth-child(even) { margin-top: 36px; }
 .next-list {
   list-style: none; padding: 0; margin: 40px auto 0; max-width: 900px;
   display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px 28px;
@@ -436,8 +435,7 @@ footer .data-credits { margin: 16px auto 0; font-size: 12px; max-width: 720px; }
   .device { width: calc(50% - 10px); padding: 6px; }
   .device-ios { border-radius: 28px; } .device-ios img { border-radius: 23px; }
   .device-ios::after { top: 11px; width: 42px; height: 13px; }
-  .device-android { border-radius: 22px; padding: 5px; } .device-android img { border-radius: 18px; }
-  .device:nth-child(even) { margin-top: 0; }
+  .device-android { border-radius: 26px; } .device-android img { border-radius: 21px; }
 }
 
 /* ── FAQ ── */

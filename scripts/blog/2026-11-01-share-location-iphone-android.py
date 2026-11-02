@@ -11,7 +11,7 @@ POST = {
         "h1": "How to share your location between iPhone and Android",
         "desc": "iPhone to Android, Android to Android, or iPhone to iPhone. Here is how to share live location with anyone, for a few minutes or a whole day, and see when everyone will arrive.",
         "image_alt": "Cerqa on iPhone and Android side by side: the same friends on the way to dinner, with live arrival times",
-        "body": """      <p>Most families and groups of friends are made up of people with different phones: some have an iPhone, some have an Android. That matters when you want to see where someone is, because the location sharing built into each phone mostly works only with the same type of device.</p>
+        "body": """      <p>Most families and groups of friends use a mix of smartphones, with some members using iPhones and others using Android devices. That matters when you want to see where someone is, because the location sharing built into each phone mostly works only with the same type of device.</p>
       <p>Here is what works across both, and how to set it up in a couple of minutes.</p>
 
       <h2>Why the sharing built into your phone isn't enough</h2>
@@ -50,7 +50,7 @@ POST = {
         "h1": "Cómo compartir tu ubicación entre iPhone y Android",
         "desc": "De iPhone a Android, de Android a Android o de iPhone a iPhone. Así compartes tu ubicación en vivo con quien sea, por unos minutos o un día entero, y ves a qué hora llega cada quien.",
         "image_alt": "Cerqa en iPhone y Android lado a lado: los mismos amigos en camino a la cena, con su hora de llegada en vivo",
-        "body": """      <p>Casi todas las familias y grupos de amigos están formados por personas con distintos teléfonos: unos tienen iPhone y otros Android. Eso importa cuando quieres ver dónde viene alguien, porque la función de compartir ubicación de cada teléfono casi siempre funciona solo con el mismo tipo de dispositivo.</p>
+        "body": """      <p>Casi todas las familias y grupos de amigos usan una mezcla de smartphones: algunos usan iPhone y otros usan Android. Eso importa cuando quieres ver dónde viene alguien, porque la función de compartir ubicación de cada teléfono casi siempre funciona solo con el mismo tipo de dispositivo.</p>
       <p>Esto es lo que sí funciona entre los dos, y cómo configurarlo en un par de minutos.</p>
 
       <h2>Por qué no basta con la función que trae tu teléfono</h2>

@@ -16,7 +16,7 @@ POST = {
 
       <h2>Why the sharing built into your phone isn't enough</h2>
       <p>The location sharing built into a phone is made for phones of the same type. Friends on the other kind of phone can't open it, so they can't see you and you can't see them.</p>
-      <p>To share between an iPhone and an Android device, you need an app that runs on both. Cerqa is free for iPhone and for Android, and it's made for getting people to the same place: share with one friend or a whole group, see when everyone will arrive, and navigate together.</p>
+      <p>To share between an iPhone and an Android phone, you need an app that runs on both. Cerqa is free for iPhone and for Android, and it's made for getting people to the same place: share with one friend or a whole group, see when everyone will arrive, and navigate together.</p>
 
       <h2>How to share your location with Cerqa</h2>
       <ol>
@@ -28,7 +28,7 @@ POST = {
       <p>Sharing ends on its own when the time is up, and you can stop location sharing any time. There's no tracking in the background after that.</p>
 
       <h2>Sharing with a group</h2>
-      <p>For a road trip, a game, or a night out, make a group and share with everyone at once. Everyone shows up on one map, iPhones and Android devices together, and the group chat is right there too. On the free plan a group can have up to 5 people and you can share for up to an hour. <a href="/#plans">Pro</a> raises that to 25 people and 24 hours.</p>
+      <p>For a road trip, a game, or a night out, make a group and share with everyone at once. Everyone shows up on one map, iPhones and Android phones together, and the group chat is right there too. On the free plan a group can have up to 5 people and you can share for up to an hour. <a href="/#plans">Pro</a> raises that to 25 people and 24 hours.</p>
 
       <h2>Tips</h2>
       <ul>
@@ -38,7 +38,7 @@ POST = {
       </ul>
 """,
         "faq": [
-            ("Can an iPhone see an Android device's location?", "Yes, when both of you use an app made for iPhone and Android, like Cerqa. The location sharing built into each phone mostly works only with the same type of device."),
+            ("Can an iPhone see an Android phone's location?", "Yes, when both of you use an app made for iPhone and Android, like Cerqa. The location sharing built into each phone mostly works only with the same type of device."),
             ("Is Cerqa free?", "Yes. Sharing with a friend or a group of up to 5 is free for up to an hour at a time. Pro adds longer sharing, bigger groups and group navigation."),
             ("Does the other person need the app?", "Yes. Both people install Cerqa so you can see each other live on the map."),
             ("Can I stop sharing whenever I want?", "Yes. Stop sharing any time, and location sharing also ends by itself when the time you picked is up."),
@@ -55,7 +55,7 @@ POST = {
 
       <h2>Por qué no basta con la función que trae tu teléfono</h2>
       <p>La función para compartir ubicación que trae cada teléfono está hecha para teléfonos del mismo tipo. Tus amigos con otro tipo de teléfono no la pueden abrir, así que no te ven y tú no los ves a ellos.</p>
-      <p>Para compartir entre un iPhone y un dispositivo Android necesitas una app que funcione en los dos. Cerqa es gratis para iPhone y para Android, y está hecha para que todos lleguen al mismo lugar: comparte con un amigo o con todo un grupo, ve a qué hora llega cada quien y naveguen juntos.</p>
+      <p>Para compartir entre un iPhone y un teléfono Android necesitas una app que funcione en los dos. Cerqa es gratis para iPhone y para Android, y está hecha para que todos lleguen al mismo lugar: comparte con un amigo o con todo un grupo, ve a qué hora llega cada quien y naveguen juntos.</p>
 
       <h2>Cómo compartir tu ubicación con Cerqa</h2>
       <ol>
@@ -67,7 +67,7 @@ POST = {
       <p>Se termina solo cuando se acaba el tiempo, y puedes dejar de compartir tu ubicación cuando quieras. Después de eso no hay rastreo en segundo plano.</p>
 
       <h2>Compartir con un grupo</h2>
-      <p>Para un viaje en carretera, un partido o una salida, haz un grupo y comparte con todos a la vez. Todos aparecen en un solo mapa, iPhone y dispositivos Android juntos, y el chat del grupo está ahí mismo. En el plan gratis un grupo puede tener hasta 5 personas y puedes compartir hasta una hora. <a href="/es/#plans">Pro</a> lo sube a 25 personas y 24 horas.</p>
+      <p>Para un viaje en carretera, un partido o una salida, haz un grupo y comparte con todos a la vez. Todos aparecen en un solo mapa, iPhone y teléfonos Android juntos, y el chat del grupo está ahí mismo. En el plan gratis un grupo puede tener hasta 5 personas y puedes compartir hasta una hora. <a href="/es/#plans">Pro</a> lo sube a 25 personas y 24 horas.</p>
 
       <h2>Consejos</h2>
       <ul>
@@ -77,7 +77,7 @@ POST = {
       </ul>
 """,
         "faq": [
-            ("¿Un iPhone puede ver la ubicación de un dispositivo Android?", "Sí, cuando los dos usan una app hecha para iPhone y Android, como Cerqa. La función para compartir ubicación que trae cada teléfono casi siempre funciona solo con el mismo tipo de dispositivo."),
+            ("¿Un iPhone puede ver la ubicación de un teléfono Android?", "Sí, cuando los dos usan una app hecha para iPhone y Android, como Cerqa. La función para compartir ubicación que trae cada teléfono casi siempre funciona solo con el mismo tipo de dispositivo."),
             ("¿Cerqa es gratis?", "Sí. Compartir con un amigo o con un grupo de hasta 5 personas es gratis, hasta una hora a la vez. Pro agrega más tiempo, grupos más grandes y navegación en grupo."),
             ("¿La otra persona necesita la app?", "Sí. Los dos instalan Cerqa para verse en vivo en el mapa."),
             ("¿Puedo dejar de compartir cuando quiera?", "Sí. Deja de compartir cuando quieras, y compartir tu ubicación también termina solo cuando se acaba el tiempo que elegiste."),

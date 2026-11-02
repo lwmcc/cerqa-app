@@ -19,13 +19,14 @@ POST = {
       <p>To share between an iPhone and an Android phone, you need an app that runs on both. Cerqa is free for iPhone and for Android, and it's made for getting people to the same place: share with one friend or a whole group, see when everyone will arrive, and navigate together.</p>
 
       <h2>How to share your location with Cerqa</h2>
+      <p>Getting started takes just a couple of minutes:</p>
       <ol>
-        <li>Both of you install Cerqa from the App Store or Google Play and sign in.</li>
-        <li>Add each other as connections. You can send an invite link, or scan the other person's QR code when you're together.</li>
-        <li>On the map, tap <strong>Share location</strong>, pick your friend or a group, and choose how long to share.</li>
-        <li>Tap <strong>Send request</strong>. When they accept, you both see each other live on the map, with how far away they are and when they'll get there.</li>
+        <li><strong>Install Cerqa.</strong> Both people download Cerqa from the Apple App Store or Google Play and sign in.</li>
+        <li><strong>Connect with each other.</strong> Send an invitation link or scan each other's QR code if you're together.</li>
+        <li><strong>Start sharing.</strong> Open the map, tap <em>Share location</em>, select a friend or group, and choose how long you want to share.</li>
+        <li><strong>Send your request.</strong> Once the other person accepts, you'll both see each other's live location on the map, along with distance and estimated arrival time.</li>
       </ol>
-      <p>Sharing ends on its own when the time is up, and you can stop location sharing any time. There's no tracking in the background after that.</p>
+      <p><strong>You're in control.</strong> Location sharing automatically ends when the selected time expires. You can also stop sharing at any time. Once sharing ends, Cerqa stops sharing your live location.</p>
 
       <h2>Sharing with a group</h2>
       <p>For a road trip, a game, or a night out, make a group and share with everyone at once. Everyone shows up on one map, iPhones and Android phones together, and the group chat is right there too. On the free plan a group can have up to 5 people and you can share for up to an hour. <a href="/#plans">Pro</a> raises that to 25 people and 24 hours.</p>
@@ -58,13 +59,14 @@ POST = {
       <p>Para compartir entre un iPhone y un Android necesitas una app que funcione en los dos. Cerqa es gratis para iPhone y para Android, y está hecha para que todos lleguen al mismo lugar: comparte con un amigo o con todo un grupo, ve a qué hora llega cada quien y naveguen juntos.</p>
 
       <h2>Cómo compartir tu ubicación con Cerqa</h2>
+      <p>Empezar toma solo un par de minutos:</p>
       <ol>
-        <li>Los dos instalan Cerqa desde el App Store o Google Play e inician sesión.</li>
-        <li>Agréguense como contactos. Puedes mandar un enlace de invitación o escanear el código QR de la otra persona cuando estén juntos.</li>
-        <li>En el mapa, toca <strong>Compartir ubicación</strong>, elige a tu amigo o un grupo, y cuánto tiempo quieres compartir.</li>
-        <li>Toca <strong>Enviar solicitud</strong>. Cuando acepte, los dos se ven en vivo en el mapa, con qué tan lejos están y a qué hora llegan.</li>
+        <li><strong>Instala Cerqa.</strong> Las dos personas descargan Cerqa desde el App Store de Apple o Google Play e inician sesión.</li>
+        <li><strong>Conéctense.</strong> Manda un enlace de invitación o escaneen el código QR del otro si están juntos.</li>
+        <li><strong>Empieza a compartir.</strong> Abre el mapa, toca <em>Compartir ubicación</em>, elige a un amigo o un grupo, y cuánto tiempo quieres compartir.</li>
+        <li><strong>Envía tu solicitud.</strong> Cuando la otra persona acepte, los dos verán la ubicación en vivo del otro en el mapa, junto con la distancia y la hora estimada de llegada.</li>
       </ol>
-      <p>Se termina solo cuando se acaba el tiempo, y puedes dejar de compartir tu ubicación cuando quieras. Después de eso no hay rastreo en segundo plano.</p>
+      <p><strong>Tú tienes el control.</strong> Compartir tu ubicación termina solo cuando se acaba el tiempo que elegiste. También puedes dejar de compartir cuando quieras. Cuando se termina, Cerqa deja de compartir tu ubicación en vivo.</p>
 
       <h2>Compartir con un grupo</h2>
       <p>Para un viaje en carretera, un partido o una salida, haz un grupo y comparte con todos a la vez. Todos aparecen en un solo mapa, iPhone y Android juntos, y el chat del grupo está ahí mismo. En el plan gratis un grupo puede tener hasta 5 personas y puedes compartir hasta una hora. <a href="/es/#plans">Pro</a> lo sube a 25 personas y 24 horas.</p>

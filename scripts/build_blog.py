@@ -29,22 +29,22 @@ UI = {
         "index_title": "Cerqa Blog | Location sharing, group trips and getting everyone there",
         "index_desc": "Guides for sharing your location with family and friends, road trips with a group, meeting up and getting everyone there, on iPhone and Android.",
         "index_h1": "The Cerqa Blog",
-        "index_sub": "Guides for sharing where you are, driving together and getting everyone there. A new post every week.",
+        "index_sub": "Guides for sharing where you are, driving together and getting everyone there.",
         "read": "Read", "min": "min read", "updated": "Updated",
         "cta_h": "Try Cerqa free", "cta_p": "On iPhone and Android, so the whole group can use it.",
         "more_h": "More from the blog", "faq_h": "Questions",
-        "crumb_home": "Home", "other_lang": "Leer en español", "date_fmt": "%B %-d, %Y", "cc": "us",
+        "crumb_home": "Home", "other_lang": "ES", "other_lang_label": "Leer en español", "date_fmt": "%B %-d, %Y", "cc": "us",
     },
     "es": {
         "blog": "/es/blog/", "home": "/es/", "blog_name": "Blog de Cerqa",
         "index_title": "Blog de Cerqa | Compartir ubicación, viajes en grupo y que todos lleguen",
         "index_desc": "Guías para compartir tu ubicación con familia y amigos, viajar en carretera en grupo, encontrarse y que todos lleguen, en iPhone y Android.",
         "index_h1": "El blog de Cerqa",
-        "index_sub": "Guías para compartir dónde estás, manejar juntos y que todos lleguen. Una entrada nueva cada semana.",
+        "index_sub": "Guías para compartir dónde estás, manejar juntos y que todos lleguen.",
         "read": "Leer", "min": "min de lectura", "updated": "Actualizado",
         "cta_h": "Prueba Cerqa gratis", "cta_p": "En iPhone y Android, para que todo el grupo la use.",
         "more_h": "Más del blog", "faq_h": "Preguntas",
-        "crumb_home": "Inicio", "other_lang": "Read in English", "date_fmt": "%d/%m/%Y", "cc": "mx",
+        "crumb_home": "Inicio", "other_lang": "EN", "other_lang_label": "Read in English", "date_fmt": "%d/%m/%Y", "cc": "mx",
     },
 }
 
@@ -132,7 +132,7 @@ def head(lang, title, desc, path, alt_path, og_type, image, ld, ga):
     <a class="site-nav-brand" href="{UI[lang]['home']}"><img src="/images/icon/apple-touch-icon.png" alt="" width="32" height="32">Cerqa</a>
     <div class="site-nav-right">
       <a class="site-nav-lang" href="{UI[lang]['blog']}">Blog</a>
-      <a class="site-nav-lang" href="{alt_path}" hreflang="{other}" lang="{other}">{T[lang]['lang_link']}</a>
+      <div class="lang-switch" role="group" aria-label="Language">{'<span aria-current="true">EN</span><a href="' + alt_path + '" hreflang="es" lang="es" aria-label="Español">ES</a>' if lang == "en" else '<a href="' + alt_path + '" hreflang="en" lang="en" aria-label="English">EN</a><span aria-current="true">ES</span>'}</div>
     </div>
   </nav>
 """
@@ -159,9 +159,10 @@ def foot(lang):
 """
 
 
-def card(p, lang):
+def card(p, lang, featured=False):
     v = p[lang]
-    return f"""      <a class="post-card" href="{url(lang, v['slug'])}">
+    cls = "post-card featured" if featured else "post-card"
+    return f"""      <a class="{cls}" href="{url(lang, v['slug'])}">
         <img src="{p['image']}" width="1200" height="630" loading="lazy" alt="{html.escape(v['image_alt'])}">
         <div class="post-card-text">
           <time datetime="{p['date'].isoformat()}">{nice_date(p['date'], lang)}</time>
@@ -213,7 +214,7 @@ def build_post(p, lang, posts, ga):
   <article class="post">
     <p class="crumbs"><a href="{ui['home']}">{ui['crumb_home']}</a> › <a href="{ui['blog']}">Blog</a></p>
     <h1>{v['h1']}</h1>
-    <p class="post-meta"><time datetime="{p['date'].isoformat()}">{nice_date(p['date'], lang)}</time>{updated} · {minutes(v['body'])} {ui['min']} · <a href="{alt_path}" hreflang="{other}" lang="{other}">{ui['other_lang']}</a></p>
+    <p class="post-meta"><time datetime="{p['date'].isoformat()}">{nice_date(p['date'], lang)}</time>{updated} · {minutes(v['body'])} {ui['min']} · <a href="{alt_path}" hreflang="{other}" lang="{other}" aria-label="{ui['other_lang_label']}" title="{ui['other_lang_label']}">{ui['other_lang']}</a></p>
     <img class="post-hero" src="{p['image']}" width="1200" height="630" alt="{html.escape(v['image_alt'])}">
     <div class="post-body">
 {v['body']}{faq}
@@ -244,7 +245,7 @@ def build_index(lang, posts, ga):
 
   <section class="section">
     <div class="post-list">
-{chr(10).join(card(p, lang) for p in posts)}
+{chr(10).join(card(p, lang, featured=(i == 0)) for i, p in enumerate(posts))}
     </div>
   </section>
 

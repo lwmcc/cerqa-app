@@ -97,7 +97,7 @@ T = {
         "tools": [
             ("/border-wait-times/", "US-Mexico border wait times", "Live waits at every crossing into the US, from CBP: San Ysidro, Otay Mesa, CBX and more.", "See wait times"),
             ("/gas-prices-mexico/", "Gas prices in Mexico", "Today's average price by state and city, and the cheapest stations near you. Coming soon for stations in the United States.", "See gas prices"),
-            ("/blog/", "Cerqa Blog", "Guides for sharing your location, road trips with a group and meeting up. A new post every week.", "Read the blog"),
+            ("/blog/", "Cerqa Blog", "Guides for sharing your location, road trips with a group and meeting up.", "Read the blog"),
         ],
         "planner_h": "Plan trips from your computer",
         "planner_p": "Sign in at ride.cerqa.app to set up a trip with stops and invite your friends. Everyone you add sees it on the Home screen of the app.",
@@ -197,7 +197,7 @@ T = {
         "tools": [
             ("/es/gasolina/", "Precio de la gasolina hoy", "Precio promedio por estado y ciudad, y las gasolineras más baratas. Próximamente también en Estados Unidos.", "Ver precios"),
             ("/es/garitas/", "Tiempos de espera en las garitas", "Espera en vivo para cruzar a EE. UU. en cada garita, según CBP: San Ysidro, Otay, CBX y más.", "Ver tiempos"),
-            ("/es/blog/", "Blog de Cerqa", "Guías para compartir tu ubicación, viajar en grupo y encontrarse. Una entrada nueva cada semana.", "Leer el blog"),
+            ("/es/blog/", "Blog de Cerqa", "Guías para compartir tu ubicación, viajar en grupo y encontrarse.", "Leer el blog"),
         ],
         "planner_h": "Planea viajes desde tu computadora",
         "planner_p": "Entra a ride.cerqa.app para armar un viaje con paradas e invitar a tus amigos. Todos los que agregues lo ven en la pantalla de Inicio de la app.",
@@ -367,7 +367,7 @@ def build(lang, ga):
     <a class="site-nav-brand" href="{t['path']}"><img src="/images/icon/apple-touch-icon.png" alt="" width="32" height="32">Cerqa</a>
     <div class="site-nav-right">
       <a class="site-nav-lang" href="{t['path']}blog/">Blog</a>
-      <a class="site-nav-lang" href="{t['alt']}" hreflang="{other}" lang="{other}">{t['lang_link']}</a>
+      <div class="lang-switch" role="group" aria-label="Language">{'<span aria-current="true">EN</span><a href="' + t['alt'] + '" hreflang="es" lang="es" aria-label="Español">ES</a>' if lang == "en" else '<a href="' + t['alt'] + '" hreflang="en" lang="en" aria-label="English">EN</a><span aria-current="true">ES</span>'}</div>
       <a class="site-nav-planner" href="https://ride.cerqa.app" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
         <span>{t['planner_nav']}</span>

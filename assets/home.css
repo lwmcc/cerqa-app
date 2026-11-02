@@ -42,6 +42,25 @@ a { color: #4a6fa5; }
   text-decoration: none;
 }
 
+/* Language switch: its own small EN | ES pill, so it doesn't read as another page link */
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid #d5dde8;
+  border-radius: 999px;
+  padding: 2px;
+}
+.lang-switch > * {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: #6b7a8d;
+  text-decoration: none;
+}
+.lang-switch [aria-current] { background: #1b2d4a; color: #fff; }
+.lang-switch a:hover { color: #1b2d4a; }
+
 
 /* Trip Planner: the web part of Cerqa (ride.cerqa.app), kept prominent in the top bar. */
 .site-nav-planner {

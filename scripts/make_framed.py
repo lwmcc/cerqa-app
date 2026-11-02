@@ -17,9 +17,11 @@ BEZEL = (16, 21, 29)
 EDGE = (58, 66, 80)
 
 
-def frame(shot_path, kind, width):
+def frame(shot_path, kind, width, pad_frac=None, aspect=None):
     shot = Image.open(shot_path).convert("RGB")
-    pad = round(width * (0.04 if kind == "ios" else 0.032))
+    if aspect:  # crop from the top so different phones end up the same height
+        shot = shot.crop((0, 0, shot.width, min(shot.height, round(shot.width * aspect))))
+    pad = round(width * (pad_frac or (0.04 if kind == "ios" else 0.032)))
     inner_w = width - 2 * pad
     inner_h = round(shot.height * inner_w / shot.width)
     shot = shot.resize((inner_w, inner_h), Image.LANCZOS)
@@ -82,8 +84,9 @@ def hero(ios, android, out, title=None):
         c = tuple(round(a + (b - a) * y / H) for a, b in zip(NAVY, (44, 72, 116)))
         d.line([(0, y), (W, y)], fill=c)
     phone_w = 300
-    a = frame(ios, "ios", phone_w)
-    b = frame(android, "android", phone_w)
+    # same bezel and same screen shape, so the two phones match exactly
+    a = frame(ios, "ios", phone_w, pad_frac=0.036, aspect=2868 / 1320)
+    b = frame(android, "android", phone_w, pad_frac=0.036, aspect=2868 / 1320)
     if title:
         x0 = W - 2 * phone_w - 90
         f = font(50)
@@ -95,9 +98,9 @@ def hero(ios, android, out, title=None):
         d.text((64, y + 16), "cerqa.app", font=font(26, bold=False), fill=(170, 190, 220))
     else:
         x0 = (W - 2 * phone_w - 40) // 2
-    # phones bleed off the bottom, the second a little lower
-    img.paste(a, (x0, 48), a)
-    img.paste(b, (x0 + phone_w + 40, 96), b)
+    # phones side by side at the same height, bleeding off the bottom
+    img.paste(a, (x0, 56), a)
+    img.paste(b, (x0 + phone_w + 40, 56), b)
     img.save(out, quality=88)
     print("wrote", out)
 

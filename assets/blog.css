@@ -23,6 +23,16 @@
 .post-card p { font-size: 15px; color: #4b5b73; margin: 0 0 12px; }
 .post-card .go { font-weight: 600; color: #4a6fa5; font-size: 15px; }
 
+/* Newest post on the index: one wide card across the whole row, image left, text right */
+.post-card.featured { grid-column: 1 / -1; }
+@media (min-width: 760px) {
+  .post-card.featured { flex-direction: row; align-items: center; }
+  .post-card.featured img { width: 58%; flex: none; }
+  .post-card.featured .post-card-text { padding: 28px 36px; }
+  .post-card.featured h2 { font-size: 28px; letter-spacing: -0.4px; }
+  .post-card.featured p { font-size: 17px; }
+}
+
 .post { max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; }
 .post .crumbs { font-size: 14px; color: #8a97a8; margin: 0 0 8px; }
 .post .crumbs a { color: #6b7a8d; text-decoration: none; }

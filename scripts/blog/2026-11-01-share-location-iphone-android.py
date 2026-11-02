@@ -15,7 +15,7 @@ POST = {
       <p>Here's how to share locations seamlessly between iPhone and Android, and get everyone set up in just a couple of minutes.</p>
 
       <h2>Why your phone's built-in location sharing isn't enough</h2>
-      <p>Location sharing built into your phone is typically designed to work best within the same ecosystem. iPhone users can easily share with other iPhone users, and Android users with other Android users. But when your family or friends use a mix of both, staying connected isn't so simple.</p>
+      <p>Location sharing built into your phone is typically designed to work best within the same ecosystem. iPhone users can easily share with other iPhone users, and Android users with other Android users. But when your family or friends use a mix of both, staying connected may not always be simple.</p>
       <p>To share between an iPhone and an Android phone, you need an app that runs on both. Cerqa is free for iPhone and for Android, and it's made for getting people to the same place: share with one friend or a whole group, see when everyone will arrive, and navigate together.</p>
 
       <h2>How to share your location with Cerqa</h2>
@@ -56,7 +56,7 @@ POST = {
       <p>Así puedes compartir tu ubicación sin complicaciones entre iPhone y Android, y tener a todos listos en solo un par de minutos.</p>
 
       <h2>Por qué no basta con compartir ubicación desde tu teléfono</h2>
-      <p>La función para compartir ubicación que trae tu teléfono normalmente está pensada para funcionar mejor dentro del mismo ecosistema. Quienes usan iPhone comparten fácilmente con otros usuarios de iPhone, y quienes usan Android con otros usuarios de Android. Pero cuando tu familia o tus amigos usan de los dos, mantenerse conectados no es tan sencillo.</p>
+      <p>La función para compartir ubicación que trae tu teléfono normalmente está pensada para funcionar mejor dentro del mismo ecosistema. Quienes usan iPhone comparten fácilmente con otros usuarios de iPhone, y quienes usan Android con otros usuarios de Android. Pero cuando tu familia o tus amigos usan de los dos, mantenerse conectados no siempre es sencillo.</p>
       <p>Para compartir entre un iPhone y un Android necesitas una app que funcione en los dos. Cerqa es gratis para iPhone y para Android, y está hecha para que todos lleguen al mismo lugar: comparte con un amigo o con todo un grupo, ve a qué hora llega cada quien y naveguen juntos.</p>
 
       <h2>Cómo compartir tu ubicación con Cerqa</h2>

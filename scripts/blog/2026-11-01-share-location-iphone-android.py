@@ -28,8 +28,9 @@ POST = {
       </ol>
       <p><strong>You're in control.</strong> Location sharing automatically ends when the selected time expires. You can also stop sharing at any time. Once sharing ends, Cerqa stops sharing your live location.</p>
 
-      <h2>Sharing with a group</h2>
-      <p>For a road trip, a game, or a night out, make a group and share with everyone at once. Everyone shows up on one map, iPhones and Android phones together, and the group chat is right there too. On the free plan a group can have up to 5 people and you can share for up to an hour. <a href="/#plans">Pro</a> raises that to 25 people and 24 hours.</p>
+      <h2>Share your location with a group</h2>
+      <p>Whether you're heading out on a road trip, meeting up for a game, or enjoying a night out, Cerqa makes it easy to stay connected. Create a group and share your location with everyone at once. Everyone appears together on one map, whether they're using an iPhone or Android. You also get a group chat to keep everyone in the loop.</p>
+      <p>With the <strong>Free plan</strong>, groups can include up to 5 people, with location sharing for up to 1 hour. Upgrade to <a href="/#plans">Pro</a> to include up to 25 people and share for up to 24 hours.</p>
 
       <h2>Tips</h2>
       <ul>
@@ -68,8 +69,9 @@ POST = {
       </ol>
       <p><strong>Tú tienes el control.</strong> Compartir tu ubicación termina solo cuando se acaba el tiempo que elegiste. También puedes dejar de compartir cuando quieras. Cuando se termina, Cerqa deja de compartir tu ubicación en vivo.</p>
 
-      <h2>Compartir con un grupo</h2>
-      <p>Para un viaje en carretera, un partido o una salida, haz un grupo y comparte con todos a la vez. Todos aparecen en un solo mapa, iPhone y Android juntos, y el chat del grupo está ahí mismo. En el plan gratis un grupo puede tener hasta 5 personas y puedes compartir hasta una hora. <a href="/es/#plans">Pro</a> lo sube a 25 personas y 24 horas.</p>
+      <h2>Comparte tu ubicación con un grupo</h2>
+      <p>Ya sea que salgas de viaje en carretera, se junten para ver un partido o disfruten una noche fuera, Cerqa hace fácil mantenerse conectados. Crea un grupo y comparte tu ubicación con todos a la vez. Todos aparecen juntos en un solo mapa, ya sea que usen iPhone o Android. También tienen un chat de grupo para que todos estén al tanto.</p>
+      <p>Con el <strong>plan Gratis</strong>, los grupos pueden tener hasta 5 personas y compartir ubicación hasta 1 hora. Cámbiate a <a href="/es/#plans">Pro</a> para tener hasta 25 personas y compartir hasta 24 horas.</p>
 
       <h2>Consejos</h2>
       <ul>

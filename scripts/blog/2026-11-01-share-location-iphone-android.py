@@ -32,11 +32,11 @@ POST = {
       <p>Whether you're heading out on a road trip, meeting up for a game, or enjoying a night out, Cerqa makes it easy to stay connected. Create a group and share your location with everyone at once. Everyone appears together on one map, whether they're using an iPhone or Android. You also get a group chat to keep everyone in the loop.</p>
       <p>With the <strong>Free plan</strong>, groups can include up to 5 people, with location sharing for up to 1 hour. Upgrade to <a href="/#plans">Pro</a> to include up to 25 people and share for up to 24 hours.</p>
 
-      <h2>Tips</h2>
+      <h2>Tips for better location sharing</h2>
       <ul>
-        <li><strong>Share for a set time, not forever.</strong> Most of the time you only need to see someone until they arrive.</li>
-        <li><strong>Turn on precise location</strong> for the app on both phones, so the dot is where they really are.</li>
-        <li><strong>Allow location while the app isn't open</strong> if you want your friends to keep seeing you when your phone is in your pocket.</li>
+        <li><strong>Set a time limit.</strong> You usually only need to share your location until someone arrives. Choose a duration that makes sense for your plans rather than sharing indefinitely.</li>
+        <li><strong>Enable precise location.</strong> Make sure precise location access is enabled for Cerqa on both iPhone and Android so your location appears as accurately as possible.</li>
+        <li><strong>Allow background location access.</strong> If you want friends and family to see your location while Cerqa is not open, allow location access in the background. This lets Cerqa continue updating your location while your phone is in your pocket or you're using another app.</li>
       </ul>
 """,
         "faq": [
@@ -73,11 +73,11 @@ POST = {
       <p>Ya sea que salgas de viaje en carretera, se junten para ver un partido o disfruten una noche fuera, Cerqa hace fácil mantenerse conectados. Crea un grupo y comparte tu ubicación con todos a la vez. Todos aparecen juntos en un solo mapa, ya sea que usen iPhone o Android. También tienen un chat de grupo para que todos estén al tanto.</p>
       <p>Con el <strong>plan Gratis</strong>, los grupos pueden tener hasta 5 personas y compartir ubicación hasta 1 hora. Cámbiate a <a href="/es/#plans">Pro</a> para tener hasta 25 personas y compartir hasta 24 horas.</p>
 
-      <h2>Consejos</h2>
+      <h2>Consejos para compartir mejor tu ubicación</h2>
       <ul>
-        <li><strong>Comparte por un tiempo, no para siempre.</strong> Casi siempre solo necesitas ver a alguien hasta que llegue.</li>
-        <li><strong>Activa la ubicación precisa</strong> para la app en los dos teléfonos, para que el punto esté donde de verdad están.</li>
-        <li><strong>Permite la ubicación con la app cerrada</strong> si quieres que tus amigos te sigan viendo con el teléfono en la bolsa.</li>
+        <li><strong>Pon un límite de tiempo.</strong> Normalmente solo necesitas compartir tu ubicación hasta que alguien llegue. Elige una duración que tenga sentido para tus planes en lugar de compartir indefinidamente.</li>
+        <li><strong>Activa la ubicación precisa.</strong> Asegúrate de que Cerqa tenga acceso a la ubicación precisa en iPhone y en Android para que tu ubicación aparezca lo más exacta posible.</li>
+        <li><strong>Permite el acceso a la ubicación en segundo plano.</strong> Si quieres que tu familia y tus amigos vean tu ubicación aunque Cerqa no esté abierta, permite el acceso a la ubicación en segundo plano. Así Cerqa sigue actualizando tu ubicación mientras tu teléfono está en tu bolsa o usas otra app.</li>
       </ul>
 """,
         "faq": [

@@ -64,7 +64,7 @@ T = {
             ("Made for iPhone", "A more familiar iPhone experience, with a translucent tab bar, easier access to location sharing, clearer titles, responsive touch feedback, and improved VoiceOver support."),
             ("Made for Android", "A more familiar Android experience, with intuitive bottom navigation and location sharing just a tap away from the map."),
             ("Pick me up", "Ask a friend for a ride. They get your spot and directions to you."),
-            ("Meet Me", "Choose a meeting place, share it with others, and see everyone make their way there."),
+            ("Meet me", "Choose a meeting place, share it with others, and see everyone make their way there."),
             ("Ride along", "Follow a friend's drive and see their next turns."),
             ("Share your location in chat", "Drop a pin when you want to, see who's on the way, and get a recap after the drive."),
         ],

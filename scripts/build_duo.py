@@ -6,9 +6,11 @@ home page's nav, badges, analytics and styles (assets/home.css). Run from the re
 LAUNCH: the Duo update is approved, so while the Duo isn't out the page says "Ready for iPhone Duo". When the Duo
 ships, set COMING_SOON = False here and in build_home.py, then rerun both.
 """
+import json
 import os
+import re
 
-from build_home import SITE, T, analytics, badges
+from build_home import APP_STORE, SITE, T, analytics, badges
 
 COMING_SOON = True
 
@@ -40,6 +42,15 @@ BENEFITS = [
 ]
 
 
+FAQ = [
+    ("Does Cerqa work on iPhone Duo?", "Yes. Cerqa is made for both screens: open, your people, plans and chat sit beside a full map; folded, you get turn-by-turn directions on the outer screen."),
+    ("Do my friends need an iPhone Duo too?", 'No. Cerqa runs on every iPhone and on Android, so you can share locations with anyone. <a href="/blog/share-location-between-iphone-and-android/">How sharing works across iPhone and Android</a>.'),
+    ("What happens when I fold or unfold it while driving?", "Cerqa keeps your trip going. Fold it and directions move to the outer screen; open it and the group map and your trip sit side by side."),
+    ("Is Cerqa free on iPhone Duo?", "Yes. Location sharing with friends and small groups is free. Pro adds group navigation, longer sharing and bigger groups."),
+    ("Does it work with Apple CarPlay?", "Yes. Your route and your group show on your car's screen."),
+]
+
+
 def build(ga):
     t = T["en"]
     pill = "Ready for iPhone Duo" if COMING_SOON else "Now on iPhone Duo"
@@ -58,8 +69,23 @@ def build(ga):
         <h3>{h}</h3>
         <p>{p}</p>
       </div>""" for icon, h, p in BENEFITS)
-    title = "Cerqa on iPhone Duo | Live location and group navigation, unfolded"
-    desc = ("Cerqa is made for iPhone Duo. Open it for a big map with your whole group beside it, "
+    faq = "\n".join(f'      <details class="faq"><summary>{q}</summary><p>{a}</p></details>' for q, a in FAQ)
+    ld = [
+        {"@context": "https://schema.org", "@type": "MobileApplication", "name": "Cerqa", "url": SITE + PATH,
+         "operatingSystem": "iOS", "applicationCategory": "TravelApplication",
+         "description": "Live location sharing and group navigation made for iPhone Duo's two screens.",
+         "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+         "downloadUrl": APP_STORE.format(cc="us"), "screenshot": SITE + "/images/duo/inner-1.webp",
+         "publisher": {"@type": "Organization", "name": "Cerqa", "url": SITE + "/"}},
+        {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": re.sub(r"<[^>]+>", "", a)}} for q, a in FAQ]},
+        {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Cerqa", "item": SITE + "/"},
+            {"@type": "ListItem", "position": 2, "name": "iPhone Duo", "item": SITE + PATH}]},
+    ]
+    ld_tags = "\n".join(f'  <script type="application/ld+json">\n  {json.dumps(x, ensure_ascii=False)}\n  </script>' for x in ld)
+    title = "Cerqa for iPhone Duo | Location sharing and group navigation on a foldable iPhone"
+    desc = ("Cerqa is made for iPhone Duo, the foldable iPhone. Open it for a big map with your whole group beside it, "
             "fold it for turn-by-turn directions. " + ("Free on the App Store, ready for iPhone Duo when it launches." if COMING_SOON else "Free on the App Store."))
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -80,7 +106,9 @@ def build(ga):
   <meta property="og:image" content="{SITE}/images/social/cerqa-iphone-duo.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
+{ld_tags}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -97,13 +125,14 @@ def build(ga):
   <nav class="site-nav">
     <a class="site-nav-brand" href="/"><img src="/images/icon/apple-touch-icon.png" alt="" width="32" height="32">Cerqa</a>
     <div class="site-nav-right">
+      <a class="site-nav-lang" href="/blog/">Blog</a>
       <a class="site-nav-lang" href="/">cerqa.app</a>
     </div>
   </nav>
 
   <header class="hero duo-hero">
     <span class="duo-pill">{pill}</span>
-    <h1>Cerqa, unfolded.</h1>
+    <h1>Cerqa on iPhone Duo, unfolded.</h1>
     <p class="subtext">Open your iPhone Duo for a big map with your whole group beside it. Fold it to drive.</p>
     {badges(t, 'iphone_duo')}
     <p class="fine">{fine} <a href="/">Learn more about Cerqa</a></p>
@@ -181,6 +210,15 @@ def build(ga):
     </div>
     <div class="benefits">
 {benefits}
+    </div>
+  </section>
+
+  <section class="section faq-section" id="faq">
+    <div class="section-header">
+      <h2>iPhone Duo questions</h2>
+    </div>
+    <div class="faq-list">
+{faq}
     </div>
   </section>
 

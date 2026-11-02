@@ -4,6 +4,8 @@ so the two stay in sync. Edit the text here, then run from the repo root:
     python3 scripts/build_home.py
 Styles live in assets/home.css.
 """
+import json
+import os
 import re
 
 # iPhone Duo: the Duo update is approved, so "Ready for iPhone Duo" until the Duo ships; then set False
@@ -18,6 +20,12 @@ PLAY = ("https://play.google.com/store/apps/details?id=com.cerqa.app&amp;referre
 ICON_PEOPLE = '<svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>'
 ICON_NAV = '<svg viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>'
 ICON_TRIP = '<svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm-7-8.5c-1.38 0-2.5 1.12-2.5 2.5 0 1.88 2.5 4.5 2.5 4.5s2.5-2.62 2.5-4.5c0-1.38-1.12-2.5-2.5-2.5z"/></svg>'
+
+# Version 1.19 preview: four phones in device frames under the hero. The section shows only once all four
+# images exist in images/next/ (captured from the dev demo world, 560 px wide webp). Set NEXT_RELEASE = None
+# when 1.19 is out, or move the copy into the regular sections.
+NEXT_RELEASE = "1.19"
+NEXT_SHOTS = [("ios", "ios-1", 1217), ("android", "android-1", 1250)]  # (kind, file, height at 560 wide)
 
 SHOTS = [  # (file, ios file) shown as iPhone + Android pairs
     ("01-home", "01-home"),
@@ -47,6 +55,19 @@ T = {
         "duo_p": "Unfold your iPhone Duo for a big map where you can see and share locations with friends. Fold it, and drive.",
         "duo_link": "See Cerqa on iPhone Duo",
         "duo_alt": ("Cerqa on the open iPhone Duo: everyone's route to the same place, with traffic ahead", "Cerqa on the closed iPhone Duo: turn-by-turn with the group's routes beside yours"),
+        "next_pill": "Version {v} · Coming soon",
+        "next_h": "Feels at home on your phone",
+        "next_p": "The next update gives Cerqa the look and feel of each phone, and new ways to get each other there.",
+        "next_alt": ["Cerqa 1.19 on iPhone: friends on the way to dinner with arrival times, a glass tab bar and Sharing location just above it",
+                     "Cerqa 1.19 on Android: the same friends and arrival times, with the Material navigation bar"],
+        "next_items": [
+            ("Native on iPhone", "Glass tab bar, Share location one tap away, large titles, haptics and better VoiceOver."),
+            ("Native on Android", "Material navigation bar and a Share location button right on the map."),
+            ("Pick me up", "Ask a friend for a ride. They get your spot and directions to you."),
+            ("Meet me", "Send a place to meet and watch each other head there."),
+            ("Ride along", "Follow a friend's drive and see their next turns."),
+            ("Chat that knows where you are", "Pin your spot, share live cards and get a recap of the drive."),
+        ],
         "benefits_h": "One map for the whole group",
         "benefits_p": "No more \"where are you?\" texts.",
         "benefits": [
@@ -76,6 +97,7 @@ T = {
         "tools": [
             ("/border-wait-times/", "US-Mexico border wait times", "Live waits at every crossing into the US, from CBP: San Ysidro, Otay Mesa, CBX and more.", "See wait times"),
             ("/gas-prices-mexico/", "Gas prices in Mexico", "Today's average price by state and city, and the cheapest stations near you. Coming soon for stations in the United States.", "See gas prices"),
+            ("/blog/", "Cerqa Blog", "Guides for sharing your location, road trips with a group and meeting up. A new post every week.", "Read the blog"),
         ],
         "planner_h": "Plan trips from your computer",
         "planner_p": "Sign in at ride.cerqa.app to set up a trip with stops and invite your friends. Everyone you add sees it on the Home screen of the app.",
@@ -99,7 +121,15 @@ T = {
         "plans_note": "You can upgrade to Pro in the app.",
         "final_h": "Your next trip starts here",
         "final_p": "Get Cerqa free and invite the people you travel with.",
-        "footer": [("/feedback", "Feedback"), ("/support/", "Support"), ("/privacy/en/", "Privacy Policy"),
+        "faq_h": "Questions",
+        "faq": [
+            ("Can I share my location between iPhone and Android?", 'Yes. Cerqa runs on both, so everyone shows up on one map. <a href="/blog/share-location-between-iphone-and-android/">Here is how</a>.'),
+            ("Is Cerqa free?", "Yes. Share with a friend or a group of up to 5 for up to an hour at a time. Pro adds 24-hour sharing, groups of up to 25, group navigation and trips."),
+            ("Does Cerqa keep tracking me after I stop sharing?", "No. You choose how long to share, it ends on its own when the time is up, and you can stop any time."),
+            ("Does Cerqa work with Apple CarPlay?", "Yes. Directions and your group show on your car's screen."),
+            ("Can I plan a group trip from my computer?", 'Yes. Sign in at <a href="https://ride.cerqa.app">ride.cerqa.app</a> to add stops and invite friends. Everyone sees the trip in the app.'),
+        ],
+        "footer": [("/blog/", "Blog"), ("/feedback", "Feedback"), ("/support/", "Support"), ("/privacy/en/", "Privacy Policy"),
                    ("/terms/en/", "Terms of Service"), ("/border-wait-times/", "Border wait times"),
                    ("/gas-prices-mexico/", "Gas prices in Mexico"),
                    ("https://www.facebook.com/profile.php?id=61594994114331", "Facebook")],
@@ -125,6 +155,19 @@ T = {
         "duo_p": "Abre tu iPhone Duo y tendrás un mapa grande donde puedes ver y compartir ubicaciones con tus amigos. Ciérralo y maneja.",
         "duo_link": "Ver Cerqa en iPhone Duo (en inglés)",
         "duo_alt": ("Cerqa en el iPhone Duo abierto: la ruta de cada quien al mismo lugar, con el tráfico por delante", "Cerqa en el iPhone Duo cerrado: indicaciones paso a paso con las rutas del grupo junto a la tuya"),
+        "next_pill": "Versión {v} · Muy pronto",
+        "next_h": "Se siente en casa en tu teléfono",
+        "next_p": "La próxima actualización le da a Cerqa el estilo de cada teléfono, y nuevas formas de llegar unos por otros.",
+        "next_alt": ["Cerqa 1.19 en iPhone: amigos en camino a la cena con su hora de llegada, barra de pestañas de vidrio y Compartiendo ubicación justo arriba",
+                     "Cerqa 1.19 en Android: los mismos amigos y horas de llegada, con la barra de navegación Material"],
+        "next_items": [
+            ("Nativa en iPhone", "Barra de pestañas de vidrio, Compartir ubicación a un toque, títulos grandes, vibración y mejor VoiceOver."),
+            ("Nativa en Android", "Barra de navegación Material y un botón para compartir ubicación en el mapa."),
+            ("Recógeme", "Pídele a un amigo que pase por ti. Recibe dónde estás y cómo llegar."),
+            ("Vernos", "Manda un lugar para verse y vean cómo va llegando cada quien."),
+            ("Acompañar", "Sigue el viaje de un amigo y ve sus próximas vueltas."),
+            ("Un chat que sabe dónde estás", "Fija tu ubicación, comparte tarjetas en vivo y recibe un resumen del viaje."),
+        ],
         "benefits_h": "Un solo mapa para todo el grupo",
         "benefits_p": "Se acabaron los mensajes de \"¿dónde vienes?\".",
         "benefits": [
@@ -154,6 +197,7 @@ T = {
         "tools": [
             ("/es/gasolina/", "Precio de la gasolina hoy", "Precio promedio por estado y ciudad, y las gasolineras más baratas. Próximamente también en Estados Unidos.", "Ver precios"),
             ("/es/garitas/", "Tiempos de espera en las garitas", "Espera en vivo para cruzar a EE. UU. en cada garita, según CBP: San Ysidro, Otay, CBX y más.", "Ver tiempos"),
+            ("/es/blog/", "Blog de Cerqa", "Guías para compartir tu ubicación, viajar en grupo y encontrarse. Una entrada nueva cada semana.", "Leer el blog"),
         ],
         "planner_h": "Planea viajes desde tu computadora",
         "planner_p": "Entra a ride.cerqa.app para armar un viaje con paradas e invitar a tus amigos. Todos los que agregues lo ven en la pantalla de Inicio de la app.",
@@ -177,7 +221,15 @@ T = {
         "plans_note": "Puedes cambiarte a Pro desde la app.",
         "final_h": "Tu próximo viaje empieza aquí",
         "final_p": "Descarga Cerqa gratis e invita a las personas con las que viajas.",
-        "footer": [("/es/comentarios/", "Comentarios"), ("/support/", "Ayuda"), ("/privacy/es/", "Aviso de privacidad"),
+        "faq_h": "Preguntas",
+        "faq": [
+            ("¿Puedo compartir mi ubicación entre iPhone y Android?", 'Sí. Cerqa funciona en los dos, así que todos aparecen en un solo mapa. <a href="/es/blog/compartir-ubicacion-entre-iphone-y-android/">Así se hace</a>.'),
+            ("¿Cerqa es gratis?", "Sí. Comparte con un amigo o un grupo de hasta 5 personas, hasta una hora a la vez. Pro agrega 24 horas, grupos de hasta 25, navegación en grupo y viajes."),
+            ("¿Cerqa me sigue rastreando cuando dejo de compartir?", "No. Tú eliges cuánto tiempo compartir, termina solo cuando se acaba el tiempo y lo puedes detener cuando quieras."),
+            ("¿Cerqa funciona con Apple CarPlay?", "Sí. Las indicaciones y tu grupo aparecen en la pantalla de tu auto."),
+            ("¿Puedo planear un viaje en grupo desde mi computadora?", 'Sí. Entra a <a href="https://ride.cerqa.app">ride.cerqa.app</a> para agregar paradas e invitar amigos. Todos ven el viaje en la app.'),
+        ],
+        "footer": [("/es/blog/", "Blog"), ("/es/comentarios/", "Comentarios"), ("/support/", "Ayuda"), ("/privacy/es/", "Aviso de privacidad"),
                    ("/terms/es/", "Términos del servicio"), ("/es/garitas/", "Tiempos en garitas"),
                    ("/es/gasolina/", "Precio de la gasolina"),
                    ("https://www.facebook.com/profile.php?id=61594994114331", "Facebook")],
@@ -234,6 +286,35 @@ def build(lang, ga):
         <p>{p}</p>
         <span class="go">{go} →</span>
       </a>""" for href, h, p, go in t["tools"])
+    next_section = ""
+    if NEXT_RELEASE and all(os.path.exists(f"images/next/{f}.webp") for _, f, _ in NEXT_SHOTS):
+        phones = "\n".join(f"""        <div class="device device-{kind}"><img src="/images/next/{f}.webp" width="560" height="{h}" loading="lazy" alt="{alt}"></div>"""
+                           for (kind, f, h), alt in zip(NEXT_SHOTS, t["next_alt"]))
+        items = "\n".join(f"          <li><strong>{h}</strong> {p}</li>" for h, p in t["next_items"])
+        next_section = f"""
+  <section class="section next-release" id="next">
+    <div class="section-header">
+      <span class="duo-pill">{t['next_pill'].format(v=NEXT_RELEASE)}</span>
+      <h2>{t['next_h']}</h2>
+      <p>{t['next_p']}</p>
+    </div>
+    <div class="next-devices">
+{phones}
+    </div>
+    <ul class="next-list">
+{items}
+    </ul>
+  </section>
+"""
+    faq = "\n".join(f'      <details class="faq"><summary>{q}</summary><p>{a}</p></details>' for q, a in t["faq"])
+    faq_ld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": re.sub(r"<[^>]+>", "", a)}}
+        for q, a in t["faq"]]}, ensure_ascii=False)
+    site_ld = json.dumps([
+        {"@context": "https://schema.org", "@type": "Organization", "name": "Cerqa", "legalName": "Cerqa LLC", "url": SITE + "/",
+         "logo": SITE + "/images/icon/apple-touch-icon.png", "sameAs": ["https://www.facebook.com/profile.php?id=61594994114331"]},
+        {"@context": "https://schema.org", "@type": "WebSite", "name": "Cerqa", "url": SITE + "/", "inLanguage": ["en", "es"]},
+    ], ensure_ascii=False)
     plan_rows = "\n".join(f"          <tr><td>{name}</td>{cell(free)}{cell(pro)}</tr>" for name, free, pro in t["plans"])
     other = "es" if lang == "en" else "en"
     return f"""<!DOCTYPE html>
@@ -269,6 +350,12 @@ def build(lang, ga):
    "sameAs":["{APP_STORE.format(cc=t['cc'])}","https://play.google.com/store/apps/details?id=com.cerqa.app"],
    "publisher":{{"@type":"Organization","name":"Cerqa","url":"{SITE}/","sameAs":["https://www.facebook.com/profile.php?id=61594994114331"]}}}}
   </script>
+  <script type="application/ld+json">
+  {faq_ld}
+  </script>
+  <script type="application/ld+json">
+  {site_ld}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -279,6 +366,7 @@ def build(lang, ga):
   <nav class="site-nav">
     <a class="site-nav-brand" href="{t['path']}"><img src="/images/icon/apple-touch-icon.png" alt="" width="32" height="32">Cerqa</a>
     <div class="site-nav-right">
+      <a class="site-nav-lang" href="{t['path']}blog/">Blog</a>
       <a class="site-nav-lang" href="{t['alt']}" hreflang="{other}" lang="{other}">{t['lang_link']}</a>
       <a class="site-nav-planner" href="https://ride.cerqa.app" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
@@ -299,6 +387,7 @@ def build(lang, ga):
     <div class="phone-wrap"><img src="/images/ios/ios-1.png" width="443" height="900" alt="{t['phones_alt'][1]}"></div>
   </div>
 
+{next_section}
   <section class="section duo-band">
     <a class="duo-band-card" href="/iphone-duo/">
       <div class="duo-band-text">
@@ -390,6 +479,15 @@ def build(lang, ga):
       </table>
     </div>
     <p class="plans-note">{t['plans_note']}</p>
+  </section>
+
+  <section class="section faq-section" id="faq">
+    <div class="section-header">
+      <h2>{t['faq_h']}</h2>
+    </div>
+    <div class="faq-list">
+{faq}
+    </div>
   </section>
 
   <section class="final">

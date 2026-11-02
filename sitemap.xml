@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://cerqa.app/</loc><lastmod>2026-10-17</lastmod>
+  <url><loc>https://cerqa.app/</loc><lastmod>2026-11-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/"/>
   </url>
-  <url><loc>https://cerqa.app/es/</loc><lastmod>2026-10-17</lastmod>
+  <url><loc>https://cerqa.app/es/</loc><lastmod>2026-11-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/"/>
   </url>
-  <url><loc>https://cerqa.app/iphone-duo/</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://cerqa.app/iphone-duo/</loc><lastmod>2026-11-01</lastmod></url>
   <url><loc>https://cerqa.app/privacy/en/</loc><lastmod>2026-10-13</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/privacy/en/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/privacy/es/"/>
@@ -157,4 +157,26 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/rutas/tijuana-a-playa-del-carmen/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/routes/tijuana-to-playa-del-carmen/"/>
   </url>
+  <!-- BLOG START (written by scripts/build_blog.py) -->
+  <url><loc>https://cerqa.app/blog/</loc><lastmod>2026-11-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/blog/"/>
+  </url>
+  <url><loc>https://cerqa.app/es/blog/</loc><lastmod>2026-11-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/blog/"/>
+  </url>
+  <url><loc>https://cerqa.app/blog/share-location-between-iphone-and-android/</loc><lastmod>2026-11-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/blog/share-location-between-iphone-and-android/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/blog/compartir-ubicacion-entre-iphone-y-android/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/blog/share-location-between-iphone-and-android/"/>
+  </url>
+  <url><loc>https://cerqa.app/es/blog/compartir-ubicacion-entre-iphone-y-android/</loc><lastmod>2026-11-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/blog/share-location-between-iphone-and-android/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/blog/compartir-ubicacion-entre-iphone-y-android/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/blog/share-location-between-iphone-and-android/"/>
+  </url>
+  <!-- BLOG END -->
 </urlset>

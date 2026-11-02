@@ -1,0 +1,39 @@
+/* Blog: index cards and post pages. Shares nav, hero, final and footer with home.css. */
+.blog-hero { padding-bottom: 8px; }
+
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.post-card {
+  display: flex; flex-direction: column;
+  background: #fff; border-radius: 20px; overflow: hidden;
+  text-decoration: none; color: inherit;
+  box-shadow: 0 1px 3px rgba(27,45,74,0.08);
+  transition: transform .15s, box-shadow .15s;
+}
+.post-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(27,45,74,0.12); }
+.post-card img { width: 100%; height: auto; display: block; aspect-ratio: 1200 / 630; object-fit: cover; }
+.post-card-text { padding: 18px 20px 22px; }
+.post-card time { font-size: 13px; color: #8a97a8; }
+.post-card h2 { font-size: 20px; line-height: 1.3; margin: 4px 0 8px; }
+.post-card p { font-size: 15px; color: #4b5b73; margin: 0 0 12px; }
+.post-card .go { font-weight: 600; color: #4a6fa5; font-size: 15px; }
+
+.post { max-width: 720px; margin: 0 auto; padding: 24px 16px 48px; }
+.post .crumbs { font-size: 14px; color: #8a97a8; margin: 0 0 8px; }
+.post .crumbs a { color: #6b7a8d; text-decoration: none; }
+.post h1 { font-size: clamp(30px, 5vw, 42px); line-height: 1.15; letter-spacing: -0.8px; margin: 0 0 10px; }
+.post-meta { font-size: 14px; color: #8a97a8; margin: 0 0 24px; }
+.post-hero { width: 100%; height: auto; border-radius: 20px; display: block; margin-bottom: 28px; }
+.post-body { font-size: 18px; color: #2b3d5a; }
+.post-body h2 { font-size: 26px; letter-spacing: -0.4px; margin: 36px 0 10px; color: #1b2d4a; }
+.post-body h3 { font-size: 20px; margin: 28px 0 8px; }
+.post-body li { margin-bottom: 8px; }
+.post-body img { max-width: 100%; height: auto; border-radius: 16px; }
+.post-body .faq { background: #fff; border-radius: 14px; padding: 14px 18px; margin: 10px 0; }
+.post-body .faq summary { font-weight: 600; cursor: pointer; }
+.post-body .faq p { margin: 10px 0 0; font-size: 16px; }

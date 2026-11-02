@@ -57,7 +57,7 @@ T = {
         "duo_alt": ("Cerqa on the open iPhone Duo: everyone's route to the same place, with traffic ahead", "Cerqa on the closed iPhone Duo: turn-by-turn with the group's routes beside yours"),
         "next_pill": "Version {v} · Coming soon",
         "next_h": "Feels right at home on your phone",
-        "next_p": "The next Cerqa update brings a more familiar look and feel to iPhone and Android, with an interface designed for each platform and new ways to stay connected and get where you're going together.",
+        "next_p": "The next Cerqa update makes it look and feel like the other apps on your iPhone or Android phone, and adds new ways to stay connected and get where you're going together.",
         "next_alt": ["Cerqa 1.19 on iPhone: friends on the way to dinner with arrival times, a glass tab bar and Sharing location just above it",
                      "Cerqa 1.19 on Android: the same friends and arrival times, with familiar navigation along the bottom"],
         "next_items": [
@@ -157,7 +157,7 @@ T = {
         "duo_alt": ("Cerqa en el iPhone Duo abierto: la ruta de cada quien al mismo lugar, con el tráfico por delante", "Cerqa en el iPhone Duo cerrado: indicaciones paso a paso con las rutas del grupo junto a la tuya"),
         "next_pill": "Versión {v} · Muy pronto",
         "next_h": "Te vas a sentir como en casa en tu teléfono",
-        "next_p": "La próxima actualización de Cerqa trae un diseño más familiar en iPhone y Android, con una interfaz hecha para cada plataforma y nuevas formas de mantenerse conectados y llegar juntos a donde van.",
+        "next_p": "La próxima actualización hace que Cerqa se vea y se sienta como las demás apps de tu iPhone o tu Android, y trae nuevas formas de mantenerse conectados y llegar juntos a donde van.",
         "next_alt": ["Cerqa 1.19 en iPhone: amigos en camino a la cena con su hora de llegada, barra de pestañas de vidrio y Compartiendo ubicación justo arriba",
                      "Cerqa 1.19 en Android: los mismos amigos y horas de llegada, con la navegación de siempre abajo"],
         "next_items": [

@@ -12,10 +12,10 @@ POST = {
         "desc": "iPhone to Android, Android to Android, or iPhone to iPhone. Here is how to share live location with anyone, for a few minutes or a whole day, and see when everyone will arrive.",
         "image_alt": "Cerqa on iPhone and Android side by side: the same friends on the way to dinner, with live arrival times",
         "body": """      <p>Most families and groups of friends use a mix of smartphones, with some members using iPhones and others using Android devices. That matters when you want to see where someone is, because the location sharing built into each phone mostly works only with the same type of device.</p>
-      <p>Here is what works across both, and how to set it up in a couple of minutes.</p>
+      <p>Here's how to share locations seamlessly between iPhone and Android, and get everyone set up in just a couple of minutes.</p>
 
-      <h2>Why the sharing built into your phone isn't enough</h2>
-      <p>The location sharing built into a phone is made for phones of the same type. Friends on the other kind of phone can't open it, so they can't see you and you can't see them.</p>
+      <h2>Why your phone's built-in location sharing isn't enough</h2>
+      <p>Location sharing built into your phone is typically designed to work best within the same ecosystem. iPhone users can easily share with other iPhone users, and Android users with other Android users. But when your family or friends use a mix of both, staying connected isn't so simple.</p>
       <p>To share between an iPhone and an Android phone, you need an app that runs on both. Cerqa is free for iPhone and for Android, and it's made for getting people to the same place: share with one friend or a whole group, see when everyone will arrive, and navigate together.</p>
 
       <h2>How to share your location with Cerqa</h2>
@@ -51,10 +51,10 @@ POST = {
         "desc": "De iPhone a Android, de Android a Android o de iPhone a iPhone. Así compartes tu ubicación en vivo con quien sea, por unos minutos o un día entero, y ves a qué hora llega cada quien.",
         "image_alt": "Cerqa en iPhone y Android lado a lado: los mismos amigos en camino a la cena, con su hora de llegada en vivo",
         "body": """      <p>Casi todas las familias y grupos de amigos usan una mezcla de smartphones: algunos usan iPhone y otros usan Android. Eso importa cuando quieres ver dónde viene alguien, porque la función de compartir ubicación de cada teléfono casi siempre funciona solo con el mismo tipo de dispositivo.</p>
-      <p>Esto es lo que sí funciona entre los dos, y cómo configurarlo en un par de minutos.</p>
+      <p>Así puedes compartir tu ubicación sin complicaciones entre iPhone y Android, y tener a todos listos en solo un par de minutos.</p>
 
-      <h2>Por qué no basta con la función que trae tu teléfono</h2>
-      <p>La función para compartir ubicación que trae cada teléfono está hecha para teléfonos del mismo tipo. Tus amigos con otro tipo de teléfono no la pueden abrir, así que no te ven y tú no los ves a ellos.</p>
+      <h2>Por qué no basta con compartir ubicación desde tu teléfono</h2>
+      <p>La función para compartir ubicación que trae tu teléfono normalmente está pensada para funcionar mejor dentro del mismo ecosistema. Quienes usan iPhone comparten fácilmente con otros usuarios de iPhone, y quienes usan Android con otros usuarios de Android. Pero cuando tu familia o tus amigos usan de los dos, mantenerse conectados no es tan sencillo.</p>
       <p>Para compartir entre un iPhone y un Android necesitas una app que funcione en los dos. Cerqa es gratis para iPhone y para Android, y está hecha para que todos lleguen al mismo lugar: comparte con un amigo o con todo un grupo, ve a qué hora llega cada quien y naveguen juntos.</p>
 
       <h2>Cómo compartir tu ubicación con Cerqa</h2>

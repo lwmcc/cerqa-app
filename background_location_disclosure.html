@@ -17,8 +17,7 @@ body {
 }
 
 .page-header {
-  background: linear-gradient(160deg, #1b2d4a 0%, #2e5280 100%);
-  color: white;
+  color: #1b2d4a;
   padding: 40px 20px;
 }
 
@@ -29,14 +28,14 @@ body {
 
 .back-link {
   display: inline-block;
-  color: rgba(255,255,255,0.65);
+  color: #4a6fa5;
   text-decoration: none;
   font-size: 14px;
   margin-bottom: 20px;
   letter-spacing: 0.3px;
 }
 
-.back-link:hover { color: white; }
+.back-link:hover { color: #1b2d4a; }
 
 .page-header h1 {
   font-size: 36px;
@@ -199,78 +198,87 @@ footer a:hover { text-decoration: underline; }
   <div class="page-header-inner">
     <a href="/" class="back-link">← Back to Cerqa</a>
     <h1>Background Location Use</h1>
-    <p>Last updated: March 2026</p>
+    <p>Last updated: November 3, 2026</p>
   </div>
 </header>
 
 <div class="content">
 
   <div class="notice-box">
-    <p>Cerqa is a location-sharing app that lets you share your live position with contacts and groups during navigation sessions. To do this reliably, Cerqa needs access to your device location while the app is running in the background.</p>
+    <p>Cerqa is a location sharing service for friends and family. Cerqa collects location data to keep your live position updated for the people you choose, and to guide you while you navigate, even when the app is closed or not in use. This page explains when that happens and how to stop it.</p>
   </div>
 
   <div class="section-block">
-    <h2>Why Cerqa uses background location</h2>
-    <p>Background location is used only when you have actively started a location sharing session. It is never collected silently, automatically, or without your knowledge.</p>
-  </div>
-
-  <div class="section-block">
-    <h2>When background location is active</h2>
-    <p>Your location is accessed in the background only under these conditions:</p>
+    <h2>When Cerqa uses your location in the background</h2>
+    <p>Your location is shared in the background only while a share or navigation you started is running. That starts when you:</p>
     <ul>
-      <li>You have tapped "Start sharing" or initiated a location share through the app</li>
-      <li>A sharing session is actively running (indicated by a persistent status bar notification on Android, or the blue location indicator on iOS)</li>
-      <li>You have not ended the session</li>
+      <li>Start sharing with a person or group, including from a plan, trip, or Meet me request</li>
+      <li>Tap Share or Join on a request or invitation notification</li>
+      <li>Start turn-by-turn navigation</li>
     </ul>
-    <p style="margin-top: 14px;">Background location access stops immediately when you end the session, when the session timer expires, or when you force-quit the app.</p>
+    <p style="margin-top: 14px;">A request from someone else, or a plan reaching its start time, does not start sharing on its own. You always make that choice.</p>
   </div>
 
   <div class="section-block">
-    <h2>What we collect</h2>
-    <p>During an active sharing session, Cerqa collects:</p>
+    <h2>What Cerqa collects</h2>
+    <p>While you are sharing, Cerqa collects:</p>
     <ul>
       <li>Your GPS coordinates (latitude and longitude)</li>
-      <li>Your approximate speed and heading (used to animate your position on the map)</li>
-      <li>Timestamps associated with each location update</li>
+      <li>Your speed, direction of travel, and GPS accuracy</li>
+      <li>The time of each location update</li>
+      <li>If you are navigating, your route, distance, and time remaining to your destination</li>
     </ul>
-    <p style="margin-top: 14px;">This data is transmitted in real time to the contacts or group members you have chosen to share with. It is not stored on our servers after your session ends.</p>
+    <p style="margin-top: 14px;">While you are inside a Private Place, such as home or work, your device stops sending your real location to anyone you have not trusted for that place.</p>
+  </div>
+
+  <div class="section-block">
+    <h2>What Cerqa keeps</h2>
+    <p>The stream of live positions is sent in real time and is not stored on the company's servers. When sharing ends, your live location is no longer sent or kept.</p>
+    <p>Cerqa does keep a few things so that plans and trips work. While a plan or trip is live, it stores status points for each person who shares, such as when they left, their estimated arrival time, and when they arrived. When a trip ends, it saves a summary to your trip history: the destination, distance, time, average and top speed, and who took part. Neither one includes the route you drove. See the <a href="/privacy" style="color: #4a6fa5; text-decoration: none;">Privacy Policy</a> for details.</p>
   </div>
 
   <div class="section-block">
     <h2>Who sees your location</h2>
-    <p>Your location is shared only with people you explicitly choose: either a specific contact or members of a group you belong to. Cerqa does not sell, license, or share your location data with advertisers or third parties.</p>
+    <p>Your location is shared only with the people you choose: a contact, or the members of a group, plan, or trip.</p>
+    <p>Your location is never sold, never shared with advertisers, and never used to target ads. Service providers process it only as needed to run Cerqa: Ably delivers live location to the people you share with, and Mapbox provides maps and navigation and receives your location while you use the map or navigate.</p>
   </div>
 
   <div class="section-block">
-    <h2>How to stop background location access</h2>
-    <p>You can stop background location access at any time by:</p>
+    <h2>How to stop it</h2>
+    <p>Background location for sharing and navigation stops when:</p>
     <ul>
-      <li>Tapping "Stop Sharing" in the app or in the persistent notification</li>
-      <li>Closing the app entirely</li>
-      <li>Revoking location permission in your device settings:
-        <ul style="margin-top: 6px;">
-          <li>iOS: Settings → Privacy &amp; Security → Location Services → Cerqa → set to "Never" or "While Using"</li>
-          <li>Android: Settings → Apps → Cerqa → Permissions → Location → set to "Only while using the app" or "Deny"</li>
-        </ul>
-      </li>
+      <li>You tap Stop sharing in the app, or in the notification on Android</li>
+      <li>You end navigation</li>
+      <li>The time limit on your share runs out</li>
+      <li>You sign out of Cerqa</li>
+    </ul>
+    <p style="margin-top: 14px;">Closing the app works differently on each phone:</p>
+    <ul>
+      <li>iPhone: force-quitting Cerqa stops background location. If your share has not ended, Cerqa offers to continue it the next time you open the app.</li>
+      <li>Android: swiping Cerqa away does not stop sharing. The notification stays up until you tap Stop sharing there or the share ends.</li>
+    </ul>
+    <p style="margin-top: 14px;">You can also change the permission at any time in your phone's settings:</p>
+    <ul>
+      <li>iPhone: Settings → Privacy &amp; Security → Location Services → Cerqa → "Never" or "While Using the App"</li>
+      <li>Android: Settings → Apps → Cerqa → Permissions → Location → "Allow only while using the app" or "Don't allow"</li>
     </ul>
   </div>
 
   <div class="section-block">
-    <h2>Platform-specific disclosures</h2>
+    <h2>On your phone</h2>
     <div class="platform-block">
-      <h3>iOS</h3>
-      <p>Cerqa requests "Always On" location authorization to maintain a sharing session when you switch to another app or lock your screen. If you grant only "While Using the App," location sharing will pause when the app is not in the foreground.</p>
+      <h3>iPhone</h3>
+      <p>Cerqa asks for "Always" location access when you start sharing, so your share keeps running when you switch apps or lock your screen. If you choose "While Using the App," iPhone shows a blue indicator while Cerqa uses your location in the background, a share may be less reliable, and tapping Share on a notification opens Cerqa first.</p>
     </div>
     <div class="platform-block">
       <h3>Android</h3>
-      <p>Cerqa runs a foreground service during active sharing sessions. A persistent notification is displayed at all times while your location is being shared. You can stop the session at any time from this notification.</p>
+      <p>Cerqa runs a foreground service while you share or navigate, and a notification stays visible the whole time. "Allow all the time" lets you answer a request from its notification without opening Cerqa. With "Allow only while using the app," a share you start in the app still keeps running in the background, and tapping Share on a notification opens Cerqa first.</p>
     </div>
   </div>
 
   <div class="section-block">
     <h2>Contact</h2>
-    <p>If you have questions about how Cerqa uses your location, contact us at <a href="mailto:privacy@cerqa.app" style="color: #4a6fa5; text-decoration: none;">privacy@cerqa.app</a>.</p>
+    <p>Questions about how Cerqa uses your location can be sent to <a href="mailto:privacy@cerqa.net" style="color: #4a6fa5; text-decoration: none;">privacy@cerqa.net</a>.</p>
   </div>
 
 </div>

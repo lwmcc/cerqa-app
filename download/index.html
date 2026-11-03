@@ -1,420 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Download Cerqa for iPhone and Android</title>
-<link rel="canonical" href="https://cerqa.app/download/">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32.png">
-<meta name="description" content="Download Cerqa for iOS and Android. Real-time location sharing meets turn-by-turn navigation.">
-<style>
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  margin: 0;
-  background: #f0f4f8;
-  color: #1b2d4a;
-}
-
-/* ── PAGE HEADER ── */
-.page-header {
-  background: #1b2d4a;
-  color: white;
-  text-align: center;
-  padding: 56px 20px 64px;
-}
-
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: rgba(255,255,255,0.65);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  margin-bottom: 32px;
-}
-
-.back-link:hover {
-  color: rgba(255,255,255,0.9);
-}
-
-.back-link svg {
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
-}
-
-.page-header h1 {
-  font-size: 52px;
-  font-weight: 700;
-  letter-spacing: -1.5px;
-  margin: 0 0 12px;
-  line-height: 1;
-}
-
-.page-header .tagline {
-  font-size: 20px;
-  font-weight: 300;
-  opacity: 0.8;
-  margin: 0 0 40px;
-}
-
-/* ── STORE BUTTONS ── */
-.store-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.store-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.22);
-  color: white;
-  text-decoration: none;
-  padding: 14px 24px;
-  border-radius: 14px;
-  cursor: pointer;
-  position: relative;
-  min-width: 200px;
-  transition: background 0.15s;
-}
-
-.store-btn:hover {
-  background: rgba(255,255,255,0.18);
-}
-
-.store-btn-icon {
-  flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  fill: white;
-  opacity: 0.9;
-}
-
-.store-btn-text {
-  text-align: left;
-}
-
-.store-btn-label {
-  display: block;
-  font-size: 11px;
-  font-weight: 500;
-  opacity: 0.65;
-  letter-spacing: 0.5px;
-}
-
-.store-btn-name {
-  display: block;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  line-height: 1.2;
-}
-
-.coming-soon-pill {
-  position: absolute;
-  top: -10px;
-  right: -8px;
-  background: rgba(255,255,255,0.18);
-  border: 1px solid rgba(255,255,255,0.3);
-  color: rgba(255,255,255,0.95);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 3px 9px;
-  border-radius: 20px;
-}
-
-.alpha-pill {
-  position: absolute;
-  top: -10px;
-  right: -8px;
-  background: rgba(255,255,255,0.28);
-  border: 1px solid rgba(255,255,255,0.5);
-  color: white;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 3px 9px;
-  border-radius: 20px;
-}
-
-.alpha-callout {
-  margin-top: 28px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 14px;
-  padding: 20px 24px;
-  max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-}
-
-.alpha-callout-title {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: white;
-  margin: 0 0 8px;
-}
-
-.alpha-callout-text {
-  font-size: 15px;
-  line-height: 1.6;
-  color: rgba(255,255,255,0.85);
-  margin: 0;
-}
-
-.alpha-callout-text a {
-  color: white;
-  font-weight: 600;
-}
-
-/* ── HERO PHONES ── */
-.hero-phones {
-  background: #f0f4f8;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 24px;
-  padding: 48px 20px 0;
-  overflow: hidden;
-}
-
-.phone-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.phone-wrap img {
-  display: block;
-  width: 160px;
-  border-radius: 32px;
-  border: 7px solid #111;
-  box-shadow: 0 24px 64px rgba(0,0,0,0.45);
-}
-
-.phone-label {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #8a97a8;
-  margin-bottom: 10px;
-}
-
-/* ── FEATURES SECTION ── */
-.section {
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: 64px 20px;
-}
-
-.section-header {
-  margin-bottom: 40px;
-}
-
-.section-header h2 {
-  font-size: 30px;
-  font-weight: 700;
-  margin: 0 0 8px;
-  color: #1b2d4a;
-}
-
-.section-header p {
-  font-size: 16px;
-  color: #6b7a8d;
-  margin: 0;
-}
-
-.screens-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.screen-pair-row {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.screen-card {
-  text-align: center;
-}
-
-.screen-card img {
-  width: 100%;
-  max-width: 140px;
-  border-radius: 22px;
-  border: 5px solid #1a1a1a;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.14);
-  display: block;
-}
-
-.os-tag {
-  display: inline-block;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  background: #e8eef6;
-  color: #4a6fa5;
-  padding: 3px 8px;
-  border-radius: 6px;
-  margin-top: 6px;
-}
-
-.feature-label {
-  font-size: 13px;
-  font-weight: 600;
-  color: #1b2d4a;
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* ── SHARE SECTION ── */
-.share-section {
-  background: white;
-  border-top: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
-  padding: 48px 20px;
-  text-align: center;
-}
-
-.share-inner {
-  max-width: 520px;
-  margin: 0 auto;
-}
-
-.share-inner h2 {
-  font-size: 22px;
-  font-weight: 700;
-  margin: 0 0 8px;
-  color: #1b2d4a;
-}
-
-.share-inner p {
-  font-size: 15px;
-  color: #6b7a8d;
-  margin: 0 0 24px;
-  line-height: 1.6;
-}
-
-.share-link-row {
-  display: flex;
-  gap: 0;
-  border: 1px solid #d0d9e6;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #f8fafc;
-}
-
-.share-link-url {
-  flex: 1;
-  padding: 12px 16px;
-  font-size: 14px;
-  color: #4a6fa5;
-  font-family: inherit;
-  border: none;
-  background: transparent;
-  outline: none;
-  cursor: text;
-  min-width: 0;
-}
-
-.copy-btn {
-  flex-shrink: 0;
-  padding: 12px 20px;
-  background: #1b2d4a;
-  color: white;
-  font-size: 14px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  letter-spacing: 0.2px;
-  transition: background 0.15s;
-}
-
-.copy-btn:hover {
-  background: #2e5280;
-}
-
-.copy-btn.copied {
-  background: #3a7d5a;
-}
-
-.share-note {
-  margin-top: 12px;
-  font-size: 13px;
-  color: #8a97a8;
-}
-
-/* ── FOOTER ── */
-footer {
-  text-align: center;
-  padding: 36px 20px;
-  font-size: 14px;
-  color: #8a97a8;
-  background: #f0f4f8;
-  border-top: 1px solid #e2e8f0;
-}
-
-footer p {
-  margin: 0 0 10px;
-}
-
-footer a {
-  margin: 0 12px;
-  color: #4a6fa5;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* ── RESPONSIVE ── */
-@media (max-width: 700px) {
-  .page-header h1 { font-size: 38px; }
-  .page-header .tagline { font-size: 17px; }
-
-  .store-buttons { gap: 12px; }
-  .store-btn { min-width: 0; padding: 12px 18px; }
-  .store-btn-name { font-size: 16px; }
-
-  .hero-phones { gap: 12px; }
-  .phone-wrap img { width: 130px; border-radius: 26px; border-width: 5px; }
-
-  .screens-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .store-btn { width: 100%; }
-  .store-buttons { flex-direction: column; align-items: center; }
-  .hero-phones { gap: 8px; }
-}
-</style>
-    <!-- Google Analytics 4 (same property as the Cerqa apps). Only on the live cerqa.app site,
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Cerqa: free location sharing for iPhone and Android</title>
+  <meta name="description" content="Get Cerqa free on iPhone and Android. Share your location with family and friends, see when everyone will arrive, and get there together. No invite needed.">
+  <link rel="canonical" href="https://cerqa.app/download/">
+  <link rel="alternate" hreflang="en" href="https://cerqa.app/download/">
+  <link rel="alternate" hreflang="es" href="https://cerqa.app/es/descargar/">
+  <link rel="alternate" hreflang="x-default" href="https://cerqa.app/download/">
+  <script>
+    (function () {
+      try {
+        if (/[?&]lang=en/.test(location.search)) return;
+        if (/^es\b/i.test(navigator.language || "")) location.replace("/es/descargar/" + location.hash);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32.png">
+  <link rel="apple-touch-icon" href="/images/icon/apple-touch-icon.png">
+  <meta name="apple-itunes-app" content="app-id=6762389261">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Cerqa">
+  <meta property="og:url" content="https://cerqa.app/download/">
+  <meta property="og:title" content="Get Cerqa">
+  <meta property="og:description" content="See who's on the way and when everyone will arrive. Free on iPhone and Android.">
+  <meta property="og:image" content="https://cerqa.app/images/social/cerqa-en.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/home.css">
+  <style>
+    .dl-note{max-width:560px;margin:0 auto;text-align:center;padding:0 16px}
+    .dl-note h2{font-size:22px;margin:0 0 8px}
+    .dl-note p{margin:0;color:var(--muted,#5b6b82);line-height:1.5}
+    .dl-share{display:flex;gap:8px;max-width:420px;margin:16px auto 0}
+    .dl-share input{flex:1;min-width:0;padding:12px 14px;border:1px solid #cfd8e3;border-radius:12px;font:inherit;background:#fff;color:#1b2d4a}
+    .dl-share button{padding:12px 18px;border:0;border-radius:12px;background:#1b2d4a;color:#fff;font:inherit;font-weight:600;cursor:pointer}
+    @media (prefers-color-scheme: dark){.dl-share input{background:#152238;color:#e8eef6;border-color:#2b3d58}.dl-share button{background:#4f8cff}}
+  </style>
+      <!-- Google Analytics 4 (same property as the Cerqa apps). Only on the live cerqa.app site,
          no ad features, addresses sent without query strings. Store button clicks are sent as
          store_click so a website visit can be tied to an install. -->
     <script>
@@ -457,173 +86,86 @@ footer a:hover {
 </head>
 <body>
 
-<!-- PAGE HEADER -->
-<header class="page-header">
-  <div>
-    <a class="back-link" href="/">
-      <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
-      Back to Cerqa
-    </a>
-  </div>
-  <h1>Download Cerqa</h1>
-  <p class="tagline">Navigate together on iOS &amp; Android.</p>
-
-  <div class="store-buttons">
-    <!-- App Store -->
-    <a class="store-btn" href="https://apps.apple.com/us/app/cerqa-app/id6762389261" target="_blank" rel="noopener" aria-label="Download on the App Store">
-      <span class="alpha-pill">Invite Only</span>
-      <svg class="store-btn-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-      </svg>
-      <div class="store-btn-text">
-        <span class="store-btn-label">Download on the</span>
-        <span class="store-btn-name">App Store</span>
-      </div>
-    </a>
-
-    <!-- Google Play -->
-    <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.cerqa.app" target="_blank" rel="noopener" aria-label="Get it on Google Play">
-      <span class="alpha-pill">Invite Only</span>
-      <svg class="store-btn-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3.18 23.76c.3.17.64.24.99.2l12.6-7.27-2.79-2.79-10.8 9.86zm-1.14-20.4C1.74 3.7 1.5 4.1 1.5 4.62v14.77c0 .52.24.91.54 1.15l.09.07 8.27-8.27v-.2L2.04 3.29l-.0001-.0001v.0001zM20.37 10.5l-2.53-1.46-3.1 3.1 3.1 3.09 2.56-1.48c.73-.42.73-1.1 0-1.52l-.03-.17v-.09l.0001.0001zM3.18.25L15.78 7.52l-2.79 2.79L2.19.45C2.5.1 2.87-.04 3.18.25z"/>
-      </svg>
-      <div class="store-btn-text">
-        <span class="store-btn-label">Get it on</span>
-        <span class="store-btn-name">Google Play</span>
-      </div>
-    </a>
-  </div>
-
-  <div class="alpha-callout">
-    <p class="alpha-callout-title">iOS · Invite Only</p>
-    <p class="alpha-callout-text">Cerqa for iPhone is available by invite only. Download the app from the App Store and request an access code when you sign up.</p>
-  </div>
-  <div class="alpha-callout">
-    <p class="alpha-callout-title">Android · Invite Only</p>
-    <p class="alpha-callout-text">Cerqa for Android is available by invite only. Download the app from Google Play and request an access code when you sign up.</p>
-  </div>
-
-</header>
-
-<!-- HERO PHONES -->
-<div class="hero-phones">
-  <div class="phone-wrap">
-    <span class="phone-label">Android</span>
-    <img src="/images/android/android-1.png" alt="Cerqa map view on Android">
-  </div>
-  <div class="phone-wrap featured">
-    <span class="phone-label">iOS</span>
-    <img src="/images/ios/ios-1.png" alt="Cerqa map view on iOS">
-  </div>
-</div>
-
-<!-- FEATURES -->
-<div class="section">
-  <div class="section-header">
-    <h2>Everything in one app</h2>
-    <p>Real-time location sharing, navigation, and groups on both platforms.</p>
-  </div>
-
-  <div class="screens-grid">
-
-    <!-- Navigation -->
-    <div>
-      <div class="screen-pair-row">
-        <div class="screen-card">
-          <img src="/images/ios/ios-5.png" alt="Navigation on iOS">
-          <span class="os-tag">iOS</span>
-        </div>
-        <div class="screen-card">
-          <img src="/images/android/android-5.png" alt="Navigation on Android">
-          <span class="os-tag">Android</span>
-        </div>
-      </div>
-      <p class="feature-label">Navigation</p>
+  <nav class="site-nav">
+    <a class="site-nav-brand" href="/"><img src="/images/icon/apple-touch-icon.png" alt="" width="32" height="32">Cerqa</a>
+    <div class="site-nav-right">
+      <a class="site-nav-lang" href="/blog/">Blog</a>
+      <div class="lang-switch" role="group" aria-label="Language"><span aria-current="true">EN</span><a href="/es/descargar/" hreflang="es" lang="es" aria-label="Español">ES</a></div>
     </div>
+  </nav>
 
-    <!-- Search -->
-    <div>
-      <div class="screen-pair-row">
-        <div class="screen-card">
-          <img src="/images/ios/ios-3.png" alt="Search on iOS">
-          <span class="os-tag">iOS</span>
-        </div>
-        <div class="screen-card">
-          <img src="/images/android/android-3.png" alt="Search on Android">
-          <span class="os-tag">Android</span>
-        </div>
-      </div>
-      <p class="feature-label">Search</p>
+  <header class="hero">
+    <h1>Get Cerqa</h1>
+    <p class="subtext">See who's on the way and when everyone will arrive. Share your location with family and friends, and get where you're going together.</p>
+    <div class="store-badges">
+      <a href="https://apps.apple.com/us/app/cerqa-app/id6762389261" target="_blank" rel="noopener"><img class="badge-apple" src="/images/badges/app-store-en-us.svg" alt="Download on the App Store" width="156" height="52"></a>
+      <a href="https://play.google.com/store/apps/details?id=com.cerqa.app&amp;referrer=utm_source%3Dcerqa.app%26utm_medium%3Dweb%26utm_campaign%3Ddownload_en" target="_blank" rel="noopener"><img class="badge-google" src="/images/badges/google-play-en.png" alt="Get it on Google Play" width="175" height="52"></a>
     </div>
+    <p class="fine">Free on iPhone and Android. No invite needed. <a href="/">Learn more about Cerqa</a></p>
+  </header>
 
-    <!-- Groups -->
-    <div>
-      <div class="screen-pair-row">
-        <div class="screen-card">
-          <img src="/images/ios/ios-4.png" alt="Groups on iOS">
-          <span class="os-tag">iOS</span>
-        </div>
-        <div class="screen-card">
-          <img src="/images/android/android-4.png" alt="Groups on Android">
-          <span class="os-tag">Android</span>
-        </div>
-      </div>
-      <p class="feature-label">Groups</span>
-    </div>
-
+  <div class="hero-phones">
+    <div class="phone-wrap"><img src="/images/android/android-1.png" width="440" height="900" alt="Cerqa on an Android phone: friends on the map"></div>
+    <div class="phone-wrap"><img src="/images/ios/ios-1.png" width="443" height="900" alt="Cerqa on iPhone: friends on the map"></div>
   </div>
-</div>
 
-<!-- SHARE SECTION -->
-<div class="share-section">
-  <div class="share-inner">
-    <h2>Share with friends</h2>
-    <p>Send them this link so they can download the app and request an invite code.</p>
-    <div class="share-link-row">
-      <input
-        class="share-link-url"
-        id="shareUrl"
-        type="text"
-        value="https://cerqa.app/download"
-        readonly
-        aria-label="Download link"
-      >
-      <button class="copy-btn" id="copyBtn" onclick="copyLink()">Copy</button>
+  <section class="section">
+    <div class="section-header">
+      <h2>What you can do with Cerqa</h2>
     </div>
-    <p class="share-note">Cerqa is available by invite only on iOS and Android. Share this link with anyone interested in trying Cerqa.</p>
-  </div>
-</div>
+    <div class="benefits">
+      <div class="benefit">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></div>
+        <h3>Share your location</h3>
+        <p>With anyone on iPhone or Android, for a few minutes or the whole drive. Stop any time.</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+        <h3>See when everyone arrives</h3>
+        <p>Live arrival times for everyone who's coming, so nobody has to ask "where are you?"</p>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+        <h3>Get there together</h3>
+        <p>Make a plan, pick a place to meet, ask for a ride, or drive as a group with turn-by-turn directions.</p>
+      </div>
+    </div>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Cerqa</p>
-  <a href="/privacy">Privacy Policy</a>
-  <a href="/terms">Terms of Service</a>
-</footer>
+  <section class="section">
+    <div class="dl-note">
+      <h2>Got an invite from a friend?</h2>
+      <p>Open their link on your phone. Your invitation will be waiting when you open Cerqa.</p>
+    </div>
+  </section>
 
-<script>
-function copyLink() {
-  var input = document.getElementById('shareUrl');
-  var btn = document.getElementById('copyBtn');
-  navigator.clipboard.writeText(input.value).then(function() {
-    btn.textContent = 'Copied!';
-    btn.classList.add('copied');
-    setTimeout(function() {
-      btn.textContent = 'Copy';
-      btn.classList.remove('copied');
-    }, 2000);
-  }).catch(function() {
-    input.select();
-    document.execCommand('copy');
-    btn.textContent = 'Copied!';
-    btn.classList.add('copied');
-    setTimeout(function() {
-      btn.textContent = 'Copy';
-      btn.classList.remove('copied');
-    }, 2000);
-  });
-}
-</script>
+  <section class="section">
+    <div class="dl-note">
+      <h2>Share Cerqa</h2>
+      <p>Send this link to family and friends. They'll find Cerqa for iPhone and Android here.</p>
+      <div class="dl-share">
+        <input id="shareUrl" type="text" value="https://cerqa.app/download/" readonly aria-label="Share Cerqa">
+        <button id="copyBtn" type="button">Copy</button>
+      </div>
+    </div>
+    <div class="store-badges">
+      <a href="https://apps.apple.com/us/app/cerqa-app/id6762389261" target="_blank" rel="noopener"><img class="badge-apple" src="/images/badges/app-store-en-us.svg" alt="Download on the App Store" width="156" height="52"></a>
+      <a href="https://play.google.com/store/apps/details?id=com.cerqa.app&amp;referrer=utm_source%3Dcerqa.app%26utm_medium%3Dweb%26utm_campaign%3Ddownload_en_bottom" target="_blank" rel="noopener"><img class="badge-google" src="/images/badges/google-play-en.png" alt="Get it on Google Play" width="175" height="52"></a>
+    </div>
+  </section>
 
+  <footer>
+    <p>© 2026 Cerqa</p>
+    <a href="/blog/">Blog</a><a href="/feedback">Feedback</a><a href="/support/">Support</a><a href="/privacy/en/">Privacy Policy</a><a href="/terms/en/">Terms of Service</a><a href="/border-wait-times/">Border wait times</a><a href="/gas-prices-mexico/">Gas prices in Mexico</a><a href="https://www.facebook.com/profile.php?id=61594994114331">Facebook</a>
+  </footer>
+
+  <script>
+    document.getElementById("copyBtn").addEventListener("click", function () {
+      var input = document.getElementById("shareUrl"), btn = this;
+      var done = function () { btn.textContent = "Copied!"; setTimeout(function () { btn.textContent = "Copy"; }, 2000); };
+      if (navigator.clipboard) navigator.clipboard.writeText(input.value).then(done, function () { input.select(); document.execCommand("copy"); done(); });
+      else { input.select(); document.execCommand("copy"); done(); }
+    });
+  </script>
 </body>
 </html>

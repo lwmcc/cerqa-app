@@ -31,7 +31,15 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/terms/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/terms/en/"/>
   </url>
-  <url><loc>https://cerqa.app/download/</loc><lastmod>2026-10-13</lastmod>
+  <url><loc>https://cerqa.app/download/</loc><lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/download/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/descargar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/download/"/>
+  </url>
+  <url><loc>https://cerqa.app/es/descargar/</loc><lastmod>2026-11-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/download/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/descargar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/download/"/>
   </url>
   <url><loc>https://cerqa.app/support/</loc><lastmod>2026-10-13</lastmod>
   </url>

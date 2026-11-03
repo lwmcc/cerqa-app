@@ -8,6 +8,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32.png">
   <meta property="og:title" content="Cerqa">
   <meta property="og:description" content="Abre este lugar en Cerqa / Open this place in Cerqa">
+  <meta property="og:site_name" content="Cerqa">
+  <meta property="og:type" content="website">
+  <!-- A preview card in WhatsApp and Messages instead of a bare line (2026-11-03). -->
+  <meta property="og:image" content="https://cerqa.app/images/social/cerqa-en.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <style>
     body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
            background: #f4f5fa; color: #1b1b21; display: flex; min-height: 100vh;
@@ -29,6 +36,7 @@
     <a id="open" class="btn primary" href="https://cerqa.app" style="display:none"></a>
     <a id="store" class="btn secondary" href="https://cerqa.app/download/"></a>
     <p id="hint" style="font-size:13px;margin:14px 0 0"></p>
+    <p id="pitch" style="font-size:14px;margin:18px 0 0"></p>
     <p style="font-size:11px;margin:18px 0 0;color:#8a8d9f"><span id="credit">Datos de mapa ©</span> <a id="creditLink" href="https://www.openstreetmap.org/copyright" style="color:inherit">colaboradores de OpenStreetMap</a></p>
   </div>
   <script>
@@ -38,7 +46,7 @@
     // link in Safari, so "Abrir en Cerqa" opens the app by its own link scheme (both apps route
     // <scheme>://cerqa.app/location?p=CODE to the place), falling back to the store. Places
     // always open in Cerqa, never Apple or Google Maps.
-    var es = !/^en/i.test(navigator.language || "es");
+    var es = /^es/i.test(navigator.language || "");
     var ua = navigator.userAgent || "";
     // iPad Safari reports itself as a Mac; a touch screen gives it away.
     var isIOS = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
@@ -62,6 +70,11 @@
       document.getElementById("credit").textContent = "Map data ©";
       document.getElementById("creditLink").textContent = "OpenStreetMap contributors";
     }
+    // What Cerqa is, for someone who has never heard of it (2026-11-03).
+    var pitch = document.getElementById("pitch");
+    pitch.innerHTML = es
+      ? 'Cerqa muestra quién va en camino y cuándo llega cada quien. Gratis en iPhone y Android. <a href="/es/descargar/" style="color:#445e91">Conoce Cerqa</a>'
+      : 'Cerqa shows who\'s on the way and when everyone arrives. Free on iPhone and Android. <a href="/download/" style="color:#445e91">About Cerqa</a>';
     var store = document.getElementById("store");
     store.textContent = es ? "Descarga Cerqa" : "Get Cerqa";
     // Android: like invite links, Play carries the place through the install (referrer

@@ -140,7 +140,7 @@
   footer a:hover { text-decoration: underline; }
   </style>
       <!-- Google Analytics 4 (same property as the Cerqa apps). Only on the live cerqa.app site,
-         no ad features, addresses sent without query strings. Store button clicks are sent as
+         no ad features, addresses sent without query strings except campaign tags. Store button clicks are sent as
          store_click so a website visit can be tied to an install. -->
     <script>
       (function () {
@@ -159,8 +159,10 @@
           document.cookie = "cerqa_internal=1; domain=cerqa.app; path=/; samesite=lax; secure; max-age=" + (internal ? 157680000 : 0);
         }
         if (internal) gtag("set", { traffic_type: "internal" });
+        // Keep only campaign tags (utm_*) from the address, so GA can credit the campaign.
+        var campaign = location.search.slice(1).split("&").filter(function (p) { return /^utm_[a-z_]+=/.test(p); }).join("&");
         gtag("config", id, {
-          page_location: location.origin + location.pathname,
+          page_location: location.origin + location.pathname + (campaign ? "?" + campaign : ""),
           allow_google_signals: false,
           allow_ad_personalization_signals: false
         });

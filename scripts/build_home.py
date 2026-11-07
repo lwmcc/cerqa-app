@@ -24,7 +24,7 @@ ICON_TRIP = '<svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0
 # Version 1.19 preview: four phones in device frames under the hero. The section shows only once all four
 # images exist in images/next/ (captured from the dev demo world, 560 px wide webp). Set NEXT_RELEASE = None
 # when 1.19 is out, or move the copy into the regular sections.
-NEXT_RELEASE = "1.19"
+NEXT_RELEASE = None
 NEXT_SHOTS = [("ios", "ios-1", 1217), ("android", "android-1", 1250)]  # (kind, file, height at 560 wide)
 
 SHOTS = ["people", "ride-along"]  # shown as Android + iPhone pairs, iPhone on the right

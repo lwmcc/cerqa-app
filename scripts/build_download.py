@@ -147,8 +147,8 @@ def build(lang, ga):
   </header>
 
   <div class="hero-phones">
-    <div class="phone-wrap"><img src="/images/android/android-1.png" width="440" height="900" alt="{p['phones_alt'][0]}"></div>
-    <div class="phone-wrap"><img src="/images/ios/ios-1.png" width="443" height="900" alt="{p['phones_alt'][1]}"></div>
+    <div class="phone-wrap"><img src="/images/screens/android/map.webp" width="440" height="898" alt="{p['phones_alt'][0]}"></div>
+    <div class="phone-wrap"><img src="/images/screens/ios/map.webp" width="443" height="900" alt="{p['phones_alt'][1]}"></div>
   </div>
 
   <section class="section">

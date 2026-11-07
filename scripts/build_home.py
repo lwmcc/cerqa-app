@@ -27,14 +27,7 @@ ICON_TRIP = '<svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0
 NEXT_RELEASE = "1.19"
 NEXT_SHOTS = [("ios", "ios-1", 1217), ("android", "android-1", 1250)]  # (kind, file, height at 560 wide)
 
-SHOTS = [  # (file, ios file) shown as iPhone + Android pairs
-    ("01-home", "01-home"),
-    ("02-group-sharing-map", "02-group-sharing-map"),
-    ("04-shared-nav", "04-shared-nav"),
-    ("08-group-nav", "08-group-nav"),
-    ("06-trip-details", "06-trip-details"),
-    ("10-compass", "10-compass"),
-]
+SHOTS = ["people", "ride-along"]  # shown as Android + iPhone pairs, iPhone on the right
 
 T = {
     "en": {
@@ -85,12 +78,8 @@ T = {
         "shots_h": "Built for iPhone and Android",
         "shots_p": "The same app on both, so the whole group can use it.",
         "shots": [
-            ("Your trips, front and center", "Upcoming trips at a glance: where, when and who's going."),
-            ("See everyone at once", "Friends show up live on the map as soon as they share."),
-            ("Navigate while you share", "Turn-by-turn directions while your group keeps seeing where you are."),
-            ("Never lose your group", "See friends on the road around you, ahead or behind."),
-            ("Every stop, planned", "The route, the stops and who's going, then start in one tap."),
-            ("Distance and direction", "Point your phone to find each friend and see how far away they are."),
+            ("Know when they'll arrive", "See who's on the way and how many minutes until they get there."),
+            ("Ride along on their trip", "Follow one person up close: arrival time, distance left, traffic and their route."),
         ],
         "tools_h": "Useful for the road",
         "tools_p": "Free pages you can use without the app.",
@@ -185,12 +174,8 @@ T = {
         "shots_h": "Para iPhone y Android",
         "shots_p": "La misma app en los dos, para que todo el grupo la use.",
         "shots": [
-            ("Tus viajes, a la vista", "Tus próximos viajes de un vistazo: a dónde, cuándo y quién va."),
-            ("Ve a todos a la vez", "Tus amigos aparecen en vivo en el mapa en cuanto comparten."),
-            ("Navega mientras compartes", "Indicaciones paso a paso mientras tu grupo sigue viendo dónde estás."),
-            ("No pierdas a tu grupo", "Ve a tus amigos en la carretera, adelante o atrás."),
-            ("Cada parada, planeada", "La ruta, las paradas y quién va, y empieza con un toque."),
-            ("Distancia y dirección", "Apunta tu teléfono para encontrar a cada amigo y ver qué tan lejos está."),
+            ("Sabe cuándo llegan", "Ve quién va en camino y cuántos minutos le faltan para llegar."),
+            ("Acompaña su viaje", "Sigue de cerca a una persona: hora de llegada, distancia restante, tráfico y su ruta."),
         ],
         "tools_h": "Útil para el camino",
         "tools_p": "Páginas gratis que puedes usar sin la app.",
@@ -276,11 +261,11 @@ def build(lang, ga):
       </div>""" for v, h, p in t["videos"])
     shots = "\n".join(f"""      <figure class="shot">
         <div class="shot-pair">
-          <img src="/images/screens/ios/{ios}.webp" width="560" height="1138" loading="lazy" alt="{h} (iPhone)">
-          <img src="/images/screens/android/{android}.webp" width="560" height="1143" loading="lazy" alt="{h} (Android)">
+          <img src="/images/screens/android/{name}.webp" width="560" height="1143" loading="lazy" alt="{h} (Android)">
+          <img src="/images/screens/ios/{name}.webp" width="560" height="1138" loading="lazy" alt="{h} (iPhone)">
         </div>
         <figcaption><h3>{h}</h3><p>{p}</p></figcaption>
-      </figure>""" for (android, ios), (h, p) in zip(SHOTS, t["shots"]))
+      </figure>""" for name, (h, p) in zip(SHOTS, t["shots"]))
     tools = "\n".join(f"""      <a class="tool" href="{href}">
         <h3>{h}</h3>
         <p>{p}</p>
@@ -383,8 +368,8 @@ def build(lang, ga):
   </header>
 
   <div class="hero-phones">
-    <div class="phone-wrap"><img src="/images/android/android-1.png" width="440" height="900" alt="{t['phones_alt'][0]}"></div>
-    <div class="phone-wrap"><img src="/images/ios/ios-1.png" width="443" height="900" alt="{t['phones_alt'][1]}"></div>
+    <div class="phone-wrap"><img src="/images/screens/android/map.webp" width="440" height="898" alt="{t['phones_alt'][0]}"></div>
+    <div class="phone-wrap"><img src="/images/screens/ios/map.webp" width="443" height="900" alt="{t['phones_alt'][1]}"></div>
   </div>
 
 {next_section}

@@ -96,7 +96,7 @@ def build(lang, ga):
     (function () {
       try {
         if (/[?&]lang=en/.test(location.search)) return;
-        if (/^es\\b/i.test(navigator.language || "")) location.replace("/es/descargar/" + location.hash);
+        if (/^es\\b/i.test(navigator.language || "")) location.replace("/es/descargar/" + location.search + location.hash);
       } catch (e) {}
     })();
   </script>""" if lang == "en" else ""
@@ -185,6 +185,18 @@ def build(lang, ga):
   </footer>
 
   <script>
+    // A tagged link (a post, the On my way page): pass its tags to Play so the install is credited to it.
+    (function () {{
+      var q = new URLSearchParams(location.search);
+      if (!q.get("utm_source")) return;
+      var tags = ["utm_source", "utm_medium", "utm_campaign"].filter(function (k) {{ return q.get(k); }})
+        .map(function (k) {{ return k + "=" + encodeURIComponent(q.get(k)); }}).join("&");
+      document.querySelectorAll('a[href*="play.google.com"]').forEach(function (a) {{
+        var u = new URL(a.href);
+        u.searchParams.set("referrer", tags);
+        a.href = u.toString();
+      }});
+    }})();
     document.getElementById("copyBtn").addEventListener("click", function () {{
       var input = document.getElementById("shareUrl"), btn = this;
       var done = function () {{ btn.textContent = "{p['copied']}"; setTimeout(function () {{ btn.textContent = "{p['copy']}"; }}, 2000); }};

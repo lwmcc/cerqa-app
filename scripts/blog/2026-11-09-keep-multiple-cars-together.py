@@ -23,31 +23,40 @@ POST = {
       <p>With a little planning and the right tools, everyone can stay connected, see where the other cars are, coordinate stops, and make it to the destination together.</p>
       <p>Here's how to keep your group connected, from the moment you leave to the moment you arrive.</p>
 
-      <h2>Before you leave</h2>
+      <h2>Before You Leave</h2>
+      <p>A little preparation can make the entire trip easier. Before the cars pull out, take a few minutes to get everyone on the same page.</p>
       <ul>
-        <li><strong>Agree on the destination and the stops.</strong> Decide where you're going and where you'll stop for gas, food or a break. A stop everyone knows about is a natural place to regroup.</li>
-        <li><strong>Pick a navigator in each car.</strong> The driver drives. The passenger handles the phone: checking where the others are, reading messages and answering.</li>
-        <li><strong>Start sharing before anyone pulls out.</strong> If everyone is already on the map when you leave, nobody has to stop later to set it up.</li>
+        <li><strong>Agree on the destination and planned stops.</strong> Decide where you're going and where you might stop for gas, food, or a break. Having a few agreed-upon stops gives everyone a natural place to regroup if the cars get separated.</li>
+        <li><strong>Choose a navigator for each car.</strong> The driver should focus on driving. Let the passenger handle the phone, check the group's locations, read messages, and communicate with the other cars.</li>
+        <li><strong>Start sharing before you leave.</strong> Get everyone connected while you're still parked. That way, nobody has to pull over or figure out location sharing halfway through the trip.</li>
       </ul>
 
-      <h2>Share your location with the whole group</h2>
-      <p>Most phones can share a location, but on a road trip you want something a little different: everyone on one map at the same time, whether they have an iPhone or an Android phone, and an arrival time for each car.</p>
-      <p>With Cerqa you create a group, tap <em>Share location</em>, pick the group and choose how long to share. When the others accept, each car shows up on the map with how far away it is and when it will get there. Sharing ends by itself when the time is up, and anyone can stop sharing at any time.</p>
-      <p>Everyone also gets a group chat, so "stopping for gas at the next exit" reaches every car at once instead of going out in three different text threads.</p>
+      <h2>Share Your Location With the Whole Group</h2>
+      <p>Most smartphones offer some form of location sharing. But when you're traveling with multiple cars, you need more than just sharing individual locations. You want everyone on the same map, whether they're using an iPhone or Android, with a clear picture of where the group is headed and when each car is expected to arrive.</p>
+      <p>With <strong>Cerqa</strong>, you can create a group, tap <em>Share Location</em>, select your group, and choose how long you want to share. Once everyone accepts, each person appears on the map, making it easy to see where the other cars are, how far away they are, and their estimated arrival times.</p>
+      <p>You don't have to remember to turn sharing off later, either. Location sharing automatically ends when the selected time expires, and anyone can stop sharing whenever they choose.</p>
+      <p>Cerqa also gives your group a shared chat. Instead of sending separate text messages to different cars, everyone can communicate in one place. Need to stop for gas at the next exit? One message reaches the entire group.</p>
 
-      <h2>When the group gets split up</h2>
-      <p>It happens on every trip with more than one car. A light, a lane that ends, a truck that won't let you merge. When everyone is sharing, a split is no big deal:</p>
+      <h2>When the Group Gets Separated</h2>
+      <p>It happens on almost every trip involving multiple cars. Someone catches a green light while another car gets stuck at a red. A lane closes, traffic slows down, or someone misses an exit.</p>
+      <p>Getting separated doesn't have to become a problem when everyone can see where the others are.</p>
       <ul>
-        <li><strong>Don't chase.</strong> You can see where the other car is, so there's no reason to speed or weave to catch up. Catch up when it's safe, or let the car ahead slow down.</li>
-        <li><strong>Regroup at the next stop.</strong> If you're far apart, meet at the stop you already agreed on instead of trying to find each other on the freeway.</li>
-        <li><strong>Watch the arrival times.</strong> If one car is 10 minutes behind, the others know whether to wait at the beach or grab a table.</li>
+        <li><strong>Don't try to catch up unsafely.</strong> There's no need to speed, weave through traffic, or make risky lane changes just to stay behind another car. You can see where everyone is, so take your time and drive safely.</li>
+        <li><strong>Regroup at the next planned stop.</strong> If the cars get too far apart, stick to the original plan. Meet at the next gas station, restaurant, or rest stop instead of trying to find each other along the freeway.</li>
+        <li><strong>Keep an eye on arrival times.</strong> If one car is running 10 minutes behind, everyone knows. The cars that arrive first can decide whether to wait, grab a table, or get settled at the destination.</li>
       </ul>
 
-      <h2>Navigate together with Pro</h2>
-      <p>For longer drives, <a href="/#plans">Cerqa Pro</a> lets you share for up to 24 hours with up to 25 people, and turns a shared trip into group navigation: everyone gets directions to the same place, and you can see each car's route ahead on the map, so you know who is taking which way. With the Free plan, groups of up to 5 people can share for up to an hour at a time.</p>
+      <h2>Navigate Together With Cerqa Pro</h2>
+      <p>For longer drives and larger groups, <strong><a href="/#plans">Cerqa Pro</a></strong> takes group coordination a step further.</p>
+      <p>With Pro, you can share your location for up to 24 hours with groups of up to 25 people. You also get group navigation, allowing everyone to receive directions to the same destination while seeing each car's route on the map.</p>
+      <p>This is especially useful when cars leave from different locations or take different routes to meet up. Everyone can navigate independently while still seeing how the rest of the group is progressing.</p>
+      <p>The free plan supports groups of up to 5 people with location sharing sessions lasting up to one hour, making it easy to coordinate shorter trips and outings.</p>
 
-      <h2>Stay safe</h2>
-      <p>Keeping the group together is never worth an unsafe move. Let the passenger handle the phone, don't text and drive, and remember that a missed exit costs a few minutes. Everyone can still see where you are.</p>
+      <h2>Above All, Stay Safe</h2>
+      <p>Getting everyone to the destination together is the goal, but arriving safely is what matters most.</p>
+      <p>Let the passenger handle the phone, avoid texting while driving, and never make sudden or unsafe driving decisions to catch up with another car. Missing an exit or getting separated for a few minutes isn't the end of the trip.</p>
+      <p>With a shared map, group communication, and a plan for regrouping, everyone can relax and enjoy the drive.</p>
+      <p><strong>The best road trips aren't about keeping every car bumper to bumper. They're about making sure everyone gets there together.</strong></p>
 """,
         "faq": [
             ("What is the best way to keep multiple cars together on a road trip?", "Agree on the destination and stops before you leave, have a passenger in each car handle the phone, and share live locations with the whole group so every car can see the others and their arrival times."),
@@ -75,30 +84,39 @@ POST = {
       <p>Así pueden mantener a su grupo conectado, desde que salen hasta que llegan.</p>
 
       <h2>Antes de salir</h2>
+      <p>Un poco de preparación puede hacer todo el viaje más fácil. Antes de que arranquen los carros, tómense unos minutos para que todos estén de acuerdo.</p>
       <ul>
-        <li><strong>Pónganse de acuerdo en el destino y las paradas.</strong> Decidan a dónde van y dónde van a parar por gasolina, comida o a descansar. Una parada que todos conocen es el lugar ideal para reagruparse.</li>
-        <li><strong>Elijan un copiloto en cada carro.</strong> El que maneja, maneja. El copiloto se encarga del teléfono: ver dónde vienen los demás, leer los mensajes y contestar.</li>
-        <li><strong>Empiecen a compartir antes de arrancar.</strong> Si todos ya están en el mapa cuando salen, nadie tiene que parar después para configurarlo.</li>
+        <li><strong>Pónganse de acuerdo en el destino y las paradas.</strong> Decidan a dónde van y dónde podrían parar por gasolina, comida o a descansar. Tener algunas paradas acordadas les da a todos un lugar natural para reagruparse si los carros se separan.</li>
+        <li><strong>Elijan un copiloto en cada carro.</strong> El que maneja debe concentrarse en manejar. Que el copiloto se encargue del teléfono, vea dónde va el grupo, lea los mensajes y se comunique con los otros carros.</li>
+        <li><strong>Empiecen a compartir antes de salir.</strong> Conecten a todos mientras siguen estacionados. Así nadie tiene que orillarse ni averiguar cómo compartir la ubicación a medio camino.</li>
       </ul>
 
       <h2>Comparte tu ubicación con todo el grupo</h2>
-      <p>Casi todos los teléfonos pueden compartir la ubicación, pero en un viaje por carretera necesitas algo un poco distinto: a todos en un solo mapa al mismo tiempo, ya sea que tengan iPhone o Android, y la hora de llegada de cada carro.</p>
-      <p>Con Cerqa creas un grupo, tocas <em>Compartir ubicación</em>, eliges el grupo y cuánto tiempo quieres compartir. Cuando los demás aceptan, cada carro aparece en el mapa con qué tan lejos está y a qué hora va a llegar. Compartir termina solo cuando se acaba el tiempo, y cualquiera puede dejar de compartir cuando quiera.</p>
-      <p>Todos tienen además un chat de grupo, así que "vamos a parar por gasolina en la siguiente salida" les llega a todos los carros a la vez, en lugar de mandarse en tres conversaciones distintas.</p>
+      <p>Casi todos los teléfonos tienen alguna forma de compartir la ubicación. Pero cuando viajan en varios carros, necesitan más que compartir ubicaciones por separado. Quieren a todos en el mismo mapa, tengan iPhone o Android, y ver claramente a dónde va el grupo y a qué hora debe llegar cada carro.</p>
+      <p>Con <strong>Cerqa</strong> puedes crear un grupo, tocar <em>Compartir ubicación</em>, elegir tu grupo y decidir cuánto tiempo quieres compartir. Cuando todos aceptan, cada persona aparece en el mapa, y es fácil ver dónde van los otros carros, qué tan lejos están y a qué hora van a llegar.</p>
+      <p>Tampoco tienes que acordarte de apagarlo después. Se deja de compartir solo cuando se acaba el tiempo elegido, y cualquiera puede dejar de compartir cuando quiera.</p>
+      <p>Cerqa también le da a tu grupo un chat compartido. En lugar de mandar mensajes por separado a cada carro, todos se comunican en un solo lugar. ¿Hay que parar por gasolina en la siguiente salida? Un mensaje le llega a todo el grupo.</p>
 
       <h2>Cuando el grupo se separa</h2>
-      <p>Pasa en todo viaje con más de un carro. Un semáforo, un carril que se acaba, un camión que no te deja pasar. Cuando todos comparten su ubicación, separarse no es problema:</p>
+      <p>Pasa en casi todos los viajes con varios carros. Un carro alcanza el verde y otro se queda en el rojo. Cierran un carril, el tráfico se pone lento o alguien se pasa la salida.</p>
+      <p>Separarse no tiene que ser un problema cuando todos pueden ver dónde van los demás.</p>
       <ul>
-        <li><strong>No los persigas.</strong> Puedes ver dónde va el otro carro, así que no hay razón para acelerar ni cambiarte de carril para alcanzarlo. Alcánzalos cuando sea seguro, o que el carro de adelante baje la velocidad.</li>
-        <li><strong>Reagrúpense en la siguiente parada.</strong> Si van lejos, encuéntrense en la parada que ya acordaron en lugar de buscarse en la autopista.</li>
-        <li><strong>Fíjense en las horas de llegada.</strong> Si un carro viene 10 minutos atrás, los demás saben si esperarlo en la playa o ir apartando mesa.</li>
+        <li><strong>No intentes alcanzarlos de forma peligrosa.</strong> No hace falta acelerar, zigzaguear entre los carros ni hacer cambios de carril arriesgados solo para seguir detrás de otro carro. Puedes ver dónde va cada quien, así que tómatelo con calma y maneja con cuidado.</li>
+        <li><strong>Reagrúpense en la siguiente parada acordada.</strong> Si los carros se alejan mucho, sigan el plan. Encuéntrense en la siguiente gasolinera, restaurante o área de descanso en lugar de buscarse en la autopista.</li>
+        <li><strong>Fíjense en las horas de llegada.</strong> Si un carro viene 10 minutos atrás, todos lo saben. Los que llegan primero pueden decidir si esperan, apartan una mesa o se acomodan en el destino.</li>
       </ul>
 
-      <h2>Naveguen juntos con Pro</h2>
-      <p>Para viajes más largos, <a href="/es/#plans">Cerqa Pro</a> te deja compartir hasta 24 horas con hasta 25 personas, y convierte un viaje compartido en navegación en grupo: todos reciben indicaciones al mismo lugar y pueden ver en el mapa la ruta que le queda a cada carro, para saber quién va por dónde. Con el plan Gratis, los grupos de hasta 5 personas pueden compartir hasta una hora a la vez.</p>
+      <h2>Naveguen juntos con Cerqa Pro</h2>
+      <p>Para viajes más largos y grupos más grandes, <strong><a href="/es/#plans">Cerqa Pro</a></strong> lleva la coordinación del grupo un paso más allá.</p>
+      <p>Con Pro puedes compartir tu ubicación hasta 24 horas con grupos de hasta 25 personas. También tienes navegación en grupo: todos reciben indicaciones al mismo destino y ven la ruta de cada carro en el mapa.</p>
+      <p>Es especialmente útil cuando los carros salen de lugares distintos o toman rutas diferentes para encontrarse. Cada quien navega por su cuenta y aun así ve cómo va el resto del grupo.</p>
+      <p>El plan gratis permite grupos de hasta 5 personas y compartir la ubicación hasta una hora a la vez, ideal para coordinar viajes cortos y salidas.</p>
 
-      <h2>Manejen con cuidado</h2>
-      <p>Mantener al grupo junto nunca vale una maniobra peligrosa. Deja que el copiloto use el teléfono, no mandes mensajes mientras manejas y recuerda que pasarte una salida solo cuesta unos minutos. Todos pueden seguir viendo dónde vas.</p>
+      <h2>Sobre todo, manejen con cuidado</h2>
+      <p>Llegar todos juntos al destino es la meta, pero llegar con bien es lo que más importa.</p>
+      <p>Que el copiloto se encargue del teléfono, no manden mensajes mientras manejan y nunca hagan maniobras bruscas o peligrosas para alcanzar a otro carro. Pasarse una salida o separarse unos minutos no arruina el viaje.</p>
+      <p>Con un mapa compartido, un chat de grupo y un plan para reagruparse, todos pueden relajarse y disfrutar el camino.</p>
+      <p><strong>Los mejores viajes por carretera no se tratan de que todos los carros vayan pegados. Se tratan de que todos lleguen juntos.</strong></p>
 """,
         "faq": [
             ("¿Cuál es la mejor forma de mantener varios carros juntos en un viaje por carretera?", "Pónganse de acuerdo en el destino y las paradas antes de salir, que un copiloto en cada carro use el teléfono, y compartan su ubicación en vivo con todo el grupo para que cada carro vea a los demás y su hora de llegada."),

@@ -159,11 +159,16 @@ def foot(lang):
 """
 
 
+def img(p, lang):
+    """A post's hero image in this language: the language's own "image", else the shared one."""
+    return p[lang].get("image") or p["image"]
+
+
 def card(p, lang, featured=False):
     v = p[lang]
     cls = "post-card featured" if featured else "post-card"
     return f"""      <a class="{cls}" href="{url(lang, v['slug'])}">
-        <img src="{p['image']}" width="1200" height="630" loading="lazy" alt="{html.escape(v['image_alt'])}">
+        <img src="{img(p, lang)}" width="1200" height="630" loading="lazy" alt="{html.escape(v['image_alt'])}">
         <div class="post-card-text">
           <time datetime="{p['date'].isoformat()}">{nice_date(p['date'], lang)}</time>
           <h2>{v['h1']}</h2>
@@ -179,7 +184,7 @@ def build_post(p, lang, posts, ga):
     path, alt_path = url(lang, v["slug"]), url(other, p[other]["slug"])
     ld = [
         {"@context": "https://schema.org", "@type": "BlogPosting", "headline": v["h1"], "description": v["desc"],
-         "image": SITE + p["image"], "datePublished": p["date"].isoformat(), "dateModified": p["updated"].isoformat(),
+         "image": SITE + img(p, lang), "datePublished": p["date"].isoformat(), "dateModified": p["updated"].isoformat(),
          "inLanguage": lang, "mainEntityOfPage": SITE + path,
          "author": {"@type": "Organization", "name": "Cerqa", "url": SITE + "/"},
          "publisher": {"@type": "Organization", "name": "Cerqa", "url": SITE + "/",
@@ -210,12 +215,12 @@ def build_post(p, lang, posts, ga):
     updated = ""
     if p["updated"] != p["date"]:
         updated = f' · {ui["updated"]} <time datetime="{p["updated"].isoformat()}">{nice_date(p["updated"], lang)}</time>'
-    return head(lang, v["title"], v["desc"], path, alt_path, "article", p["image"], ld, ga) + f"""
+    return head(lang, v["title"], v["desc"], path, alt_path, "article", img(p, lang), ld, ga) + f"""
   <article class="post">
     <p class="crumbs"><a href="{ui['home']}">{ui['crumb_home']}</a> › <a href="{ui['blog']}">Blog</a></p>
     <h1>{v['h1']}</h1>
     <p class="post-meta"><time datetime="{p['date'].isoformat()}">{nice_date(p['date'], lang)}</time>{updated} · {minutes(v['body'])} {ui['min']} · <a href="{alt_path}" hreflang="{other}" lang="{other}" aria-label="{ui['other_lang_label']}" title="{ui['other_lang_label']}">{ui['other_lang']}</a></p>
-    <img class="post-hero" src="{p['image']}" width="1200" height="630" alt="{html.escape(v['image_alt'])}">
+    <img class="post-hero" src="{img(p, lang)}" width="1200" height="630" alt="{html.escape(v['image_alt'])}">
     <div class="post-body">
 {v['body']}{faq}
     </div>
@@ -236,7 +241,7 @@ def build_index(lang, posts, ga):
            "inLanguage": lang, "publisher": {"@type": "Organization", "name": "Cerqa", "url": SITE + "/"},
            "blogPost": [{"@type": "BlogPosting", "headline": p[lang]["h1"], "url": SITE + url(lang, p[lang]["slug"]),
                          "datePublished": p["date"].isoformat()} for p in posts]}]
-    image = posts[0]["image"] if posts else f"/images/social/cerqa-{lang}.jpg"
+    image = img(posts[0], lang) if posts else f"/images/social/cerqa-{lang}.jpg"
     return head(lang, ui["index_title"], ui["index_desc"], ui["blog"], UI[other]["blog"], "website", image, ld, ga) + f"""
   <header class="hero blog-hero">
     <h1>{ui['index_h1']}</h1>

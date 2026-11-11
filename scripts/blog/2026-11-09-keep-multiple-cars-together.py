@@ -58,6 +58,7 @@ POST = {
     },
     "es": {
         "slug": "como-mantener-varios-carros-juntos-en-un-viaje-por-carretera",
+        "image": "/images/blog/keep-multiple-cars-together-es.jpg",
         "title": "Viajar juntos en carros separados: cómo mantener a todos conectados en un viaje por carretera | Cerqa",
         "h1": "Viajar juntos en carros separados: cómo mantener a todos conectados en un viaje por carretera",
         "desc": "¿Viajan en dos o tres carros? Así se mantienen juntos sin mandar mensajes mientras manejan: compartan su ubicación en vivo, vean a qué hora llega cada carro, planeen sus paradas y vuelvan a encontrarse si se separan.",

@@ -12,7 +12,7 @@ POST = {
         "h1": "How to keep multiple cars together on a road trip",
         "desc": "Traveling in two or three cars? Here is how to stay together without texting while you drive: share live locations, see everyone's arrival time, plan your stops and find each other again after a split.",
         "image_alt": "Cerqa on iPhone and Android: friends in different cars on one map, sharing their location on the way to the same place",
-        "body": """      <p>Say a group of friends is heading to the beach in San Diego. One car leaves from Los Angeles, another from Orange County. Somewhere on the freeway someone makes a yellow light, the others don't, and now nobody knows who is ahead. Someone needs gas. Someone takes the wrong exit. And the passenger in every car is texting "where are you?"</p>
+        "body": """      <p>Say a group of friends is heading to the beach in San Diego. One car leaves from Los Angeles, another from Orange County. Before they even reach the freeway someone makes a yellow light, the others don't, and now nobody knows who is ahead. Someone needs gas. Someone takes the wrong exit. And the passenger in every car is texting "where are you?"</p>
       <p>Traveling in separate cars doesn't have to mean traveling separately. Here's how to keep everyone together, from planning to arrival.</p>
 
       <h2>Before you leave</h2>
@@ -54,7 +54,7 @@ POST = {
         "h1": "Cómo mantener varios carros juntos en un viaje por carretera",
         "desc": "¿Viajan en dos o tres carros? Así se mantienen juntos sin mandar mensajes mientras manejan: compartan su ubicación en vivo, vean a qué hora llega cada carro, planeen sus paradas y vuelvan a encontrarse si se separan.",
         "image_alt": "Cerqa en iPhone y Android: amigos en distintos carros en un solo mapa, compartiendo su ubicación camino al mismo lugar",
-        "body": """      <p>Imagina que un grupo de amigos va a la playa en San Diego. Un carro sale de Los Ángeles y otro de Orange County. En la autopista alguien alcanza a pasar el semáforo en amarillo, los demás no, y ya nadie sabe quién va adelante. Alguien necesita gasolina. Alguien se pasa la salida. Y en cada carro el copiloto está escribiendo "¿dónde vienen?"</p>
+        "body": """      <p>Imagina que un grupo de amigos va a la playa en San Diego. Un carro sale de Los Ángeles y otro de Orange County. Antes de llegar a la autopista alguien alcanza a pasar el semáforo en amarillo, los demás no, y ya nadie sabe quién va adelante. Alguien necesita gasolina. Alguien se pasa la salida. Y en cada carro el copiloto está escribiendo "¿dónde vienen?"</p>
       <p>Viajar en carros separados no tiene que significar viajar por separado. Así pueden mantenerse juntos, desde que planean hasta que llegan.</p>
 
       <h2>Antes de salir</h2>

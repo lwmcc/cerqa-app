@@ -12,8 +12,16 @@ POST = {
         "h1": "How to keep multiple cars together on a road trip",
         "desc": "Traveling in two or three cars? Here is how to stay together without texting while you drive: share live locations, see everyone's arrival time, plan your stops and find each other again after a split.",
         "image_alt": "Cerqa on iPhone and Android: friends in different cars on one map, sharing their location on the way to the same place",
-        "body": """      <p>Say a family is heading to the beach in San Diego. Two cars leave Los Angeles together, one following the other, and a third car leaves from Orange County. Before they even reach the freeway, the first car makes a yellow light, the car behind it gets stuck at the red, and now they're split up. Nobody knows who is ahead, or how far away the Orange County car is. Someone needs gas. Someone takes the wrong exit. And the passenger in every car is texting "where are you?"</p>
-      <p>Traveling in separate cars doesn't have to mean traveling separately. Here's how to keep everyone together, from planning to arrival.</p>
+        "body": """      <p>Imagine your family is heading to the beach in San Diego. Two cars leave Los Angeles together, one following the other, while a third car starts its trip from Orange County.</p>
+      <p>Before anyone even reaches the freeway, the group is already split up. The first car makes a yellow light, but the car behind it gets stuck at the red. Now they're separated, and nobody knows how far apart they are. Meanwhile, the car coming from Orange County is trying to figure out where everyone else is.</p>
+      <p>Then the little things start adding up. Someone needs gas. Another car takes the wrong exit. Traffic slows down. And the passengers in every car are sending the same text messages:</p>
+      <p>"Where are you?"</p>
+      <p>"Did you pass that exit?"</p>
+      <p>"How far away are you?"</p>
+      <p>What was supposed to be a fun family road trip starts turning into a coordination problem.</p>
+      <p>But traveling in separate cars doesn't have to mean traveling separately.</p>
+      <p>With a little planning and the right tools, everyone can stay connected, see where the other cars are, coordinate stops, and make it to the destination together.</p>
+      <p>Here's how to keep your group connected, from the moment you leave to the moment you arrive.</p>
 
       <h2>Before you leave</h2>
       <ul>
@@ -54,8 +62,16 @@ POST = {
         "h1": "Cómo mantener varios carros juntos en un viaje por carretera",
         "desc": "¿Viajan en dos o tres carros? Así se mantienen juntos sin mandar mensajes mientras manejan: compartan su ubicación en vivo, vean a qué hora llega cada carro, planeen sus paradas y vuelvan a encontrarse si se separan.",
         "image_alt": "Cerqa en iPhone y Android: amigos en distintos carros en un solo mapa, compartiendo su ubicación camino al mismo lugar",
-        "body": """      <p>Imagina que una familia va a la playa en San Diego. Dos carros salen juntos de Los Ángeles, uno siguiendo al otro, y un tercero sale de Orange County. Antes de llegar a la autopista, el primero alcanza a pasar el semáforo en amarillo, el de atrás se queda en el rojo, y ya se separaron. Nadie sabe quién va adelante, ni qué tan lejos viene el carro de Orange County. Alguien necesita gasolina. Alguien se pasa la salida. Y en cada carro el copiloto está escribiendo "¿dónde vienen?"</p>
-      <p>Viajar en carros separados no tiene que significar viajar por separado. Así pueden mantenerse juntos, desde que planean hasta que llegan.</p>
+        "body": """      <p>Imagina que tu familia va a la playa en San Diego. Dos carros salen juntos de Los Ángeles, uno siguiendo al otro, mientras un tercero empieza su viaje desde Orange County.</p>
+      <p>Antes de que alguien llegue a la autopista, el grupo ya se separó. El primer carro alcanza a pasar el semáforo en amarillo, pero el de atrás se queda en el rojo. Ahora van separados y nadie sabe qué tan lejos están. Mientras tanto, el carro que viene de Orange County trata de averiguar dónde están los demás.</p>
+      <p>Luego las cosas pequeñas se empiezan a juntar. Alguien necesita gasolina. Otro carro se pasa la salida. El tráfico se pone lento. Y en cada carro los pasajeros mandan los mismos mensajes:</p>
+      <p>"¿Dónde vienen?"</p>
+      <p>"¿Ya pasaron la salida?"</p>
+      <p>"¿Qué tan lejos están?"</p>
+      <p>Lo que iba a ser un viaje familiar divertido se empieza a convertir en un problema de coordinación.</p>
+      <p>Pero viajar en carros separados no tiene que significar viajar por separado.</p>
+      <p>Con un poco de planeación y las herramientas correctas, todos pueden mantenerse conectados, ver dónde van los otros carros, coordinar las paradas y llegar juntos al destino.</p>
+      <p>Así pueden mantener a su grupo conectado, desde que salen hasta que llegan.</p>
 
       <h2>Antes de salir</h2>
       <ul>

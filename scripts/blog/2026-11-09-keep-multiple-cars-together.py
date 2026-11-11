@@ -8,8 +8,8 @@ POST = {
     "image": "/images/blog/keep-multiple-cars-together.jpg",
     "en": {
         "slug": "keep-multiple-cars-together-on-a-road-trip",
-        "title": "How to keep multiple cars together on a road trip | Cerqa",
-        "h1": "How to keep multiple cars together on a road trip",
+        "title": "Traveling Together in Separate Cars: How to Keep Everyone Connected on a Road Trip | Cerqa",
+        "h1": "Traveling Together in Separate Cars: How to Keep Everyone Connected on a Road Trip",
         "desc": "Traveling in two or three cars? Here is how to stay together without texting while you drive: share live locations, see everyone's arrival time, plan your stops and find each other again after a split.",
         "image_alt": "Cerqa on iPhone and Android: friends in different cars on one map, sharing their location on the way to the same place",
         "body": """      <p>Imagine your family is heading to the beach in San Diego. Two cars leave Los Angeles together, one following the other, while a third car starts its trip from Orange County.</p>
@@ -58,8 +58,8 @@ POST = {
     },
     "es": {
         "slug": "como-mantener-varios-carros-juntos-en-un-viaje-por-carretera",
-        "title": "Cómo mantener varios carros juntos en un viaje por carretera | Cerqa",
-        "h1": "Cómo mantener varios carros juntos en un viaje por carretera",
+        "title": "Viajar juntos en carros separados: cómo mantener a todos conectados en un viaje por carretera | Cerqa",
+        "h1": "Viajar juntos en carros separados: cómo mantener a todos conectados en un viaje por carretera",
         "desc": "¿Viajan en dos o tres carros? Así se mantienen juntos sin mandar mensajes mientras manejan: compartan su ubicación en vivo, vean a qué hora llega cada carro, planeen sus paradas y vuelvan a encontrarse si se separan.",
         "image_alt": "Cerqa en iPhone y Android: amigos en distintos carros en un solo mapa, compartiendo su ubicación camino al mismo lugar",
         "body": """      <p>Imagina que tu familia va a la playa en San Diego. Dos carros salen juntos de Los Ángeles, uno siguiendo al otro, mientras un tercero empieza su viaje desde Orange County.</p>

@@ -93,7 +93,7 @@ LANES_ES = """
 # Crossing pages. "nearby" lists other Tijuana-area crossings to compare.
 CROSSINGS = [
     {
-        "slug": "san-ysidro", "port": "250401", "extra_ports": ["250407"],
+        "slug": "san-ysidro", "area": "tijuana", "port": "250401", "extra_ports": ["250407"],
         "en": {
             "title": "San Ysidro border wait time, live",
             "h1": "San Ysidro border wait time",
@@ -114,7 +114,7 @@ CROSSINGS = [
         },
     },
     {
-        "slug": "otay-mesa", "port": "250601",
+        "slug": "otay-mesa", "area": "tijuana", "port": "250601",
         "en": {
             "title": "Otay Mesa border wait time, live",
             "h1": "Otay Mesa border wait time",
@@ -133,7 +133,7 @@ CROSSINGS = [
         },
     },
     {
-        "slug": "cbx", "port": "250409",
+        "slug": "cbx", "area": "tijuana", "port": "250409",
         "en": {
             "title": "CBX wait time (Cross Border Xpress), live",
             "h1": "Cross Border Xpress (CBX) wait time",
@@ -152,7 +152,7 @@ CROSSINGS = [
         },
     },
     {
-        "slug": "tecate", "port": "250501",
+        "slug": "tecate", "area": "tijuana", "port": "250501",
         "en": {
             "title": "Tecate border wait time, live",
             "h1": "Tecate border wait time",
@@ -170,11 +170,82 @@ CROSSINGS = [
 <p>Cuando las garitas de Tijuana están llenas, a veces vale la pena manejar a Tecate.</p>""",
         },
     },
+    {
+        "slug": "laredo-bridge-i", "area": "laredo", "port": "230401",
+        "en": {
+            "title": "Laredo Bridge I wait time, live",
+            "h1": "Laredo Bridge I wait time",
+            "desc": "Live Laredo Bridge I wait to enter the US from Nuevo Laredo: cars and walking, from CBP. Compare with Bridge II and Colombia right now.",
+            "lead": "Live wait to enter the United States from Nuevo Laredo at Bridge I, from US Customs and Border Protection (CBP).",
+            "about": """<p>Bridge I, also called the Gateway to the Americas Bridge, connects downtown Nuevo Laredo with downtown Laredo. It's the main bridge for people crossing on foot.</p>
+<p>Car lanes at Bridge I are sometimes closed, so check the live wait above and compare it with Bridge II and Colombia.</p>""",
+        },
+        "es": {
+            "title": "Puente 1 Nuevo Laredo: tiempo de espera en vivo",
+            "h1": "Puente 1 de Nuevo Laredo: tiempo de espera",
+            "desc": "Tiempo de espera en vivo en el Puente 1 para cruzar de Nuevo Laredo a Laredo: autos y peatones, datos de CBP. Compáralo con el Puente 2 y el Puente Colombia.",
+            "lead": "Tiempo de espera en vivo para entrar a Estados Unidos desde Nuevo Laredo por el Puente 1, según la Oficina de Aduanas y Protección Fronteriza (CBP).",
+            "about": """<p>El Puente Internacional 1 une el centro de Nuevo Laredo con el centro de Laredo, Texas. Es el puente principal para cruzar a pie.</p>
+<p>A veces los carriles para autos del Puente 1 están cerrados, así que revisa la espera arriba y compárala con el Puente 2 y el Puente Colombia.</p>""",
+        },
+    },
+    {
+        "slug": "laredo-bridge-ii", "area": "laredo", "port": "230402",
+        "en": {
+            "title": "Laredo Bridge II wait time, live",
+            "h1": "Laredo Bridge II wait time",
+            "desc": "Live Laredo Bridge II (Juárez-Lincoln) wait to enter the US from Nuevo Laredo: general, SENTRI and Ready Lane, from CBP. Compare with Bridge I and Colombia.",
+            "lead": "Live wait to enter the United States from Nuevo Laredo at Bridge II, from US Customs and Border Protection (CBP).",
+            "about": """<p>Bridge II, the Juárez-Lincoln International Bridge, ends where I-35 begins in downtown Laredo, a few blocks east of Bridge I. It's for cars and buses; people on foot use Bridge I.</p>
+<p>When Bridge II is backed up, many drivers compare it with the Colombia bridge northwest of the city.</p>""",
+        },
+        "es": {
+            "title": "Puente 2 Nuevo Laredo: tiempo de espera en vivo",
+            "h1": "Puente 2 de Nuevo Laredo: tiempo de espera",
+            "desc": "Tiempo de espera en vivo en el Puente 2 (Juárez-Lincoln) para cruzar de Nuevo Laredo a Laredo: carril general, SENTRI y Ready Lane, datos de CBP. Compáralo con el Puente 1 y el Puente Colombia.",
+            "lead": "Tiempo de espera en vivo para entrar a Estados Unidos desde Nuevo Laredo por el Puente 2, según la Oficina de Aduanas y Protección Fronteriza (CBP).",
+            "about": """<p>El Puente 2, o Puente Internacional Juárez-Lincoln, llega al centro de Laredo donde empieza la I-35, a unas cuadras al este del Puente 1. Es para autos y autobuses; los peatones cruzan por el Puente 1.</p>
+<p>Cuando el Puente 2 está lleno, mucha gente lo compara con el Puente Colombia, al noroeste de la ciudad.</p>""",
+        },
+    },
+    {
+        "slug": "laredo-colombia-solidarity", "area": "laredo", "port": "230403",
+        "en": {
+            "title": "Colombia Bridge wait time (Laredo), live",
+            "h1": "Colombia Solidarity Bridge wait time",
+            "desc": "Live Colombia Solidarity Bridge wait to enter the US from Colombia, Nuevo León, near Laredo: general, SENTRI and Ready Lane, from CBP. Hours and nearby bridges.",
+            "lead": "Live wait to enter the United States from Colombia, Nuevo León, northwest of Laredo, from US Customs and Border Protection (CBP).",
+            "about": """<p>The Colombia Solidarity Bridge connects Colombia, Nuevo León with the Laredo area, northwest of the city. It's the only crossing from the state of Nuevo León.</p>
+<p>It isn't open overnight, so check the hours above. Drivers coming from Monterrey sometimes use it to skip city traffic in Nuevo Laredo, so compare the waits below before you choose.</p>""",
+        },
+        "es": {
+            "title": "Puente Colombia: tiempo de espera en vivo",
+            "h1": "Puente Colombia (Solidaridad): tiempo de espera",
+            "desc": "Tiempo de espera en vivo en el Puente Colombia para cruzar de Colombia, Nuevo León a Laredo: carril general, SENTRI y Ready Lane, datos de CBP. Horario y puentes cercanos.",
+            "lead": "Tiempo de espera en vivo para entrar a Estados Unidos desde Colombia, Nuevo León, al noroeste de Laredo, según la Oficina de Aduanas y Protección Fronteriza (CBP).",
+            "about": """<p>El Puente Solidaridad Colombia une Colombia, Nuevo León con la zona de Laredo, Texas, al noroeste de la ciudad. Es el único cruce fronterizo del estado de Nuevo León.</p>
+<p>No abre de noche, así que revisa el horario arriba. Mucha gente que viene de Monterrey lo usa para evitar el tráfico de Nuevo Laredo; compara las esperas abajo antes de decidir.</p>""",
+        },
+    },
 ]
 
-TIJUANA_AREA = [("san-ysidro", "250401", "San Ysidro"), ("otay-mesa", "250601", "Otay Mesa"),
-                ("cbx", "250409", "Cross Border Xpress (CBX)"), ("tecate", "250501", "Tecate")]
-PAGE_FOR_PORT = {port: slug for slug, port, _ in TIJUANA_AREA}
+# Crossings compared on each page: (slug, CBP port, name EN, name ES, Mexican city).
+AREAS = {
+    "tijuana": {
+        "h": ("Tijuana crossings right now", "Garitas de Tijuana ahorita"),
+        "items": [("san-ysidro", "250401", "San Ysidro", "San Ysidro", "Tijuana"),
+                  ("otay-mesa", "250601", "Otay Mesa", "Otay", "Tijuana"),
+                  ("cbx", "250409", "Cross Border Xpress (CBX)", "Cross Border Xpress (CBX)", "Tijuana"),
+                  ("tecate", "250501", "Tecate", "Tecate", "Tecate")],
+    },
+    "laredo": {
+        "h": ("Laredo bridges right now", "Puentes de Laredo ahorita"),
+        "items": [("laredo-bridge-i", "230401", "Bridge I", "Puente 1", "Nuevo Laredo"),
+                  ("laredo-bridge-ii", "230402", "Bridge II (Juárez-Lincoln)", "Puente 2 (Juárez-Lincoln)", "Nuevo Laredo"),
+                  ("laredo-colombia-solidarity", "230403", "Colombia Solidarity", "Puente Colombia", "Colombia, Nuevo León")],
+    },
+}
+PAGE_FOR_PORT = {it[1]: it[0] for a in AREAS.values() for it in a["items"]}
 
 TEXT = {
     "en": {
@@ -187,7 +258,11 @@ TEXT = {
         "loading": "Loading live wait from CBP…",
         "noscript": "Turn on JavaScript to see the live wait.",
         "southbound": "These are waits to enter the United States. No official wait times are published for going into Mexico.",
-        "nearby": "Other Tijuana crossings",
+        "this_page": "this page",
+        "pickup": "<strong>Picking someone up on this side?</strong> If they have Cerqa, they can send you a live link while they drive. You'll see their arrival time in your browser, no app needed.",
+        "pickup_link": "Get Cerqa",
+        "qr": "Scan to get Cerqa on your phone",
+        "download": "/download/",
         "all": "All border crossings",
         "about": "About this crossing",
         "source": 'Wait times: <a href="https://bwt.cbp.gov/">U.S. Customs and Border Protection</a>. They\'re CBP estimates, usually updated about once an hour, and can change quickly. The page refreshes on its own every 5 minutes.',
@@ -207,7 +282,11 @@ TEXT = {
         "loading": "Cargando el tiempo de espera de CBP…",
         "noscript": "Activa JavaScript para ver el tiempo de espera en vivo.",
         "southbound": "Estos son los tiempos para entrar a Estados Unidos. No hay tiempos oficiales publicados para entrar a México.",
-        "nearby": "Otras garitas de Tijuana",
+        "this_page": "esta página",
+        "pickup": "<strong>¿Vas a recoger a alguien de este lado?</strong> Si trae Cerqa, te puede mandar un enlace en vivo mientras maneja. Verás su hora de llegada en tu navegador, sin instalar nada.",
+        "pickup_link": "Descarga Cerqa",
+        "qr": "Escanea para tener Cerqa en tu celular",
+        "download": "/es/descargar/",
         "all": "Todas las garitas",
         "about": "Sobre esta garita",
         "source": 'Tiempos de espera: <a href="https://bwt.cbp.gov/">Oficina de Aduanas y Protección Fronteriza de EE. UU. (CBP)</a>. Son estimados de CBP, normalmente se actualizan cada hora y pueden cambiar rápido. La página se actualiza sola cada 5 minutos.',
@@ -276,16 +355,43 @@ def page(lang, path, alt_path, title, desc, body, og_image):
 """
 
 
+def download_url(lang, campaign, medium):
+    return f"{SITE}{TEXT[lang]['download']}?utm_source=cerqa.app&utm_medium={medium}&utm_campaign={campaign}"
+
+
+def qr(lang, campaign):
+    """QR code (SVG) to the download page, for visitors on a computer. Needs `pip install segno` to
+    make new codes; without it, codes already in images/qr/ are reused."""
+    rel = f"images/qr/{campaign}.svg"
+    if not os.path.exists(rel):
+        import segno
+        os.makedirs("images/qr", exist_ok=True)
+        segno.make(download_url(lang, campaign, "qr"), error="m").save(rel, scale=3, border=2, dark="#1b2d4a", light="#ffffff")
+        # Add a viewBox so every code scales to the same size on the page, whatever its module count.
+        svg = open(rel).read()
+        w = re.search(r'<svg[^>]* width="(\d+)"', svg).group(1)
+        open(rel, "w").write(svg.replace(f'width="{w}" height="{w}"', f'width="{w}" height="{w}" viewBox="0 0 {w} {w}"', 1))
+    return "/" + rel
+
+
 def cta(lang, campaign):
     t = TEXT[lang]
     return f"""<section class="app-cta">
+  <div class="app-cta-text">
   <h2>{t['cta_h']}</h2>
   <p>{t['cta_p']}</p>
   <div class="stores">
     <a href="{APP_STORE.format(cc=t['cc'])}" target="_blank" rel="noopener">App Store</a>
     <a href="{PLAY.format(campaign=campaign)}" target="_blank" rel="noopener">Google Play</a>
   </div>
+  </div>
+  <figure class="app-cta-qr"><img src="{qr(lang, campaign)}" alt="" width="135" height="135"><figcaption>{t['qr']}</figcaption></figure>
 </section>"""
+
+
+def pickup(lang, campaign):
+    t = TEXT[lang]
+    return (f'<p class="pickup">{t["pickup"]} <a href="{download_url(lang, campaign, "web").replace("&", "&amp;")}">{t["pickup_link"]}</a></p>')
 
 
 def hub_path(lang):
@@ -324,24 +430,32 @@ def build_crossing(lang, c):
     for port in c.get("extra_ports", []):
         extra += f"""<h2>{x['extra_title']}</h2>
 <div class="wait-card" data-port="{port}" data-mode="detail"><p class="wait-loading">{t['loading']}</p></div>"""
-    nearby = "\n".join(crossing_li(lang, p, n, "Tijuana" if s != "tecate" else "Tecate")
-                       for s, p, n in TIJUANA_AREA if s != c["slug"])
+    area = AREAS[c["area"]]
+    lis = []
+    for s, p, n_en, n_es, city in area["items"]:
+        name = n_en if lang == "en" else n_es
+        if s == c["slug"]:
+            name = f'{name} <span class="this-page">· {t["this_page"]}</span>'
+        lis.append(crossing_li(lang, p, name, city, link=(s != c["slug"])))
+    nearby = "\n".join(lis)
+    campaign = f"border_{c['slug'].replace('-', '_')}_{lang}"
     body = f"""<p class="crumbs"><a href="{hub_path(lang)}">{t['crumb']}</a></p>
 <h1>{x['h1']}</h1>
 <p class="lead">{x['lead']}</p>
 <div class="wait-card" data-port="{c['port']}" data-mode="detail"><p class="wait-loading">{t['loading']}</p></div>
 <noscript><p class="note">{t['noscript']}</p></noscript>
+{pickup(lang, campaign)}
 {extra}
+<h2>{area['h'][0 if lang == 'en' else 1]}</h2>
+<ul class="crossing-list" data-fastest>
+{nearby}
+</ul>
+<p style="margin-top:12px"><a href="{hub_path(lang)}">{t['all']}</a></p>
 <p class="note">{t['southbound']}</p>
 <h2>{t['about']}</h2>
 <div class="prose">{x['about']}</div>
 {LANES_EN if lang == 'en' else LANES_ES}
-<h2>{t['nearby']}</h2>
-<ul class="crossing-list">
-{nearby}
-</ul>
-<p style="margin-top:12px"><a href="{hub_path(lang)}">{t['all']}</a></p>
-{cta(lang, f"border_{c['slug'].replace('-', '_')}_{lang}")}
+{cta(lang, campaign)}
 <p class="source">{t['source']}</p>"""
     path = f"{hub_path(lang)}{c['slug']}/"
     alt = f"{hub_path('es' if lang == 'en' else 'en')}{c['slug']}/"

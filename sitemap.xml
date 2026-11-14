@@ -51,12 +51,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/feedback"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/comentarios/"/>
   </url>
-  <url><loc>https://cerqa.app/border-wait-times/</loc><lastmod>2026-10-13</lastmod>
+  <url><loc>https://cerqa.app/border-wait-times/</loc><lastmod>2026-11-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/garitas/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/border-wait-times/"/>
   </url>
-  <url><loc>https://cerqa.app/es/garitas/</loc><lastmod>2026-10-13</lastmod>
+  <url><loc>https://cerqa.app/es/garitas/</loc><lastmod>2026-11-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/garitas/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/border-wait-times/"/>
@@ -100,6 +100,36 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/tecate/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/garitas/tecate/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/border-wait-times/tecate/"/>
+  </url>
+  <url><loc>https://cerqa.app/border-wait-times/laredo-bridge-i/</loc><lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/laredo-bridge-i/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/garitas/laredo-bridge-i/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/border-wait-times/laredo-bridge-i/"/>
+  </url>
+  <url><loc>https://cerqa.app/es/garitas/laredo-bridge-i/</loc><lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/laredo-bridge-i/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/garitas/laredo-bridge-i/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/border-wait-times/laredo-bridge-i/"/>
+  </url>
+  <url><loc>https://cerqa.app/border-wait-times/laredo-bridge-ii/</loc><lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/laredo-bridge-ii/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/garitas/laredo-bridge-ii/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/border-wait-times/laredo-bridge-ii/"/>
+  </url>
+  <url><loc>https://cerqa.app/es/garitas/laredo-bridge-ii/</loc><lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/laredo-bridge-ii/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/garitas/laredo-bridge-ii/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/border-wait-times/laredo-bridge-ii/"/>
+  </url>
+  <url><loc>https://cerqa.app/border-wait-times/laredo-colombia-solidarity/</loc><lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/laredo-colombia-solidarity/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/garitas/laredo-colombia-solidarity/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/border-wait-times/laredo-colombia-solidarity/"/>
+  </url>
+  <url><loc>https://cerqa.app/es/garitas/laredo-colombia-solidarity/</loc><lastmod>2026-11-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/border-wait-times/laredo-colombia-solidarity/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/garitas/laredo-colombia-solidarity/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/border-wait-times/laredo-colombia-solidarity/"/>
   </url>
   <url><loc>https://cerqa.app/es/gasolina/</loc><lastmod>2026-11-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/gas-prices-mexico/"/>

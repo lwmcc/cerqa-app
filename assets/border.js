@@ -8,13 +8,15 @@
     lanes: function (n) { return n == 1 ? "1 carril abierto" : n + " carriles abiertos"; },
     closed: "Cerrada ahorita", noReport: "Sin reporte ahorita", noWait: "Sin espera",
     updated: "Actualizado", hours24: "Abierta 24 horas", hours: "Horario", carsShort: "autos", walkShort: "a pie",
-    error: "No pudimos cargar los tiempos de CBP. Intenta de nuevo en un momento.", h: "h"
+    error: "No pudimos cargar los tiempos de CBP. Intenta de nuevo en un momento.", h: "h",
+    fastest: "Más rápido en auto"
   } : {
     cars: "Cars", sentri: "SENTRI", ready: "Ready Lane", walk: "Walking", walkReady: "Walking, Ready Lane",
     lanes: function (n) { return n == 1 ? "1 lane open" : n + " lanes open"; },
     closed: "Closed now", noReport: "No report right now", noWait: "No wait",
     updated: "Updated", hours24: "Open 24 hours", hours: "Hours", carsShort: "cars", walkShort: "walking",
-    error: "Couldn't load CBP wait times. Try again in a moment.", h: "hr"
+    error: "Couldn't load CBP wait times. Try again in a moment.", h: "hr",
+    fastest: "Fastest by car"
   };
 
   function minutes(lane) {
@@ -92,10 +94,51 @@
   }
 
   function row(el, p) {
+    el.removeAttribute("data-car");
+    var car = isOpen(p) ? minutes(p.passenger_vehicle_lanes && p.passenger_vehicle_lanes.standard_lanes) : null;
+    if (car != null) el.setAttribute("data-car", car);
     if (!isOpen(p)) { el.innerHTML = '<span class="lvl-none">' + T.closed + "</span>"; return; }
     var hl = headline(p);
     el.innerHTML = hl ? '<span class="lvl-' + level(hl.m) + '">' + fmt(hl.m) + "</span><small>" + hl.kind + "</small>"
       : '<span class="lvl-none">' + T.noReport + "</span>";
+  }
+
+  // In lists marked data-fastest, badge the open crossing with the shortest general car wait.
+  // Only cars are compared, so a walking-only wait never wins against a car lane.
+  function markFastest() {
+    document.querySelectorAll("[data-fastest]").forEach(function (list) {
+      list.querySelectorAll(".fastest").forEach(function (b) { b.remove(); });
+      var best = null;
+      list.querySelectorAll("[data-car]").forEach(function (el) {
+        var m = parseInt(el.getAttribute("data-car"), 10);
+        if (best === null || m < best.m) best = { m: m, el: el, tie: false };
+        else if (m === best.m) best.tie = true;
+      });
+      if (!best || best.tie || list.querySelectorAll("[data-car]").length < 2) return;
+      var name = best.el.parentNode.querySelector(".crossing-name");
+      var b = document.createElement("span");
+      b.className = "fastest";
+      b.textContent = T.fastest;
+      name.insertBefore(b, name.querySelector(".crossing-sub"));
+    });
+  }
+
+  // English page, Spanish browser: offer the Spanish page once (dismissal remembered when storage works).
+  function offerSpanish() {
+    if (es || !/^es\b/i.test(navigator.language || "")) return;
+    var alt = document.querySelector('link[rel="alternate"][hreflang="es"]');
+    if (!alt) return;
+    try { if (localStorage.getItem("cerqa_es_offer") === "no") return; } catch (e) {}
+    var bar = document.createElement("p");
+    bar.className = "lang-offer";
+    bar.innerHTML = '¿Prefieres español? <a href="' + alt.getAttribute("href").replace(/^https:\/\/cerqa\.app/, "") +
+      '" hreflang="es" lang="es">Ver en español</a> <button type="button" aria-label="Cerrar">×</button>';
+    bar.querySelector("button").addEventListener("click", function () {
+      bar.remove();
+      try { localStorage.setItem("cerqa_es_offer", "no"); } catch (e) {}
+    });
+    var main = document.querySelector("main");
+    if (main) main.insertBefore(bar, main.firstChild);
   }
 
   function load() {
@@ -109,6 +152,7 @@
           if (!p) { el.innerHTML = '<span class="lvl-none">' + T.noReport + "</span>"; return; }
           (el.getAttribute("data-mode") === "detail" ? detail : row)(el, p);
         });
+        markFastest();
       })
       .catch(function () {
         document.querySelectorAll('[data-port][data-mode="detail"]').forEach(function (el) {
@@ -117,6 +161,7 @@
       });
   }
 
+  offerSpanish();
   load();
   setInterval(load, 5 * 60 * 1000);
 })();

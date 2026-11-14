@@ -227,6 +227,139 @@ CROSSINGS = [
 <p>No abre de noche, así que revisa el horario arriba. Mucha gente que viene de Monterrey lo usa para evitar el tráfico de Nuevo Laredo; compara las esperas abajo antes de decidir.</p>""",
         },
     },
+    {
+        "slug": "el-paso-bridge-of-the-americas", "area": "el_paso", "port": "240201",
+        "en": {
+            "title": 'Bridge of the Americas wait time (El Paso), live',
+            "h1": 'Bridge of the Americas (BOTA) wait time',
+            "desc": 'Live Bridge of the Americas wait to enter El Paso from Ciudad Juárez: cars, Ready Lane and walking, from CBP. Compare with Paso del Norte, Ysleta and Stanton.',
+            "lead": 'Live wait to enter the United States from Ciudad Juárez at the Bridge of the Americas, from US Customs and Border Protection (CBP).',
+            "about": """<p>The Bridge of the Americas, or BOTA, connects Ciudad Juárez with central El Paso near the Cordova area. It's the free bridge, so people in Juárez call it the Puente Libre. Cars and people on foot can cross, 24 hours.</p>
+<p>Compare it with Paso del Norte and Ysleta below before you pick a line.</p>""",
+        },
+        "es": {
+            "title": 'Puente Libre Juárez: tiempo de espera en vivo',
+            "h1": 'Puente Libre (Córdova-Américas): tiempo de espera',
+            "desc": 'Tiempo de espera en vivo en el Puente Libre para cruzar de Ciudad Juárez a El Paso: autos, Ready Lane y peatones, datos de CBP. Compáralo con el Santa Fe, Zaragoza y Lerdo.',
+            "lead": 'Tiempo de espera en vivo para entrar a Estados Unidos desde Ciudad Juárez por el Puente Libre, según la Oficina de Aduanas y Protección Fronteriza (CBP).',
+            "about": """<p>El Puente Libre, o Puente Córdova-de las Américas (BOTA en inglés), une Ciudad Juárez con el centro de El Paso. No cobra cuota, por eso le dicen el Libre. Cruzan autos y peatones, las 24 horas.</p>
+<p>Compáralo abajo con el Santa Fe y el Zaragoza antes de formarte.</p>""",
+        },
+    },
+    {
+        "slug": "el-paso-paso-del-norte", "area": "el_paso", "port": "240202",
+        "en": {
+            "title": 'Paso del Norte bridge wait time (El Paso), live',
+            "h1": 'Paso del Norte (PDN) wait time',
+            "desc": 'Live Paso del Norte wait to enter El Paso from downtown Ciudad Juárez: cars, SENTRI, Ready Lane and walking, from CBP. Compare with BOTA, Ysleta and Stanton.',
+            "lead": 'Live wait to enter the United States from downtown Ciudad Juárez at Paso del Norte, from US Customs and Border Protection (CBP).',
+            "about": """<p>Paso del Norte connects downtown Ciudad Juárez with downtown El Paso. In Juárez it's called the Puente Santa Fe. It's the busiest bridge for people crossing on foot, and it only carries traffic into the US.</p>
+<p>Cars and pedestrians can cross 24 hours.</p>""",
+        },
+        "es": {
+            "title": 'Puente Santa Fe Juárez: tiempo de espera en vivo',
+            "h1": 'Puente Santa Fe (Paso del Norte): tiempo de espera',
+            "desc": 'Tiempo de espera en vivo en el Puente Santa Fe para cruzar del centro de Ciudad Juárez a El Paso: autos, SENTRI, Ready Lane y peatones, datos de CBP. Compáralo con el Libre, Zaragoza y Lerdo.',
+            "lead": 'Tiempo de espera en vivo para entrar a Estados Unidos desde el centro de Ciudad Juárez por el Puente Santa Fe, según la Oficina de Aduanas y Protección Fronteriza (CBP).',
+            "about": """<p>El Puente Santa Fe (Paso del Norte en inglés) une el centro de Ciudad Juárez con el centro de El Paso. Es el puente con más gente cruzando a pie, y solo va hacia Estados Unidos.</p>
+<p>Cruzan autos y peatones las 24 horas.</p>""",
+        },
+    },
+    {
+        "slug": "el-paso-ysleta", "area": "el_paso", "port": "240203",
+        "en": {
+            "title": 'Ysleta bridge wait time (El Paso), live',
+            "h1": 'Ysleta (Zaragoza) bridge wait time',
+            "desc": 'Live Ysleta wait to enter east El Paso from Ciudad Juárez: cars, SENTRI, Ready Lane and walking, from CBP. Compare with BOTA, Paso del Norte and Stanton.',
+            "lead": 'Live wait to enter the United States from Ciudad Juárez at the Ysleta bridge, from US Customs and Border Protection (CBP).',
+            "about": """<p>The Ysleta bridge connects the east side of Ciudad Juárez with east El Paso. In Juárez it's called the Puente Zaragoza. It's open 24 hours for cars and people on foot.</p>
+<p>For drivers headed to east El Paso or I-10 east, it can save a drive through downtown.</p>""",
+        },
+        "es": {
+            "title": 'Puente Zaragoza Juárez: tiempo de espera en vivo',
+            "h1": 'Puente Zaragoza (Ysleta): tiempo de espera',
+            "desc": 'Tiempo de espera en vivo en el Puente Zaragoza para cruzar de Ciudad Juárez al este de El Paso: autos, SENTRI, Ready Lane y peatones, datos de CBP. Compáralo con el Libre, Santa Fe y Lerdo.',
+            "lead": 'Tiempo de espera en vivo para entrar a Estados Unidos desde Ciudad Juárez por el Puente Zaragoza, según la Oficina de Aduanas y Protección Fronteriza (CBP).',
+            "about": """<p>El Puente Zaragoza (Ysleta en inglés) une el oriente de Ciudad Juárez con el este de El Paso. Abre las 24 horas para autos y peatones.</p>
+<p>Si vas al este de El Paso o a la I-10 hacia el este, te ahorra cruzar por el centro.</p>""",
+        },
+    },
+    {
+        "slug": "el-paso-stanton", "area": "el_paso", "port": "240204",
+        "en": {
+            "title": 'Stanton bridge wait time (El Paso), live',
+            "h1": 'Stanton (Lerdo) bridge wait time',
+            "desc": "Live Stanton bridge wait to enter El Paso from Ciudad Juárez, from CBP. Into the US it's SENTRI only. Hours and nearby bridges.",
+            "lead": 'Live wait to enter the United States from Ciudad Juárez at the Stanton bridge, from US Customs and Border Protection (CBP).',
+            "about": """<p>The Stanton Street bridge connects downtown Ciudad Juárez with downtown El Paso. In Juárez it's called the Puente Lerdo. Going into the US, it's a SENTRI-only crossing, so everyone in the car needs a SENTRI card.</p>
+<p>It isn't open overnight, so check the hours above.</p>""",
+        },
+        "es": {
+            "title": 'Puente Lerdo Juárez: tiempo de espera en vivo',
+            "h1": 'Puente Lerdo (Stanton): tiempo de espera',
+            "desc": 'Tiempo de espera en vivo en el Puente Lerdo para cruzar de Ciudad Juárez a El Paso, datos de CBP. Hacia Estados Unidos es solo SENTRI. Horario y puentes cercanos.',
+            "lead": 'Tiempo de espera en vivo para entrar a Estados Unidos desde Ciudad Juárez por el Puente Lerdo, según la Oficina de Aduanas y Protección Fronteriza (CBP).',
+            "about": """<p>El Puente Lerdo (Stanton en inglés) une el centro de Ciudad Juárez con el centro de El Paso. Hacia Estados Unidos es solo para SENTRI, así que todos en el auto necesitan tarjeta SENTRI.</p>
+<p>No abre de noche, así que revisa el horario arriba.</p>""",
+        },
+    },
+    {
+        "slug": "hidalgo", "area": "reynosa", "port": "230501",
+        "en": {
+            "title": 'Hidalgo bridge wait time (Reynosa to McAllen), live',
+            "h1": 'Hidalgo bridge wait time',
+            "desc": 'Live Hidalgo bridge wait to enter the US from Reynosa: cars, SENTRI, Ready Lane and walking, from CBP. Compare with Anzalduas and Pharr.',
+            "lead": 'Live wait to enter the United States from Reynosa at the Hidalgo bridge, from US Customs and Border Protection (CBP).',
+            "about": """<p>The McAllen-Hidalgo-Reynosa bridge connects downtown Reynosa with Hidalgo, a few miles south of McAllen. It's open 24 hours for cars and people on foot.</p>
+<p>When the line is long, compare it with Anzalduas, west of the city.</p>""",
+        },
+        "es": {
+            "title": 'Puente Reynosa-Hidalgo: tiempo de espera en vivo',
+            "h1": 'Puente Reynosa-Hidalgo: tiempo de espera',
+            "desc": 'Tiempo de espera en vivo en el puente Reynosa-Hidalgo para cruzar a McAllen: autos, SENTRI, Ready Lane y peatones, datos de CBP. Compáralo con Anzaldúas y Pharr.',
+            "lead": 'Tiempo de espera en vivo para entrar a Estados Unidos desde Reynosa por el puente de Hidalgo, según la Oficina de Aduanas y Protección Fronteriza (CBP).',
+            "about": """<p>El puente McAllen-Hidalgo-Reynosa une el centro de Reynosa con Hidalgo, Texas, a unos kilómetros al sur de McAllen. Abre las 24 horas para autos y peatones.</p>
+<p>Cuando la fila está larga, compáralo con Anzaldúas, al poniente de la ciudad.</p>""",
+        },
+    },
+    {
+        "slug": "anzalduas", "area": "reynosa", "port": "230503",
+        "en": {
+            "title": 'Anzalduas bridge wait time (Reynosa), live',
+            "h1": 'Anzalduas bridge wait time',
+            "desc": 'Live Anzalduas bridge wait to enter the US from Reynosa: cars, SENTRI and Ready Lane, from CBP. Hours and nearby bridges.',
+            "lead": 'Live wait to enter the United States from Reynosa at the Anzalduas bridge, from US Customs and Border Protection (CBP).',
+            "about": """<p>The Anzalduas International Bridge connects the west side of Reynosa with Mission and McAllen. It's for cars only, with no walking lanes.</p>
+<p>It isn't open overnight, so check the hours above.</p>""",
+        },
+        "es": {
+            "title": 'Puente Anzaldúas Reynosa: tiempo de espera en vivo',
+            "h1": 'Puente Anzaldúas: tiempo de espera',
+            "desc": 'Tiempo de espera en vivo en el puente Anzaldúas para cruzar de Reynosa a Mission y McAllen: autos, SENTRI y Ready Lane, datos de CBP. Horario y puentes cercanos.',
+            "lead": 'Tiempo de espera en vivo para entrar a Estados Unidos desde Reynosa por el puente Anzaldúas, según la Oficina de Aduanas y Protección Fronteriza (CBP).',
+            "about": """<p>El Puente Internacional Anzaldúas une el poniente de Reynosa con Mission y McAllen. Es solo para autos, sin carriles para peatones.</p>
+<p>No abre de noche, así que revisa el horario arriba.</p>""",
+        },
+    },
+    {
+        "slug": "pharr", "area": "reynosa", "port": "230502",
+        "en": {
+            "title": 'Pharr bridge wait time (Reynosa), live',
+            "h1": 'Pharr bridge wait time',
+            "desc": 'Live Pharr bridge wait to enter the US from Reynosa, from CBP. Passenger lanes are often closed; compare with Hidalgo and Anzalduas.',
+            "lead": 'Live wait to enter the United States from Reynosa at the Pharr bridge, from US Customs and Border Protection (CBP).',
+            "about": """<p>The Pharr-Reynosa bridge, east of Reynosa, is mostly used by trucks. Its passenger car lanes are often closed, so check the live wait above.</p>
+<p>Most drivers in cars use Hidalgo or Anzalduas instead.</p>""",
+        },
+        "es": {
+            "title": 'Puente Pharr Reynosa: tiempo de espera en vivo',
+            "h1": 'Puente Pharr: tiempo de espera',
+            "desc": 'Tiempo de espera en vivo en el puente Pharr para cruzar de Reynosa, datos de CBP. Los carriles para autos suelen estar cerrados; compáralo con Hidalgo y Anzaldúas.',
+            "lead": 'Tiempo de espera en vivo para entrar a Estados Unidos desde Reynosa por el puente Pharr, según la Oficina de Aduanas y Protección Fronteriza (CBP).',
+            "about": """<p>El puente Pharr-Reynosa, al oriente de Reynosa, lo usan sobre todo los camiones de carga. Los carriles para autos suelen estar cerrados, así que revisa la espera arriba.</p>
+<p>La mayoría de quienes cruzan en auto usan Hidalgo o Anzaldúas.</p>""",
+        },
+    },
 ]
 
 # Crossings compared on each page: (slug, CBP port, name EN, name ES, Mexican city).
@@ -238,6 +371,23 @@ AREAS = {
                   ("cbx", "250409", "Cross Border Xpress (CBX)", "Cross Border Xpress (CBX)", "Tijuana"),
                   ("tecate", "250501", "Tecate", "Tecate", "Tecate")],
     },
+    "el_paso": {
+        "h": ("El Paso bridges right now", "Puentes de Ciudad Juárez ahorita"),
+        "items": [("el-paso-bridge-of-the-americas", "240201", "Bridge of the Americas (BOTA)", "Puente Libre (Córdova-Américas)", "Ciudad Juárez"),
+                  ("el-paso-paso-del-norte", "240202", "Paso del Norte", "Puente Santa Fe (Paso del Norte)", "Ciudad Juárez"),
+                  ("el-paso-ysleta", "240203", "Ysleta", "Puente Zaragoza (Ysleta)", "Ciudad Juárez"),
+                  ("el-paso-stanton", "240204", "Stanton (SENTRI only)", "Puente Lerdo (solo SENTRI)", "Ciudad Juárez"),
+                  (None, "240401", "Tornillo (Marcelino Serna)", "Tornillo-Guadalupe", "Guadalupe"),
+                  (None, "240801", "Santa Teresa", "Santa Teresa", "San Jerónimo")],
+    },
+    "reynosa": {
+        "h": ("Reynosa bridges right now", "Puentes de Reynosa ahorita"),
+        "items": [("hidalgo", "230501", "Hidalgo", "Reynosa-Hidalgo", "Reynosa"),
+                  ("anzalduas", "230503", "Anzalduas", "Anzaldúas", "Reynosa"),
+                  ("pharr", "230502", "Pharr", "Pharr", "Reynosa"),
+                  (None, "230902", "Donna", "Donna", "Río Bravo"),
+                  (None, "230901", "Progreso", "Progreso", "Nuevo Progreso")],
+    },
     "laredo": {
         "h": ("Laredo bridges right now", "Puentes de Laredo ahorita"),
         "items": [("laredo-bridge-i", "230401", "Bridge I", "Puente 1", "Nuevo Laredo"),
@@ -245,7 +395,7 @@ AREAS = {
                   ("laredo-colombia-solidarity", "230403", "Colombia Solidarity", "Puente Colombia", "Colombia, Nuevo León")],
     },
 }
-PAGE_FOR_PORT = {it[1]: it[0] for a in AREAS.values() for it in a["items"]}
+PAGE_FOR_PORT = {it[1]: it[0] for a in AREAS.values() for it in a["items"] if it[0]}
 
 TEXT = {
     "en": {
@@ -259,6 +409,7 @@ TEXT = {
         "noscript": "Turn on JavaScript to see the live wait.",
         "southbound": "These are waits to enter the United States. No official wait times are published for going into Mexico.",
         "this_page": "this page",
+        "farther": "Farther away",
         "pickup": "<strong>Picking someone up on this side?</strong> If they have Cerqa, they can send you a live link while they drive. You'll see their arrival time in your browser, no app needed.",
         "pickup_link": "Get Cerqa",
         "qr": "Scan to get Cerqa on your phone",
@@ -283,6 +434,7 @@ TEXT = {
         "noscript": "Activa JavaScript para ver el tiempo de espera en vivo.",
         "southbound": "Estos son los tiempos para entrar a Estados Unidos. No hay tiempos oficiales publicados para entrar a México.",
         "this_page": "esta página",
+        "farther": "Más lejos",
         "pickup": "<strong>¿Vas a recoger a alguien de este lado?</strong> Si trae Cerqa, te puede mandar un enlace en vivo mientras maneja. Verás su hora de llegada en tu navegador, sin instalar nada.",
         "pickup_link": "Descarga Cerqa",
         "qr": "Escanea para tener Cerqa en tu celular",
@@ -431,13 +583,17 @@ def build_crossing(lang, c):
         extra += f"""<h2>{x['extra_title']}</h2>
 <div class="wait-card" data-port="{port}" data-mode="detail"><p class="wait-loading">{t['loading']}</p></div>"""
     area = AREAS[c["area"]]
-    lis = []
+    lis, far = [], []
     for s, p, n_en, n_es, city in area["items"]:
+        if s is None:  # farther crossings: listed for comparison, never badged as fastest
+            far.append(crossing_li(lang, p, n_en if lang == "en" else n_es, city, link=False))
+            continue
         name = n_en if lang == "en" else n_es
         if s == c["slug"]:
             name = f'{name} <span class="this-page">· {t["this_page"]}</span>'
         lis.append(crossing_li(lang, p, name, city, link=(s != c["slug"])))
     nearby = "\n".join(lis)
+    farther = (f'<h3 class="farther">{t["farther"]}</h3>\n<ul class="crossing-list">\n' + "\n".join(far) + "\n</ul>") if far else ""
     campaign = f"border_{c['slug'].replace('-', '_')}_{lang}"
     body = f"""<p class="crumbs"><a href="{hub_path(lang)}">{t['crumb']}</a></p>
 <h1>{x['h1']}</h1>
@@ -450,6 +606,7 @@ def build_crossing(lang, c):
 <ul class="crossing-list" data-fastest>
 {nearby}
 </ul>
+{farther}
 <p style="margin-top:12px"><a href="{hub_path(lang)}">{t['all']}</a></p>
 <p class="note">{t['southbound']}</p>
 <h2>{t['about']}</h2>

@@ -305,3 +305,5 @@ footer a { margin: 0 10px; text-decoration: none; }
   .price-table th, .price-table td { padding: 8px; font-size: 13px; }
 }
 .station-legal { display: block; font-size: 12px; color: #6b7a8d; }
+
+.farther { font-size: 15px; color: #4b5b73; margin: 20px 0 8px; }

@@ -563,6 +563,59 @@ AREAS = {
                   ("laredo-colombia-solidarity", "230403", "Colombia Solidarity", "Puente Colombia", "Colombia, Nuevo León")],
     },
 }
+LINE_WORDS = {
+    "tijuana": ("la línea", "la garita"), "calexico": ("la línea", "la garita"), "nogales": ("la línea", "la garita"),
+    "laredo": ("la fila", "el puente"), "el_paso": ("la fila", "el puente"), "reynosa": ("la fila", "el puente"),
+    "brownsville": ("la fila", "el puente"),
+}
+
+
+def faq(lang, c, name, area_h):
+    """Short questions in the words people search ("¿cómo está la línea?"), plus FAQPage data."""
+    import json
+    line, word = LINE_WORDS[c["area"]]
+    plain = re.sub(r"<[^>]+>", "", name).replace("&amp;", "&")
+    if lang == "en":
+        qa = [
+            (f"How long is the line at {plain} right now?",
+             f"The live wait at the top of this page is CBP's estimate for {plain}, by lane. It refreshes every 5 minutes on its own."),
+            ("Which crossing is fastest right now?",
+             f"Check \"{area_h}\" above. The crossing with the shortest regular car wait gets a green Fastest by car tag."),
+            ("Are there wait times for going into Mexico?",
+             "No. CBP only publishes waits for entering the United States."),
+            ("Can my family see when I've crossed?",
+             "Yes, with the free Cerqa app. You share your location for the trip, and they see where you are and when you'll arrive. Cerqa also shows border waits on the map."),
+        ]
+    else:
+        qa = [
+            (f"¿Cómo está {line} en {plain} ahorita?",
+             f"El tiempo de espera de arriba es el estimado de CBP para {plain}, por carril. Se actualiza solo cada 5 minutos."),
+            (f"¿Cuál {'garita' if word == 'la garita' else 'puente'} tiene menos espera ahorita?",
+             f"Revisa «{area_h}» arriba. {'La garita' if word == 'la garita' else 'El puente'} con menos espera en el carril general para autos tiene la etiqueta verde Más rápido en auto."),
+            ("¿Hay tiempos de espera para entrar a México?",
+             "No. CBP solo publica los tiempos para entrar a Estados Unidos."),
+            ("¿Mi familia puede ver cuando ya crucé?",
+             "Sí, con la app gratis de Cerqa. Compartes tu ubicación durante el viaje y ven dónde vienes y a qué hora llegas. Cerqa también muestra los tiempos de la frontera en el mapa."),
+        ]
+    html = "\n".join(f"<h3>{q}</h3>\n<p>{a}</p>" for q, a in qa)
+    ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in qa]}
+    return (f'<h2>{TEXT[lang]["faq_h"]}</h2>\n<div class="prose faq">\n{html}\n</div>\n'
+            f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>')
+
+
+def share(lang, c, name):
+    """WhatsApp share (wa.me opens the app on phones, WhatsApp Web on computers). border.js adds the live wait."""
+    t = TEXT[lang]
+    plain = re.sub(r"<[^>]+>", "", name).replace("&amp;", "&")
+    url = f"{SITE}{hub_path(lang)}{c['slug']}/?utm_source=whatsapp&utm_medium=share&utm_campaign=border_share"
+    from urllib.parse import quote
+    href = "https://wa.me/?text=" + quote(f"{plain}: {url}")
+    return (f'<div class="share-row"><a class="share-wa" href="{href}" target="_blank" rel="noopener" '
+            f'data-share-name="{plain.replace(chr(34), "")}" data-share-url="{url}">{t["share"]}</a>'
+            f'<button type="button" class="share-other" hidden>{t["share_other"]}</button></div>')
+
+
 PAGE_FOR_PORT = {it[1]: it[0] for a in AREAS.values() for it in a["items"] if it[0]}
 
 TEXT = {
@@ -585,8 +638,10 @@ TEXT = {
         "all": "All border crossings",
         "about": "About this crossing",
         "source": 'Wait times: <a href="https://bwt.cbp.gov/">U.S. Customs and Border Protection</a>. They\'re CBP estimates, usually updated about once an hour, and can change quickly. The page refreshes on its own every 5 minutes.',
-        "cta_h": "Crossing with family or friends?",
-        "cta_p": "Cerqa shows everyone's live location and arrival time on one map, so nobody gets lost on the other side.",
+        "cta_h": "Border waits on your map",
+        "cta_p": "Cerqa shows live border waits right on the map, plus where your family or friends are and when they'll arrive. Free on iPhone and Android.",
+        "share": "Share on WhatsApp", "share_other": "Share",
+        "faq_h": "Questions",
         "cc": "us",
         "footer": [("/feedback", "Feedback"), ("/support/", "Support"), ("/privacy/en/", "Privacy Policy"), ("/terms/en/", "Terms of Service"), ("https://www.facebook.com/profile.php?id=61594994114331", "Facebook")],
         "home": "/",
@@ -610,8 +665,10 @@ TEXT = {
         "all": "Todas las garitas",
         "about": "Sobre esta garita",
         "source": 'Tiempos de espera: <a href="https://bwt.cbp.gov/">Oficina de Aduanas y Protección Fronteriza de EE. UU. (CBP)</a>. Son estimados de CBP, normalmente se actualizan cada hora y pueden cambiar rápido. La página se actualiza sola cada 5 minutos.',
-        "cta_h": "¿Cruzas con familia o amigos?",
-        "cta_p": "Cerqa muestra la ubicación en vivo y la hora de llegada de todos en un solo mapa, para que nadie se pierda del otro lado.",
+        "cta_h": "Los tiempos de la frontera en tu mapa",
+        "cta_p": "Cerqa muestra los tiempos de espera de la frontera en el mapa, y dónde vienen tu familia o amigos y a qué hora llegan. Gratis en iPhone y Android.",
+        "share": "Compartir por WhatsApp", "share_other": "Compartir",
+        "faq_h": "Preguntas frecuentes",
         "cc": "mx",
         "footer": [("/es/comentarios/", "Comentarios"), ("/support/", "Ayuda"), ("/privacy/es/", "Aviso de privacidad"), ("/terms/es/", "Términos del servicio"), ("https://www.facebook.com/profile.php?id=61594994114331", "Facebook")],
         "home": "/es/",
@@ -763,11 +820,15 @@ def build_crossing(lang, c):
     nearby = "\n".join(lis)
     farther = (f'<h3 class="farther">{t["farther"]}</h3>\n<ul class="crossing-list">\n' + "\n".join(far) + "\n</ul>") if far else ""
     campaign = f"border_{c['slug'].replace('-', '_')}_{lang}"
+    me = next(it for it in area["items"] if it[0] == c["slug"])
+    my_name = me[2] if lang == "en" else me[3]
+    area_h = area['h'][0 if lang == 'en' else 1]
     body = f"""<p class="crumbs"><a href="{hub_path(lang)}">{t['crumb']}</a></p>
 <h1>{x['h1']}</h1>
 <p class="lead">{x['lead']}</p>
 <div class="wait-card" data-port="{c['port']}" data-mode="detail"><p class="wait-loading">{t['loading']}</p></div>
 <noscript><p class="note">{t['noscript']}</p></noscript>
+{share(lang, c, my_name)}
 {pickup(lang, campaign)}
 {extra}
 <h2>{area['h'][0 if lang == 'en' else 1]}</h2>
@@ -780,11 +841,16 @@ def build_crossing(lang, c):
 <h2>{t['about']}</h2>
 <div class="prose">{x['about']}</div>
 {LANES_EN if lang == 'en' else LANES_ES}
+{faq(lang, c, my_name, area_h)}
 {cta(lang, campaign)}
 <p class="source">{t['source']}</p>"""
     path = f"{hub_path(lang)}{c['slug']}/"
     alt = f"{hub_path('es' if lang == 'en' else 'en')}{c['slug']}/"
-    return path, page(lang, path, alt, x["title"], x["desc"], body, f"cerqa-{lang}.jpg")
+    desc = x["desc"]
+    if lang == "es":
+        line, _ = LINE_WORDS[c["area"]]
+        desc = f"¿Cómo está {line}? " + desc
+    return path, page(lang, path, alt, x["title"], desc, body, f"cerqa-{lang}.jpg")
 
 
 def write(path, html):

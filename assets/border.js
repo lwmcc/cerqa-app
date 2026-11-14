@@ -9,14 +9,16 @@
     closed: "Cerrada ahorita", noReport: "Sin reporte ahorita", noWait: "Sin espera",
     updated: "Actualizado", hours24: "Abierta 24 horas", hours: "Horario", carsShort: "autos", walkShort: "a pie",
     error: "No pudimos cargar los tiempos de CBP. Intenta de nuevo en un momento.", h: "h",
-    fastest: "Más rápido en auto"
+    fastest: "Más rápido en auto", now: "ahorita", live: "Míralo en vivo", app: "Tiempos de la frontera en tu mapa, app gratis", dl: "/es/descargar/",
+    bar: "Tiempos de la frontera en tu mapa", barSub: "Cerqa, gratis en Google Play", barGet: "Instalar", close: "Cerrar"
   } : {
     cars: "Cars", sentri: "SENTRI", ready: "Ready Lane", walk: "Walking", walkReady: "Walking, Ready Lane",
     lanes: function (n) { return n == 1 ? "1 lane open" : n + " lanes open"; },
     closed: "Closed now", noReport: "No report right now", noWait: "No wait",
     updated: "Updated", hours24: "Open 24 hours", hours: "Hours", carsShort: "cars", walkShort: "walking",
     error: "Couldn't load CBP wait times. Try again in a moment.", h: "hr",
-    fastest: "Fastest by car"
+    fastest: "Fastest by car", now: "right now", live: "Live", app: "Border waits on your map, free app", dl: "/download/",
+    bar: "Border waits on your map", barSub: "Cerqa, free on Google Play", barGet: "Install", close: "Close"
   };
 
   function minutes(lane) {
@@ -141,6 +143,61 @@
     if (main) main.insertBefore(bar, main.firstChild);
   }
 
+  function track(name, params) {
+    try { if (window.gtag) window.gtag("event", name, Object.assign({ page: location.pathname, transport_type: "beacon" }, params)); } catch (e) {}
+  }
+
+  // WhatsApp message with the current wait, e.g. "Puente 2: 1 h 30 min autos ahorita. Míralo en vivo: <link>".
+  var lastShareText = null;
+  function updateShare(byPort) {
+    var a = document.querySelector(".share-wa");
+    var card = document.querySelector('.wait-card[data-mode="detail"]');
+    if (!a || !card) return;
+    var p = byPort[card.getAttribute("data-port")];
+    var hl = p && isOpen(p) ? headline(p) : null;
+    var name = a.getAttribute("data-share-name"), url = a.getAttribute("data-share-url");
+    // Second line lets the person who gets the message install the app (its own campaign tag in GA).
+    var appUrl = "https://cerqa.app" + T.dl + "?utm_source=whatsapp&utm_medium=share&utm_campaign=border_share_app";
+    lastShareText = name + (hl ? ": " + fmt(hl.m) + " " + hl.kind + " " + T.now : "") + ". " + T.live + ": " + url +
+      "\n" + T.app + ": " + appUrl;
+    a.href = "https://wa.me/?text=" + encodeURIComponent(lastShareText);
+  }
+
+  function setupShare() {
+    var a = document.querySelector(".share-wa");
+    if (!a) return;
+    a.addEventListener("click", function () { track("share_click", { method: "whatsapp" }); });
+    var other = document.querySelector(".share-other");
+    if (other && navigator.share) {
+      other.hidden = false;
+      other.addEventListener("click", function () {
+        track("share_click", { method: "native" });
+        navigator.share({ text: lastShareText || a.getAttribute("data-share-name") + ": " + a.getAttribute("data-share-url") }).catch(function () {});
+      });
+    }
+  }
+
+  // Android phones get no store banner from the browser (iPhone gets Apple's), so show a small bar.
+  function androidBar() {
+    if (!/Android/i.test(navigator.userAgent || "")) return;
+    try { if (localStorage.getItem("cerqa_android_bar") === "no") return; } catch (e) {}
+    var slug = (location.pathname.split("/").filter(Boolean).pop() || "hub").replace(/-/g, "_");
+    var ref = "utm_source=cerqa.app&utm_medium=android_bar&utm_campaign=border_" + slug + "_" + (es ? "es" : "en");
+    var bar = document.createElement("div");
+    bar.className = "android-bar";
+    bar.innerHTML = '<button type="button" class="android-bar-x" aria-label="' + T.close + '">×</button>' +
+      '<img src="/images/icon/apple-touch-icon.png" alt="" width="40" height="40">' +
+      '<span class="android-bar-text"><strong>' + T.bar + "</strong><small>" + T.barSub + "</small></span>" +
+      '<a href="https://play.google.com/store/apps/details?id=com.cerqa.app&referrer=' + encodeURIComponent(ref) + '">' + T.barGet + "</a>";
+    bar.querySelector(".android-bar-x").addEventListener("click", function () {
+      bar.remove();
+      document.body.classList.remove("has-android-bar");
+      try { localStorage.setItem("cerqa_android_bar", "no"); } catch (e) {}
+    });
+    document.body.appendChild(bar);
+    document.body.classList.add("has-android-bar");
+  }
+
   function load() {
     fetch("https://bwt.cbp.gov/api/bwtnew", { cache: "no-store" })
       .then(function (r) { return r.json(); })
@@ -153,6 +210,7 @@
           (el.getAttribute("data-mode") === "detail" ? detail : row)(el, p);
         });
         markFastest();
+        updateShare(byPort);
       })
       .catch(function () {
         document.querySelectorAll('[data-port][data-mode="detail"]').forEach(function (el) {
@@ -162,6 +220,8 @@
   }
 
   offerSpanish();
+  setupShare();
+  androidBar();
   load();
   setInterval(load, 5 * 60 * 1000);
 })();

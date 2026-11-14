@@ -3,6 +3,8 @@
    Refreshes every 5 minutes. Waits over 60 minutes read as hours and minutes. */
 (function () {
   var es = document.documentElement.lang === "es";
+  // US-Canada pages: NEXUS instead of SENTRI, waits into Canada from CBSA, no "border waits in the app" claim.
+  var ca = document.body && document.body.getAttribute("data-border") === "ca";
   var T = es ? {
     cars: "Autos", sentri: "SENTRI", ready: "Ready Lane", walk: "Peatones", walkReady: "Peatones, Ready Lane",
     lanes: function (n) { return n == 1 ? "1 carril abierto" : n + " carriles abiertos"; },
@@ -17,9 +19,13 @@
     closed: "Closed now", noReport: "No report right now", noWait: "No wait",
     updated: "Updated", hours24: "Open 24 hours", hours: "Hours", carsShort: "cars", walkShort: "walking",
     error: "Couldn't load CBP wait times. Try again in a moment.", h: "hr",
+    intoCanada: "into Canada", intoUS: "into the US", appCa: "See your group on one map, free app", travellers: "Travelers", cbsaError: "Couldn't load CBSA wait times. Try again in a moment.",
+    barCa: "See your group on one map", barSubCa: "Cerqa, free on Google Play",
     fastest: "Fastest by car", now: "right now", live: "Live", app: "Border waits on your map, free app", dl: "/download/",
     bar: "Border waits on your map", barSub: "Cerqa, free on Google Play", barGet: "Install", close: "Close"
   };
+
+  if (ca) T.sentri = "NEXUS";
 
   function minutes(lane) {
     if (!lane) return null;
@@ -101,7 +107,7 @@
     if (car != null) el.setAttribute("data-car", car);
     if (!isOpen(p)) { el.innerHTML = '<span class="lvl-none">' + T.closed + "</span>"; return; }
     var hl = headline(p);
-    el.innerHTML = hl ? '<span class="lvl-' + level(hl.m) + '">' + fmt(hl.m) + "</span><small>" + hl.kind + "</small>"
+    el.innerHTML = hl ? '<span class="lvl-' + level(hl.m) + '">' + fmt(hl.m) + "</span><small>" + (ca && hl.kind === T.carsShort ? T.intoUS : hl.kind) + "</small>"
       : '<span class="lvl-none">' + T.noReport + "</span>";
   }
 
@@ -148,8 +154,11 @@
   }
 
   // WhatsApp message with the current wait, e.g. "Puente 2: 1 h 30 min autos ahorita. Míralo en vivo: <link>".
-  var lastShareText = null;
+  var lastShareText = null, lastByPort = null, myCbsa = null;
   function updateShare(byPort) {
+    if (byPort) lastByPort = byPort;
+    byPort = lastByPort;
+    if (!byPort) return;
     var a = document.querySelector(".share-wa");
     var card = document.querySelector('.wait-card[data-mode="detail"]');
     if (!a || !card) return;
@@ -158,8 +167,17 @@
     var name = a.getAttribute("data-share-name"), url = a.getAttribute("data-share-url");
     // Second line lets the person who gets the message install the app (its own campaign tag in GA).
     var appUrl = "https://cerqa.app" + T.dl + "?utm_source=whatsapp&utm_medium=share&utm_campaign=border_share_app";
-    lastShareText = name + (hl ? ": " + fmt(hl.m) + " " + hl.kind + " " + T.now : "") + ". " + T.live + ": " + url +
-      "\n" + T.app + ": " + appUrl;
+    var waits;
+    if (ca) {
+      var parts = [];
+      var low = function (m) { return m === 0 ? T.noWait.toLowerCase() : fmt(m); };
+      if (hl) parts.push(T.intoUS + " " + low(hl.m));
+      if (myCbsa != null) parts.push(T.intoCanada + " " + low(myCbsa));
+      waits = parts.length ? ": " + parts.join(", ") + " " + T.now : "";
+    } else {
+      waits = hl ? ": " + fmt(hl.m) + " " + hl.kind + " " + T.now : "";
+    }
+    lastShareText = name + waits + ". " + T.live + ": " + url + "\n" + (ca ? T.appCa : T.app) + ": " + appUrl;
     a.href = "https://wa.me/?text=" + encodeURIComponent(lastShareText);
   }
 
@@ -182,12 +200,12 @@
     if (!/Android/i.test(navigator.userAgent || "")) return;
     try { if (localStorage.getItem("cerqa_android_bar") === "no") return; } catch (e) {}
     var slug = (location.pathname.split("/").filter(Boolean).pop() || "hub").replace(/-/g, "_");
-    var ref = "utm_source=cerqa.app&utm_medium=android_bar&utm_campaign=border_" + slug + "_" + (es ? "es" : "en");
+    var ref = "utm_source=cerqa.app&utm_medium=android_bar&utm_campaign=border_" + (ca ? "ca_" : "") + slug + "_" + (es ? "es" : "en");
     var bar = document.createElement("div");
     bar.className = "android-bar";
     bar.innerHTML = '<button type="button" class="android-bar-x" aria-label="' + T.close + '">×</button>' +
       '<img src="/images/icon/apple-touch-icon.png" alt="" width="40" height="40">' +
-      '<span class="android-bar-text"><strong>' + T.bar + "</strong><small>" + T.barSub + "</small></span>" +
+      '<span class="android-bar-text"><strong>' + (ca ? T.barCa : T.bar) + "</strong><small>" + (ca ? T.barSubCa : T.barSub) + "</small></span>" +
       '<a href="https://play.google.com/store/apps/details?id=com.cerqa.app&referrer=' + encodeURIComponent(ref) + '">' + T.barGet + "</a>";
     bar.querySelector(".android-bar-x").addEventListener("click", function () {
       bar.remove();
@@ -219,9 +237,71 @@
       });
   }
 
+  // CBSA (into Canada): cerqa.app/data/cbsa-bwt.csv is an Amplify rewrite of CBSA's open-data CSV.
+  // Rows are "Office;; Location;; Last updated;; Commercial CA;; Commercial US;; Travellers CA;; Travellers US;;".
+  function cbsaMinutes(v) {
+    v = (v || "").trim();
+    if (/^no delay$/i.test(v)) return 0;
+    var m = v.match(/^(\d+)\s*minute/i);
+    return m ? parseInt(m[1], 10) : null;
+  }
+
+  function cbsaUpdated(v) {
+    var m = (v || "").match(/(\d{1,2}):(\d{2})\s*([A-Z]{2,4})?/);
+    if (!m) return "";
+    var h = parseInt(m[1], 10), ap = h >= 12 ? "pm" : "am";
+    h = h % 12 || 12;
+    // CBSA's zone label can be off (PDT in November), so show the time only.
+    return h + ":" + m[2] + " " + ap;
+  }
+
+  function loadCbsa() {
+    if (!document.querySelector("[data-cbsa]")) return;
+    fetch("/data/cbsa-bwt.csv", { cache: "no-store" })
+      .then(function (r) { return r.text(); })
+      .then(function (text) {
+        var byName = {};
+        text.split(/\r?\n/).slice(1).forEach(function (line) {
+          var f = line.split(";;").map(function (x) { return x.trim(); });
+          if (f.length >= 6 && f[0]) byName[f[0]] = { raw: f[5], m: cbsaMinutes(f[5]), updated: cbsaUpdated(f[2]) };
+        });
+        document.querySelectorAll("[data-cbsa]").forEach(function (el) {
+          var r = byName[el.getAttribute("data-cbsa")];
+          el.removeAttribute("data-car");
+          var closed = r && /closed/i.test(r.raw);
+          if (el.getAttribute("data-mode") === "detail") {
+            if (!r) { el.innerHTML = '<p class="wait-loading">' + T.noReport + "</p>"; return; }
+            var big = closed ? '<span class="wait-big lvl-none">' + T.closed + "</span>"
+              : r.m == null ? '<span class="wait-big lvl-none" style="font-size:24px">' + T.noReport + "</span>"
+              : '<span class="wait-big lvl-' + level(r.m) + '">' + fmt(r.m) + '</span><span class="wait-label">' + T.intoCanada + "</span>";
+            el.innerHTML = '<div class="wait-headline">' + big + "</div>" +
+              (r.m != null ? '<ul class="wait-rows"><li><span>' + T.travellers + '</span><span class="value lvl-' + level(r.m) + '">' + fmt(r.m) + "</span></li></ul>" : "") +
+              '<p class="wait-meta">' + esc(r.updated ? T.updated + " " + r.updated : "") + "</p>";
+          } else {
+            if (r && r.m != null && !closed) el.setAttribute("data-car", r.m);
+            el.innerHTML = !r ? '<span class="lvl-none">' + T.noReport + "</span>"
+              : closed ? '<span class="lvl-none">' + T.closed + "</span>"
+              : r.m == null ? '<span class="lvl-none">' + T.noReport + "</span>"
+              : '<span class="lvl-' + level(r.m) + '">' + fmt(r.m) + "</span><small>" + T.intoCanada + "</small>";
+          }
+        });
+        var mine = document.querySelector('.wait-card[data-cbsa]');
+        var mr = mine && byName[mine.getAttribute("data-cbsa")];
+        myCbsa = mr && !/closed/i.test(mr.raw) ? mr.m : null;
+        markFastest();
+        updateShare();
+      })
+      .catch(function () {
+        document.querySelectorAll('[data-cbsa][data-mode="detail"]').forEach(function (el) {
+          el.innerHTML = '<p class="wait-loading">' + T.cbsaError + "</p>";
+        });
+      });
+  }
+
   offerSpanish();
   setupShare();
   androidBar();
   load();
-  setInterval(load, 5 * 60 * 1000);
+  loadCbsa();
+  setInterval(function () { load(); loadCbsa(); }, 5 * 60 * 1000);
 })();

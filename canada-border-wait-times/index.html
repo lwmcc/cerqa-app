@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>US-Canada border wait times, live (both directions) | Cerqa</title>
+<meta name="description" content="Live border waits at Peace Arch, Pacific Highway, Sumas, Lynden, the Peace Bridge, Rainbow Bridge and Lewiston-Queenston, into the US (CBP) and into Canada (CBSA).">
+<link rel="canonical" href="https://cerqa.app/canada-border-wait-times/">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32.png">
+<link rel="apple-touch-icon" href="/images/icon/apple-touch-icon.png">
+<meta name="apple-itunes-app" content="app-id=6762389261">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cerqa">
+<meta property="og:url" content="https://cerqa.app/canada-border-wait-times/">
+<meta property="og:title" content="US-Canada border wait times, live (both directions)">
+<meta property="og:description" content="Live border waits at Peace Arch, Pacific Highway, Sumas, Lynden, the Peace Bridge, Rainbow Bridge and Lewiston-Queenston, into the US (CBP) and into Canada (CBSA).">
+<meta property="og:image" content="https://cerqa.app/images/social/cerqa-en.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/border.css">
+      <!-- Google Analytics 4 (same property as the Cerqa apps). Only on the live cerqa.app site,
+         no ad features, addresses sent without query strings except campaign tags. Store button clicks are sent as
+         store_click so a website visit can be tied to an install. -->
+    <script>
+      (function () {
+        var host = location.hostname;
+        if (host !== "cerqa.app" && host !== "www.cerqa.app") return;
+        var id = "G-BPFEDCV63V";
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        gtag("js", new Date());
+        // Your own visits: open any page once with ?internal=1 (?internal=0 undoes it). The cookie
+        // covers cerqa.app and ride.cerqa.app; GA's Internal Traffic filter drops traffic_type internal.
+        var internal = /(?:^|; )cerqa_internal=1/.test(document.cookie);
+        var flag = location.search.match(/[?&]internal=([01])/);
+        if (flag) {
+          internal = flag[1] === "1";
+          document.cookie = "cerqa_internal=1; domain=cerqa.app; path=/; samesite=lax; secure; max-age=" + (internal ? 157680000 : 0);
+        }
+        if (internal) gtag("set", { traffic_type: "internal" });
+        // Keep only campaign tags (utm_*) from the address, so GA can credit the campaign.
+        var campaign = location.search.slice(1).split("&").filter(function (p) { return /^utm_[a-z_]+=/.test(p); }).join("&");
+        gtag("config", id, {
+          page_location: location.origin + location.pathname + (campaign ? "?" + campaign : ""),
+          allow_google_signals: false,
+          allow_ad_personalization_signals: false
+        });
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+        document.head.appendChild(s);
+        document.addEventListener("click", function (e) {
+          var link = e.target.closest && e.target.closest("a[href]");
+          if (!link) return;
+          var store = link.href.indexOf("apps.apple.com") !== -1 ? "apple"
+            : link.href.indexOf("play.google.com") !== -1 ? "google" : null;
+          if (store) {
+            gtag("event", "store_click", { store: store, page: location.pathname, transport_type: "beacon" });
+          }
+        });
+      })();
+    </script>
+</head>
+<body data-border="ca">
+<nav class="site-nav">
+  <a class="site-nav-brand" href="/">Cerqa</a>
+  <a class="site-nav-lang" href="/border-wait-times/">Mexico border</a>
+</nav>
+<main>
+<h1>US-Canada border wait times</h1>
+<p class="lead">Live waits at the Vancouver and Niagara crossings in both directions: into the US from US Customs and Border Protection (CBP), and into Canada from the Canada Border Services Agency (CBSA).</p>
+<noscript><p class="note">Turn on JavaScript to see the live waits.</p></noscript>
+<h2>Vancouver and Blaine crossings: into the US right now</h2>
+<ul class="crossing-list" data-fastest>
+<li><span class="crossing-name"><a href="/canada-border-wait-times/peace-arch/">Peace Arch (Douglas)</a><span class="crossing-sub">Blaine, WA / Surrey, BC</span></span><span class="crossing-wait" data-port="300402" data-mode="row">…</span></li>
+<li><span class="crossing-name"><a href="/canada-border-wait-times/pacific-highway/">Pacific Highway</a><span class="crossing-sub">Blaine, WA / Surrey, BC</span></span><span class="crossing-wait" data-port="300401" data-mode="row">…</span></li>
+<li><span class="crossing-name"><a href="/canada-border-wait-times/lynden-aldergrove/">Lynden / Aldergrove</a><span class="crossing-sub">Lynden, WA / Langley, BC</span></span><span class="crossing-wait" data-port="302301" data-mode="row">…</span></li>
+<li><span class="crossing-name"><a href="/canada-border-wait-times/sumas-huntingdon/">Sumas / Abbotsford-Huntingdon</a><span class="crossing-sub">Sumas, WA / Abbotsford, BC</span></span><span class="crossing-wait" data-port="300901" data-mode="row">…</span></li>
+</ul>
+<h2>Vancouver and Blaine crossings: into Canada right now</h2>
+<ul class="crossing-list" data-fastest>
+<li><span class="crossing-name"><a href="/canada-border-wait-times/peace-arch/">Peace Arch (Douglas)</a><span class="crossing-sub">Blaine, WA / Surrey, BC</span></span><span class="crossing-wait" data-cbsa="Douglas" data-mode="row">…</span></li>
+<li><span class="crossing-name"><a href="/canada-border-wait-times/pacific-highway/">Pacific Highway</a><span class="crossing-sub">Blaine, WA / Surrey, BC</span></span><span class="crossing-wait" data-cbsa="Pacific Highway" data-mode="row">…</span></li>
+<li><span class="crossing-name"><a href="/canada-border-wait-times/sumas-huntingdon/">Sumas / Abbotsford-Huntingdon</a><span class="crossing-sub">Sumas, WA / Abbotsford, BC</span></span><span class="crossing-wait" data-cbsa="Abbotsford-Huntingdon" data-mode="row">…</span></li>
+</ul>
+<h3 class="farther">Farther away (into the US)</h3>
+<ul class="crossing-list">
+<li><span class="crossing-name">Point Roberts / Boundary Bay<span class="crossing-sub">Point Roberts, WA / Delta, BC</span></span><span class="crossing-wait" data-port="300403" data-mode="row">…</span></li>
+</ul>
+<h2>Niagara and Buffalo crossings: into the US right now</h2>
+<ul class="crossing-list" data-fastest>
+<li><span class="crossing-name"><a href="/canada-border-wait-times/peace-bridge/">Peace Bridge</a><span class="crossing-sub">Buffalo, NY / Fort Erie, ON</span></span><span class="crossing-wait" data-port="090101" data-mode="row">…</span></li>
+<li><span class="crossing-name"><a href="/canada-border-wait-times/rainbow-bridge/">Rainbow Bridge</a><span class="crossing-sub">Niagara Falls, NY / Niagara Falls, ON</span></span><span class="crossing-wait" data-port="090102" data-mode="row">…</span></li>
+<li><span class="crossing-name"><a href="/canada-border-wait-times/lewiston-queenston/">Lewiston-Queenston Bridge</a><span class="crossing-sub">Lewiston, NY / Niagara-on-the-Lake, ON</span></span><span class="crossing-wait" data-port="090104" data-mode="row">…</span></li>
+<li><span class="crossing-name">Whirlpool Bridge (NEXUS only)<span class="crossing-sub">Niagara Falls, NY / Niagara Falls, ON</span></span><span class="crossing-wait" data-port="090103" data-mode="row">…</span></li>
+</ul>
+<h2>Niagara and Buffalo crossings: into Canada right now</h2>
+<ul class="crossing-list" data-fastest>
+<li><span class="crossing-name"><a href="/canada-border-wait-times/peace-bridge/">Peace Bridge</a><span class="crossing-sub">Buffalo, NY / Fort Erie, ON</span></span><span class="crossing-wait" data-cbsa="Peace Bridge" data-mode="row">…</span></li>
+<li><span class="crossing-name"><a href="/canada-border-wait-times/rainbow-bridge/">Rainbow Bridge</a><span class="crossing-sub">Niagara Falls, NY / Niagara Falls, ON</span></span><span class="crossing-wait" data-cbsa="Rainbow Bridge" data-mode="row">…</span></li>
+<li><span class="crossing-name"><a href="/canada-border-wait-times/lewiston-queenston/">Lewiston-Queenston Bridge</a><span class="crossing-sub">Lewiston, NY / Niagara-on-the-Lake, ON</span></span><span class="crossing-wait" data-cbsa="Queenston-Lewiston Bridge" data-mode="row">…</span></li>
+</ul>
+<p style="margin-top:12px"><a href="/border-wait-times/">US-Mexico border wait times</a></p>
+<section class="app-cta">
+  <div class="app-cta-text">
+  <h2>Crossing with family or friends?</h2>
+  <p>Cerqa shows everyone's live location and arrival time on one map, so nobody gets lost on the other side. Free on iPhone and Android.</p>
+  <div class="stores">
+    <a href="https://apps.apple.com/app/cerqa-app/id6762389261" target="_blank" rel="noopener">App Store</a>
+    <a href="https://play.google.com/store/apps/details?id=com.cerqa.app&amp;referrer=utm_source%3Dcerqa.app%26utm_medium%3Dweb%26utm_campaign%3Dborder_ca_hub" target="_blank" rel="noopener">Google Play</a>
+  </div>
+  </div>
+  <figure class="app-cta-qr"><img src="/images/qr/border_ca_hub.svg" alt="" width="135" height="135"><figcaption>Scan to get Cerqa on your phone</figcaption></figure>
+</section>
+<p class="source">Waits into the US: <a href="https://bwt.cbp.gov/">U.S. Customs and Border Protection</a>. Waits into Canada: <a href="https://www.cbsa-asfc.gc.ca/bwt-taf/menu-eng.html">Canada Border Services Agency</a>; contains information licensed under the <a href="https://open.canada.ca/en/open-government-licence-canada">Open Government Licence – Canada</a>. These are official estimates and can change quickly. The page refreshes on its own every 5 minutes.</p>
+</main>
+<footer>
+  <p>© 2026 Cerqa</p>
+  <a href="/feedback">Feedback</a> <a href="/support/">Support</a> <a href="/privacy/en/">Privacy Policy</a> <a href="/terms/en/">Terms of Service</a> <a href="https://www.facebook.com/profile.php?id=61594994114331">Facebook</a>
+</footer>
+<script src="/assets/border.js" defer></script>
+</body>
+</html>

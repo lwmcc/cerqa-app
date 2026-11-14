@@ -793,6 +793,7 @@ def build_hub(lang):
 <noscript><p class="note">{t['noscript']}</p></noscript>
 {chr(10).join(sections)}
 <p class="note">{t['southbound']}</p>
+{'<p style="margin-top:12px"><a href="/canada-border-wait-times/">US-Canada border wait times (both directions)</a></p>' if lang == 'en' else ''}
 {cta(lang, f"border_hub_{lang}")}
 <p class="source">{t['source']}</p>"""
     path = hub_path(lang)

@@ -360,6 +360,154 @@ CROSSINGS = [
 <p>La mayoría de quienes cruzan en auto usan Hidalgo o Anzaldúas.</p>""",
         },
     },
+    {
+        "slug": "brownsville-gateway", "area": "brownsville", "port": "535504",
+        "en": {
+            "title": 'Gateway bridge wait time (Brownsville), live',
+            "h1": 'Brownsville Gateway bridge wait time',
+            "desc": 'Live Gateway International Bridge wait to enter Brownsville from Matamoros: cars, Ready Lane and walking, from CBP. Compare with B&M and Veterans.',
+            "lead": 'Live wait to enter the United States from downtown Matamoros at the Gateway bridge, from US Customs and Border Protection (CBP).',
+            "about": """<p>The Gateway International Bridge connects downtown Matamoros with downtown Brownsville. In Matamoros it's called the Puente Nuevo. It's open 24 hours for cars and people on foot.</p>
+<p>Compare it with the B&amp;M bridge a few blocks away and with Veterans before you pick a line.</p>""",
+        },
+        "es": {
+            "title": 'Puente Nuevo Matamoros: tiempo de espera en vivo',
+            "h1": 'Puente Nuevo (Gateway), Matamoros: tiempo de espera',
+            "desc": 'Tiempo de espera en vivo en el Puente Nuevo para cruzar de Matamoros a Brownsville: autos, Ready Lane y peatones, datos de CBP. Compáralo con el Puente Viejo y Los Tomates.',
+            "lead": 'Tiempo de espera en vivo para entrar a Estados Unidos desde el centro de Matamoros por el Puente Nuevo, según la Oficina de Aduanas y Protección Fronteriza (CBP).',
+            "about": """<p>El Puente Nuevo (Gateway en inglés) une el centro de Matamoros con el centro de Brownsville. Abre las 24 horas para autos y peatones.</p>
+<p>Compáralo con el Puente Viejo, a unas cuadras, y con Los Tomates antes de formarte.</p>""",
+        },
+    },
+    {
+        "slug": "brownsville-b-and-m", "area": "brownsville", "port": "535501",
+        "en": {
+            "title": 'B&M bridge wait time (Brownsville), live',
+            "h1": 'Brownsville B&M bridge wait time',
+            "desc": 'Live B&M bridge wait to enter Brownsville from Matamoros: cars, Ready Lane and walking, from CBP. Compare with Gateway and Veterans.',
+            "lead": 'Live wait to enter the United States from Matamoros at the B&M bridge, from US Customs and Border Protection (CBP).',
+            "about": """<p>The B&amp;M (Brownsville and Matamoros) bridge is a few blocks from the Gateway bridge, in downtown Brownsville. In Matamoros it's called the Puente Viejo. It's open 24 hours for cars and people on foot.</p>""",
+        },
+        "es": {
+            "title": 'Puente Viejo Matamoros: tiempo de espera en vivo',
+            "h1": 'Puente Viejo (B&M), Matamoros: tiempo de espera',
+            "desc": 'Tiempo de espera en vivo en el Puente Viejo para cruzar de Matamoros a Brownsville: autos, Ready Lane y peatones, datos de CBP. Compáralo con el Puente Nuevo y Los Tomates.',
+            "lead": 'Tiempo de espera en vivo para entrar a Estados Unidos desde Matamoros por el Puente Viejo, según la Oficina de Aduanas y Protección Fronteriza (CBP).',
+            "about": """<p>El Puente Viejo (B&amp;M en inglés) está a unas cuadras del Puente Nuevo, en el centro de Brownsville. Abre las 24 horas para autos y peatones.</p>""",
+        },
+    },
+    {
+        "slug": "brownsville-veterans", "area": "brownsville", "port": "535502",
+        "en": {
+            "title": 'Veterans bridge wait time (Brownsville), live',
+            "h1": 'Brownsville Veterans bridge wait time',
+            "desc": 'Live Veterans International Bridge wait to enter Brownsville from Matamoros: cars, SENTRI, Ready Lane and walking, from CBP. Hours and nearby bridges.',
+            "lead": 'Live wait to enter the United States from Matamoros at the Veterans bridge, from US Customs and Border Protection (CBP).',
+            "about": """<p>The Veterans International Bridge, at Los Tomates, is east of downtown Brownsville and connects straight to the I-69E highway. It's the only Brownsville bridge with SENTRI lanes.</p>
+<p>It isn't open overnight, so check the hours above.</p>""",
+        },
+        "es": {
+            "title": 'Puente Los Tomates Matamoros: tiempo de espera en vivo',
+            "h1": 'Puente Los Tomates (Veterans): tiempo de espera',
+            "desc": 'Tiempo de espera en vivo en el puente Los Tomates para cruzar de Matamoros a Brownsville: autos, SENTRI, Ready Lane y peatones, datos de CBP. Horario y puentes cercanos.',
+            "lead": 'Tiempo de espera en vivo para entrar a Estados Unidos desde Matamoros por el puente Los Tomates, según la Oficina de Aduanas y Protección Fronteriza (CBP).',
+            "about": """<p>El puente Los Tomates (Veterans en inglés) está al oriente del centro de Brownsville y conecta directo con la carretera I-69E. Es el único puente de Brownsville con carriles SENTRI.</p>
+<p>No abre de noche, así que revisa el horario arriba.</p>""",
+        },
+    },
+    {
+        "slug": "nogales-deconcini", "area": "nogales", "port": "260401",
+        "en": {
+            "title": 'Nogales DeConcini wait time, live',
+            "h1": 'Nogales DeConcini wait time',
+            "desc": 'Live DeConcini wait to enter Nogales, Arizona from Nogales, Sonora: cars, SENTRI and walking, from CBP. Compare with Mariposa and Morley Gate.',
+            "lead": 'Live wait to enter the United States from downtown Nogales, Sonora at DeConcini, from US Customs and Border Protection (CBP).',
+            "about": """<p>The DeConcini crossing connects downtown Nogales, Sonora with downtown Nogales, Arizona. It's open 24 hours for cars and people on foot.</p>
+<p>Drivers often compare it with Mariposa on the west side of town.</p>""",
+        },
+        "es": {
+            "title": 'Garita DeConcini Nogales: tiempo de espera en vivo',
+            "h1": 'Garita DeConcini, Nogales: tiempo de espera',
+            "desc": 'Tiempo de espera en vivo en la garita DeConcini para cruzar de Nogales, Sonora a Nogales, Arizona: autos, SENTRI y peatones, datos de CBP. Compárala con Mariposa y Morley.',
+            "lead": 'Tiempo de espera en vivo para entrar a Estados Unidos desde el centro de Nogales, Sonora por la garita DeConcini, según la Oficina de Aduanas y Protección Fronteriza (CBP).',
+            "about": """<p>La garita DeConcini une el centro de Nogales, Sonora con el centro de Nogales, Arizona. Abre las 24 horas para autos y peatones.</p>
+<p>Mucha gente la compara con Mariposa, al poniente de la ciudad.</p>""",
+        },
+    },
+    {
+        "slug": "nogales-mariposa", "area": "nogales", "port": "260402",
+        "en": {
+            "title": 'Nogales Mariposa wait time, live',
+            "h1": 'Nogales Mariposa wait time',
+            "desc": 'Live Mariposa wait to enter Nogales, Arizona from Nogales, Sonora: cars and walking, from CBP. Hours and nearby crossings.',
+            "lead": 'Live wait to enter the United States from Nogales, Sonora at Mariposa, from US Customs and Border Protection (CBP).',
+            "about": """<p>Mariposa is on the west side of Nogales and handles cars and trucks. It's a common choice for drivers who want to skip downtown.</p>
+<p>It isn't open overnight, so check the hours above.</p>""",
+        },
+        "es": {
+            "title": 'Garita Mariposa Nogales: tiempo de espera en vivo',
+            "h1": 'Garita Mariposa, Nogales: tiempo de espera',
+            "desc": 'Tiempo de espera en vivo en la garita Mariposa para cruzar de Nogales, Sonora a Nogales, Arizona: autos y peatones, datos de CBP. Horario y garitas cercanas.',
+            "lead": 'Tiempo de espera en vivo para entrar a Estados Unidos desde Nogales, Sonora por la garita Mariposa, según la Oficina de Aduanas y Protección Fronteriza (CBP).',
+            "about": """<p>La garita Mariposa está al poniente de Nogales y la usan autos y camiones. Mucha gente la escoge para no pasar por el centro.</p>
+<p>No abre de noche, así que revisa el horario arriba.</p>""",
+        },
+    },
+    {
+        "slug": "nogales-morley-gate", "area": "nogales", "port": "260403",
+        "en": {
+            "title": 'Nogales Morley Gate wait time, live',
+            "h1": 'Nogales Morley Gate wait time',
+            "desc": 'Live Morley Gate walking wait to enter Nogales, Arizona from Nogales, Sonora, from CBP. Short hours; compare with DeConcini.',
+            "lead": 'Live walking wait to enter the United States from downtown Nogales, Sonora at Morley Gate, from US Customs and Border Protection (CBP).',
+            "about": """<p>Morley Gate is a walking-only crossing in downtown Nogales, close to DeConcini. It keeps short daytime hours, so check them above.</p>""",
+        },
+        "es": {
+            "title": 'Garita Morley Nogales: tiempo de espera en vivo',
+            "h1": 'Garita Morley, Nogales: tiempo de espera',
+            "desc": 'Tiempo de espera en vivo a pie en la garita Morley para cruzar de Nogales, Sonora a Nogales, Arizona, datos de CBP. Horario corto; compárala con DeConcini.',
+            "lead": 'Tiempo de espera en vivo a pie para entrar a Estados Unidos desde el centro de Nogales, Sonora por la garita Morley, según la Oficina de Aduanas y Protección Fronteriza (CBP).',
+            "about": """<p>La garita Morley es solo para peatones, en el centro de Nogales, cerca de DeConcini. Tiene un horario corto de día, así que revísalo arriba.</p>""",
+        },
+    },
+    {
+        "slug": "calexico-west", "area": "calexico", "port": "250302",
+        "en": {
+            "title": 'Calexico West wait time, live',
+            "h1": 'Calexico West wait time',
+            "desc": 'Live Calexico West wait to enter the US from downtown Mexicali: cars, SENTRI, Ready Lane and walking, from CBP. Compare with Calexico East.',
+            "lead": 'Live wait to enter the United States from downtown Mexicali at Calexico West, from US Customs and Border Protection (CBP).',
+            "about": """<p>Calexico West connects downtown Mexicali with downtown Calexico. In Mexicali it's called the Garita Centro. It's open 24 hours for cars and people on foot.</p>
+<p>Compare it with Calexico East before you pick a line.</p>""",
+        },
+        "es": {
+            "title": 'Garita Centro Mexicali: tiempo de espera en vivo',
+            "h1": 'Garita Centro (Calexico West), Mexicali: tiempo de espera',
+            "desc": 'Tiempo de espera en vivo en la Garita Centro para cruzar de Mexicali a Calexico: autos, SENTRI, Ready Lane y peatones, datos de CBP. Compárala con la garita Nuevo Mexicali.',
+            "lead": 'Tiempo de espera en vivo para entrar a Estados Unidos desde el centro de Mexicali por la Garita Centro, según la Oficina de Aduanas y Protección Fronteriza (CBP).',
+            "about": """<p>La Garita Centro (Calexico West en inglés) une el centro de Mexicali con el centro de Calexico. Abre las 24 horas para autos y peatones.</p>
+<p>Compárala con la garita Nuevo Mexicali antes de formarte.</p>""",
+        },
+    },
+    {
+        "slug": "calexico-east", "area": "calexico", "port": "250301",
+        "en": {
+            "title": 'Calexico East wait time, live',
+            "h1": 'Calexico East wait time',
+            "desc": 'Live Calexico East wait to enter the US from Mexicali: cars, SENTRI, Ready Lane and walking, from CBP. Hours and nearby crossings.',
+            "lead": 'Live wait to enter the United States from Mexicali at Calexico East, from US Customs and Border Protection (CBP).',
+            "about": """<p>Calexico East is a few miles east of downtown, between the east side of Mexicali and Calexico. In Mexicali it's called the Garita Nuevo Mexicali. It handles cars, people on foot and trucks.</p>
+<p>It isn't open overnight, so check the hours above.</p>""",
+        },
+        "es": {
+            "title": 'Garita Nuevo Mexicali: tiempo de espera en vivo',
+            "h1": 'Garita Nuevo Mexicali (Calexico East): tiempo de espera',
+            "desc": 'Tiempo de espera en vivo en la garita Nuevo Mexicali para cruzar a Calexico: autos, SENTRI, Ready Lane y peatones, datos de CBP. Horario y garitas cercanas.',
+            "lead": 'Tiempo de espera en vivo para entrar a Estados Unidos desde Mexicali por la garita Nuevo Mexicali, según la Oficina de Aduanas y Protección Fronteriza (CBP).',
+            "about": """<p>La garita Nuevo Mexicali (Calexico East en inglés) está a unos kilómetros al oriente del centro, entre el oriente de Mexicali y Calexico. La usan autos, peatones y camiones.</p>
+<p>No abre de noche, así que revisa el horario arriba.</p>""",
+        },
+    },
 ]
 
 # Crossings compared on each page: (slug, CBP port, name EN, name ES, Mexican city).
@@ -387,6 +535,26 @@ AREAS = {
                   ("pharr", "230502", "Pharr", "Pharr", "Reynosa"),
                   (None, "230902", "Donna", "Donna", "Río Bravo"),
                   (None, "230901", "Progreso", "Progreso", "Nuevo Progreso")],
+    },
+    "brownsville": {
+        "h": ("Brownsville bridges right now", "Puentes de Matamoros ahorita"),
+        "items": [("brownsville-gateway", "535504", "Gateway", "Puente Nuevo (Gateway)", "Matamoros"),
+                  ("brownsville-b-and-m", "535501", "B&amp;M", "Puente Viejo (B&amp;M)", "Matamoros"),
+                  ("brownsville-veterans", "535502", "Veterans (Los Tomates)", "Los Tomates (Veterans)", "Matamoros"),
+                  (None, "535503", "Los Indios", "Los Indios", "Matamoros"),
+                  (None, "230901", "Progreso", "Progreso", "Nuevo Progreso")],
+    },
+    "nogales": {
+        "h": ("Nogales crossings right now", "Garitas de Nogales ahorita"),
+        "items": [("nogales-deconcini", "260401", "DeConcini", "DeConcini", "Nogales, Sonora"),
+                  ("nogales-mariposa", "260402", "Mariposa", "Mariposa", "Nogales, Sonora"),
+                  ("nogales-morley-gate", "260403", "Morley Gate (walking)", "Morley (peatones)", "Nogales, Sonora")],
+    },
+    "calexico": {
+        "h": ("Mexicali crossings right now", "Garitas de Mexicali ahorita"),
+        "items": [("calexico-west", "250302", "Calexico West", "Garita Centro (Calexico West)", "Mexicali"),
+                  ("calexico-east", "250301", "Calexico East", "Nuevo Mexicali (Calexico East)", "Mexicali"),
+                  (None, "250201", "Andrade", "Andrade", "Los Algodones")],
     },
     "laredo": {
         "h": ("Laredo bridges right now", "Puentes de Laredo ahorita"),

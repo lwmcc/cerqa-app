@@ -346,15 +346,25 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/routes/tijuana-to-playa-del-carmen/"/>
   </url>
   <!-- BLOG START (written by scripts/build_blog.py) -->
-  <url><loc>https://cerqa.app/blog/</loc><lastmod>2026-11-09</lastmod>
+  <url><loc>https://cerqa.app/blog/</loc><lastmod>2026-11-16</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/blog/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/blog/"/>
   </url>
-  <url><loc>https://cerqa.app/es/blog/</loc><lastmod>2026-11-09</lastmod>
+  <url><loc>https://cerqa.app/es/blog/</loc><lastmod>2026-11-16</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/blog/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/blog/"/>
+  </url>
+  <url><loc>https://cerqa.app/blog/make-school-pickups-easier/</loc><lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/blog/make-school-pickups-easier/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/blog/recoger-a-los-ninos-de-la-escuela-mas-facil/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/blog/make-school-pickups-easier/"/>
+  </url>
+  <url><loc>https://cerqa.app/es/blog/recoger-a-los-ninos-de-la-escuela-mas-facil/</loc><lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/blog/make-school-pickups-easier/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/blog/recoger-a-los-ninos-de-la-escuela-mas-facil/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/blog/make-school-pickups-easier/"/>
   </url>
   <url><loc>https://cerqa.app/blog/keep-multiple-cars-together-on-a-road-trip/</loc><lastmod>2026-11-09</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/blog/keep-multiple-cars-together-on-a-road-trip/"/>

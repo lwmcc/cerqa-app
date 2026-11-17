@@ -377,6 +377,7 @@ def page(lang, path, title, desc, body, alt_path=None):
   <p>© 2026 Cerqa</p>
   {' '.join(f'<a href="{h}">{n}</a>' for h, n in t['footer'])}
 </footer>
+<script src="/assets/store-gate.js" defer></script>
 </body>
 </html>
 """

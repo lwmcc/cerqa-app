@@ -237,6 +237,7 @@ def build(ga):
     {"".join(f'<a href="{h}">{n}</a>' for h, n in t['footer'])}
     <p class="data-credits">{t['credits']}</p>
   </footer>
+<script src="/assets/store-gate.js" defer></script>
 </body>
 </html>
 """

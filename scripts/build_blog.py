@@ -154,6 +154,7 @@ def foot(lang):
       }});
     }});
   </script>
+<script src="/assets/store-gate.js" defer></script>
 </body>
 </html>
 """

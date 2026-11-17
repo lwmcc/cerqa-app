@@ -507,6 +507,7 @@ def build(lang, ga):
       vids.forEach(function (v) {{ io.observe(v); }});
     }})();
   </script>
+<script src="/assets/store-gate.js" defer></script>
 </body>
 </html>
 """

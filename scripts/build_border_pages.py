@@ -727,6 +727,7 @@ def page(lang, path, alt_path, title, desc, body, og_image):
   {' '.join(f'<a href="{h}">{n}</a>' for h, n in t['footer'])}
 </footer>
 <script src="/assets/border.js" defer></script>
+<script src="/assets/store-gate.js" defer></script>
 </body>
 </html>
 """

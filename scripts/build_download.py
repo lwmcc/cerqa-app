@@ -204,6 +204,7 @@ def build(lang, ga):
       else {{ input.select(); document.execCommand("copy"); done(); }}
     }});
   </script>
+<script src="/assets/store-gate.js" defer></script>
 </body>
 </html>
 """

@@ -209,7 +209,7 @@
     <div class="page-header-inner">
       <a href="/" class="back-link">← Back to Cerqa</a>
       <h1>Privacy Policy</h1>
-      <p>Last updated: November 6, 2026</p>
+      <p>Last updated: November 16, 2026</p>
     </div>
   </header>
 
@@ -235,7 +235,8 @@
 
       <p><strong>Account information.</strong> When you create an account, Cerqa collects your email address and creates a username
   for you, which you can change. Your first and last name are optional. If you sign in with Apple or Google and choose to share your
-  name, Cerqa uses it to fill in your profile. You can also add a phone number if you want. This information is stored securely in
+  name, Cerqa uses it to fill in your profile. You can also add a phone number if you want. Cerqa also records whether you signed up on iPhone,
+  Android, or the web, and which app version you used. This information is stored securely in
   the company's database (AWS DynamoDB via AWS Amplify/Cognito).</p>
 
       <p><strong>Guest mode.</strong> You can try Cerqa without an account. In guest mode no account is created, and your location is
@@ -287,9 +288,11 @@
   on the company's servers (AWS DynamoDB) so they can be retrieved in your inbox. The title and message content of these notifications
   are encrypted at rest using AES-256, with the encryption key managed via AWS Secrets Manager.</p>
 
-      <p><strong>Device contacts.</strong> If you grant contacts permission, Cerqa reads your device contact list on your device to
-  help you find friends who are already on Cerqa. Your contact list is not uploaded to the company's servers. Only when you add someone
-  as a connection is a record of that connection stored.</p>
+      <p><strong>Device contacts.</strong> If you grant contacts permission and choose to look for friends, Cerqa sends the phone
+  numbers in your device contact list to the company's servers over an encrypted connection, compares them with the phone numbers of
+  registered Cerqa users, and shows you which of your contacts are already on Cerqa. The numbers are used only for that comparison and
+  are not stored. Names and other contact details stay on your device. Only when you add someone as a connection is a record of that
+  connection stored.</p>
 
       <p><strong>Family plan.</strong> If you own or join a Cerqa Family plan, the owner and members can see each other's username and
   photo. Your membership is recorded on the company's servers and with RevenueCat so your Pro access works.</p>
@@ -298,8 +301,9 @@
   Android, or APNs on iOS) along with a device identifier and platform type (iOS or Android) to send you notifications. This is stored
   on the company's servers and linked to your account.</p>
 
-      <p><strong>Voice input.</strong> If you use voice search, your voice is processed on your device using its built-in
-  speech recognition. The company does not receive or store your voice audio.</p>
+      <p><strong>Voice input.</strong> If you use voice search, your phone's built-in speech recognition (from Apple on iPhone,
+  or Google on Android) turns your voice into text. Depending on your phone, this happens on the device or on Apple's or Google's
+  servers, under their privacy policies. Cerqa receives only the text, never your voice audio.</p>
 
       <p><strong>Usage analytics.</strong> Cerqa uses Google Analytics for Firebase in the app, and Google Analytics on cerqa.app and
   ride.cerqa.app, to understand how Cerqa is used and what to improve. This includes the screens and features you use (for example,
@@ -335,8 +339,8 @@
       <ul>
         <li>To run the Cerqa service: signing you in, sharing your location, running plans, trips, and Meet me requests, delivering
   messages, and sending notifications.</li>
-        <li>To help you find people you know: matching phone numbers from your device contact list against existing Cerqa users
-  (processed on your device, not uploaded).</li>
+        <li>To help you find people you know: when you ask, comparing phone numbers from your device contact list with existing Cerqa
+  users (the numbers are not stored).</li>
         <li>To send push notifications: location sharing requests, plan and Meet me invitations, chat messages, connection invites, and
   arrival updates.</li>
         <li>To share your location in real time with the people or groups you choose.</li>
@@ -353,7 +357,8 @@
       <p>Ads are provided by Google AdMob. To choose, show, and measure ads, and to prevent fraud, Google's ads software collects
   information such as your device type and settings, IP address (which gives an approximate location, like your city), how you
   interact with ads, and on Android, your device's advertising ID. On iPhone, Cerqa does not ask for permission to track you, so the
-  advertising identifier (IDFA) is not used. Cerqa does not send Google your GPS location or any of your Cerqa data.</p>
+  advertising identifier (IDFA) is not used. Starting with version 1.21, the Android app also asks Google for non-personalized ads
+  only, so ads are not based on your interests on either platform. Cerqa does not send Google your GPS location or any of your Cerqa data.</p>
       <p>Depending on where you are and the choices you make, ads may be personalized based on your interests, or based only on
   general information such as the app and your approximate location:</p>
       <ul>
@@ -415,7 +420,7 @@
           </tr>
           <tr>
             <td>Mapbox</td>
-            <td>Maps, place search, and turn-by-turn navigation (receives your location while you use the map or navigate), and the map on live link pages</td>
+            <td>Maps, place search, and turn-by-turn navigation (receives your location while you use the map or navigate), and the map on live link pages. Mapbox's software may also collect anonymous location and usage data to improve its maps</td>
             <td><a href="https://www.mapbox.com/legal/privacy" target="_blank">mapbox.com/legal/privacy</a></td>
           </tr>
           <tr>
@@ -500,9 +505,25 @@
       <p><strong>Account deletion.</strong> You can delete your account from the Profile screen in the app, or at <a href="/delete"
   style="color:#4a6fa5;">cerqa.app/delete</a>. This permanently removes your account and associated data from the company's
   systems.</p>
-      <p><strong>GDPR and CCPA.</strong> If you are in the European Economic Area, UK, Switzerland, California, or another US state with
-  a privacy law, you have additional rights, including the right to access, correct, or delete your personal data, and to object to
-  certain processing. To use these rights, email <a href="mailto:privacy@cerqa.net" style="color:#4a6fa5;">privacy@cerqa.net</a>.</p>
+      <p><strong>Your privacy rights.</strong> Wherever you live, you can ask Cerqa LLC to give you a copy of your personal data
+  (including in a portable format), correct it, delete it, or stop or limit how it is used, and you can withdraw your consent at any
+  time. Withdrawing consent does not affect what was done before. To make a request, email
+  <a href="mailto:privacy@cerqa.net" style="color:#4a6fa5;">privacy@cerqa.net</a> from the email address on your account.
+  Cerqa LLC may ask you to confirm it is you, and replies within the time limit set by the law where you live. Making a request is free.</p>
+      <p><strong>Why Cerqa uses your data.</strong> Cerqa uses your data to provide the service you signed up for (your account,
+  sharing, plans, trips, messages, and Pro); with your consent, which you give through your device's permissions and your choices in
+  the app (location, contacts, photos, notifications, and, where required, ads); for legitimate interests such as keeping Cerqa
+  secure, fixing crashes, and understanding how Cerqa is used; and to meet legal obligations.</p>
+      <p><strong>Where your data is stored.</strong> Cerqa LLC is based in the United States, and Cerqa's servers are in the United
+  States (Amazon Web Services). If you use Cerqa from another country, your data is transferred to and stored in the United States, and
+  some service providers listed above may process it in other countries. Cerqa LLC uses providers that protect personal data and
+  limits what each one receives to what it needs.</p>
+      <p><strong>Laws in your country.</strong> If you are in the European Economic Area, the UK, or Switzerland (GDPR), California or
+  another US state with a privacy law (such as the CCPA), Canada (PIPEDA), Mexico (Ley Federal de Protección de Datos Personales en
+  Posesión de los Particulares, including your ARCO rights), Colombia (Ley 1581 de 2012), or Chile (Ley 19.628, as amended by Ley 21.719),
+  you have the rights above under your local law. If you are not satisfied with Cerqa LLC's answer, you can complain to your local data
+  protection authority, such as the Office of the Privacy Commissioner of Canada, the Superintendencia de Industria y Comercio in
+  Colombia, or the Agencia de Protección de Datos Personales in Chile.</p>
     </div>
 
     <div class="section-block">

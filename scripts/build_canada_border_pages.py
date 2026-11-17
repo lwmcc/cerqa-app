@@ -162,7 +162,7 @@ def cta(campaign):
     <a href="{play}" target="_blank" rel="noopener">Google Play</a>
   </div>
   </div>
-  <figure class="app-cta-qr"><img src="{qr(campaign)}" alt="" width="135" height="135"><figcaption>Scan to get Cerqa on your phone</figcaption></figure>
+  <figure class="app-cta-qr"><img src="{qr(campaign)}" alt="" width="135" height="135"><figcaption>Scan to download Cerqa</figcaption></figure>
 </section>"""
 
 

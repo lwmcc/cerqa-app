@@ -31,7 +31,7 @@ SHOTS = ["people", "ride-along"]  # shown as Android + iPhone pairs, iPhone on t
 
 T = {
     "en": {
-        "path": "/", "alt": "/es/", "lang_link": "Español", "planner_nav": "Trip Planner", "cc": "us", "campaign": "home_en", "download": "/download/", "qr": "Scan to get Cerqa on your phone",
+        "path": "/", "alt": "/es/", "lang_link": "Español", "planner_nav": "Trip Planner", "cc": "us", "campaign": "home_en", "download": "/download/", "qr": "Scan to download Cerqa",
         "title": "Cerqa | Live location and group navigation for road trips",
         "desc": "Share live location, see everyone's arrival time and navigate together. Cerqa keeps family and friends together on road trips, meetups and group drives. Free on iPhone and Android.",
         "og_title": "Cerqa: get everyone there",
@@ -127,7 +127,7 @@ T = {
         "currency": "USD",
     },
     "es": {
-        "path": "/es/", "alt": "/", "lang_link": "English", "planner_nav": "Planear viaje", "cc": "mx", "campaign": "home_es", "download": "/es/descargar/", "qr": "Escanea para tener Cerqa en tu celular",
+        "path": "/es/", "alt": "/", "lang_link": "English", "planner_nav": "Planear viaje", "cc": "mx", "campaign": "home_es", "download": "/es/descargar/", "qr": "Escanea para descargar Cerqa",
         "title": "Cerqa | Ubicación en vivo y navegación en grupo para viajes en carretera",
         "desc": "Comparte tu ubicación en vivo, ve a qué hora llega cada quien y naveguen juntos. Cerqa mantiene unidos a familia y amigos en viajes en carretera, reuniones y caravanas. Gratis en iPhone y Android.",
         "og_title": "Cerqa: que todos lleguen",

@@ -31,7 +31,7 @@ SHOTS = ["people", "ride-along"]  # shown as Android + iPhone pairs, iPhone on t
 
 T = {
     "en": {
-        "path": "/", "alt": "/es/", "lang_link": "Español", "planner_nav": "Trip Planner", "cc": "us", "campaign": "home_en",
+        "path": "/", "alt": "/es/", "lang_link": "Español", "planner_nav": "Trip Planner", "cc": "us", "campaign": "home_en", "download": "/download/", "qr": "Scan to get Cerqa on your phone",
         "title": "Cerqa | Live location and group navigation for road trips",
         "desc": "Share live location, see everyone's arrival time and navigate together. Cerqa keeps family and friends together on road trips, meetups and group drives. Free on iPhone and Android.",
         "og_title": "Cerqa: get everyone there",
@@ -127,7 +127,7 @@ T = {
         "currency": "USD",
     },
     "es": {
-        "path": "/es/", "alt": "/", "lang_link": "English", "planner_nav": "Planear viaje", "cc": "mx", "campaign": "home_es",
+        "path": "/es/", "alt": "/", "lang_link": "English", "planner_nav": "Planear viaje", "cc": "mx", "campaign": "home_es", "download": "/es/descargar/", "qr": "Escanea para tener Cerqa en tu celular",
         "title": "Cerqa | Ubicación en vivo y navegación en grupo para viajes en carretera",
         "desc": "Comparte tu ubicación en vivo, ve a qué hora llega cada quien y naveguen juntos. Cerqa mantiene unidos a familia y amigos en viajes en carretera, reuniones y caravanas. Gratis en iPhone y Android.",
         "og_title": "Cerqa: que todos lleguen",
@@ -230,10 +230,27 @@ def analytics():
     return re.search(r"\s*<!-- Google Analytics 4.*?</script>", s, re.S).group(0)
 
 
+def qr(t, campaign):
+    """QR code (SVG) to the download page, which sends iPhones to the App Store and Androids to
+    Play. Shown only on a computer (assets/home.css). Same recipe as the border pages: needs
+    `pip install segno` to make a new code; codes already in images/qr/ are reused."""
+    rel = f"images/qr/{campaign}.svg"
+    if not os.path.exists(rel):
+        import segno
+        os.makedirs("images/qr", exist_ok=True)
+        url = f"{SITE}{t['download']}?utm_source=cerqa.app&utm_medium=qr&utm_campaign={campaign}"
+        segno.make(url, error="m").save(rel, scale=3, border=2, dark="#1b2d4a", light="#ffffff")
+        svg = open(rel).read()
+        w = re.search(r'<svg[^>]* width="(\d+)"', svg).group(1)
+        open(rel, "w").write(svg.replace(f'width="{w}" height="{w}"', f'width="{w}" height="{w}" viewBox="0 0 {w} {w}"', 1))
+    return "/" + rel
+
+
 def badges(t, campaign):
     return f"""<div class="store-badges">
       <a href="{APP_STORE.format(cc=t['cc'])}" target="_blank" rel="noopener"><img class="badge-apple" src="{t['apple_badge']}" alt="{t['apple_alt']}" width="156" height="52"></a>
       <a href="{PLAY.format(campaign=campaign)}" target="_blank" rel="noopener"><img class="badge-google" src="{t['google_badge']}" alt="{t['google_alt']}" width="175" height="52"></a>
+      <figure class="store-qr"><img src="{qr(t, campaign + '_qr')}" alt="" width="96" height="96"><figcaption>{t['qr']}</figcaption></figure>
     </div>"""
 
 
@@ -307,6 +324,7 @@ def build(lang, ga):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="fo-verify" content="6c6e5808-27e6-4ea6-8e35-d85cd2c7ba57">
   <title>{t['title']}</title>
   <meta name="description" content="{t['desc']}">
   <link rel="canonical" href="{SITE}{t['path']}">

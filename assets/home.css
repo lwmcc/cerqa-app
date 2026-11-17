@@ -116,6 +116,14 @@ a { color: #4a6fa5; }
 .store-badges .badge-apple { height: 52px; width: auto; }
 .store-badges .badge-google { height: 52px; width: auto; }
 
+/* QR to the download page, on a computer only: phones can't scan their own screen. */
+.store-qr { display: none; margin: 0 0 0 12px; align-items: center; gap: 10px; text-align: left; }
+.store-qr img { display: block; background: #fff; border-radius: 10px; padding: 5px; border: 1px solid #e3e8f0; }
+.store-qr figcaption { font-size: 13px; line-height: 1.3; color: #4b5b73; max-width: 110px; }
+.final .store-qr figcaption { color: rgba(255,255,255,0.8); }
+.final .store-qr img { border-color: transparent; }
+@media (min-width: 900px) and (hover: hover) and (pointer: fine) { .store-qr { display: flex; } }
+
 .hero .fine {
   font-size: 14px;
   color: #6b7a8d;

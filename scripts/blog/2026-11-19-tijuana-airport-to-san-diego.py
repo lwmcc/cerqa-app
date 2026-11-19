@@ -31,7 +31,7 @@ POST = {
       <p><strong>The short answer:</strong> if you're flying, use CBX. It's quicker, calmer, and it saves you a lot of headaches.</p>
 
       <h2>Why Fly Out of Tijuana?</h2>
-      <p>Price. On international trips, flying out of Tijuana can save big compared to flying out of nearby US airports. For our family's international flights, I've found airfare out of Tijuana <strong>50% to 75% cheaper</strong> than the same trip from an American airport.</p>
+      <p>Price. On international trips, flying out of Tijuana can save big compared to flying out of nearby US airports. For our family's international flights, I've found airfare out of Tijuana <strong>around 50% cheaper</strong> than the same trip from an American airport.</p>
       <p>Getting to Tijuana can take some driving. But when you find a discounted fare from TIJ, the savings are worth it, in my opinion. Before you book, compare the fare from Tijuana with your home airport, and count the drive, gas and parking.</p>
 
       <h2>How CBX Works</h2>
@@ -120,7 +120,7 @@ POST = {
       <p><strong>La respuesta corta:</strong> si vas a volar, usa el CBX. Es más rápido, más tranquilo y te ahorras muchos dolores de cabeza.</p>
 
       <h2>¿Por qué volar desde Tijuana?</h2>
-      <p>Por el precio. En viajes internacionales, volar desde Tijuana puede ahorrarte mucho comparado con volar desde los aeropuertos cercanos de Estados Unidos. Para los vuelos internacionales de mi familia, he encontrado boletos desde Tijuana <strong>entre 50% y 75% más baratos</strong> que el mismo viaje desde un aeropuerto estadounidense.</p>
+      <p>Por el precio. En viajes internacionales, volar desde Tijuana puede ahorrarte mucho comparado con volar desde los aeropuertos cercanos de Estados Unidos. Para los vuelos internacionales de mi familia, he encontrado boletos desde Tijuana <strong>alrededor de 50% más baratos</strong> que el mismo viaje desde un aeropuerto estadounidense.</p>
       <p>Llegar a Tijuana puede requerir manejar un rato. Pero cuando encuentras un vuelo en oferta desde TIJ, en mi opinión el ahorro vale la pena. Antes de comprar, compara el precio desde Tijuana con el de tu aeropuerto, y suma el camino, la gasolina y el estacionamiento.</p>
 
       <h2>Cómo funciona el CBX</h2>

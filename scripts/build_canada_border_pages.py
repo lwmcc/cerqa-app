@@ -45,6 +45,27 @@ AREAS = {
         ],
         "far": [],
     },
+    # 2026-11-19: Detroit-Windsor and Port Huron-Sarnia, the busiest US-Canada crossings.
+    "detroit": {
+        "h": "Detroit and Windsor crossings",
+        "items": [
+            ("ambassador-bridge", "380001", "Ambassador Bridge", "Ambassador Bridge", "Detroit, MI / Windsor, ON"),
+            ("detroit-windsor-tunnel", "380002", "Windsor and Detroit Tunnel", "Detroit-Windsor Tunnel", "Detroit, MI / Windsor, ON"),
+            ("gordie-howe-bridge", "380102", "Gordie Howe International Bridge", "Gordie Howe International Bridge", "Detroit, MI / Windsor, ON"),
+        ],
+        "far": [(None, "380201", "Blue Water Bridge", "Blue Water Bridge", "Port Huron, MI / Sarnia, ON")],
+    },
+    "port-huron": {
+        "h": "Port Huron and Sarnia",
+        "items": [
+            ("blue-water-bridge", "380201", "Blue Water Bridge", "Blue Water Bridge", "Port Huron, MI / Sarnia, ON"),
+        ],
+        "far": [
+            (None, "380001", "Ambassador Bridge", "Ambassador Bridge", "Detroit, MI / Windsor, ON"),
+            (None, "380002", "Windsor and Detroit Tunnel", "Detroit-Windsor Tunnel", "Detroit, MI / Windsor, ON"),
+            (None, "380102", "Gordie Howe International Bridge", "Gordie Howe International Bridge", "Detroit, MI / Windsor, ON"),
+        ],
+    },
 }
 
 CROSSINGS = {
@@ -110,6 +131,42 @@ CROSSINGS = {
         "lead": "Live waits on the Lewiston-Queenston Bridge between Lewiston, New York and Niagara-on-the-Lake, Ontario, in both directions.",
         "about": """<p>The Lewiston-Queenston Bridge is north of the falls and connects I-190 with Highway 405, which leads to the QEW. It carries cars and trucks.</p>
 <p>It's a common choice for trips to Toronto when the Rainbow Bridge is busy.</p>""",
+    },
+    "ambassador-bridge": {
+        "area": "detroit",
+        "title": "Ambassador Bridge border wait time, live (both directions)",
+        "h1": "Ambassador Bridge border wait time",
+        "desc": "Live Ambassador Bridge wait into the US from CBP and into Canada from CBSA, Detroit to Windsor. Compare with the Detroit-Windsor Tunnel and the Gordie Howe Bridge.",
+        "lead": "Live waits on the Ambassador Bridge between Detroit, Michigan and Windsor, Ontario, in both directions.",
+        "about": """<p>The Ambassador Bridge crosses the Detroit River between southwest Detroit, near I-75 and I-96, and Windsor's Huron Church Road, which leads to Highway 401. It carries cars and a large share of the trucks between the two countries.</p>
+<p>When the bridge backs up, compare the Detroit-Windsor Tunnel downtown and the Gordie Howe International Bridge downriver below.</p>""",
+    },
+    "detroit-windsor-tunnel": {
+        "area": "detroit",
+        "title": "Detroit-Windsor Tunnel wait time, live (both directions)",
+        "h1": "Detroit-Windsor Tunnel wait time",
+        "desc": "Live Detroit-Windsor Tunnel wait into the US from CBP and into Canada from CBSA. Compare with the Ambassador Bridge and the Gordie Howe Bridge.",
+        "lead": "Live waits at the Detroit-Windsor Tunnel between downtown Detroit, Michigan and downtown Windsor, Ontario, in both directions.",
+        "about": """<p>The tunnel runs under the Detroit River and connects downtown Detroit with downtown Windsor directly. It's for cars; large trucks use the bridges.</p>
+<p>For trips between the two downtowns it's often the shortest drive, so check it against the bridges below.</p>""",
+    },
+    "gordie-howe-bridge": {
+        "area": "detroit",
+        "title": "Gordie Howe Bridge border wait time, live (both directions)",
+        "h1": "Gordie Howe International Bridge wait time",
+        "desc": "Live Gordie Howe International Bridge wait into the US from CBP and into Canada from CBSA. Compare with the Ambassador Bridge and the Detroit-Windsor Tunnel.",
+        "lead": "Live waits on the Gordie Howe International Bridge between Detroit, Michigan and Windsor, Ontario, in both directions.",
+        "about": """<p>The Gordie Howe International Bridge is the newest Detroit River crossing, downriver from the Ambassador Bridge. On the US side it connects to I-75 in southwest Detroit; in Canada, to the Herb Gray Parkway and Highway 401. It carries cars and trucks.</p>
+<p>Compare it with the Ambassador Bridge and the tunnel below before you go.</p>""",
+    },
+    "blue-water-bridge": {
+        "area": "port-huron",
+        "title": "Blue Water Bridge border wait time, live (both directions)",
+        "h1": "Blue Water Bridge border wait time",
+        "desc": "Live Blue Water Bridge wait into the US from CBP and into Canada from CBSA, Port Huron to Sarnia. Compare with the Detroit crossings.",
+        "lead": "Live waits on the Blue Water Bridge between Port Huron, Michigan and Point Edward (Sarnia), Ontario, in both directions.",
+        "about": """<p>The Blue Water Bridge crosses the St. Clair River where Lake Huron begins, connecting I-94 and I-69 in Port Huron with Highway 402 in Sarnia. It carries cars and trucks.</p>
+<p>It's about 60 miles north of Detroit. When the Detroit crossings are slow, it can be worth the drive for trips toward London and Toronto; the Detroit waits are below.</p>""",
     },
 }
 
@@ -274,14 +331,14 @@ def page(path, title, desc, body):
 def build_hub():
     sections = "\n".join(compare(k) for k in AREAS)
     body = f"""<h1>US-Canada border wait times</h1>
-<p class="lead">Live waits at the Vancouver and Niagara crossings in both directions: into the US from US Customs and Border Protection (CBP), and into Canada from the Canada Border Services Agency (CBSA).</p>
+<p class="lead">Live waits at the Vancouver, Niagara, Detroit and Port Huron crossings in both directions: into the US from US Customs and Border Protection (CBP), and into Canada from the Canada Border Services Agency (CBSA).</p>
 <noscript><p class="note">Turn on JavaScript to see the live waits.</p></noscript>
 {sections}
 <p style="margin-top:12px"><a href="/border-wait-times/">US-Mexico border wait times</a></p>
 {cta("border_ca_hub")}
 <p class="source">{SOURCE}</p>"""
     return HUB, page(HUB, "US-Canada border wait times, live (both directions)",
-                     "Live border waits at Peace Arch, Pacific Highway, Sumas, Lynden, the Peace Bridge, Rainbow Bridge and Lewiston-Queenston, into the US (CBP) and into Canada (CBSA).", body)
+                     "Live border waits at Peace Arch, Pacific Highway, the Peace and Rainbow bridges, the Ambassador Bridge, the Detroit-Windsor Tunnel, Gordie Howe and Blue Water bridges, into the US (CBP) and into Canada (CBSA).", body)
 
 
 def build_crossing(slug, c):

@@ -162,6 +162,12 @@ footer a:hover { text-decoration: underline; }
         window.dataLayer = window.dataLayer || [];
         window.gtag = function () { window.dataLayer.push(arguments); };
         gtag("js", new Date());
+        // Europe (EEA, UK, Switzerland): no analytics cookies without consent. Consent Mode keeps
+        // storage denied there, so GA only gets cookieless pings. Elsewhere unchanged (2026-11-19).
+        gtag("consent", "default", {
+          analytics_storage: "denied", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied",
+          region: ["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","IS","LI","NO","GB","CH"]
+        });
         // Your own visits: open any page once with ?internal=1 (?internal=0 undoes it). The cookie
         // covers cerqa.app and ride.cerqa.app; GA's Internal Traffic filter drops traffic_type internal.
         var internal = /(?:^|; )cerqa_internal=1/.test(document.cookie);

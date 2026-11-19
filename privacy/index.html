@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <script>
     var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-    window.location.replace(lang.startsWith('es') ? '/privacy/es/index.html' : '/privacy/en/index.html');
+    window.location.replace(lang.startsWith('es') ? '/privacy/es/index.html' : lang.startsWith('fr') ? '/privacy/fr/index.html' : '/privacy/en/index.html');
   </script>
   <noscript>
     <meta http-equiv="refresh" content="0; url=/privacy/en/index.html">

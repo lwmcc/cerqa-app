@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+  <html lang="fr">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politique de confidentialité | Cerqa</title>
+<meta name="description" content="Comment Cerqa recueille, utilise et protège tes données, y compris la position, les publicités et les statistiques.">
+<link rel="canonical" href="https://cerqa.app/privacy/fr/">
+<link rel="alternate" hreflang="en" href="https://cerqa.app/privacy/en/">
+<link rel="alternate" hreflang="es" href="https://cerqa.app/privacy/es/">
+<link rel="alternate" hreflang="fr" href="https://cerqa.app/privacy/fr/">
+<link rel="alternate" hreflang="x-default" href="https://cerqa.app/privacy/en/">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32.png">
+  <style>
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    margin: 0;
+    background: #f0f4f8;
+    color: #1b2d4a;
+  }
+
+  .page-header {
+    color: #1b2d4a;
+    padding: 40px 20px;
+  }
+
+  .page-header-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-block;
+    color: #4a6fa5;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 20px;
+    letter-spacing: 0.3px;
+  }
+
+  .back-link:hover { color: #1b2d4a; }
+
+  .page-header h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    letter-spacing: -0.5px;
+  }
+
+  .page-header p {
+    font-size: 14px;
+    opacity: 0.6;
+    margin: 0;
+  }
+
+  .content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 20px 80px;
+  }
+
+  .section-block {
+    margin-bottom: 36px;
+  }
+
+  .section-block h2 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1b2d4a;
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .section-block p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #344a63;
+    margin: 0 0 12px;
+  }
+
+  .section-block p:last-child {
+    margin-bottom: 0;
+  }
+
+  .section-block ul {
+    margin: 8px 0 12px;
+    padding-left: 20px;
+  }
+
+  .section-block ul li {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #344a63;
+    margin-bottom: 4px;
+  }
+
+  .highlight-box {
+    margin-bottom: 40px;
+  }
+
+  .highlight-box p {
+    margin: 0;
+    font-size: 15px;
+    color: #1b2d4a;
+    line-height: 1.7;
+  }
+
+  .third-party-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  .third-party-table th {
+    text-align: left;
+    padding: 8px 12px;
+    background: #eef2f7;
+    color: #1b2d4a;
+    font-weight: 600;
+    border-bottom: 2px solid #dde4ef;
+  }
+
+  .third-party-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e8edf4;
+    color: #344a63;
+    vertical-align: top;
+  }
+
+  .third-party-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .third-party-table a {
+    color: #4a6fa5;
+    text-decoration: none;
+  }
+
+  .third-party-table a:hover {
+    text-decoration: underline;
+  }
+
+  footer {
+    text-align: center;
+    padding: 28px 20px;
+    font-size: 14px;
+    color: #8a97a8;
+    border-top: 1px solid #e2e8f0;
+    background: #f0f4f8;
+  }
+
+  footer a {
+    margin: 0 10px;
+    color: #4a6fa5;
+    text-decoration: none;
+  }
+
+  footer a:hover { text-decoration: underline; }
+  </style>
+      <!-- Google Analytics 4 (same property as the Cerqa apps). Only on the live cerqa.app site,
+         no ad features, addresses sent without query strings except campaign tags. Store button clicks are sent as
+         store_click so a website visit can be tied to an install. -->
+    <script>
+      (function () {
+        var host = location.hostname;
+        if (host !== "cerqa.app" && host !== "www.cerqa.app") return;
+        var id = "G-BPFEDCV63V";
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        gtag("js", new Date());
+        // Europe (EEA, UK, Switzerland): no analytics cookies without consent. Consent Mode keeps
+        // storage denied there, so GA only gets cookieless pings. Elsewhere unchanged (2026-11-19).
+        gtag("consent", "default", {
+          analytics_storage: "denied", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied",
+          region: ["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","IS","LI","NO","GB","CH"]
+        });
+        // Your own visits: open any page once with ?internal=1 (?internal=0 undoes it). The cookie
+        // covers cerqa.app and ride.cerqa.app; GA's Internal Traffic filter drops traffic_type internal.
+        var internal = /(?:^|; )cerqa_internal=1/.test(document.cookie);
+        var flag = location.search.match(/[?&]internal=([01])/);
+        if (flag) {
+          internal = flag[1] === "1";
+          document.cookie = "cerqa_internal=1; domain=cerqa.app; path=/; samesite=lax; secure; max-age=" + (internal ? 157680000 : 0);
+        }
+        if (internal) gtag("set", { traffic_type: "internal" });
+        // Keep only campaign tags (utm_*) from the address, so GA can credit the campaign.
+        var campaign = location.search.slice(1).split("&").filter(function (p) { return /^utm_[a-z_]+=/.test(p); }).join("&");
+        gtag("config", id, {
+          page_location: location.origin + location.pathname + (campaign ? "?" + campaign : ""),
+          allow_google_signals: false,
+          allow_ad_personalization_signals: false
+        });
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+        document.head.appendChild(s);
+        document.addEventListener("click", function (e) {
+          var link = e.target.closest && e.target.closest("a[href]");
+          if (!link) return;
+          var store = link.href.indexOf("apps.apple.com") !== -1 ? "apple"
+            : link.href.indexOf("play.google.com") !== -1 ? "google" : null;
+          if (store) {
+            gtag("event", "store_click", { store: store, page: location.pathname, transport_type: "beacon" });
+          }
+        });
+      })();
+    </script>
+  </head>
+  <body>
+
+  <header class="page-header">
+    <div class="page-header-inner">
+      <a href="/" class="back-link">← Retour à Cerqa</a>
+      <h1>Politique de confidentialité</h1>
+      <p>Dernière mise à jour : 19 novembre 2026</p>
+    </div>
+  </header>
+
+  <div class="content">
+
+    <div class="highlight-box">
+      <p>Cerqa est un service de partage de position pour les amis et la famille. Il repose sur un principe : ta position t’appartient.
+  Elle n’est partagée que quand tu choisis de la partager, et seulement avec les personnes que tu choisis. Ta position n’est jamais vendue,
+  jamais partagée avec des annonceurs et jamais utilisée pour cibler des publicités.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>Qui exploite Cerqa</h2>
+      <p>Le service Cerqa est exploité par Cerqa LLC (« l’entreprise »). Le service Cerqa (« Cerqa ») désigne les applis Cerqa pour iPhone et
+  Android, les sites cerqa.app et ride.cerqa.app, les liens créés par Cerqa (comme les liens de position en direct, de plan et d’invitation)
+  et les serveurs qui les font fonctionner. Cette politique s’applique à tous. « Tu » désigne toute personne qui utilise Cerqa.</p>
+      <p>Les questions sur cette politique peuvent être envoyées à <a href="mailto:privacy@cerqa.net"
+  style="color:#4a6fa5;">privacy@cerqa.net</a>.</p>
+      <p>Cette traduction est fournie pour ta commodité. En cas de différence, la <a href="/privacy/en/" style="color:#4a6fa5;">version anglaise</a> fait foi.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>Informations recueillies par Cerqa</h2>
+
+      <p><strong>Informations du compte.</strong> Quand tu crées un compte, Cerqa recueille ton adresse e-mail et crée pour toi un nom
+  d’utilisateur, que tu peux changer. Ton prénom et ton nom sont facultatifs. Si tu te connectes avec Apple ou Google et choisis de partager ton
+  nom, Cerqa l’utilise pour remplir ton profil. Tu peux aussi ajouter un numéro de téléphone si tu le souhaites. Cerqa enregistre aussi si tu t’es inscrit sur iPhone,
+  Android ou le Web, et la version de l’appli utilisée. Ces informations sont stockées de façon sécurisée dans
+  la base de données de l’entreprise (AWS DynamoDB via AWS Amplify/Cognito).</p>
+
+      <p><strong>Mode invité.</strong> Tu peux essayer Cerqa sans compte. En mode invité, aucun compte n’est créé et ta position
+  n’est partagée avec personne.</p>
+
+      <p><strong>Photo de profil.</strong> Si tu ajoutes une photo de profil, elle est stockée dans un compartiment AWS S3 privé et n’est accessible qu’aux
+  utilisateurs qui peuvent voir ton profil. Les photos sont conservées jusqu’à ce que tu les remplaces ou supprimes ton compte.</p>
+
+      <p><strong>Position en direct.</strong> Pendant que tu partages ta position, Cerqa recueille tes coordonnées GPS (latitude et
+  longitude), ta vitesse, ton cap (direction de déplacement) et la précision du GPS. Si tu as lancé la navigation, Cerqa envoie aussi
+  des détails de navigation comme ton itinéraire, la distance et le temps restant jusqu’à ta destination. Ces données sont envoyées en temps réel aux personnes
+  avec qui tu as choisi de partager. Le flux de positions en direct n’est pas stocké sur les serveurs de l’entreprise. Quand le partage s’arrête, ta position en direct
+  n’est plus envoyée ni conservée.</p>
+
+      <p><strong>Liens en direct.</strong> Pendant que tu navigues, tu peux partager un lien en direct avec n’importe qui, qui peut l’ouvrir dans un navigateur sans
+  l’appli ni compte. Toute personne qui a le lien peut voir ton prénom (ou nom d’utilisateur), où tu es, ton heure d’arrivée et la distance,
+  ainsi que ta destination et ton itinéraire, jusqu’à la fin du lien. Au début de ton trajet, et si tu t’arrêtes 5 minutes ou plus, la page montre
+  seulement une zone approximative. Si ta destination est un de tes Lieux privés, son nom et ton itinéraire sont masqués, et pendant que tu es dans
+  un Lieu privé, la page ne se met plus à jour. Un lien se termine quand tu l’arrêtes, arrives ou termines la navigation, et après 3 heures au plus. Cerqa
+  stocke le lien, ton nom tel qu’il apparaît sur la page, ton code d’invitation pour le bouton Obtenir Cerqa de la page et un identifiant aléatoire pour chaque navigateur
+  qui ouvre le lien, utilisé seulement pour te montrer combien de personnes l’ont vu. Cerqa ne stocke ni tes positions ni ton itinéraire. La page enregistre aussi
+  cet identifiant aléatoire dans le navigateur de la personne qui l’ouvre, et sur cerqa.app elle utilise Google Analytics.</p>
+
+      <p><strong>Plans, voyages et Rejoins-moi.</strong> Quand tu crées un plan ou un voyage, ou envoies une demande Rejoins-moi, Cerqa stocke le lieu,
+  l’heure, le titre ou la note que tu ajoutes, et les personnes invitées avec leurs réponses. Seules les personnes du plan ou du voyage peuvent
+  le voir, et une note Rejoins-moi apparaît aussi dans ta discussion avec les personnes à qui tu l’as envoyée. Pendant qu’un plan ou un voyage est en direct, Cerqa stocke aussi
+  quelques étapes pour chaque personne qui partage, comme l’heure de départ, l’heure d’arrivée estimée, le moment où elle s’est approchée et
+  celui où elle est arrivée, pour que le groupe voie qui est en route. L’itinéraire parcouru n’est pas stocké.</p>
+
+      <p><strong>Historique des voyages.</strong> Quand un voyage se termine, Cerqa enregistre un résumé dans ton historique : la destination, la distance, la durée,
+  la vitesse moyenne et maximale, et les participants. Tu peux voir ton propre historique, et pour un voyage de groupe, les personnes qui faisaient partie
+  du groupe à ce moment peuvent aussi le voir. Il ne contient pas l’itinéraire parcouru.</p>
+
+      <p><strong>Lieux privés.</strong> Les Lieux privés (comme le domicile ou le travail) et les personnes de confiance qui peuvent t’y voir sont enregistrés uniquement
+  sur ton appareil, pas sur les serveurs de l’entreprise. Quand tu es dans un Lieu privé, ton appareil n’envoie plus ta vraie position à
+  quiconque n’est pas de confiance pour ce lieu.</p>
+
+      <p><strong>Photos de voyage.</strong> Les photos que tu ajoutes pendant un voyage partagé sont stockées dans un compartiment AWS S3 privé avec une
+  légende et un nom de lieu facultatifs, et ne sont visibles que par les personnes de ce voyage (pour un groupe, les personnes du groupe au moment où la photo
+  a été ajoutée). Elles sont supprimées automatiquement après 30 jours.</p>
+
+      <p><strong>Messages et discussion.</strong> Les messages que tu envoies avec Cerqa sont stockés sur les serveurs de l’entreprise (AWS DynamoDB) pour
+  pouvoir être livrés et retrouvés sur tes appareils. Ils comprennent le texte, l’identité de l’expéditeur, l’horodatage et les accusés de lecture.
+  Le contenu des messages est chiffré au repos en AES-256 avant d’être écrit dans la base de données ; la clé de chiffrement est stockée séparément dans
+  AWS Secrets Manager et n’est pas intégrée à l’appli. Les images envoyées dans la discussion sont stockées dans un compartiment AWS S3 privé. Les messages sont conservés
+  jusqu’à ce que tu les supprimes ou supprimes ton compte.</p>
+
+      <p><strong>Notifications.</strong> Les notifications dans l’appli (comme les demandes de connexion et les invitations à partager ta position) sont stockées
+  sur les serveurs de l’entreprise (AWS DynamoDB) pour être retrouvées dans ta boîte de réception. Le titre et le contenu de ces notifications
+  sont chiffrés au repos en AES-256, avec une clé de chiffrement gérée par AWS Secrets Manager.</p>
+
+      <p><strong>Contacts de l’appareil.</strong> Si tu autorises l’accès aux contacts et choisis de chercher des amis, Cerqa envoie les numéros de
+  téléphone de ta liste de contacts aux serveurs de l’entreprise par une connexion chiffrée, les compare aux numéros des
+  utilisateurs Cerqa inscrits et te montre lesquels de tes contacts sont déjà sur Cerqa. Les numéros servent uniquement à cette comparaison et
+  ne sont pas conservés. Les noms et autres coordonnées restent sur ton appareil. Une connexion n’est enregistrée que lorsque tu ajoutes
+  quelqu’un comme connexion.</p>
+
+      <p><strong>Forfait familial.</strong> Si tu es titulaire ou membre d’un forfait familial Cerqa, le titulaire et les membres peuvent voir le nom d’utilisateur et la
+  photo des autres. Ton adhésion est enregistrée sur les serveurs de l’entreprise et chez RevenueCat pour que ton accès Pro fonctionne.</p>
+
+      <p><strong>Jeton de notification.</strong> Cerqa recueille un jeton de notification (fourni par Firebase Cloud Messaging sur
+  Android, ou APNs sur iOS) avec un identifiant d’appareil et le type de plateforme (iOS ou Android) pour t’envoyer des notifications. Ces données sont stockées
+  sur les serveurs de l’entreprise et liées à ton compte.</p>
+
+      <p><strong>Saisie vocale.</strong> Si tu utilises la recherche vocale, la reconnaissance vocale intégrée à ton téléphone (d’Apple sur iPhone,
+  ou de Google sur Android) transforme ta voix en texte. Selon ton téléphone, cela se fait sur l’appareil ou sur les serveurs d’Apple ou de Google,
+  selon leurs politiques de confidentialité. Cerqa ne reçoit que le texte, jamais l’audio de ta voix.</p>
+
+      <p><strong>Statistiques d’utilisation.</strong> Cerqa utilise Google Analytics for Firebase dans l’appli, et Google Analytics sur cerqa.app et
+  ride.cerqa.app, pour comprendre comment Cerqa est utilisé et ce qu’il faut améliorer. Cela comprend les écrans et fonctions que tu utilises (par exemple,
+  lancer un partage de position ou créer un voyage), la version de l’appli, le type d’appareil, le système d’exploitation, la langue et la région approximative.
+  Ces données sont liées à un identifiant de compte interne, jamais à ton nom, ton adresse e-mail, ton numéro de téléphone ou ta position. Les adresses de pages sont envoyées sans liens de
+  voyage ni autres identifiants privés. Les fonctions publicitaires de Google sont désactivées dans les statistiques : elles ne recueillent pas
+  d’identifiant publicitaire et ne servent pas à la publicité. Dans l’Espace économique européen, au Royaume-Uni et en Suisse, les statistiques de l’appli
+  ne fonctionnent que si tu y consens dans le message de consentement de Google, et sur les sites, aucun cookie de statistiques n’est déposé sans consentement.</p>
+
+      <p><strong>Publicité.</strong> Les comptes gratuits voient des publicités de Google AdMob. Le logiciel publicitaire de Google dans l’appli recueille des
+  informations sur l’appareil comme décrit dans la section Publicité ci-dessous. Cerqa ne donne pas aux annonceurs ta position, tes voyages, tes messages,
+  tes connexions ni tes contacts.</p>
+
+      <p><strong>Informations routières publiques.</strong> Les temps d’attente à la frontière (de l’U.S. Customs and Border Protection), les prix de l’essence et les péages au
+  Mexique, et les bornes de recharge proviennent de sources publiques. Cerqa n’envoie à ces sources aucune information sur toi.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>Position en arrière-plan</h2>
+      <p>Cerqa partage ta position en arrière-plan seulement pendant qu’un partage ou une navigation que tu as lancé est en cours. La position en arrière-plan sert
+  uniquement à garder ta position à jour pour les personnes ou le groupe avec qui tu as choisi de partager, et à te guider pendant la navigation.</p>
+      <p><strong>Sur Android :</strong> un service au premier plan fonctionne pendant que tu partages ou navigues, et une notification reste affichée tout le temps.
+  Tu peux arrêter le partage à tout moment en appuyant sur « Arrêter le partage » dans la notification. Fermer Cerqa d’un glissement n’arrête pas le partage.</p>
+      <p><strong>Sur iPhone :</strong> Cerqa utilise le mode de localisation en arrière-plan d’iOS pour garder ta position à jour quand tu changes d’appli ou
+  verrouilles l’écran. Si tu as choisi « Lorsque l’app est active », l’iPhone affiche un indicateur bleu pendant que Cerqa utilise ta position en arrière-plan.
+  Forcer la fermeture de Cerqa arrête la position en arrière-plan, et si ton partage n’est pas terminé, Cerqa propose de le reprendre la prochaine fois que tu ouvres l’appli.</p>
+      <p>La position en arrière-plan pour le partage et la navigation s’arrête quand tu arrêtes le partage, termines la navigation ou te déconnectes, quand ton lien en direct se termine ou quand la durée de ton partage est écoulée. Pour une
+  explication complète, consulte <a href="/background_location_disclosure"
+  style="color:#4a6fa5;">cerqa.app/background_location_disclosure</a> (en anglais).</p>
+    </div>
+
+    <div class="section-block">
+      <h2>Utilisation de tes informations</h2>
+      <ul>
+        <li>Pour faire fonctionner le service Cerqa : te connecter, partager ta position, gérer les plans, voyages et demandes Rejoins-moi, livrer
+  les messages et envoyer des notifications.</li>
+        <li>Pour t’aider à trouver des gens que tu connais : à ta demande, comparer les numéros de ta liste de contacts avec les utilisateurs Cerqa
+  existants (les numéros ne sont pas conservés).</li>
+        <li>Pour envoyer des notifications : demandes de partage de position, invitations à des plans et à Rejoins-moi, messages, invitations de connexion et
+  mises à jour d’arrivée.</li>
+        <li>Pour partager ta position en temps réel avec les personnes ou groupes que tu choisis.</li>
+        <li>Pour améliorer la fiabilité et corriger les bogues grâce aux rapports de plantage et aux statistiques de Firebase.</li>
+      </ul>
+      <p>Cerqa ne crée pas de profils publicitaires à partir de ta position ou de ton utilisation, et ne partage jamais ta position, tes voyages, tes messages,
+  tes connexions ni tes contacts avec des annonceurs.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>Publicité</h2>
+      <p>Pour que Cerqa reste gratuit, les comptes gratuits voient une petite carte publicitaire à certains endroits de l’appli, comme l’Accueil. Les comptes Pro ne voient aucune publicité. Les publicités
+  n’apparaissent jamais pendant la navigation ni dans CarPlay.</p>
+      <p>Les publicités sont fournies par Google AdMob. Pour choisir, afficher et mesurer les publicités, et pour prévenir la fraude, le logiciel publicitaire de Google recueille
+  des informations comme le type et les réglages de ton appareil, ton adresse IP (qui donne une position approximative, comme ta ville), tes
+  interactions avec les publicités et, sur Android, l’identifiant publicitaire de ton appareil. Sur iPhone, Cerqa ne demande pas l’autorisation de te suivre, donc
+  l’identifiant publicitaire (IDFA) n’est pas utilisé. Depuis la version 1.21, l’appli Android demande aussi à Google uniquement des publicités non personnalisées,
+  donc les publicités ne sont basées sur tes centres d’intérêt sur aucune des deux plateformes. Cerqa n’envoie à Google ni ta position GPS ni tes données Cerqa.</p>
+      <p>Selon l’endroit où tu te trouves et tes choix, les publicités peuvent être personnalisées selon tes centres d’intérêt, ou basées seulement sur
+  des informations générales comme l’appli et ta position approximative :</p>
+      <ul>
+        <li><strong>Espace économique européen, Royaume-Uni et Suisse :</strong> le message de consentement de Google te demande d’abord ton accord. Les publicités ne sont personnalisées
+  que si tu acceptes.</li>
+        <li><strong>États américains dotés de lois sur la vie privée</strong> (comme la Californie) : tu peux refuser la vente ou le partage de tes données à des fins
+  publicitaires.</li>
+        <li><strong>Partout :</strong> tu peux réinitialiser ou supprimer ton identifiant publicitaire sur Android (Paramètres, puis Google, puis Annonces), ou désactiver
+  « Autoriser les demandes de suivi des apps » sur iPhone.</li>
+      </ul>
+      <p>Là où la loi l’exige, l’écran Profil de Cerqa affiche <strong>Choix de confidentialité pour les publicités</strong>, qui rouvre le message de Google
+  pour que tu puisses changer ta réponse à tout moment. Découvre comment Google utilise les informations des applis qui utilisent ses services sur <a
+  href="https://policies.google.com/technologies/partner-sites" target="_blank"
+  style="color:#4a6fa5;">policies.google.com/technologies/partner-sites</a>.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>Partage et tiers</h2>
+      <p>Cerqa LLC ne vend pas tes données personnelles contre de l’argent. Certaines lois d’États américains considèrent les publicités personnalisées comme un « partage » de données ; tu peux
+  le refuser comme décrit dans la section Publicité. Tes informations ne sont partagées que dans les cas suivants :</p>
+      <ul>
+        <li><strong>Avec les personnes que tu choisis.</strong> Quand tu partages ta position, invites des gens à un plan ou à Rejoins-moi, ou envoies un
+  message, ces informations sont partagées avec les personnes ou membres du groupe que tu as choisis. Un lien en direct est différent : toute personne
+  qui a le lien peut l’ouvrir, alors envoie-le seulement à des personnes de confiance.</li>
+        <li><strong>Avec des prestataires.</strong> Cerqa utilise les services tiers ci-dessous pour fonctionner. Chacun ne traite les données que
+  dans la mesure nécessaire à son service.</li>
+        <li><strong>Pour des raisons légales.</strong> L’entreprise peut divulguer des informations si la loi ou une décision de justice l’exige, ou pour protéger
+  la sécurité des utilisateurs de Cerqa ou du public.</li>
+      </ul>
+
+      <table class="third-party-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Utilisation</th>
+            <th>Politique de confidentialité</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AWS Amplify / Cognito</td>
+            <td>Authentification des comptes et gestion des utilisateurs</td>
+            <td><a href="https://aws.amazon.com/privacy/" target="_blank">aws.amazon.com/privacy</a></td>
+          </tr>
+          <tr>
+            <td>AWS AppSync / DynamoDB / S3</td>
+            <td>Stockage des messages, des profils et des médias</td>
+            <td><a href="https://aws.amazon.com/privacy/" target="_blank">aws.amazon.com/privacy</a></td>
+          </tr>
+          <tr>
+            <td>AWS Secrets Manager</td>
+            <td>Stockage sécurisé de la clé AES-256 qui chiffre le contenu des messages et des notifications</td>
+            <td><a href="https://aws.amazon.com/privacy/" target="_blank">aws.amazon.com/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Ably</td>
+            <td>Transmission en temps réel des positions et des messages</td>
+            <td><a href="https://ably.com/privacy" target="_blank">ably.com/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Mapbox</td>
+            <td>Cartes, recherche de lieux et navigation (reçoit ta position pendant que tu utilises la carte ou navigues), et la carte des pages de liens en direct. Le logiciel de Mapbox peut aussi recueillir des données anonymes de position et d’utilisation pour améliorer ses cartes</td>
+            <td><a href="https://www.mapbox.com/legal/privacy" target="_blank">mapbox.com/legal/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Google Places</td>
+            <td>Recherche de lieux et saisie automatique</td>
+            <td><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Firebase (Google)</td>
+            <td>Notifications (FCM), rapports de plantage et statistiques de l’appli et des sites</td>
+            <td><a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Google AdMob</td>
+            <td>Publicités des comptes gratuits, et message de consentement et de choix de confidentialité pour les publicités</td>
+            <td><a href="https://policies.google.com/technologies/ads" target="_blank">policies.google.com/technologies/ads</a></td>
+          </tr>
+          <tr>
+            <td>Amazon Bedrock (AWS)</td>
+            <td>Descriptions par IA des options d’itinéraire. Reçoit le nom de la destination et les détails de l’itinéraire (routes, distance, trafic), pas ton nom ni ton compte</td>
+            <td><a href="https://aws.amazon.com/privacy" target="_blank">aws.amazon.com/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Amazon SES (AWS)</td>
+            <td>Envoie un e-mail à Cerqa LLC quand tu signales un contenu ou bloques quelqu’un</td>
+            <td><a href="https://aws.amazon.com/privacy" target="_blank">aws.amazon.com/privacy</a></td>
+          </tr>
+          <tr>
+            <td>Connexion Apple et Google</td>
+            <td>Connexion facultative avec ton compte Apple ou Google</td>
+            <td><a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a></td>
+          </tr>
+          <tr>
+            <td>RevenueCat</td>
+            <td>Achats et statut de l’abonnement Pro (un identifiant de compte interne et l’historique d’achat ; le paiement lui-même est géré par Apple ou Google)</td>
+            <td><a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a></td>
+          </tr>
+          <tr>
+            <td>OpenWeather</td>
+            <td>Vérifications de pluie, comme une alerte de pluie pour une personne, un trajet ou une légende de photo. Reçoit des coordonnées, pas ton nom ni ton compte</td>
+            <td><a href="https://openweather.co.uk/privacy-policy" target="_blank">openweather.co.uk/privacy-policy</a></td>
+          </tr>
+          <tr>
+            <td>Wikimedia</td>
+            <td>Photos et courtes descriptions de lieux, chargées par ton appareil depuis Wikipédia et Wikimedia Commons</td>
+            <td><a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy" target="_blank">foundation.wikimedia.org</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-block">
+      <h2>Conservation des données</h2>
+      <ul>
+        <li><strong>Les données du compte</strong> sont conservées jusqu’à la suppression de ton compte.</li>
+        <li><strong>La position en direct</strong> n’est pas stockée. Elle est envoyée en temps réel seulement pendant que tu partages.</li>
+        <li><strong>Les liens en direct</strong> sont supprimés environ un jour après leur limite de 3 heures, avec le nom et les identifiants de visiteurs stockés avec eux.</li>
+        <li><strong>Les plans, voyages et l’historique des voyages</strong> sont conservés jusqu’à la suppression de ton compte. Les plans et voyages auxquels tu as été invité
+  restent chez la personne qui les a créés.</li>
+        <li><strong>Les photos de voyage</strong> sont supprimées automatiquement après 30 jours.</li>
+        <li><strong>Les messages</strong> sont conservés jusqu’à ce que tu les supprimes un par un ou supprimes ton compte.</li>
+        <li><strong>Les photos de profil et les images de discussion</strong> sont conservées jusqu’à ce que tu les remplaces ou supprimes ton compte.</li>
+        <li><strong>Les jetons de notification</strong> sont conservés tant que ton compte est actif et supprimés quand tu supprimes ton compte
+  ou désactives l’autorisation des notifications.</li>
+      </ul>
+      <p>Quand tu supprimes ton compte, Cerqa LLC supprime de ses serveurs ton profil, tes connexions, tes messages et les données associées.
+  Certaines données peuvent rester dans des sauvegardes pendant une courte période avant d’être effacées.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>Tes droits et tes choix</h2>
+      <p><strong>Autorisation de localisation.</strong> Tu peux désactiver l’accès à la position à tout moment dans les réglages de ton appareil. Cerqa continue
+  de fonctionner pour la messagerie et les autres fonctions qui n’ont pas besoin de ta position.</p>
+      <p><strong>Arrêter le partage.</strong> Tu peux arrêter de partager ta position à tout moment depuis la carte ou la notification de partage. Tu peux arrêter un lien en direct à tout moment depuis l’écran de navigation.</p>
+      <p><strong>Lieux privés.</strong> Tu peux ajouter des Lieux privés et choisir qui peut t’y voir, s’il y a quelqu’un.</p>
+      <p><strong>Autorisation des contacts.</strong> Tu peux désactiver l’accès aux contacts à tout moment. Cela n’affecte pas les connexions
+  déjà établies.</p>
+      <p><strong>Autorisation des notifications.</strong> Tu peux désactiver les notifications dans les réglages de ton appareil. Tu verras quand même
+  les notifications dans l’appli quand elle est ouverte.</p>
+      <p><strong>Publicités.</strong> Tu peux changer tes choix publicitaires comme décrit dans la section Publicité. Passer à Pro supprime les publicités.</p>
+      <p><strong>Accès et rectification.</strong> Tu peux voir et modifier les informations de ton profil dans l’appli à tout moment.</p>
+      <p><strong>Suppression du compte.</strong> Tu peux supprimer ton compte depuis l’écran Profil de l’appli, ou sur <a href="/delete"
+  style="color:#4a6fa5;">cerqa.app/delete</a>. Cela supprime définitivement ton compte et les données associées des systèmes de
+  l’entreprise.</p>
+      <p><strong>Tes droits sur tes données.</strong> Où que tu vives, tu peux demander à Cerqa LLC une copie de tes données personnelles
+  (y compris dans un format portable), leur rectification, leur suppression, ou l’arrêt ou la limitation de leur utilisation, et tu peux retirer ton consentement à tout
+  moment. Retirer ton consentement n’affecte pas ce qui a été fait avant. Pour faire une demande, écris à
+  <a href="mailto:privacy@cerqa.net" style="color:#4a6fa5;">privacy@cerqa.net</a> depuis l’adresse e-mail de ton compte.
+  Cerqa LLC peut te demander de confirmer ton identité et répond dans le délai prévu par la loi de ton pays. Une demande est gratuite. En France, tu peux aussi
+  donner des directives sur le sort de tes données après ton décès.</p>
+      <p><strong>Pourquoi Cerqa utilise tes données.</strong> Cerqa utilise tes données pour fournir le service auquel tu t’es inscrit (ton compte,
+  le partage, les plans, les voyages, les messages et Pro) ; avec ton consentement, que tu donnes par les autorisations de ton appareil et tes choix dans
+  l’appli (position, contacts, photos, notifications et, là où c’est requis, publicités et statistiques) ; pour des intérêts légitimes comme la sécurité de
+  Cerqa, la correction des plantages et la compréhension de l’utilisation de Cerqa ; et pour respecter des obligations légales.</p>
+      <p><strong>Où tes données sont stockées.</strong> Cerqa LLC est établie aux États-Unis, et les serveurs de Cerqa sont aux
+  États-Unis (Amazon Web Services). Si tu utilises Cerqa depuis un autre pays, tes données sont transférées et stockées aux États-Unis, et
+  certains prestataires listés ci-dessus peuvent les traiter dans d’autres pays. Cerqa LLC utilise des prestataires qui protègent les données personnelles et
+  limite ce que chacun reçoit au strict nécessaire.</p>
+      <p><strong>Les lois de ton pays.</strong> Si tu es dans l’Espace économique européen, au Royaume-Uni ou en Suisse (RGPD), au Canada
+  (LPRPDE et, au Québec, la Loi sur la protection des renseignements personnels dans le secteur privé), aux États-Unis, au Mexique, en Colombie, au Chili,
+  au Pérou, en Argentine ou en Équateur, tu as les droits ci-dessus selon la loi de ton pays. Si la réponse de Cerqa LLC ne te satisfait pas, tu peux
+  porter plainte auprès de l’autorité de protection des données de ton pays, comme la Commission nationale de l’informatique et des libertés (CNIL) en France,
+  l’Agencia Española de Protección de Datos (AEPD) en Espagne, le Commissariat à la protection de la vie privée du Canada ou la Commission d’accès à
+  l’information du Québec.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>Sécurité</h2>
+      <p>Toutes les données sont envoyées par TLS (HTTPS). La connexion est gérée par AWS Cognito, et Cerqa LLC ne stocke jamais ton mot de passe. Les fichiers médias
+  sont stockés dans des compartiments S3 privés et ne sont accessibles que par des liens signés de courte durée.</p>
+      <p>Le contenu des messages et les données des notifications dans l’appli (titre et message) sont chiffrés au repos en AES-256 (mode CBC)
+  avant d’être stockés dans DynamoDB. La clé de chiffrement est gérée par AWS Secrets Manager et n’est stockée ni dans le code source de l’appli
+  ni dans son binaire.</p>
+      <p>Aucune méthode de transmission ou de stockage n’est sûre à 100 %. Si tu penses que ton compte a été compromis, écris tout de suite à <a
+  href="mailto:privacy@cerqa.net" style="color:#4a6fa5;">privacy@cerqa.net</a>.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>Confidentialité des enfants</h2>
+      <p>Cerqa ne s’adresse pas aux enfants de moins de 13 ans, et Cerqa LLC ne recueille pas sciemment d’informations personnelles sur
+  des enfants de moins de 13 ans. Dans les pays où un âge plus élevé s’applique (14 ans en Espagne, 15 ans en France), les personnes plus jeunes ont besoin de l’accord d’un parent pour utiliser Cerqa.
+  Si tu penses qu’un enfant de moins de 13 ans a créé un compte, écris à <a href="mailto:privacy@cerqa.net"
+  style="color:#4a6fa5;">privacy@cerqa.net</a> et le compte sera supprimé rapidement.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>Modifications de cette politique</h2>
+      <p>Cerqa LLC peut mettre à jour cette politique de temps à autre. Dans ce cas, la date de « Dernière mise à jour » en haut de cette page change.
+  Pour les changements importants, tu seras prévenu dans l’appli ou par e-mail. Continuer à utiliser Cerqa après la publication des changements signifie que tu acceptes
+  la politique mise à jour.</p>
+    </div>
+
+    <div class="section-block">
+      <h2>Contact</h2>
+      <p>Pour toute question, préoccupation ou demande au sujet de cette politique de confidentialité, contacte :</p>
+      <p>
+        <strong>Cerqa LLC</strong><br>
+        <a href="mailto:privacy@cerqa.net" style="color:#4a6fa5;">privacy@cerqa.net</a>
+      </p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Cerqa LLC</p>
+    <a href="/privacy/fr">Politique de confidentialité</a>
+    <a href="/terms">Conditions d’utilisation (en anglais)</a>
+    <a href="https://www.facebook.com/profile.php?id=61594994114331">Facebook</a>
+  </footer>
+
+  <script src="/assets/store-gate.js" defer></script>
+</body>
+  </html>

@@ -1,44 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://cerqa.app/</loc><lastmod>2026-11-01</lastmod>
+  <url><loc>https://cerqa.app/</loc><lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cerqa.app/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/"/>
   </url>
-  <url><loc>https://cerqa.app/es/</loc><lastmod>2026-11-01</lastmod>
+  <url><loc>https://cerqa.app/es/</loc><lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cerqa.app/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/"/>
   </url>
   <url><loc>https://cerqa.app/iphone-duo/</loc><lastmod>2026-11-01</lastmod></url>
-  <url><loc>https://cerqa.app/privacy/en/</loc><lastmod>2026-10-13</lastmod>
+  <url><loc>https://cerqa.app/privacy/en/</loc><lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/privacy/en/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/privacy/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cerqa.app/privacy/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/privacy/en/"/>
   </url>
-  <url><loc>https://cerqa.app/privacy/es/</loc><lastmod>2026-10-13</lastmod>
+  <url><loc>https://cerqa.app/privacy/es/</loc><lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/privacy/en/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/privacy/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cerqa.app/privacy/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/privacy/en/"/>
   </url>
-  <url><loc>https://cerqa.app/terms/en/</loc><lastmod>2026-10-13</lastmod>
+  <url><loc>https://cerqa.app/terms/en/</loc><lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/terms/en/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/terms/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cerqa.app/terms/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/terms/en/"/>
   </url>
-  <url><loc>https://cerqa.app/terms/es/</loc><lastmod>2026-10-13</lastmod>
+  <url><loc>https://cerqa.app/terms/es/</loc><lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/terms/en/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/terms/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cerqa.app/terms/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/terms/en/"/>
   </url>
-  <url><loc>https://cerqa.app/download/</loc><lastmod>2026-11-03</lastmod>
+  <url><loc>https://cerqa.app/download/</loc><lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/download/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/descargar/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cerqa.app/fr/telecharger/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/download/"/>
   </url>
-  <url><loc>https://cerqa.app/es/descargar/</loc><lastmod>2026-11-03</lastmod>
+  <url><loc>https://cerqa.app/es/descargar/</loc><lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/download/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/descargar/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cerqa.app/fr/telecharger/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/download/"/>
   </url>
   <url><loc>https://cerqa.app/support/</loc><lastmod>2026-10-13</lastmod>
@@ -399,8 +407,28 @@
   <url><loc>https://cerqa.app/canada-border-wait-times/peace-bridge/</loc><lastmod>2026-11-14</lastmod></url>
   <url><loc>https://cerqa.app/canada-border-wait-times/rainbow-bridge/</loc><lastmod>2026-11-14</lastmod></url>
   <url><loc>https://cerqa.app/canada-border-wait-times/lewiston-queenston/</loc><lastmod>2026-11-14</lastmod></url>
-  <url><loc>https://cerqa.app/fr/</loc><lastmod>2026-11-19</lastmod></url>
-  <url><loc>https://cerqa.app/fr/telecharger/</loc><lastmod>2026-11-19</lastmod></url>
-  <url><loc>https://cerqa.app/privacy/fr/</loc><lastmod>2026-11-19</lastmod></url>
-  <url><loc>https://cerqa.app/terms/fr/</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://cerqa.app/fr/</loc><lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cerqa.app/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/"/>
+  </url>
+  <url><loc>https://cerqa.app/fr/telecharger/</loc><lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/download/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/descargar/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cerqa.app/fr/telecharger/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/download/"/>
+  </url>
+  <url><loc>https://cerqa.app/privacy/fr/</loc><lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/privacy/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/privacy/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cerqa.app/privacy/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/privacy/en/"/>
+  </url>
+  <url><loc>https://cerqa.app/terms/fr/</loc><lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/terms/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/terms/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cerqa.app/terms/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/terms/en/"/>
+  </url>
 </urlset>

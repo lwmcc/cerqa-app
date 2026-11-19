@@ -2,8 +2,8 @@
 Week 5: Tijuana airport to San Diego. Searches: "tijuana airport to san diego", "cbx vs san ysidro",
 "how does cbx work", "cbx parking", "pick up at cbx", "aeropuerto de tijuana a san diego", "cómo funciona
 el cbx". The founder's own trips (2026-11-19): both directions through CBX, offsite parking with a shuttle
-(Lion Parking, moved from 552 Alto to 2739 Cactus Rd), tickets bought ahead, quick check-in; San Ysidro by
-car to park at TIJ (short drive, heavy Tijuana traffic, rough roads, armed federal police trucks); curb
+(Lion Parking, moved from 552 Alto to 2739 Cactus Rd), tickets bought ahead, quick check-in; driving to TIJ:
+Otay is short but traffic can be heavy, rough roads there (may be fixed); San Ysidro is longer, very heavy traffic at times; armed federal police trucks; curb
 pickup at CBX gets moved along by security, nearby street parking ended; once an hour late picking up
 his wife; his wife did one-way rentals: dropped one off at the CBX Hertz going, rented at CBX coming back and returned it near home;
 once got into the SENTRI lane at San Ysidro by mistake and was sent back around.
@@ -49,13 +49,14 @@ POST = {
       <p>CBX has rules about how close to your flight you can cross in either direction, and they change from time to time. Check the current ones on the <a href="https://www.crossborderxpress.com/" target="_blank" rel="noopener">official CBX site</a> before your trip.</p>
       <p>Coming back into the US, you'll see the live CBX wait on our <a href="/border-wait-times/cbx/">CBX wait time page</a>, straight from US Customs and Border Protection.</p>
 
-      <h2>Driving Through San Ysidro Instead</h2>
-      <p>You can also drive into Tijuana through San Ysidro and park at the airport. The drive is short, but it isn't always easy.</p>
+      <h2>Driving Into Tijuana Instead</h2>
+      <p>You can also drive into Tijuana, through Otay Mesa or San Ysidro, and park at the airport. Either way works, but neither is always easy.</p>
       <ul>
-        <li><strong>Traffic can be heavy</strong> as you pass through Tijuana, and some roads are in rough shape. It can be nerve-wracking if you don't do it often.</li>
+        <li><strong>Through Otay Mesa,</strong> the drive to the airport is short, but traffic can still be heavy. When I drove it, some stretches had poor road conditions. Those may be fixed by now.</li>
+        <li><strong>Through San Ysidro,</strong> it's a longer drive across Tijuana, and traffic can be very heavy at times. It can be nerve-wracking if you don't do it often.</li>
         <li><strong>Parking at Tijuana airport is affordable and good,</strong> for short or long stays.</li>
         <li><strong>You'll see a lot of police.</strong> Once, driving out of the airport's long-term lot to head back to the US, I drove right next to federal police in full gear with rifles in the backs of their pickup trucks. That's normal there, but it made me a little nervous.</li>
-        <li><strong>Coming back, the border line is the hard part.</strong> Check the <a href="/border-wait-times/san-ysidro/">San Ysidro wait</a> before you leave the airport.</li>
+        <li><strong>Coming back, the border line is the hard part.</strong> Check the <a href="/border-wait-times/otay-mesa/">Otay Mesa</a> and <a href="/border-wait-times/san-ysidro/">San Ysidro</a> waits before you leave the airport.</li>
       </ul>
       <p><strong>Watch the lane signs early.</strong> Years ago, coming back from the airport, we ended up in the SENTRI lane at San Ysidro without SENTRI. We were told to go back around, and it took a long time to drive all the way back and get into the right lane. The lanes split well before the booths, so pick yours as soon as you see the signs.</p>
       <p>Both ways work. But if you're flying, CBX saves you the drive through Tijuana and the long line back.</p>
@@ -137,13 +138,14 @@ POST = {
       <p>El CBX tiene reglas sobre qué tan cerca de tu vuelo puedes cruzar, de ida y de regreso, y cambian de vez en cuando. Revisa las actuales en el <a href="https://www.crossborderxpress.com/" target="_blank" rel="noopener">sitio oficial del CBX</a> antes de tu viaje.</p>
       <p>De regreso a Estados Unidos, puedes ver el tiempo de espera del CBX en vivo en nuestra <a href="/es/garitas/cbx/">página del CBX</a>, directo de la Oficina de Aduanas y Protección Fronteriza (CBP).</p>
 
-      <h2>Cruzar en carro por San Ysidro</h2>
-      <p>También puedes entrar en carro a Tijuana por San Ysidro y estacionarte en el aeropuerto. El camino es corto, pero no siempre es fácil.</p>
+      <h2>Cruzar en carro a Tijuana</h2>
+      <p>También puedes entrar en carro a Tijuana, por Otay o por San Ysidro, y estacionarte en el aeropuerto. Las dos funcionan, pero ninguna es siempre fácil.</p>
       <ul>
-        <li><strong>El tráfico puede estar pesado</strong> al pasar por Tijuana, y algunas calles están en mal estado. Puede ponerte nervioso si no lo haces seguido.</li>
+        <li><strong>Por Otay,</strong> el camino al aeropuerto es corto, pero el tráfico puede estar pesado. Cuando yo lo manejé, algunos tramos tenían calles en mal estado. Puede que ya los hayan arreglado.</li>
+        <li><strong>Por San Ysidro,</strong> el camino por Tijuana es más largo, y a veces el tráfico está muy pesado. Puede ponerte nervioso si no lo haces seguido.</li>
         <li><strong>El estacionamiento del aeropuerto de Tijuana es bueno y económico,</strong> por poco tiempo o por varios días.</li>
         <li><strong>Vas a ver mucha policía.</strong> Una vez, saliendo del estacionamiento de largo plazo del aeropuerto para regresar a EE. UU., manejé justo al lado de policías federales con equipo completo y rifles en la parte de atrás de sus camionetas. Ahí es normal, pero sí me puso un poco nervioso.</li>
-        <li><strong>De regreso, la fila de la garita es lo difícil.</strong> Revisa <a href="/es/garitas/san-ysidro/">cómo está San Ysidro</a> antes de salir del aeropuerto.</li>
+        <li><strong>De regreso, la fila de la garita es lo difícil.</strong> Revisa cómo están <a href="/es/garitas/otay-mesa/">Otay</a> y <a href="/es/garitas/san-ysidro/">San Ysidro</a> antes de salir del aeropuerto.</li>
       </ul>
       <p><strong>Fíjate en los letreros de los carriles desde antes.</strong> Hace años, regresando del aeropuerto, nos metimos al carril SENTRI en San Ysidro sin tener SENTRI. Nos dijeron que diéramos la vuelta, y tardamos mucho en regresar y entrar al carril correcto. Los carriles se separan mucho antes de las casetas, así que escoge el tuyo en cuanto veas los letreros.</p>
       <p>Las dos formas funcionan. Pero si vas a volar, el CBX te ahorra manejar por Tijuana y la fila larga de regreso.</p>

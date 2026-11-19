@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <script>
     var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
-    window.location.replace(lang.startsWith('es') ? '/terms/es/index.html' : '/terms/en/index.html');
+    window.location.replace(lang.startsWith('es') ? '/terms/es/index.html' : lang.startsWith('fr') ? '/terms/fr/index.html' : '/terms/en/index.html');
   </script>
   <noscript>
     <meta http-equiv="refresh" content="0; url=/terms/en/index.html">

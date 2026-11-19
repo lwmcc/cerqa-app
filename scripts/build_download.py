@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Builds the download pages: /download/ (EN) and /es/descargar/ (ES). Every link the app shares for
+"""Builds the download pages: /download/ (EN), /es/descargar/ (ES) and /fr/telecharger/ (FR, 2026-11-19). Every link the app shares for
 "get Cerqa" lands here, so it says what Cerqa does in a line and that it's free, with no invite
 needed (the old page still said "Invite Only", 2026-11-03). Shares the home page's nav, badges,
 analytics and styles. Run from the repo root:
@@ -7,7 +7,7 @@ analytics and styles. Run from the repo root:
 """
 import os
 
-from build_home import SITE, T, analytics, badges
+from build_home import SITE, T, LANGS, analytics, badges
 
 ICON_PIN = '<svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>'
 ICON_CLOCK = '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>'
@@ -64,7 +64,34 @@ PAGES = {
         "more": "Conoce más de Cerqa", "home": "/es/",
         "campaign": "download_es",
     },
+    "fr": {
+        "path": "/fr/telecharger/", "alt": "/download/", "html_lang": "fr", "og_locale": "fr_FR",
+        "title": "Télécharger Cerqa : partage de position gratuit sur iPhone et Android",
+        "desc": "Télécharge Cerqa gratuitement sur iPhone et Android. Partage ta position avec ta famille et tes amis, vois quand chacun arrivera et arrivez ensemble. Aucune invitation nécessaire.",
+        "og_title": "Télécharger Cerqa",
+        "og_desc": "Vois qui est en route et quand chacun arrivera. Gratuit sur iPhone et Android.",
+        "og_image": "/images/social/cerqa-en.jpg",
+        "h1": "Télécharger Cerqa",
+        "sub": "Vois qui est en route et quand chacun arrivera. Partage ta position avec ta famille et tes amis, et arrivez ensemble.",
+        "fine": "Gratuit sur iPhone et Android. Aucune invitation nécessaire.",
+        "phones_alt": ("Cerqa sur un téléphone Android : des amis sur la carte", "Cerqa sur iPhone : des amis sur la carte"),
+        "benefits_h": "Ce que tu peux faire avec Cerqa",
+        "benefits": [
+            (ICON_PIN, "Partage ta position", "Avec n’importe qui sur iPhone ou Android, quelques minutes ou tout le trajet. Arrête quand tu veux."),
+            (ICON_CLOCK, "Vois quand chacun arrive", "L’heure d’arrivée en direct de chaque personne qui vient, pour que personne n’ait à demander « t’es où\u202f? »"),
+            (ICON_CARS, "Arrivez ensemble", "Fais un plan, choisis un lieu de rendez-vous, demande qu’on vienne te chercher ou roule en groupe avec le guidage étape par étape."),
+        ],
+        "invite_h": "Un ami t’a invité\u202f?",
+        "invite_p": "Ouvre son lien sur ton téléphone. Ton invitation t’attendra quand tu ouvriras Cerqa.",
+        "share_h": "Partage Cerqa",
+        "share_p": "Envoie ce lien à ta famille et à tes amis. Ils trouveront Cerqa pour iPhone et Android ici.",
+        "copy": "Copier", "copied": "Copié\u202f!",
+        "more": "En savoir plus sur Cerqa", "home": "/fr/",
+        "campaign": "download_fr",
+    },
 }
+
+DL = {"en": "/download/?lang=en", "es": "/es/descargar/", "fr": "/fr/telecharger/"}
 
 EXTRA_CSS = """
   <style>
@@ -86,9 +113,9 @@ def build(lang, ga):
         <h3>{h}</h3>
         <p>{d}</p>
       </div>""" for icon, h, d in p["benefits"])
-    switch = ('<span aria-current="true">EN</span><a href="/es/descargar/" hreflang="es" lang="es" aria-label="Español">ES</a>'
-              if lang == "en" else
-              '<a href="/download/?lang=en" hreflang="en" lang="en" aria-label="English">EN</a><span aria-current="true">ES</span>')
+    switch = "".join(f'<span aria-current="true">{c.upper()}</span>' if c == lang
+                     else f'<a href="{DL[c]}" hreflang="{c}" lang="{c}" aria-label="{name}">{c.upper()}</a>'
+                     for c, name, _ in LANGS)
     # The app shares /download/ in every language: a Spanish phone goes to the Spanish page once
     # (?lang=en, from the EN switch, stays in English).
     redirect = """
@@ -97,6 +124,7 @@ def build(lang, ga):
       try {
         if (/[?&]lang=en/.test(location.search)) return;
         if (/^es\\b/i.test(navigator.language || "")) location.replace("/es/descargar/" + location.search + location.hash);
+        else if (/^fr\\b/i.test(navigator.language || "")) location.replace("/fr/telecharger/" + location.search + location.hash);
       } catch (e) {}
     })();
   </script>""" if lang == "en" else ""
@@ -110,6 +138,7 @@ def build(lang, ga):
   <link rel="canonical" href="{url}">
   <link rel="alternate" hreflang="en" href="{SITE}/download/">
   <link rel="alternate" hreflang="es" href="{SITE}/es/descargar/">
+  <link rel="alternate" hreflang="fr" href="{SITE}/fr/telecharger/">
   <link rel="alternate" hreflang="x-default" href="{SITE}/download/">{redirect}
   <link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32.png">
   <link rel="apple-touch-icon" href="/images/icon/apple-touch-icon.png">
@@ -212,7 +241,7 @@ def build(lang, ga):
 
 if __name__ == "__main__":
     ga = analytics()
-    for lang, out in (("en", "download/index.html"), ("es", "es/descargar/index.html")):
+    for lang, out in (("en", "download/index.html"), ("es", "es/descargar/index.html"), ("fr", "fr/telecharger/index.html")):
         os.makedirs(os.path.dirname(out), exist_ok=True)
         with open(out, "w") as f:
             f.write(build(lang, ga))

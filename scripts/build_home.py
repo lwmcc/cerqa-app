@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Builds the home page in English (/index.html) and Spanish (/es/index.html) from one template,
-so the two stay in sync. Edit the text here, then run from the repo root:
+"""Builds the home page in English (/index.html), Spanish (/es/index.html) and French (/fr/index.html,
+added 2026-11-19) from one template, so they stay in sync. Edit the text here, then run from the repo root:
     python3 scripts/build_home.py
 Styles live in assets/home.css.
 """
@@ -224,6 +224,101 @@ T = {
     },
 }
 
+# French (2026-11-19): France French with "tu", like the app; narrow no-break space before ? and !.
+# Mexico-only tools (gas prices, US-Mexico border) swapped for the US-Canada border pages. Blog and
+# Duo page are English only, so they say "(en anglais)".
+NB = "\u202f"
+T["fr"] = dict(T["en"])
+T["fr"].update({
+    "path": "/fr/", "planner_nav": "Planificateur", "cc": "fr", "campaign": "home_fr", "download": "/fr/telecharger/", "qr": "Scanne pour télécharger Cerqa",
+    "blog": "/blog/", "og_image": "cerqa-en.jpg", "apple_width": 164,
+    "title": "Cerqa | Position en direct et navigation en groupe pour les voyages en voiture",
+    "desc": "Partage ta position en direct, vois l’heure d’arrivée de chacun et naviguez ensemble. Cerqa garde ta famille et tes amis ensemble en voyage, pour se retrouver et rouler en groupe. Gratuit sur iPhone et Android.",
+    "og_title": "Cerqa : que tout le monde arrive",
+    "og_desc": "Position en direct, heures d’arrivée et navigation en groupe pour la famille et les amis.",
+    "og_locale": ("fr_FR", "fr_CA"),
+    "h1": "Que tout le monde arrive.",
+    "sub": "Vois où est chacun, quand il arrivera, et naviguez ensemble. Pour les voyages en voiture, les rendez-vous et tous les trajets entre les deux.",
+    "fine": "Gratuit sur iPhone et Android. Compatible avec Apple CarPlay.",
+    "apple_badge": "/images/badges/app-store-fr.svg", "google_badge": "/images/badges/google-play-fr.png",
+    "apple_alt": "Télécharger dans l’App Store", "google_alt": "Disponible sur Google Play",
+    "phones_alt": ("Carte de partage de position en groupe sur Android", "Carte de partage de position en groupe sur iPhone"),
+    "duo_pill": ("Prêt pour iPhone Duo", "Nouveau"),
+    "duo_h": "Conçu pour iPhone Duo",
+    "duo_p": "Déplie ton iPhone Duo pour une grande carte où tu vois et partages les positions avec tes amis. Replie-le et conduis.",
+    "duo_link": "Voir Cerqa sur iPhone Duo (en anglais)",
+    "duo_alt": ("Cerqa sur l’iPhone Duo ouvert : l’itinéraire de chacun vers le même lieu, avec le trafic à venir", "Cerqa sur l’iPhone Duo fermé : le guidage avec les itinéraires du groupe à côté du tien"),
+    "benefits_h": "Une seule carte pour tout le groupe",
+    "benefits_p": "Fini les messages « t’es où" + NB + "? ».",
+    "benefits": [
+        (ICON_PEOPLE, "Vois tout le monde en direct", "Partage ta position avec un ami ou un groupe pendant une heure ou toute une journée, et vois tout le monde sur une seule carte."),
+        (ICON_NAV, "Arrivez ensemble", "Le guidage étape par étape avec ton groupe sur la carte. Vois qui est devant, qui est derrière et quand chacun arrive."),
+        (ICON_TRIP, "Planifie le voyage", "Les arrêts, les participants et la discussion de groupe dans un seul voyage, depuis ton téléphone ou ton ordinateur."),
+    ],
+    "videos_h": "Cerqa en action",
+    "videos_p": "De vrais écrans de l’appli.",
+    "videos": [
+        ("group-navigation-pro", "Naviguer avec ton groupe", "Le guidage avec tout ton groupe sur la carte, pour savoir qui est devant, derrière ou déjà arrivé."),
+        ("shared-trip-meet-up-android-group", "Partager avec un groupe", "Lance un partage limité dans le temps, choisis qui en fait partie et mettez-vous d’accord sur un lieu de rendez-vous."),
+        ("cruise-mode", "Balade", "Des idées d’arrêts sur ton trajet, des routes panoramiques aux sites à voir, à portée de doigt."),
+    ],
+    "shots_h": "Fait pour iPhone et Android",
+    "shots_p": "La même appli sur les deux, pour que tout le groupe puisse l’utiliser.",
+    "shots": [
+        ("Sache quand ils arriveront", "Vois qui est en route et dans combien de minutes chacun arrive."),
+        ("Suis son trajet de près", "Suis une personne de près : heure d’arrivée, distance restante, trafic et itinéraire."),
+    ],
+    "tools_h": "Utile sur la route",
+    "tools_p": "Des pages gratuites, utilisables sans l’appli.",
+    "tools": [
+        ("/canada-border-wait-times/", "Attente à la frontière Canada–États-Unis", "L’attente en direct dans les deux sens, de la CBP et de l’ASFC : Peace Arch, pont Ambassador, tunnel Detroit-Windsor, pont Peace et plus (en anglais).", "Voir les temps d’attente"),
+        ("/blog/", "Blog Cerqa", "Des guides pour partager ta position, voyager en groupe et se retrouver (en anglais).", "Lire le blog"),
+    ],
+    "planner_h": "Planifie tes voyages depuis ton ordinateur",
+    "planner_p": "Connecte-toi sur ride.cerqa.app pour préparer un voyage avec des arrêts et inviter tes amis. Chaque personne ajoutée le voit sur l’écran d’accueil de l’appli.",
+    "planner_link": "Ouvrir le planificateur",
+    "planner_alt": "Création d’un voyage de groupe avec des arrêts et un itinéraire dans le planificateur Web de Cerqa",
+    "carplay_p": "Garde ton groupe sur l’écran de ta voiture, sans les mains.",
+    "plans_h": "Gratuit et Pro",
+    "plans_p": "Cerqa est gratuit. Pro est fait pour les groupes qui voyagent souvent ensemble.",
+    "plans_cols": ("", "Gratuit", "Pro"),
+    "plans": [
+        ("Partager ta position avec tes amis et tes groupes", True, True),
+        ("Durée du partage", "Jusqu’à 1 heure", "Jusqu’à 24 heures"),
+        ("Personnes par groupe", "Jusqu’à 5", "Jusqu’à 25"),
+        ("Rejoindre les voyages où tu es invité", True, True),
+        ("Navigation en groupe", False, True),
+        ("Créer des voyages", False, True),
+        ("Copilote vocal", False, True),
+        ("Sans publicité", False, True),
+    ],
+    "plans_note": "Tu peux passer à Pro dans l’appli.",
+    "final_h": "Ton prochain voyage commence ici",
+    "final_p": "Télécharge Cerqa gratuitement et invite les personnes avec qui tu voyages.",
+    "faq_h": "Questions",
+    "faq": [
+        ("Puis-je partager ma position entre iPhone et Android" + NB + "?", 'Oui. Cerqa fonctionne sur les deux, donc tout le monde apparaît sur une seule carte. <a href="/blog/share-location-between-iphone-and-android/" hreflang="en">Voici comment</a> (en anglais).'),
+        ("Cerqa est-il gratuit" + NB + "?", "Oui. Partage avec un ami ou un groupe de 5 personnes au plus, jusqu’à une heure à la fois. Pro ajoute le partage sur 24 heures, des groupes jusqu’à 25 personnes, la navigation en groupe et les voyages."),
+        ("Cerqa continue-t-il à me suivre quand j’arrête le partage" + NB + "?", "Non. Tu choisis la durée du partage, il s’arrête tout seul à la fin et tu peux l’arrêter quand tu veux."),
+        ("Cerqa fonctionne-t-il avec Apple CarPlay" + NB + "?", "Oui. Le guidage et ton groupe s’affichent sur l’écran de ta voiture."),
+        ("Puis-je planifier un voyage de groupe depuis mon ordinateur" + NB + "?", 'Oui. Connecte-toi sur <a href="https://ride.cerqa.app">ride.cerqa.app</a> pour ajouter des arrêts et inviter tes amis. Tout le monde voit le voyage dans l’appli.'),
+    ],
+    "footer": [("/blog/", "Blog (en anglais)"), ("/feedback", "Commentaires"), ("/support/", "Aide"), ("/privacy/fr/", "Politique de confidentialité"),
+               ("/terms/fr/", "Conditions d’utilisation"), ("/canada-border-wait-times/", "Attente à la frontière canado-américaine"),
+               ("https://www.facebook.com/profile.php?id=61594994114331", "Facebook")],
+    "credits": 'Données cartographiques © <a href="https://www.mapbox.com/about/maps/">Mapbox</a> · © <a href="https://www.openstreetmap.org/copyright">contributeurs OpenStreetMap</a> · Bornes de recharge : <a href="https://openchargemap.org">Open Charge Map</a> (CC BY 4.0) · Attente à la frontière : U.S. Customs and Border Protection et Agence des services frontaliers du Canada',
+    "ld_desc": "Partage de position en direct, heures d’arrivée et navigation en groupe pour la famille et les amis.",
+    "currency": "EUR",
+})
+
+LANGS = [("en", "English", "/"), ("es", "Español", "/es/"), ("fr", "Français", "/fr/")]
+
+
+def lang_switch(lang):
+    return "".join(f'<span aria-current="true">{c.upper()}</span>' if c == lang
+                   else f'<a href="{href}" hreflang="{c}" lang="{c}" aria-label="{name}">{c.upper()}</a>'
+                   for c, name, href in LANGS)
+
 
 def analytics():
     s = open("index.html").read()
@@ -248,7 +343,7 @@ def qr(t, campaign):
 
 def badges(t, campaign):
     return f"""<div class="store-badges">
-      <a href="{APP_STORE.format(cc=t['cc'])}" target="_blank" rel="noopener"><img class="badge-apple" src="{t['apple_badge']}" alt="{t['apple_alt']}" width="156" height="52"></a>
+      <a href="{APP_STORE.format(cc=t['cc'])}" target="_blank" rel="noopener"><img class="badge-apple" src="{t['apple_badge']}" alt="{t['apple_alt']}" width="{t.get('apple_width', 156)}" height="52"></a>
       <a href="{PLAY.format(campaign=campaign)}" target="_blank" rel="noopener"><img class="badge-google" src="{t['google_badge']}" alt="{t['google_alt']}" width="175" height="52"></a>
       <figure class="store-qr"><img src="{qr(t, campaign + '_qr')}" alt="" width="96" height="96"><figcaption>{t['qr']}</figcaption></figure>
     </div>"""
@@ -315,10 +410,9 @@ def build(lang, ga):
     site_ld = json.dumps([
         {"@context": "https://schema.org", "@type": "Organization", "name": "Cerqa", "legalName": "Cerqa LLC", "url": SITE + "/",
          "logo": SITE + "/images/icon/apple-touch-icon.png", "sameAs": ["https://www.facebook.com/profile.php?id=61594994114331"]},
-        {"@context": "https://schema.org", "@type": "WebSite", "name": "Cerqa", "url": SITE + "/", "inLanguage": ["en", "es"]},
+        {"@context": "https://schema.org", "@type": "WebSite", "name": "Cerqa", "url": SITE + "/", "inLanguage": ["en", "es", "fr"]},
     ], ensure_ascii=False)
     plan_rows = "\n".join(f"          <tr><td>{name}</td>{cell(free)}{cell(pro)}</tr>" for name, free, pro in t["plans"])
-    other = "es" if lang == "en" else "en"
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -330,6 +424,7 @@ def build(lang, ga):
   <link rel="canonical" href="{SITE}{t['path']}">
   <link rel="alternate" hreflang="en" href="{SITE}/">
   <link rel="alternate" hreflang="es" href="{SITE}/es/">
+  <link rel="alternate" hreflang="fr" href="{SITE}/fr/">
   <link rel="alternate" hreflang="x-default" href="{SITE}/">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32.png">
   <link rel="apple-touch-icon" href="/images/icon/apple-touch-icon.png">
@@ -339,7 +434,7 @@ def build(lang, ga):
   <meta property="og:url" content="{SITE}{t['path']}">
   <meta property="og:title" content="{t['og_title']}">
   <meta property="og:description" content="{t['og_desc']}">
-  <meta property="og:image" content="{SITE}/images/social/cerqa-{lang}.jpg">
+  <meta property="og:image" content="{SITE}/images/social/{t.get('og_image', 'cerqa-' + lang + '.jpg')}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="{t['og_locale'][0]}">
@@ -369,8 +464,8 @@ def build(lang, ga):
   <nav class="site-nav">
     <a class="site-nav-brand" href="{t['path']}"><img src="/images/icon/apple-touch-icon.png" alt="" width="32" height="32">Cerqa</a>
     <div class="site-nav-right">
-      <a class="site-nav-lang" href="{t['path']}blog/">Blog</a>
-      <div class="lang-switch" role="group" aria-label="Language">{'<span aria-current="true">EN</span><a href="' + t['alt'] + '" hreflang="es" lang="es" aria-label="Español">ES</a>' if lang == "en" else '<a href="' + t['alt'] + '" hreflang="en" lang="en" aria-label="English">EN</a><span aria-current="true">ES</span>'}</div>
+      <a class="site-nav-lang" href="{t.get('blog', t['path'] + 'blog/')}">Blog</a>
+      <div class="lang-switch" role="group" aria-label="Language">{lang_switch(lang)}</div>
       <a class="site-nav-planner" href="https://ride.cerqa.app" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
         <span>{t['planner_nav']}</span>
@@ -533,7 +628,7 @@ def build(lang, ga):
 
 if __name__ == "__main__":
     ga = analytics()
-    for lang, out in (("en", "index.html"), ("es", "es/index.html")):
+    for lang, out in (("en", "index.html"), ("es", "es/index.html"), ("fr", "fr/index.html")):
         html = build(lang, ga)
         with open(out, "w") as f:
             f.write(html)

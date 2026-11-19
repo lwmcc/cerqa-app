@@ -30,6 +30,10 @@ POST = {
       <p>I've done it both ways many times, walking across the Cross Border Xpress (CBX) bridge and driving through the San Ysidro border crossing. Here's what each one is really like, where to park, and how to get picked up on the US side.</p>
       <p><strong>The short answer:</strong> if you're flying, use CBX. It's quicker, calmer, and it saves you a lot of headaches.</p>
 
+      <h2>Why Fly Out of Tijuana?</h2>
+      <p>We live in the Phoenix area, so why drive all the way to Tijuana to catch a flight? Price. For our family, I've found airfare out of Tijuana <strong>50% to 75% cheaper</strong> than the same trip out of Phoenix Sky Harbor (PHX).</p>
+      <p>The drive is long. But when you find a discounted fare from TIJ, the savings are worth it, in my opinion. Before you book, compare the fare from Tijuana with your home airport, and count the drive, gas and parking.</p>
+
       <h2>How CBX Works</h2>
       <p>CBX is a covered walkway that connects a terminal in Otay Mesa, San Diego, directly to the Tijuana airport. You cross the border on foot inside the building, without driving through Tijuana at all.</p>
       <ul>
@@ -108,6 +112,10 @@ POST = {
         "body": """      <p>Volar desde Tijuana puede ahorrarte mucho dinero, y el aeropuerto está justo en la frontera. Pero la primera pregunta siempre es la misma: <strong>¿cuál es la forma más fácil de ir del aeropuerto de Tijuana a San Diego?</strong></p>
       <p>Lo he hecho muchas veces de las dos formas: caminando por el puente del Cross Border Xpress (CBX) y cruzando en carro por la garita de San Ysidro. Así es cada una de verdad, dónde estacionarte y cómo hacer que te recojan del lado de Estados Unidos.</p>
       <p><strong>La respuesta corta:</strong> si vas a volar, usa el CBX. Es más rápido, más tranquilo y te ahorras muchos dolores de cabeza.</p>
+
+      <h2>¿Por qué volar desde Tijuana?</h2>
+      <p>Vivimos en el área de Phoenix, así que ¿por qué manejar hasta Tijuana para tomar un vuelo? Por el precio. Para mi familia, he encontrado boletos desde Tijuana <strong>entre 50% y 75% más baratos</strong> que el mismo viaje desde el aeropuerto de Phoenix (PHX).</p>
+      <p>El camino es largo. Pero cuando encuentras un vuelo en oferta desde TIJ, en mi opinión el ahorro vale la pena. Antes de comprar, compara el precio desde Tijuana con el de tu aeropuerto, y suma el camino, la gasolina y el estacionamiento.</p>
 
       <h2>Cómo funciona el CBX</h2>
       <p>El CBX es un puente techado que conecta una terminal en Otay Mesa, San Diego, directo con el aeropuerto de Tijuana. Cruzas la frontera a pie dentro del edificio, sin manejar por Tijuana.</p>

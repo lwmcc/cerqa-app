@@ -354,15 +354,25 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/routes/tijuana-to-playa-del-carmen/"/>
   </url>
   <!-- BLOG START (written by scripts/build_blog.py) -->
-  <url><loc>https://cerqa.app/blog/</loc><lastmod>2026-11-16</lastmod>
+  <url><loc>https://cerqa.app/blog/</loc><lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/blog/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/blog/"/>
   </url>
-  <url><loc>https://cerqa.app/es/blog/</loc><lastmod>2026-11-16</lastmod>
+  <url><loc>https://cerqa.app/es/blog/</loc><lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/blog/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/blog/"/>
+  </url>
+  <url><loc>https://cerqa.app/blog/tijuana-airport-to-san-diego-cbx-or-san-ysidro/</loc><lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/blog/tijuana-airport-to-san-diego-cbx-or-san-ysidro/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/blog/aeropuerto-de-tijuana-a-san-diego-cbx-o-san-ysidro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/blog/tijuana-airport-to-san-diego-cbx-or-san-ysidro/"/>
+  </url>
+  <url><loc>https://cerqa.app/es/blog/aeropuerto-de-tijuana-a-san-diego-cbx-o-san-ysidro/</loc><lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/blog/tijuana-airport-to-san-diego-cbx-or-san-ysidro/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://cerqa.app/es/blog/aeropuerto-de-tijuana-a-san-diego-cbx-o-san-ysidro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cerqa.app/blog/tijuana-airport-to-san-diego-cbx-or-san-ysidro/"/>
   </url>
   <url><loc>https://cerqa.app/blog/make-school-pickups-easier/</loc><lastmod>2026-11-16</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cerqa.app/blog/make-school-pickups-easier/"/>

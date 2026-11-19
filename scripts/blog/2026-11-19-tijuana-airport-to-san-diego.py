@@ -5,7 +5,7 @@ el cbx". The founder's own trips (2026-11-19): both directions through CBX, offs
 (Lion Parking, moved from 552 Alto to 2739 Cactus Rd), tickets bought ahead, quick check-in; San Ysidro by
 car to park at TIJ (short drive, heavy Tijuana traffic, rough roads, armed federal police trucks); curb
 pickup at CBX gets moved along by security, nearby street parking ended; once an hour late picking up
-his wife; his wife rented at the CBX Hertz (quick) and dropped off a one-way rental from Phoenix there;
+his wife; his wife did one-way rentals: dropped one off at the CBX Hertz going, rented at CBX coming back and returned it near home;
 once got into the SENTRI lane at San Ysidro by mistake and was sent back around.
 Facts checked 2026-11-19: CBX needs a CBX ticket plus a boarding pass for a TIJ flight and travel
 documents (crossborderxpress.com, Volaris, Viva Aerobus); buying ahead saves up to 20% (CBX site).
@@ -31,8 +31,8 @@ POST = {
       <p><strong>The short answer:</strong> if you're flying, use CBX. It's quicker, calmer, and it saves you a lot of headaches.</p>
 
       <h2>Why Fly Out of Tijuana?</h2>
-      <p>We live in the Phoenix area, so why drive all the way to Tijuana to catch a flight? Price. For our family, I've found airfare out of Tijuana <strong>50% to 75% cheaper</strong> than the same trip out of Phoenix Sky Harbor (PHX).</p>
-      <p>The drive is long. But when you find a discounted fare from TIJ, the savings are worth it, in my opinion. Before you book, compare the fare from Tijuana with your home airport, and count the drive, gas and parking.</p>
+      <p>Price. On international trips, flying out of Tijuana can save big compared to flying out of nearby US airports. For our family's international flights, I've found airfare out of Tijuana <strong>50% to 75% cheaper</strong> than the same trip from an American airport.</p>
+      <p>Getting to Tijuana can take some driving. But when you find a discounted fare from TIJ, the savings are worth it, in my opinion. Before you book, compare the fare from Tijuana with your home airport, and count the drive, gas and parking.</p>
 
       <h2>How CBX Works</h2>
       <p>CBX is a covered walkway that connects a terminal in Otay Mesa, San Diego, directly to the Tijuana airport. You cross the border on foot inside the building, without driving through Tijuana at all.</p>
@@ -69,7 +69,12 @@ POST = {
       <p>If I could change one thing about my first trips, I'd have parked offsite for the long stays and saved a few bucks.</p>
 
       <h2>Renting a Car at CBX</h2>
-      <p>My wife has rented from the Hertz location at CBX, and she said it was quick and easy. She has also rented a car in the Phoenix area and dropped it off at CBX with no problems, which is handy if you're driving in from Arizona to catch a flight.</p>
+      <p>A one-way rental can save you from leaving your own car at CBX for the whole trip. My wife has done it both ways:</p>
+      <ul>
+        <li><strong>Going:</strong> she rented a car for the drive on the US side and dropped it off at the Hertz location at CBX.</li>
+        <li><strong>Coming back:</strong> she rented a car at CBX and returned it at a rental location near home.</li>
+      </ul>
+      <p>She said it was quick and easy both times, and there's no parking bill waiting when you get back.</p>
 
       <h2>Getting Picked Up on the US Side</h2>
       <p>Getting picked up at CBX is easy if you time it right. The person picking you up can wait at the curb, but not for long. Security will hurry them along, and there's nowhere close to wait on the street anymore.</p>
@@ -114,8 +119,8 @@ POST = {
       <p><strong>La respuesta corta:</strong> si vas a volar, usa el CBX. Es más rápido, más tranquilo y te ahorras muchos dolores de cabeza.</p>
 
       <h2>¿Por qué volar desde Tijuana?</h2>
-      <p>Vivimos en el área de Phoenix, así que ¿por qué manejar hasta Tijuana para tomar un vuelo? Por el precio. Para mi familia, he encontrado boletos desde Tijuana <strong>entre 50% y 75% más baratos</strong> que el mismo viaje desde el aeropuerto de Phoenix (PHX).</p>
-      <p>El camino es largo. Pero cuando encuentras un vuelo en oferta desde TIJ, en mi opinión el ahorro vale la pena. Antes de comprar, compara el precio desde Tijuana con el de tu aeropuerto, y suma el camino, la gasolina y el estacionamiento.</p>
+      <p>Por el precio. En viajes internacionales, volar desde Tijuana puede ahorrarte mucho comparado con volar desde los aeropuertos cercanos de Estados Unidos. Para los vuelos internacionales de mi familia, he encontrado boletos desde Tijuana <strong>entre 50% y 75% más baratos</strong> que el mismo viaje desde un aeropuerto estadounidense.</p>
+      <p>Llegar a Tijuana puede requerir manejar un rato. Pero cuando encuentras un vuelo en oferta desde TIJ, en mi opinión el ahorro vale la pena. Antes de comprar, compara el precio desde Tijuana con el de tu aeropuerto, y suma el camino, la gasolina y el estacionamiento.</p>
 
       <h2>Cómo funciona el CBX</h2>
       <p>El CBX es un puente techado que conecta una terminal en Otay Mesa, San Diego, directo con el aeropuerto de Tijuana. Cruzas la frontera a pie dentro del edificio, sin manejar por Tijuana.</p>
@@ -152,7 +157,12 @@ POST = {
       <p>Si pudiera cambiar algo de mis primeros viajes, me habría estacionado fuera para los viajes largos y me habría ahorrado unos dólares.</p>
 
       <h2>Rentar un carro en el CBX</h2>
-      <p>Mi esposa ha rentado en el Hertz del CBX y dice que fue rápido y fácil. También ha rentado un carro en el área de Phoenix y lo entregó en el CBX sin problemas, algo muy útil si vienes manejando desde Arizona para tomar un vuelo.</p>
+      <p>Rentar un carro de un solo sentido te puede ahorrar dejar tu propio carro en el CBX todo el viaje. Mi esposa lo ha hecho de las dos formas:</p>
+      <ul>
+        <li><strong>De ida:</strong> rentó un carro para el camino del lado de Estados Unidos y lo entregó en el Hertz del CBX.</li>
+        <li><strong>De regreso:</strong> rentó un carro en el CBX y lo devolvió en una agencia de renta cerca de casa.</li>
+      </ul>
+      <p>Dice que las dos veces fue rápido y fácil, y no te espera la cuenta del estacionamiento al regresar.</p>
 
       <h2>Que te recojan del lado de Estados Unidos</h2>
       <p>Que te recojan en el CBX es fácil si calculan bien el tiempo. Quien pasa por ti puede esperar en la banqueta, pero no mucho. Seguridad le pide que avance, y ya no hay dónde esperar cerca en la calle.</p>

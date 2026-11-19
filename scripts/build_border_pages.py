@@ -631,7 +631,9 @@ TEXT = {
         "southbound": "These are waits to enter the United States. No official wait times are published for going into Mexico.",
         "this_page": "this page",
         "farther": "Farther away",
-        "pickup": "<strong>Picking someone up on this side?</strong> If they have Cerqa, they can send you a live link while they drive. You'll see their arrival time in your browser, no app needed.",
+        # 2026-11-19: written to the person crossing, who checks the wait and leaves. True today (the
+        # On my way link); once "Share my crossing" (CAT-48) is in the stores, say "see when you're through".
+        "pickup": "<strong>Crossing now?</strong> Send your people a live link from Cerqa. They'll see where you are and when you'll arrive, right in their browser. No app needed on their side.",
         "pickup_link": "Get Cerqa",
         "qr": "Scan to download Cerqa",
         "download": "/download/",
@@ -658,7 +660,7 @@ TEXT = {
         "southbound": "Estos son los tiempos para entrar a Estados Unidos. No hay tiempos oficiales publicados para entrar a México.",
         "this_page": "esta página",
         "farther": "Más lejos",
-        "pickup": "<strong>¿Vas a recoger a alguien de este lado?</strong> Si trae Cerqa, te puede mandar un enlace en vivo mientras maneja. Verás su hora de llegada en tu navegador, sin instalar nada.",
+        "pickup": "<strong>¿Vas a cruzar?</strong> Mándale a los tuyos un enlace en vivo desde Cerqa. Verán dónde vas y a qué hora llegas, desde su navegador. Ellos no necesitan instalar nada.",
         "pickup_link": "Descarga Cerqa",
         "qr": "Escanea para descargar Cerqa",
         "download": "/es/descargar/",

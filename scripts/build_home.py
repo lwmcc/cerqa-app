@@ -409,7 +409,11 @@ def build(lang, ga):
         for q, a in t["faq"]]}, ensure_ascii=False)
     site_ld = json.dumps([
         {"@context": "https://schema.org", "@type": "Organization", "name": "Cerqa", "legalName": "Cerqa LLC", "url": SITE + "/",
-         "logo": SITE + "/images/icon/apple-touch-icon.png", "sameAs": ["https://www.facebook.com/profile.php?id=61594994114331"]},
+         "logo": SITE + "/images/icon/apple-touch-icon.png",
+         # Brand signals (2026-11-19): the store listings and Facebook are the same Cerqa.
+         "sameAs": ["https://www.facebook.com/profile.php?id=61594994114331",
+                    "https://apps.apple.com/us/app/cerqa-app/id6762389261",
+                    "https://play.google.com/store/apps/details?id=com.cerqa.app"]},
         {"@context": "https://schema.org", "@type": "WebSite", "name": "Cerqa", "url": SITE + "/", "inLanguage": ["en", "es", "fr"]},
     ], ensure_ascii=False)
     plan_rows = "\n".join(f"          <tr><td>{name}</td>{cell(free)}{cell(pro)}</tr>" for name, free, pro in t["plans"])

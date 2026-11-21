@@ -271,7 +271,7 @@ T["fr"].update({
     "tools_h": "Utile sur la route",
     "tools_p": "Des pages gratuites, utilisables sans l’appli.",
     "tools": [
-        ("/canada-border-wait-times/", "Attente à la frontière Canada–États-Unis", "L’attente en direct dans les deux sens, de la CBP et de l’ASFC : Peace Arch, pont Ambassador, tunnel Detroit-Windsor, pont Peace et plus (en anglais).", "Voir les temps d’attente"),
+        ("/fr/temps-attente-frontiere/", "Attente à la frontière Québec–États-Unis", "L’attente en direct dans les deux sens, de l’ASFC et de la CBP : Lacolle, Stanstead et Saint-Armand/Philipsburg.", "Voir les temps d’attente"),
         ("/blog/", "Blog Cerqa", "Des guides pour partager ta position, voyager en groupe et se retrouver (en anglais).", "Lire le blog"),
     ],
     "planner_h": "Planifie tes voyages depuis ton ordinateur",
@@ -304,7 +304,7 @@ T["fr"].update({
         ("Puis-je planifier un voyage de groupe depuis mon ordinateur" + NB + "?", 'Oui. Connecte-toi sur <a href="https://ride.cerqa.app">ride.cerqa.app</a> pour ajouter des arrêts et inviter tes amis. Tout le monde voit le voyage dans l’appli.'),
     ],
     "footer": [("/blog/", "Blog (en anglais)"), ("/feedback", "Commentaires"), ("/support/", "Aide"), ("/privacy/fr/", "Politique de confidentialité"),
-               ("/terms/fr/", "Conditions d’utilisation"), ("/canada-border-wait-times/", "Attente à la frontière canado-américaine"),
+               ("/terms/fr/", "Conditions d’utilisation"), ("/fr/temps-attente-frontiere/", "Attente à la frontière Québec–États-Unis"),
                ("https://www.facebook.com/profile.php?id=61594994114331", "Facebook")],
     "credits": 'Données cartographiques © <a href="https://www.mapbox.com/about/maps/">Mapbox</a> · © <a href="https://www.openstreetmap.org/copyright">contributeurs OpenStreetMap</a> · Bornes de recharge : <a href="https://openchargemap.org">Open Charge Map</a> (CC BY 4.0) · Attente à la frontière : U.S. Customs and Border Protection et Agence des services frontaliers du Canada',
     "ld_desc": "Partage de position en direct, heures d’arrivée et navigation en groupe pour la famille et les amis.",

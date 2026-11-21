@@ -3,9 +3,20 @@
    Refreshes every 5 minutes. Waits over 60 minutes read as hours and minutes. */
 (function () {
   var es = document.documentElement.lang === "es";
+  var fr = /^fr/.test(document.documentElement.lang || "");   // Quebec pages (2026-11-21)
   // US-Canada pages: NEXUS instead of SENTRI, waits into Canada from CBSA, no "border waits in the app" claim.
   var ca = document.body && document.body.getAttribute("data-border") === "ca";
-  var T = es ? {
+  var T = fr ? {
+    cars: "Voitures", sentri: "NEXUS", ready: "Ready Lane", walk: "Piétons", walkReady: "Piétons, Ready Lane",
+    lanes: function (n) { return n == 1 ? "1 voie ouverte" : n + " voies ouvertes"; },
+    closed: "Fermé en ce moment", noReport: "Aucune donnée en ce moment", noWait: "Aucune attente",
+    updated: "Mis à jour", hours24: "Ouvert 24 h", hours: "Heures", carsShort: "voitures", walkShort: "à pied",
+    error: "Impossible de charger les temps de la CBP. Réessayez dans un instant.", h: "h",
+    intoCanada: "vers le Canada", intoUS: "vers les États-Unis", appCa: "Voyez votre groupe sur une carte, appli gratuite", travellers: "Voyageurs", cbsaError: "Impossible de charger les temps de l'ASFC. Réessayez dans un instant.",
+    barCa: "Voyez votre groupe sur une carte", barSubCa: "Cerqa, gratuit sur Google Play",
+    fastest: "Le plus rapide en voiture", now: "en ce moment", live: "En direct", app: "Voyez votre groupe sur une carte, appli gratuite", dl: "/fr/telecharger/",
+    bar: "Voyez votre groupe sur une carte", barSub: "Cerqa, gratuit sur Google Play", barGet: "Installer", close: "Fermer"
+  } : es ? {
     cars: "Autos", sentri: "SENTRI", ready: "Ready Lane", walk: "Peatones", walkReady: "Peatones, Ready Lane",
     lanes: function (n) { return n == 1 ? "1 carril abierto" : n + " carriles abiertos"; },
     closed: "Cerrada ahorita", noReport: "Sin reporte ahorita", noWait: "Sin espera",
@@ -200,7 +211,7 @@
     if (!/Android/i.test(navigator.userAgent || "")) return;
     try { if (localStorage.getItem("cerqa_android_bar") === "no") return; } catch (e) {}
     var slug = (location.pathname.split("/").filter(Boolean).pop() || "hub").replace(/-/g, "_");
-    var ref = "utm_source=cerqa.app&utm_medium=android_bar&utm_campaign=border_" + (ca ? "ca_" : "") + slug + "_" + (es ? "es" : "en");
+    var ref = "utm_source=cerqa.app&utm_medium=android_bar&utm_campaign=border_" + (ca ? "ca_" : "") + slug + "_" + (fr ? "fr" : es ? "es" : "en");
     var bar = document.createElement("div");
     bar.className = "android-bar";
     bar.innerHTML = '<button type="button" class="android-bar-x" aria-label="' + T.close + '">×</button>' +
@@ -249,6 +260,7 @@
   function cbsaUpdated(v) {
     var m = (v || "").match(/(\d{1,2}):(\d{2})\s*([A-Z]{2,4})?/);
     if (!m) return "";
+    if (fr) return parseInt(m[1], 10) + " h " + m[2];
     var h = parseInt(m[1], 10), ap = h >= 12 ? "pm" : "am";
     h = h % 12 || 12;
     // CBSA's zone label can be off (PDT in November), so show the time only.

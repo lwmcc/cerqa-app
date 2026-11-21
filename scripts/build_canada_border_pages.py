@@ -55,6 +55,16 @@ AREAS = {
         ],
         "far": [(None, "380201", "Blue Water Bridge", "Blue Water Bridge", "Port Huron, MI / Sarnia, ON")],
     },
+    # 2026-11-21: Quebec (Montreal) crossings, also in French (scripts/build_quebec_border_pages.py).
+    "montreal": {
+        "h": "Montreal and Quebec crossings",
+        "items": [
+            ("lacolle-champlain", "071201", "St-Bernard-de-Lacolle", "Lacolle / Champlain (Highway 15)", "Champlain, NY / Saint-Bernard-de-Lacolle, QC"),
+            ("stanstead-derby-line", "020901", "Stanstead", "Stanstead / Derby Line (Highway 55)", "Derby Line, VT / Stanstead, QC"),
+            ("saint-armand-highgate", "021201", "St-Armand/Philipsburg", "Saint-Armand / Highgate Springs (Highway 133)", "Highgate Springs, VT / Saint-Armand, QC"),
+        ],
+        "far": [],
+    },
     "port-huron": {
         "h": "Port Huron and Sarnia",
         "items": [
@@ -69,6 +79,33 @@ AREAS = {
 }
 
 CROSSINGS = {
+    "lacolle-champlain": {
+        "area": "montreal", "fr": "/fr/temps-attente-frontiere/lacolle/",
+        "title": "Lacolle border wait time (Champlain), live both directions",
+        "h1": "Lacolle / Champlain border wait time",
+        "desc": "Live Lacolle wait into Canada from CBSA and Champlain wait into the US from CBP, on Highway 15 / I-87 between Montreal and New York. Compare with Stanstead and Saint-Armand.",
+        "lead": "Live waits at the Saint-Bernard-de-Lacolle crossing between Champlain, New York and Quebec, in both directions.",
+        "about": """<p>Lacolle is the main crossing between Montreal and New York, where Quebec Autoroute 15 meets I-87 about 45 minutes south of Montreal. Canada calls it Saint-Bernard-de-Lacolle; the US side is Champlain. It's open 24 hours and gets long lines on holiday weekends.</p>
+<p>When Lacolle backs up, Saint-Armand (Highway 133) toward Vermont is the usual alternative. Compare them below.</p>""",
+    },
+    "stanstead-derby-line": {
+        "area": "montreal", "fr": "/fr/temps-attente-frontiere/stanstead/",
+        "title": "Stanstead border wait time (Derby Line), live both directions",
+        "h1": "Stanstead / Derby Line border wait time",
+        "desc": "Live Stanstead wait into Canada from CBSA and Derby Line wait into the US from CBP, on Highway 55 / I-91 between the Eastern Townships and Vermont.",
+        "lead": "Live waits at the crossing between Derby Line, Vermont and Stanstead, Quebec, in both directions.",
+        "about": """<p>Stanstead connects Quebec Autoroute 55 with I-91 in Vermont, the main route between the Eastern Townships (Sherbrooke, Magog) and New England. It's open 24 hours.</p>
+<p>From Montreal, Lacolle and Saint-Armand are closer; compare all three below.</p>""",
+    },
+    "saint-armand-highgate": {
+        "area": "montreal", "fr": "/fr/temps-attente-frontiere/saint-armand-philipsburg/",
+        "title": "Saint-Armand border wait time (Highgate Springs), live",
+        "h1": "Saint-Armand / Highgate Springs border wait time",
+        "desc": "Live Saint-Armand/Philipsburg wait into Canada from CBSA and Highgate Springs wait into the US from CBP, on Highway 133 / I-89 between Montreal and Vermont.",
+        "lead": "Live waits at the crossing between Highgate Springs, Vermont and Saint-Armand (Philipsburg), Quebec, in both directions.",
+        "about": """<p>Saint-Armand/Philipsburg is where Quebec Route 133 meets I-89, the route from Montreal to Burlington and Vermont. It's open 24 hours.</p>
+<p>It's the usual alternative when Lacolle is busy. Compare them below.</p>""",
+    },
     "peace-arch": {
         "area": "vancouver",
         "title": "Peace Arch border wait time, live (both directions)",
@@ -284,8 +321,10 @@ def share(slug, name):
             f'<button type="button" class="share-other" hidden>Share</button></div>')
 
 
-def page(path, title, desc, body):
+def page(path, title, desc, body, fr=None):
     t = mx.TEXT["en"]
+    alt = (f'\n<link rel="alternate" hreflang="en" href="{SITE}{path}">'
+           f'\n<link rel="alternate" hreflang="fr" href="{SITE}{fr}">') if fr else ""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -293,7 +332,7 @@ def page(path, title, desc, body):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title} | Cerqa</title>
 <meta name="description" content="{desc}">
-<link rel="canonical" href="{SITE}{path}">
+<link rel="canonical" href="{SITE}{path}">{alt}
 <link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32.png">
 <link rel="apple-touch-icon" href="/images/icon/apple-touch-icon.png">
 <meta name="apple-itunes-app" content="app-id=6762389261">
@@ -331,14 +370,14 @@ def page(path, title, desc, body):
 def build_hub():
     sections = "\n".join(compare(k) for k in AREAS)
     body = f"""<h1>US-Canada border wait times</h1>
-<p class="lead">Live waits at the Vancouver, Niagara, Detroit and Port Huron crossings in both directions: into the US from US Customs and Border Protection (CBP), and into Canada from the Canada Border Services Agency (CBSA).</p>
+<p class="lead">Live waits at the Vancouver, Niagara, Detroit, Port Huron and Montreal (Quebec) crossings in both directions: into the US from US Customs and Border Protection (CBP), and into Canada from the Canada Border Services Agency (CBSA).</p>
 <noscript><p class="note">Turn on JavaScript to see the live waits.</p></noscript>
 {sections}
 <p style="margin-top:12px"><a href="/border-wait-times/">US-Mexico border wait times</a></p>
 {cta("border_ca_hub")}
 <p class="source">{SOURCE}</p>"""
     return HUB, page(HUB, "US-Canada border wait times, live (both directions)",
-                     "Live border waits at Peace Arch, Pacific Highway, the Peace and Rainbow bridges, the Ambassador Bridge, the Detroit-Windsor Tunnel, Gordie Howe and Blue Water bridges, into the US (CBP) and into Canada (CBSA).", body)
+                     "Live border waits at Peace Arch, Pacific Highway, the Peace and Rainbow bridges, the Ambassador Bridge, the Detroit-Windsor Tunnel, Gordie Howe and Blue Water bridges, Lacolle, Stanstead and Saint-Armand, into the US (CBP) and into Canada (CBSA).", body)
 
 
 def build_crossing(slug, c):
@@ -367,7 +406,7 @@ def build_crossing(slug, c):
 {cta(campaign)}
 <p class="source">{SOURCE}</p>"""
     path = f"{HUB}{slug}/"
-    return path, page(path, c["title"], c["desc"], body)
+    return path, page(path, c["title"], c["desc"], body, c.get("fr"))
 
 
 if __name__ == "__main__":

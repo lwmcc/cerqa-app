@@ -70,7 +70,7 @@ PAGES = {
         "desc": "Télécharge Cerqa gratuitement sur iPhone et Android. Partage ta position avec ta famille et tes amis, vois quand chacun arrivera et arrivez ensemble. Aucune invitation nécessaire.",
         "og_title": "Télécharger Cerqa",
         "og_desc": "Vois qui est en route et quand chacun arrivera. Gratuit sur iPhone et Android.",
-        "og_image": "/images/social/cerqa-en.jpg",
+        "og_image": "/images/social/cerqa-fr.jpg",
         "h1": "Télécharger Cerqa",
         "sub": "Vois qui est en route et quand chacun arrivera. Partage ta position avec ta famille et tes amis, et arrivez ensemble.",
         "fine": "Gratuit sur iPhone et Android. Aucune invitation nécessaire.",
@@ -139,6 +139,11 @@ def build(lang, ga):
   <link rel="alternate" hreflang="en" href="{SITE}/download/">
   <link rel="alternate" hreflang="es" href="{SITE}/es/descargar/">
   <link rel="alternate" hreflang="fr" href="{SITE}/fr/telecharger/">
+  <link rel="alternate" hreflang="es-MX" href="{SITE}/es/descargar/">
+  <link rel="alternate" hreflang="es-419" href="{SITE}/es/descargar/">
+  <link rel="alternate" hreflang="es-ES" href="{SITE}/es/descargar/">
+  <link rel="alternate" hreflang="fr-FR" href="{SITE}/fr/telecharger/">
+  <link rel="alternate" hreflang="fr-CA" href="{SITE}/fr/telecharger/">
   <link rel="alternate" hreflang="x-default" href="{SITE}/download/">{redirect}
   <link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32.png">
   <link rel="apple-touch-icon" href="/images/icon/apple-touch-icon.png">

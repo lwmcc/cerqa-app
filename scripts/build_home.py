@@ -231,7 +231,7 @@ NB = "\u202f"
 T["fr"] = dict(T["en"])
 T["fr"].update({
     "path": "/fr/", "planner_nav": "Planificateur", "cc": "fr", "campaign": "home_fr", "download": "/fr/telecharger/", "qr": "Scanne pour télécharger Cerqa",
-    "blog": "/blog/", "og_image": "cerqa-en.jpg", "apple_width": 164,
+    "blog": "/blog/", "og_image": "cerqa-fr.jpg", "apple_width": 164,
     "title": "Cerqa | Position en direct et navigation en groupe pour les voyages en voiture",
     "desc": "Partage ta position en direct, vois l’heure d’arrivée de chacun et naviguez ensemble. Cerqa garde ta famille et tes amis ensemble en voyage, pour se retrouver et rouler en groupe. Gratuit sur iPhone et Android.",
     "og_title": "Cerqa : que tout le monde arrive",
@@ -359,6 +359,8 @@ def cell(v):
 
 def build(lang, ga):
     t = T[lang]
+    # The big heads with the app itself in Spanish or French (store shots, 2026-11-21).
+    hero_dir = f"{lang}/" if lang in ("es", "fr") else ""
     benefits = "\n".join(f"""      <div class="benefit">
         <div class="benefit-icon">{icon}</div>
         <h3>{h}</h3>
@@ -429,6 +431,11 @@ def build(lang, ga):
   <link rel="alternate" hreflang="en" href="{SITE}/">
   <link rel="alternate" hreflang="es" href="{SITE}/es/">
   <link rel="alternate" hreflang="fr" href="{SITE}/fr/">
+  <link rel="alternate" hreflang="es-MX" href="{SITE}/es/">
+  <link rel="alternate" hreflang="es-419" href="{SITE}/es/">
+  <link rel="alternate" hreflang="es-ES" href="{SITE}/es/">
+  <link rel="alternate" hreflang="fr-FR" href="{SITE}/fr/">
+  <link rel="alternate" hreflang="fr-CA" href="{SITE}/fr/">
   <link rel="alternate" hreflang="x-default" href="{SITE}/">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/icon/favicon-32.png">
   <link rel="apple-touch-icon" href="/images/icon/apple-touch-icon.png">
@@ -485,8 +492,8 @@ def build(lang, ga):
   </header>
 
   <div class="hero-phones">
-    <div class="phone-wrap"><img src="/images/screens/android/map.webp" width="440" height="898" alt="{t['phones_alt'][0]}"></div>
-    <div class="phone-wrap"><img src="/images/screens/ios/map.webp" width="443" height="900" alt="{t['phones_alt'][1]}"></div>
+    <div class="phone-wrap"><img src="/images/screens/{hero_dir}android/map.webp" width="440" height="898" alt="{t['phones_alt'][0]}"></div>
+    <div class="phone-wrap"><img src="/images/screens/{hero_dir}ios/map.webp" width="443" height="900" alt="{t['phones_alt'][1]}"></div>
   </div>
 
 {next_section}
